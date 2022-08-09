@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>API Docs | Kibramoa</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="API Docs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jekyll template for API documentation." />
+<meta property="og:description" content="Jekyll template for API documentation." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Kibramoa" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="API Docs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Jekyll template for API documentation.","headline":"API Docs","name":"Kibramoa","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="icon" type="image/png" href="/favicon.png">
+
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>
+				<button type="button" class="open-nav" id="open-nav"></button>
+				<a href="/"><img src="/images/logo.svg" height="40" alt="Kibramoa logo"></a>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	
+	
+		
+	
+		
+			<section>
+				<h6>Overview</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#documentationgetting_started">
+								Getting Started
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#documentationCashier Integration">
+								Cashier Integration
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#documentationServer to Server Integration">
+								Server to Server Integration
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#documentationGateway Interface">
+								Gateway URLs
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#documentationCashier Authentication copy">
+								Cashier Request
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#documentationCashier Authentication">
+								Cashier Authentication
+								
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>API Endpoints</h6>
+				<ul>
+					
+					
+				</ul>
+			</section>
+		
+	
+</div>
+
+
+			<p class="copyright">
+				<a href="https://kibramoa.com">
+					Kibramoa
+				</a>
+			</p>
+		</header>
+		<div class="main">
+			
+
+	
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationgetting_started">
+						Getting Started
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/getting_started.md">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>This document covers all the technical aspects for accomplish an integration with Kibramoa API, a platform that aggregates most popular payments methods from different countries around the world.</p>
+
+<p>Kibramoa API provides a modern user interface called CashierUI, this application provides a visual way for the merchant’s customers to initiate and complete payments using their preferred payment options from different countries.</p>
+
+<p class="info">Using the API</p>
+
+<p>You will need a test merchant account to generate the keys for .</p>
+
+<p class="info">Integration Options</p>
+
+<p>The Kibramoa API offers the following types of integrations for payment processing:</p>
+<ul>
+  <li>Payment Form Integration called Cashier-UI</li>
+  <li>Server to Server Integration (Merchant’s own payment form).</li>
+</ul>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationCashier Integration">
+						Cashier Integration
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier Integration.md">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>The Cashier will allow the merchants to manage payments fast and safe :</p>
+<ul>
+  <li>A link to CashierUI will be generated for the merchant platform after session requesting.</li>
+  <li>To load the cashier the merchant would have to be boarded and generate an API key from merchant portal. This API key once generated needs to be used when calling the Kibramoa Gateway cashier.</li>
+  <li>The HTTP header needs to have the Merchant API key added before the cashier can be called. (described in section 4.1)</li>
+</ul>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationServer to Server Integration">
+						Server to Server Integration
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/Server to Server Integration.md">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>Server-side integration coming soon.</p>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationGateway Interface">
+						Gateway URLs
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/Gateway Interface.md">Edit</a>
+				</h3>
+				
+
+				
+
+				
+<p class="info">Sandbox Environment URLs</p>
+<h4 id="sandbox-api">Sandbox API</h4>
+<p>https://api.sandbox.kibramoa.net</p>
+
+<h4 id="sandbox-cashier-hosted-payments-page">Sandbox Cashier (Hosted Payments Page)</h4>
+<p>https://cashier.sandbox.kibramoa.net</p>
+
+<p class="info">Production  Environment URLs</p>
+
+<h4 id="production-api">Production API</h4>
+<p>https://api.kibramoa.net</p>
+
+<h4 id="production-cashier-hosted-payments-page">Production Cashier (Hosted Payments Page)</h4>
+<p>https://cashier.kibramoa.net</p>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationCashier Authentication copy">
+						Cashier Request
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier Authentication copy.md">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier and payment methods requested for</p>
+
+<p><img src="/images/Cashier_Request_Api_Steps.png" alt="API Calls" class="img-responsive" /></p>
+
+
+				
+						
+								
+
+
+<div title="" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationCashier Authentication">
+						Cashier Authentication
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier Authentication.md">Edit</a>
+				</h3>
+				
+
+				
+
+				
+<p>Within the header of the calls to Kibramoa that will contain the cashier request the Merchant API key needs to be declared.</p>
+
+
+				
+						
+								
+
+
+<div title="Session ID Format" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>X-API-KEY: 48wL6TGO3K0be*3ff6-b255-c19a2d2c164b
+Content-Type: application/json
+</code></pre></div></div>
+
+								
+						
+			</section>
+			
+		</section>
+	
+
+	
+	
+
+
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
