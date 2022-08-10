@@ -28,7 +28,7 @@ content_markdown: |-
     {: .success }
   **Example request**
 
-    A curl request to add a new riddle:
+    A curl request to Start a transaction:
 
     ```
     curl -X POST \
@@ -88,30 +88,7 @@ content_markdown: |-
     ]
   }'
 
-    ```
-    {: .success }
-    **Example response**
-
-    **Example response**
-
-    A successful response to a `POST` request is an object like below:
-
-    ```
-    HTTP/1.1 201 Created
-    Content-Type: application/json; charset=utf-8
-
-    {
-    "message": "Successfully added new riddle",
-    "content": {
-        "_id": "60bd0708d7dcc31bd9376abe",
-        "riddle": "I'm tall when I'm young, and I'm short when I'm old. What am I?",
-        "answer": "A candle",
-        "category": "easy",
-        "source": "https://parade.com/947956/parade/riddles/",
-        "__v": 0
-    }
-    }
-    ```
+   
 
 
           Data Table
