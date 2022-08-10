@@ -145,6 +145,7 @@ content_markdown: |-
     {: .info }
       Data Table
       The following are the parameteres needed along with the data types that are used.
+      
 
       | **Parameter**         | **Data Type** | **Example**                     | **Description**                                                       |
       | --------------------- | ------------- | ------------------------------- | --------------------------------------------------------------------- |
@@ -155,6 +156,7 @@ content_markdown: |-
       | **merchantReference** | string        | order\_ticket\_123              | Merchant reference, must be unique and generated in merchant system.  |
       | **paymentReference**  | string        | Invoice ABC123                  | Reference to be used for the Payment.                                 |
       | **redirectUrl\***     | string        | https://merchant.io/where-to-go | Merchant redirect page after payment.                                 |
+
 
       | **Parameter**    | **Data Type** | **Example**                                                                                                | **Description**                          |
       | ---------------- | ------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
