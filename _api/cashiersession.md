@@ -143,17 +143,37 @@ content_markdown: |-
     | 500        | `Internal Server Error`: An unexpected error occurred on the server.                                                                       |
 
     {: .info }
-      **Data Table**
+      Data Table
       The following are the parameteres needed along with the data types that are used.
-      
 
-    | **Parameter**   | **Data Type** | **Example**         | **Description**                                                                                             |
-    | --------------- | ------------- | ------------------- | ----------------------------------------------------------------------------------------------------------- |
-    | **productName** | string        | shirt-1233474       | ID Number from end user.                                                                                    |
-    | **quantity**    | number        | 1                   | Product quantity.                                                                                           |
-    | **dimensions**  | string        | 85x51               | Product size dimension.                                                                                     |
-    | **ApplyPromo**  | boolean       | 1                   | Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. **– Coming soon** |
-    | **description** | string        | Blue sports t-shirt | Free description of the order.                                                                              |
+      | **Parameter**         | **Data Type** | **Example**                     | **Description**                                                       |
+      | --------------------- | ------------- | ------------------------------- | --------------------------------------------------------------------- |
+      | **country\***         | string        | BR                              | Alpha-2 ISO Country code                                              |
+      | **currency\***        | string        | BRL                             | ISO Currency code                                                     |
+      | **amount\***          | number        | 1000                            | Amount without coma, format 155 = 1.55 This needs to be sent in cents |
+      | **language**          | string        | ES                              | Alpha-2 ISO Language code                                             |
+      | **merchantReference** | string        | order\_ticket\_123              | Merchant reference, must be unique and generated in merchant system.  |
+      | **paymentReference**  | string        | Invoice ABC123                  | Reference to be used for the Payment.                                 |
+      | **redirectUrl\***     | string        | https://merchant.io/where-to-go | Merchant redirect page after payment.                                 |
+
+      | **Parameter**    | **Data Type** | **Example**                                                                                                | **Description**                          |
+      | ---------------- | ------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+      | **customer\***   |               |                                                                                                            | Customer data.                           |
+      | **name\***       | string        | Pepe Doe                                                                                                   | User / payer full name.                  |
+      | **email\***      | string        | pepe@test.test                                                                                             | User / payer email.                      |
+      | **phone\***      | string        | 34666999666                                                                                                | User / payer phone number.               |
+      | **userDevice\*** | string        | User device.                                                                                               | ENUM: Array\[ MOBILE, DESKTOP, TABLET \] |
+      | **userAgent\***  | string        | Mozilla/5.0 (X11; Linux x86\_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36 |                                          |
+      | **ip\***         | string        | 84.232.140.77                                                                                              |                                          |
+
+
+      | **Parameter**   | **Data Type** | **Example**         | **Description**                                                                                             |
+      | --------------- | ------------- | ------------------- | ----------------------------------------------------------------------------------------------------------- |
+      | **productName** | string        | shirt-1233474       | ID Number from end user.                                                                                    |
+      | **quantity**    | number        | 1                   | Product quantity.                                                                                           |
+      | **dimensions**  | string        | 85x51               | Product size dimension.                                                                                     |
+      | **ApplyPromo**  | boolean       | 1                   | Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. **– Coming soon** |
+      | **description** | string        | Blue sports t-shirt | Free description of the order.                                                                              |
 
 
 
