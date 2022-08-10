@@ -28,7 +28,7 @@ content_markdown: |-
     {: .success }
   **Example request**
 
-    A curl request to Start a transaction:
+    A curl request to add a new riddle:
 
     ```
     curl -X POST \
@@ -88,10 +88,51 @@ content_markdown: |-
     ]
   }'
 
-   
+    ```
 
+    A successful response will return an HTTP status code of `201` and have the following schema:
 
-          Data Table
+    | Field   | Type   | Description                        |
+    | ------- | ------ | ---------------------------------- |
+    | message | string | A brief success message            |
+    | content | object | Top-level containing Riddle object |
+
+    Where the Riddle object has this schema:
+
+    | Field    | Type   | Description                                                                                                                                                        |
+    | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+    | \_id     | string | The database id for the Riddle object                                                                                                                              |
+    | riddle   | string | The riddle's question                                                                                                                                              |
+    | answer   | string | The riddle's answer                                                                                                                                                |
+    | category | string | A classification of the riddle. The original database includes the categories: easy, hard, funny, kids, math, and word. This is not an enum and more can be added. |
+    | source   | string | The source of the riddle                                                                                                                                           |
+    | \_\_v    | number | An internal versioning number used by Mongoose (the Object Data Model library used to connect to the MongoDB database).
+
+    {: .success }
+    **Example response**
+
+    **Example response**
+
+    A successful response to a `POST` request is an object like below:
+
+    ```
+    HTTP/1.1 201 Created
+    Content-Type: application/json; charset=utf-8
+
+    {
+    "message": "Successfully added new riddle",
+    "content": {
+        "_id": "60bd0708d7dcc31bd9376abe",
+        "riddle": "I'm tall when I'm young, and I'm short when I'm old. What am I?",
+        "answer": "A candle",
+        "category": "easy",
+        "source": "https://parade.com/947956/parade/riddles/",
+        "__v": 0
+    }
+    }
+    ```
+
+         ## Data Table
         The following are the parameteres needed along with the data types that are used.
 
 
