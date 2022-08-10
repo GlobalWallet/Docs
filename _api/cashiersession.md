@@ -9,21 +9,13 @@ content_markdown: |-
 
     | HTTP Method | Endpoint | Summary                           |
     | ----------- | -------- | --------------------------------- |
-    | `POST`      | /riddles | Adds a new riddle to the database |
+    | `POST`      | /payment-session | Creates a new session in the cashier |
 
     Use the JSON request body to add a new Riddle object to the database.
+  
 
-    The request body should use the following schema:
-    
-    | Field    | Type   | Required | Description                                                                                                                                                                                               |
-    | -------- | ------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-    | riddle   | string | Required | The riddle's question                                                                                                                                                                                     |
-    | answer   | string | Required | The riddle's answer                                                                                                                                                                                       |
-    | category | string | Required | A one-word classification of the riddle. It should not contain spaces. The original database includes the categories: easy, hard, funny, kids, math, and word. This is not an enum and more can be added. |
-    | source   | string | Optional | The source of the riddle
-
-    {: .error }
-    **Note**: The `Content-Type` header should be set to `application/json`.
+    {: .info }
+    **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
     {: .success }
   **Example request**
@@ -98,7 +90,7 @@ content_markdown: |-
     | content | object | Top-level containing Riddle object |
 
     
-       Data Table
+    Data Table
         The following are the parameteres needed along with the data types that are used.
 
 
