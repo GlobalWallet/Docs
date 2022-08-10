@@ -132,7 +132,18 @@ content_markdown: |-
     }
     ```
 
-         ## Data Table
+    {: .error }
+    **Possible error responses**
+
+    A `POST` request to the /riddles endpoint may return the following errors.
+
+    | Error code | Description                                                                                                                                |
+    | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+    | 400        | `Bad Request`: This error will be returned if a required field in the request body is missing or if the `category` field contains a space. |
+    | 500        | `Internal Server Error`: An unexpected error occurred on the server.                                                                       |
+
+
+          Data Table
         The following are the parameteres needed along with the data types that are used.
 
 
@@ -193,7 +204,7 @@ content_markdown: |-
     | **ApplyPromo**  | boolean       | 1                   | Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. **– Coming soon** |
     | **description** | string        | Blue sports t-shirt | Free description of the order.                                                                              |
 
-
+  
 right_code_blocks:
   - code_block: |1-
         {
