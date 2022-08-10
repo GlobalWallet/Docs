@@ -204,7 +204,8 @@ content_markdown: |-
     | **ApplyPromo**  | boolean       | 1                   | Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. **– Coming soon** |
     | **description** | string        | Blue sports t-shirt | Free description of the order.                                                                              |
 
-
+    title: Session Data
+    position_number: 2
 
 right_code_blocks:
   - code_block: |1-
@@ -225,7 +226,7 @@ right_code_blocks:
     title: Error 401
     language: json
    
-
+---
 
 title: Session Data
 position_number: 2
