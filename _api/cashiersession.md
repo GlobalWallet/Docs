@@ -145,6 +145,7 @@ content_markdown: |-
     {: .info }
       **Data Table**
       The following are the parameteres needed along with the data types that are used.
+      
 
     | **Parameter**   | **Data Type** | **Example**         | **Description**                                                                                             |
     | --------------- | ------------- | ------------------- | ----------------------------------------------------------------------------------------------------------- |
