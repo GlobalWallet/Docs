@@ -143,9 +143,10 @@ content_markdown: |-
     | 500        | `Internal Server Error`: An unexpected error occurred on the server.                                                                       |
 
     {: .info }
+    
       Data Table
       The following are the parameteres needed along with the data types that are used.
-      
+
 
       | **Parameter**         | **Data Type** | **Example**                     | **Description**                                                       |
       | --------------------- | ------------- | ------------------------------- | --------------------------------------------------------------------- |
