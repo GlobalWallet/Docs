@@ -140,10 +140,11 @@ content_markdown: |-
     | Error code | Description                                                                                                                                |
     | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
     | 400        | `Bad Request`: This error will be returned if a required field in the request body is missing or if the `category` field contains a space. |
-    | 500        | `Internal Server Error`: An unexpected error occurred on the server.
+    | 500        | `Internal Server Error`: An unexpected error occurred on the server.                                                                       |
 
     {: .Session Data Types }
     **Data Table**
+
     | **Parameter**   | **Data Type** | **Example**         | **Description**                                                                                             |
     | --------------- | ------------- | ------------------- | ----------------------------------------------------------------------------------------------------------- |
     | **productName** | string        | shirt-1233474       | ID Number from end user.                                                                                    |
