@@ -97,53 +97,8 @@ content_markdown: |-
     | message | string | A brief success message            |
     | content | object | Top-level containing Riddle object |
 
-    Where the Riddle object has this schema:
-
-    | Field    | Type   | Description                                                                                                                                                        |
-    | -------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-    | \_id     | string | The database id for the Riddle object                                                                                                                              |
-    | riddle   | string | The riddle's question                                                                                                                                              |
-    | answer   | string | The riddle's answer                                                                                                                                                |
-    | category | string | A classification of the riddle. The original database includes the categories: easy, hard, funny, kids, math, and word. This is not an enum and more can be added. |
-    | source   | string | The source of the riddle                                                                                                                                           |
-    | \_\_v    | number | An internal versioning number used by Mongoose (the Object Data Model library used to connect to the MongoDB database).
-
-    {: .success }
-    **Example response**
-
-    **Example response**
-
-    A successful response to a `POST` request is an object like below:
-
-    ```
-    HTTP/1.1 201 Created
-    Content-Type: application/json; charset=utf-8
-
-    {
-    "message": "Successfully added new riddle",
-    "content": {
-        "_id": "60bd0708d7dcc31bd9376abe",
-        "riddle": "I'm tall when I'm young, and I'm short when I'm old. What am I?",
-        "answer": "A candle",
-        "category": "easy",
-        "source": "https://parade.com/947956/parade/riddles/",
-        "__v": 0
-    }
-    }
-    ```
-
-    {: .error }
-    **Possible error responses**
-
-    A `POST` request to the /riddles endpoint may return the following errors.
-
-    | Error code | Description                                                                                                                                |
-    | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-    | 400        | `Bad Request`: This error will be returned if a required field in the request body is missing or if the `category` field contains a space. |
-    | 500        | `Internal Server Error`: An unexpected error occurred on the server.                                                                       |
-
-
-          Data Table
+    
+       Data Table
         The following are the parameteres needed along with the data types that are used.
 
 
