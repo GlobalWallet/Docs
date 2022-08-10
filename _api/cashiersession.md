@@ -200,3 +200,24 @@ right_code_blocks:
     language: json
    
 ---
+title: Session Data
+position_number: 2
+description: Sessions Date and Types required to be send in the /payment-session request
+
+content_markdown: |-
+  {: .info }
+    
+      Data Table
+      The following are the parameteres needed along with the data types that are used.
+      | **Parameter**   | **Data Type** | **Example**         | **Description**                                                                                             |
+      | --------------- | ------------- | ------------------- | ----------------------------------------------------------------------------------------------------------- |
+      | **productName** | string        | shirt-1233474       | ID Number from end user.                                                                                    |
+      | **quantity**    | number        | 1                   | Product quantity.                                                                                           |
+      | **dimensions**  | string        | 85x51               | Product size dimension.                                                                                     |
+      | **ApplyPromo**  | boolean       | 1                   | Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. **– Coming soon** |
+      | **description** | string        | Blue sports t-shirt | Free description of the order.                                                                              |
+
+
+
+
+---
