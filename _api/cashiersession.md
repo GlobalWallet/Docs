@@ -142,7 +142,8 @@ content_markdown: |-
     | 400        | `Bad Request`: This error will be returned if a required field in the request body is missing or if the `category` field contains a space. |
     | 500        | `Internal Server Error`: An unexpected error occurred on the server.
 
-    Data Table
+    {: .Session Data Types }
+    **Data Table**
     | **Parameter**   | **Data Type** | **Example**         | **Description**                                                                                             |
     | --------------- | ------------- | ------------------- | ----------------------------------------------------------------------------------------------------------- |
     | **productName** | string        | shirt-1233474       | ID Number from end user.                                                                                    |
@@ -150,6 +151,8 @@ content_markdown: |-
     | **dimensions**  | string        | 85x51               | Product size dimension.                                                                                     |
     | **ApplyPromo**  | boolean       | 1                   | Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. **– Coming soon** |
     | **description** | string        | Blue sports t-shirt | Free description of the order.                                                                              |
+
+
 
 right_code_blocks:
   - code_block: |1-
