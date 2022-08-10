@@ -142,10 +142,9 @@ content_markdown: |-
     | 400        | `Bad Request`: This error will be returned if a required field in the request body is missing or if the `category` field contains a space. |
     | 500        | `Internal Server Error`: An unexpected error occurred on the server.                                                                       |
 
-    {: .info }
-    
-      Data Table
-      The following are the parameteres needed along with the data types that are used.
+
+          Data Table
+        The following are the parameteres needed along with the data types that are used.
 
 
     | **Parameter**         | **Data Type** | **Example**                     | **Description**                                                       |
