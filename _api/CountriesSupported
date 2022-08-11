@@ -2,10 +2,11 @@
 title: Supported Countries
 position_number: 3
 type: Data
-description: The following is a list of Supported Countries, Currencies and Methods
+description: The following is a list of Supported Countries, Currencies and Methods.
+Some Methods might not be available on the staging environement.
 
 content_markdown: |-
-    Brazil:  Country: BR Currency: BRL
+    **Brazil**:  Country: BR Currency: BRL
 
     | **Payment Solution Name**    | **Payment Solution Type** |
     | ---------------------------- | ------------------------- |
@@ -21,7 +22,7 @@ content_markdown: |-
     | **Cartao de Credito**        | Cash                      |
     | **Payouts**                  | Transfer                  |
 
-    Mexico:  Country: MX Currency: MXN
+    **Mexico**:  Country: MX Currency: MXN
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
@@ -39,7 +40,7 @@ content_markdown: |-
     | **Todito**                | eWallet                   |
     | **SPEI Payout**           | Transfer                  |
 
-    Chile:  Country: CL Currency: CLP
+    **Chile**:  Country: CL Currency: CLP
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
@@ -54,7 +55,7 @@ content_markdown: |-
     | **Lider**                 | Cash                      |
     | **Bank Transfer**         | Transfer                  |
 
-    Colombia: Country: CO Currency: COP
+    **Colombia**: Country: CO Currency: COP
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
@@ -65,7 +66,7 @@ content_markdown: |-
     | **Tpaga**                 | eWallet                   |
     | **PSE Payout**            | Transfer                  |
 
-    Peru: Country: PE Currency: PEN
+    **Peru**: Country: PE Currency: PEN
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
@@ -78,14 +79,14 @@ content_markdown: |-
     | **Interbank**             | Transfer                  |
     | **Scotiabank**            | Transfer                  |
 
-    Ecuador: Country: EC Currency: USD
+    **Ecuador**: Country: EC Currency: USD
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
     | **Banco Guayaquil**       | Transfer                  |
     | **Banco Pichincha**       | Transfer                  |
 
-    El Salvador:Country: SV Currency: SVC/USD
+    **El Salvador**:Country: SV Currency: SVC/USD
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
@@ -101,7 +102,7 @@ content_markdown: |-
     | **Integral**              | Cash                      |
     | **El Gallo mas Gallo**    | Cash                      |`
 
-    Panama: Country: PA Currency: USD
+    **Panama**: Country: PA Currency: USD
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
@@ -117,14 +118,14 @@ content_markdown: |-
     | **Integral**              | Cash                      |
     | **El Gallo mas Gallo**    | Cash                      |
 
-    Costa Rica: Country: CR Currency: CRC
+    **Costa Rica**: Country: CR Currency: CRC
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
     | **Banco Nacional**        | Transfer                  |
     
-    Guatemala: Country: GT Currency: GTQ
-    
+    **Guatemala**: Country: GT Currency: GTQ
+
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
     | **Banco Industrial**      | Transfer                  |
