@@ -6,6 +6,13 @@ description: Payment notifications happen once payment reach the PSP, they will 
 
 content_markdown: |-
 
+    ##  Once notification reach merchant systems it MUST be replied back returning a HTTP response with 200 status code, otherwise Kibramoa system will re-send every hour.
+
+        📌 All notification communications must be encrypted under TLS/SSL 
+    
+    ## Merchant is able to resubmit a notification manually using the merchant portal.
+    ### Notification body request
+
     ```    
         {
             "internalId": "ee40a31b-a14f-48e2-a272-e3fc013f4735",

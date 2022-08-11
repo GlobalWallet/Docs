@@ -8,6 +8,8 @@ description: The following is a list of Supported Countries, Currencies and Meth
 content_markdown: |-
    ###  Some Methods might not be available on the staging environment.
 
+   ##Latin America
+
     **Brazil**:  Country: BR Currency: BRL
 
     | **Payment Solution Name**    | **Payment Solution Type** |
@@ -88,7 +90,7 @@ content_markdown: |-
     | **Banco Guayaquil**       | Transfer                  |
     | **Banco Pichincha**       | Transfer                  |
 
-    **El Salvador**:Country: SV Currency: SVC/USD
+    **El Salvador**:Country: SV Currency: USD
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
@@ -136,5 +138,111 @@ content_markdown: |-
     | **Banco de Antigua**      | Transfer                  |
     | **Super 24**              | Transfer                  |
     | **Fundación Genesis**     | Transfer                  |
+
+
+    ##Africa
+
+    **Nigeria**: Country: NG Currency: NGN
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Kenya**: Country: KE  Currency: KES
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Ghana**: Country: GH  Currency: GHS
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Zambia**: Country: ZM  Currency: ZMW
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Uganda**: Country: UG Currency: UGX
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Tanzania**: Country:TZ  Currency: TZS
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Zimbabwe**: Country: ZW  Currency: ZWB
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Senegal**: Country: SN  Currency: XOF
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Ivory Coast**: Country: CI  Currency: XOF
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Cameroon**: Country: CM  Currency: XAF
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Guinea**: Country: GN  Currency: XAF
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Mali**: Country: ML  Currency: XOF
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Burkina**: Country: BF  Currency: XOF
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Egypt**: Country: EG  Currency: EGP
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Mozambique**: Country: MZ  Currency: MZN
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Rwanda**: Country: RW  Currency: RWF
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **Ethiopia**: Country: ET  Currency: ETB
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    **South Africa**: Country: ZA  Currency: ZAR
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    
+
+    ##India
+
+
+    **India**: Country: IN  Currency: INR
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+
+    
+
 
 ---
