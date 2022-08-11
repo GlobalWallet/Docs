@@ -8,7 +8,7 @@ description: The following is a list of Supported Countries, Currencies and Meth
 content_markdown: |-
    ###  Some Methods might not be available on the staging environment.
 
-   ##Latin America
+    ##Latin America
 
     **Brazil**:  Country: BR Currency: BRL
 
@@ -176,76 +176,149 @@ content_markdown: |-
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | MTN              | Mobile       |
+    | Zamtel           | Mobile       |
+    | Airtel           | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Uganda**: Country: UG Currency: UGX
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | MTN              | Mobile       |
+    | AirtelTigo       | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Tanzania**: Country:TZ  Currency: TZS
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Vodacom          | Mobile       |
+    | Mpesa            | Mobile       |
+    | Airtel           | Mobile       |
+    | Tigo             | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Zimbabwe**: Country: ZW  Currency: ZWB
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
+
 
     **Senegal**: Country: SN  Currency: XOF
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Orange Money     | Mobile       |
+    | Free Money       | Mobile       |
+    | E-Money          | Mobile       |
+    | Wizall           | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Ivory Coast**: Country: CI  Currency: XOF
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Orange Money     | Mobile       |
+    | MTN              | Mobile       |
+    | Moov             | Mobile       |
+    | Wizall           | Mobile       |
+    | Yup              | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Cameroon**: Country: CM  Currency: XAF
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Orange Money     | Mobile       |
+    | MTN              | Mobile       |
+    | Yup              | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Guinea**: Country: GN  Currency: XAF
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Orange Money     | Mobile       |
+    | MTN              | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Mali**: Country: ML  Currency: XOF
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Orange Money     | Mobile       |
+    | Mobi Cash        | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Burkina**: Country: BF  Currency: XOF
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Orange Money     | Mobile       |
+    | Mobi Cash        | Mobile       |
+    | Yup              | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Egypt**: Country: EG  Currency: EGP
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Local Banks      | Transfer     |
+    | Orange           | Mobile       |
+    | Money Etisalat   | Mobile       |
+    | We-Pay           | Mobile       |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Mozambique**: Country: MZ  Currency: MZN
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Mpesa            | Mobile       |
+    | Local Visa       | Cards        |
+    | Local Mastercard | Cards        |
 
     **Rwanda**: Country: RW  Currency: RWF
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | MTN         | Mobile       |
+    | Airtel      | Mobile       |
+    | Local Banks | Transfer     |
 
     **Ethiopia**: Country: ET  Currency: ETB
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Local Banks | Transfer     |
 
     **South Africa**: Country: ZA  Currency: ZAR
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Local Banks | Transfer     |
 
     
 
@@ -256,6 +329,9 @@ content_markdown: |-
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Net Banking |	Transfer|
+    | UPI |	Transfer|
+
 
     
 
