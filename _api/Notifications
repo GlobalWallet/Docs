@@ -83,8 +83,7 @@ content_markdown: |-
     | DECINED       | Transaction was declined by PSP.|
     | EXPIRED       | Expired transaction.|
     | REFUNDED      | Refund transcation completed.|
-
-    
+  
 
     
 
