@@ -2,7 +2,7 @@
 title: /payment-session
 position_number: 1
 type: post
-description: To create a payments page (cashier) session
+description: This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.
 
 content_markdown: |-
 
