@@ -1,8 +1,8 @@
 ---
-title: /Notifications
+title: /notifications
 position_number: 3
 type: post
-description: To create a payments page (cashier) session
+description: To create Notifications
 
 content_markdown: |-
     New page for notifications
