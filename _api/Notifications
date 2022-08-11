@@ -7,6 +7,8 @@ description: To create Notifications
 content_markdown: |-
 
         New page for notifications
-
         
+        ###  Some Methods might not be available on the environment.
+
+
 ---
