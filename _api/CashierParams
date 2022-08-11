@@ -1,8 +1,8 @@
 ---
 title: /payment-session/Params
 position_number: 2
-type: post
-description: Sessions Data and Types required to be send in the /payment-session request test
+type: Data
+description: Session Data and Types required to be sent in the /payment-session request test
 
 content_markdown: |-
     

@@ -1,0 +1,38 @@
+---
+title: Supported Countries
+position_number: 3
+type: Data
+description: The following is a list of Supported Countries, Currencies and Methods
+
+content_markdown: |-
+    Brazil
+        **_NOTE:_**  Country: BR Currency: BRL
+
+    Mexico
+        **_NOTE:_**  Country: MX Currency: MXN
+
+    Chile
+        **_NOTE:_**  Country: CL Currency: CLP
+
+    Colombia
+        **_NOTE:_**  Country: CO Currency: COP
+
+    Peru
+        **_NOTE:_**  Country: PE Currency: PEN
+
+    Ecuador
+        **_NOTE:_**  Country: EC Currency: USD
+
+    El Salvador
+        **_NOTE:_**  Country: SV Currency: SVC/USD
+
+    Panama
+        **_NOTE:_**  Country: PA Currency: USD
+
+    Costa Rica
+        **_NOTE:_**  Country: CR Currency: CRC
+
+    Guatemala
+        **_NOTE:_**  Country: GT Currency: GTQ
+
+---
