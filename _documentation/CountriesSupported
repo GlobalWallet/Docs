@@ -1,6 +1,6 @@
 ---
 title: Supported Countries
-position_number: 3
+position_number: 7
 type: Data
 description: The following is a list of Supported Countries, Currencies and Methods.
 
@@ -102,7 +102,7 @@ content_markdown: |-
     | **Pago724**               | Cash                      |
     | **Credicomer**            | Cash                      |
     | **Integral**              | Cash                      |
-    | **El Gallo mas Gallo**    | Cash                      |`
+    | **El Gallo mas Gallo**    | Cash                      |
 
     **Panama**: Country: PA Currency: USD
 
