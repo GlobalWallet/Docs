@@ -82,6 +82,6 @@ content_markdown: |-
     | ERROR         | Error happened during the processing.|
     | DECINED       | Transaction was declined by PSP.|
     | EXPIRED       | Expired transaction.|
-    | REFUNDED      | Refund transcation completed.|
+    | REFUNDED      | Refund transaction completed.|
   
 ---
