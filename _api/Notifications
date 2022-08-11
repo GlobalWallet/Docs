@@ -73,17 +73,17 @@ content_markdown: |-
     ```
     #### Transaction status table
 
-        | Status        | Description          |
-        | ------------- |:-------------:|
-        | INIT          | Transaction initiated |
-        | USER_CANCEL   | User cancel        |
-        | PROCESSING    | Transaction is sent to PSP and waiting to be settled     |
-        | COMPLETED     | Transaction is settled and confirmed.     |
-        | ERROR         | Error happened during the processing.     |
-        | DECINED       | Transaction was declined by PSP.     |
-        | EXPIRED       | Expired transaction.     |
-        | REFUNDED      | Refund transcation completed.     |
-    
+    | Status| Description|
+    | ------------- |:-------------:|
+    | INIT          | Transaction initiated|
+    | USER_CANCEL   | User cancel        |
+    | PROCESSING    | Transaction is sent to PSP and waiting to be settled|
+    | COMPLETED     | Transaction is settled and confirmed.|
+    | ERROR         | Error happened during the processing.|
+    | DECINED       | Transaction was declined by PSP.|
+    | EXPIRED       | Expired transaction.|
+    | REFUNDED      | Refund transcation completed.|
+
     
 
 ---
