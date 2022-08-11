@@ -6,9 +6,9 @@ description: The following is a list of Supported Countries, Currencies and Meth
 
 
 content_markdown: |-
-   ###  Some Methods might not be available on the staging environment.
+###  Some Methods might not be available on the staging environment.
 
-    ##Latin America
+##Latin America
 
     **Brazil**:  Country: BR Currency: BRL
 
@@ -140,7 +140,7 @@ content_markdown: |-
     | **Fundación Genesis**     | Transfer                  |
 
 
-    ##Africa
+##Africa
 
     **Nigeria**: Country: NG Currency: NGN
 
@@ -321,8 +321,7 @@ content_markdown: |-
     | Local Banks | Transfer     |
 
     
-
-    ##India
+##India
 
 
     **India**: Country: IN  Currency: INR
