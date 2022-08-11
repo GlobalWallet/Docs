@@ -5,7 +5,7 @@ type: post
 description: To create a payments page (cashier) session
 
 content_markdown: |-
-  📌 
+
     {: .info }
     **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
