@@ -146,16 +146,31 @@ content_markdown: |-
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | Local Visa       | Card         |
+    | Local Mastercard | Card         |
+    | Verve            | Card         |
+    | Local Banks      | Transfer     |
 
     **Kenya**: Country: KE  Currency: KES
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | MPESA            | Mobile       |
+    | Airtel Money     | Mobile       |
+    | Local Banks      | Transfer     |
+    | Local Visa       | Card         |
+    | Local Mastercard | Card         |
 
     **Ghana**: Country: GH  Currency: GHS
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
+    | MTN              | Mobile       |
+    | AirtelTigo       | Mobile       |
+    | Vodacom          | Mobile       |
+    | Local Transfer   | Transfer     |
+    | Local Visa       | Card         |
+    | Local Mastercard | Card         |
 
     **Zambia**: Country: ZM  Currency: ZMW
 
