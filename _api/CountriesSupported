@@ -3,9 +3,11 @@ title: Supported Countries
 position_number: 3
 type: Data
 description: The following is a list of Supported Countries, Currencies and Methods.
-Some Methods might not be available on the staging environement.
+
 
 content_markdown: |-
+    Some Methods might not be available on the staging environement.
+
     **Brazil**:  Country: BR Currency: BRL
 
     | **Payment Solution Name**    | **Payment Solution Type** |
