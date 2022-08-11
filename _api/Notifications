@@ -2,7 +2,7 @@
 title: /notifications
 position_number: 3
 type: post
-description: To create Notifications
+description: Payment notifications happen once payment reach the PSP, they will be subbmited to the merchant notification url previusly configured on the merchant portal.
 
 content_markdown: |-
 
