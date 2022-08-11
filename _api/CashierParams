@@ -1,13 +1,13 @@
 ---
-title: /payment-session/Params
+title: Payment Session Data
 position_number: 2
 type: Data
 description: Session Data and Types required to be sent in the /payment-session request test
 
 content_markdown: |-
     
-    Data Table
-      The following are the parameteres needed along with the data types that are used.
+  Data Table
+    The following are the parameteres needed along with the data types that are used.
 
     | **Parameter**         | **Data Type** | **Example**                     | **Description**                                                       |
     | --------------------- | ------------- | ------------------------------- | --------------------------------------------------------------------- |
