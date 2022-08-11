@@ -5,28 +5,20 @@ type: post
 description: To create a payments page (cashier) session
 
 content_markdown: |-
-  📌 To add a new riddle to the database
-
-    | HTTP Method | Endpoint | Summary                           |
-    | ----------- | -------- | --------------------------------- |
-    | `POST`      | /payment-session | Creates a new session in the cashier |
-
-    Use the JSON request body to add a new Riddle object to the database.
-  
-
+  📌 
     {: .info }
     **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
     {: .success }
   **Example request**
 
-    A curl request to add a new riddle:
+    A curl request to request the cashier:
 
     ```
     curl -X POST \
     'https://api.dev.kibramoa.net/payment-session' \
     -H 'accept: application/json' \
-    -H 'X-API-KEY: 5TDI6o6keGvH9Di+umZj6wGkMZBE7Ukrb8+8A4WErq0=.b8987f40-e1cf-488c-843a-7a634f245a81' \
+    -H 'X-API-KEY: 4rDI6o6keGvH9Di+umZj6wGkMZBE7Ukrb8+8A4WErq0=.b8987f40-e1cf-488c-843a-7a634f245a04' \
     -H 'Content-Type: application/json' \
     -d '{
     "country": "BR",
@@ -84,10 +76,12 @@ content_markdown: |-
 
     A successful response will return an HTTP status code of `201` and have the following schema:
 
+
     | Field   | Type   | Description                        |
     | ------- | ------ | ---------------------------------- |
-    | message | string | A brief success message            |
-    | content | object | Top-level containing Riddle object |
+    | StatusCode | string | If an error is returned the error code is shown here |
+    | message | string | the CashierUrl or A message of the error             |
+
 
   
 right_code_blocks:
