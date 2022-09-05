@@ -17,7 +17,7 @@ content_markdown: |-
     | description       | string    | Additional remark for this payout. | Payout description to be sent in the bank request.                            |
     | userId            | string    | merchant\_user123                  | User id from end merchant customer.                                           |
     | userAgent         | string    | Mozilla/5.0 (X11; Linux x86\_64)   | User agent from browser system.                                               |
-    | userDevice        | string    | DESKTOP                            | User device used in the payout DESKTOP|MOBILE.                                |
+    | userDevice        | string    | DESKTOP                            | User device used in the payout DESKTOP/MOBILE.                                |
     | ip                | string    | 13.12.11.10                        | User device Ip.                                                               |
     | language          | string    | PT                                 | Language ISO alpha-2 code                                                     |
     | extra1            | string    | merchant extra value 1             | Extra parameter to be used for track the payout using merchant generated data |
