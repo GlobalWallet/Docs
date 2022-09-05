@@ -2,20 +2,18 @@
 title: /payout-session
 position_number: 4
 type: post
-description: payout-session Coming Soon
+description: This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.
 
 content_markdown: |-
 
-    This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.
-
-    {: .info }
+  {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
   {: .success }
   **Example request**
----
-  A curl request to request the cashier:
 
+  A curl request to request the cashier:
+---
   ```
   {
   "country": "BR",
