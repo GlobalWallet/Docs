@@ -18,24 +18,22 @@ content_markdown: |-
 
   ```
   {
-
-    "country": "BR",
-    "currency": "BRL",
-    "amount": 150,
-    "redirectUrl": "https://merchant1.io/where/to/go",
-    "merchantReference": "custom_code 9982674851738108",
-    "description": "Additional remark for this payout.",
-    "userId": "merchant_user123",
-    "userAgent": "Mozilla/5.0 (X11; Linux x86_64)",
-    "userDevice": "DESKTOP",
-    "ip": "13.12.11.10",
-    "language": "PT",
-    "extra1": "merchant extra value 1",
-    "extra2": "merchant extra value 2",
-    "extra3": "merchant extra value 3"
-
+   "country": "BR",
+   "currency": "BRL",
+   "amount": 150,
+   "redirectUrl": "https://merchant1.io/where/to/go",
+   "merchantReference": "custom_code 9982674851738108",
+   "description": "Additional remark for this payout.",
+   "userId": "merchant_user123",
+   "userAgent": "Mozilla/5.0 (X11; Linux x86_64)",
+   "userDevice": "DESKTOP",
+   "ip": "13.12.11.10",
+   "language": "PT",
+   "extra1": "merchant extra value 1",
+   "extra2": "merchant extra value 2",
+   "extra3": "merchant extra value 3"
   }
-
+  
   ```
 
   A successful response will return an HTTP status code of `201` and have the following schema:
