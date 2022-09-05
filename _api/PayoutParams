@@ -1,5 +1,5 @@
 ---
-title: Payment Session Data
+title: Payout Session Data
 position_number: 5
 type: Data
 description: Session Data and Types required to be sent in the /Payout-session request
