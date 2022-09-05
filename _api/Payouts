@@ -13,7 +13,7 @@ content_markdown: |-
   **Example request**
 
   A curl request to request the cashier:
----
+
   ```
   {
   "country": "BR",
