@@ -44,8 +44,8 @@ content_markdown: |-
   | StatusCode | string | If an error is returned the error code is shown here |
   | message | string | the CashierUrl or A message of the error             |
 
+---
 
-  
 right_code_blocks:
   - code_block: |1-
         {
@@ -64,5 +64,3 @@ right_code_blocks:
           }
     title: Error 401
     language: json
-
----
