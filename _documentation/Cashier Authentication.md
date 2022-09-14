@@ -1,6 +1,6 @@
 ---
-title: Cashier Authentication
-position_number: 5
+title: Authentication
+position_number: 6
 parameters:
   - name:
     content:

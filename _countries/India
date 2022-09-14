@@ -1,0 +1,21 @@
+---
+title: India
+position_number: 2
+type: Data
+description: The following is a list of Supported Countries, Currencies and Methods.
+
+
+content_markdown: |-
+
+    **India**: Country: IN  Currency: INR
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | Net Banking |	Transfer|
+    | UPI |	Transfer|
+
+
+    
+
+
+---

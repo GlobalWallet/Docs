@@ -1,0 +1,140 @@
+---
+title: Latin America
+position_number: 3
+type: Data
+description: The following is a list of Supported Countries, Currencies and Methods.
+
+
+content_markdown: |-
+
+    **Brazil**:  Country: BR Currency: BRL
+
+    | **Payment Solution Name**    | **Payment Solution Type** |
+    | ---------------------------- | ------------------------- |
+    | **PIX**                      | Transfer                  |
+    | **Deposit/Transfer Express** | Transfer                  |
+    | **Boleto Rapido**            | Cash                      |
+    | **Lotopay**                  | Cash                      |
+    | **Mercado Pago**             | eWallet                   |
+    | **Picpay**                   | eWallet                   |
+    | **Smileone**                 | Cash                      |
+    | **Ame**                      | Cash                      |
+    | **Paypal**                   | eWallet                   |
+    | **Cartao de Credito**        | Cash                      |
+    | **Payouts**                  | Transfer                  |
+
+    **Mexico**:  Country: MX Currency: MXN
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | **SPEI Payin**            | Transfer                  |
+    | **OXXO**                  | Cash                      |
+    | **Seven-Eleven**          | Cash                      |
+    | **Sams Club**             | Cash                      |
+    | **Walmart**               | Cash                      |
+    | **Superama**              | Cash                      |
+    | **Waldos**                | Cash                      |
+    | **Alsuper**               | Cash                      |
+    | **AirPak**                | Cash                      |
+    | **Superama**              | Cash                      |
+    | **Circulo K**             | Cash                      |
+    | **Todito**                | eWallet                   |
+    | **SPEI Payout**           | Transfer                  |
+
+    **Chile**:  Country: CL Currency: CLP
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | **Banco Estado**          | Transfer                  |
+    | **Banco de Chile**        | Transfer                  |
+    | **BCi**                   | Transfer                  |
+    | **TBanc**                 | Transfer                  |
+    | **Scotiabank azul**       | Transfer                  |
+    | **CajaVacina**            | Cash                      |
+    | **aCuenta**               | Cash                      |
+    | **ServiEstado**           | Cash                      |
+    | **Lider**                 | Cash                      |
+    | **Bank Transfer**         | Transfer                  |
+
+    **Colombia**: Country: CO Currency: COP
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | **PSE Payin**             | Transfer                  |
+    | **Efecty**                | Cash                      |
+    | **Su Red**                | Cash                      |
+    | **Baloto**                | Cash                      |
+    | **Tpaga**                 | eWallet                   |
+    | **PSE Payout**            | Transfer                  |
+
+    **Peru**: Country: PE Currency: PEN
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | **BCP**                   | Transfer                  |
+    | **BBVA**                  | Transfer                  |
+    | **Caja Arequipa**         | Transfer                  |
+    | **Caja Huancayo**         | Transfer                  |
+    | **Caja Tacna**            | Transfer                  |
+    | **Caja Trujillo**         | Transfer                  |
+    | **Interbank**             | Transfer                  |
+    | **Scotiabank**            | Transfer                  |
+
+    **Ecuador**: Country: EC Currency: USD
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | **Banco Guayaquil**       | Transfer                  |
+    | **Banco Pichincha**       | Transfer                  |
+
+    **El Salvador**:Country: SV Currency: USD
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | **Punto Express**         | Cash                      |
+    | **Tiendas Galo**          | Cash                      |
+    | **Fedecaces**             | Cash                      |
+    | **Fedecrece**             | Cash                      |
+    | **Superselectos**         | Cash                      |
+    | **AirPark**               | Cash                      |
+    | **Farmacias Economicas**  | Cash                      |
+    | **Pago724**               | Cash                      |
+    | **Credicomer**            | Cash                      |
+    | **Integral**              | Cash                      |
+    | **El Gallo mas Gallo**    | Cash                      |
+
+    **Panama**: Country: PA Currency: USD
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | **Punto Express**         | Cash                      |
+    | **Tiendas Galo**          | Cash                      |
+    | **Fedecaces**             | Cash                      |
+    | **Fedecrece**             | Cash                      |
+    | **Superselectos**         | Cash                      |
+    | **AirPark**               | Cash                      |
+    | **Farmacias Economicas**  | Cash                      |
+    | **Pago724**               | Cash                      |
+    | **Credicomer**            | Cash                      |
+    | **Integral**              | Cash                      |
+    | **El Gallo mas Gallo**    | Cash                      |
+
+    **Costa Rica**: Country: CR Currency: CRC
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | **Banco Nacional**        | Transfer                  |
+    
+    **Guatemala**: Country: GT Currency: GTQ
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    | **Banco Industrial**      | Transfer                  |
+    | **Punto Express**         | Transfer                  |
+    | **Caja Desarrollo**       | Transfer                  |
+    | **Banco de Antigua**      | Transfer                  |
+    | **Super 24**              | Transfer                  |
+    | **Fundación Genesis**     | Transfer                  |
+
+
+---

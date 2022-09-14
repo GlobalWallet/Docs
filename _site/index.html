@@ -90,7 +90,7 @@
 					
 						<li>
 							<a href="#documentationCashier Authentication">
-								Cashier Authentication
+								Authentication
 								
 							</a>
 						</li>
@@ -109,6 +109,65 @@
 							<a href="#apicashiersession">
 								/payment-session
 								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apiCashierParams">
+								Payment Session Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apiNotifications">
+								/notifications
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apiPayouts">
+								/payout-session
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apiPayoutParams">
+								Payout Session Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>GEOs and Methods</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#countriesAfrica">
+								Africa
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#countriesIndia">
+								India
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#countriesLatam">
+								Latin America
+								<span class="endpoint Data"></span>
 							</a>
 						</li>
 					
@@ -185,7 +244,7 @@
 <ul>
   <li>A link to CashierUI will be generated for the merchant platform after session requesting.</li>
   <li>To load the cashier the merchant would have to be boarded and generate an API key from merchant portal. This API key once generated needs to be used when calling the Kibramoa Gateway cashier.</li>
-  <li>The HTTP header needs to have the Merchant API key added before the cashier can be called. (described in section 4.1)</li>
+  <li>The HTTP header needs to have the Merchant API key added before the cashier can be called.</li>
 </ul>
 
 
@@ -286,7 +345,7 @@
 			<section class="left-docs">
 				<h3>
 					<a id="documentationCashier Authentication">
-						Cashier Authentication
+						Authentication
 						
 					</a>
 					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier Authentication.md">Edit</a>
@@ -329,117 +388,32 @@ Content-Type: application/json
 					<a class="editor-link" href="cloudcannon:collections/_api/cashiersession.md">Edit</a>
 				</h3>
 				
-					<p class="description">To create a payments page (cashier) session</p>
+					<p class="description">This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.</p>
 				
 
 				
 
-				<p>📌 To add a new riddle to the database</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>HTTP Method</th>
-      <th>Endpoint</th>
-      <th>Summary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">POST</code></td>
-      <td>/riddles</td>
-      <td>Adds a new riddle to the database</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Use the JSON request body to add a new Riddle object to the database.</p>
-
-<p>The request body should use the following schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Required</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>riddle</td>
-      <td>string</td>
-      <td>Required</td>
-      <td>The riddle’s question</td>
-    </tr>
-    <tr>
-      <td>answer</td>
-      <td>string</td>
-      <td>Required</td>
-      <td>The riddle’s answer</td>
-    </tr>
-    <tr>
-      <td>category</td>
-      <td>string</td>
-      <td>Required</td>
-      <td>A one-word classification of the riddle. It should not contain spaces. The original database includes the categories: easy, hard, funny, kids, math, and word. This is not an enum and more can be added.</td>
-    </tr>
-    <tr>
-      <td>source</td>
-      <td>string</td>
-      <td>Optional</td>
-      <td>The source of the riddle</td>
-    </tr>
-  </tbody>
-</table>
-
-<p class="error"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code>.</p>
+				
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
 
 <p class="success"><strong>Example request</strong></p>
 
-<p>A curl request to add a new riddle:</p>
+<p>A curl request to request the cashier:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  curl -X POST \
-  'https://api.dev.kibramoa.net/payment-session' \
-  -H 'accept: application/json' \
-  -H 'X-API-KEY: 5TDI6o6keGvH9Di+umZj6wGkMZBE7Ukrb8+8A4WErq0=.b8987f40-e1cf-488c-843a-7a634f245a81' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "country": "BR",
-  "currency": "BRL",
-  "amount": 13000,
-  "redirectUrl": "https://merchant.io/where-to-go",
-  "language": "ES",
-  "customer": {
-    "name": "John Doe",
-    "email": "john@email.test",
-    "phone": "+34666999666",
-    "userDevice": "MOBILE",
-    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
-    "ip": "84.232.140.77",
-    "address": {
-      "street": "32 Windsor Gardens",
-      "streetNumber": "24",
-      "country": "GB",
-      "zipCode": "W9 3RG",
-      "city": "London",
-      "state": "Great London."
-    },
-    "identify": {
-      "number": "76486883X",
-      "type": "DNI"
-    }
-  },
-  "merchantReference": "mustbe18cars",
-  "paymentReference": "Invoice ABC123",
-  "userId": "Merch_User_123",
-  "extra1": "extraData001",
-  "extra2": "extraData002",
-  "extra3": "extraData003",
-  "storedToken": "index-stored",
-  "tax": "21%",
-  "shippingAddress": {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+"country": "BR",
+"currency": "BRL",
+"amount": 13000,
+"redirectUrl": "https://merchant.io/where-to-go",
+"language": "ES",
+"customer": {
+  "name": "John Doe",
+  "email": "john@email.test",
+  "phone": "+34666999666",
+  "userDevice": "MOBILE",
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
+  "ip": "84.232.140.77",
+  "address": {
     "street": "32 Windsor Gardens",
     "streetNumber": "24",
     "country": "GB",
@@ -447,15 +421,36 @@ Content-Type: application/json
     "city": "London",
     "state": "Great London."
   },
-  "orderDetails": [
-    {
-      "productName": "shirt-1233474",
-      "quantity": 1,
-      "dimensions": "85x51",
-      "description": "Blue sports t-shirt "
-    }
-  ]
-}'
+  "identify": {
+    "number": "76486883X",
+    "type": "DNI"
+  }
+},
+"merchantReference": "mustbe18cars",
+"paymentReference": "Invoice ABC123",
+"userId": "Merch_User_123",
+"extra1": "extraData001",
+"extra2": "extraData002",
+"extra3": "extraData003",
+"storedToken": "index-stored",
+"tax": "21%",
+"shippingAddress": {
+  "street": "32 Windsor Gardens",
+  "streetNumber": "24",
+  "country": "GB",
+  "zipCode": "W9 3RG",
+  "city": "London",
+  "state": "Great London."
+},
+"orderDetails": [
+  {
+    "productName": "shirt-1233474",
+    "quantity": 1,
+    "dimensions": "85x51",
+    "description": "Blue sports t-shirt "
+  }
+]
+}
 
 </code></pre></div></div>
 
@@ -471,103 +466,14 @@ Content-Type: application/json
   </thead>
   <tbody>
     <tr>
+      <td>StatusCode</td>
+      <td>string</td>
+      <td>If an error is returned the error code is shown here</td>
+    </tr>
+    <tr>
       <td>message</td>
       <td>string</td>
-      <td>A brief success message</td>
-    </tr>
-    <tr>
-      <td>content</td>
-      <td>object</td>
-      <td>Top-level containing Riddle object</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Where the Riddle object has this schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>_id</td>
-      <td>string</td>
-      <td>The database id for the Riddle object</td>
-    </tr>
-    <tr>
-      <td>riddle</td>
-      <td>string</td>
-      <td>The riddle’s question</td>
-    </tr>
-    <tr>
-      <td>answer</td>
-      <td>string</td>
-      <td>The riddle’s answer</td>
-    </tr>
-    <tr>
-      <td>category</td>
-      <td>string</td>
-      <td>A classification of the riddle. The original database includes the categories: easy, hard, funny, kids, math, and word. This is not an enum and more can be added.</td>
-    </tr>
-    <tr>
-      <td>source</td>
-      <td>string</td>
-      <td>The source of the riddle</td>
-    </tr>
-    <tr>
-      <td>__v</td>
-      <td>number</td>
-      <td>An internal versioning number used by Mongoose (the Object Data Model library used to connect to the MongoDB database).</td>
-    </tr>
-  </tbody>
-</table>
-
-<p class="success"><strong>Example response</strong></p>
-
-<p><strong>Example response</strong></p>
-
-<p>A successful response to a <code class="language-plaintext highlighter-rouge">POST</code> request is an object like below:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  HTTP/1.1 201 Created
-  Content-Type: application/json; charset=utf-8
-
-  {
-  "message": "Successfully added new riddle",
-  "content": {
-      "_id": "60bd0708d7dcc31bd9376abe",
-      "riddle": "I'm tall when I'm young, and I'm short when I'm old. What am I?",
-      "answer": "A candle",
-      "category": "easy",
-      "source": "https://parade.com/947956/parade/riddles/",
-      "__v": 0
-  }
-  }
-</code></pre></div></div>
-
-<p class="error"><strong>Possible error responses</strong></p>
-
-<p>A <code class="language-plaintext highlighter-rouge">POST</code> request to the /riddles endpoint may return the following errors.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Error code</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>400</td>
-      <td><code class="language-plaintext highlighter-rouge">Bad Request</code>: This error will be returned if a required field in the request body is missing or if the <code class="language-plaintext highlighter-rouge">category</code> field contains a space.</td>
-    </tr>
-    <tr>
-      <td>500</td>
-      <td><code class="language-plaintext highlighter-rouge">Internal Server Error</code>: An unexpected error occurred on the server.</td>
+      <td>the CashierUrl or A message of the error</td>
     </tr>
   </tbody>
 </table>
@@ -602,6 +508,1822 @@ Content-Type: application/json
 
 						
 				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiCashierParams">
+						Payment Session Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/CashierParams">Edit</a>
+				</h3>
+				
+					<p class="description">Session Data and Types required to be sent in the /payment-session request test</p>
+				
+
+				
+
+				<p>Data Table
+  The following are the parameteres needed along with the data types that are used.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>country*</strong></td>
+      <td>string</td>
+      <td>BR</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>currency*</strong></td>
+      <td>string</td>
+      <td>BRL</td>
+      <td>ISO Currency code</td>
+    </tr>
+    <tr>
+      <td><strong>amount*</strong></td>
+      <td>number</td>
+      <td>1000</td>
+      <td>Amount without coma, format 155 = 1.55 This needs to be sent in cents</td>
+    </tr>
+    <tr>
+      <td><strong>language</strong></td>
+      <td>string</td>
+      <td>ES</td>
+      <td>Alpha-2 ISO Language code</td>
+    </tr>
+    <tr>
+      <td><strong>merchantReference</strong></td>
+      <td>string</td>
+      <td>order_ticket_123</td>
+      <td>Merchant reference, must be unique and generated in merchant system.</td>
+    </tr>
+    <tr>
+      <td><strong>paymentReference</strong></td>
+      <td>string</td>
+      <td>Invoice ABC123</td>
+      <td>Reference to be used for the Payment.</td>
+    </tr>
+    <tr>
+      <td><strong>redirectUrl*</strong></td>
+      <td>string</td>
+      <td>https://merchant.io/where-to-go</td>
+      <td>Merchant redirect page after payment.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>customer*</strong></td>
+      <td> </td>
+      <td> </td>
+      <td>Customer data.</td>
+    </tr>
+    <tr>
+      <td><strong>name*</strong></td>
+      <td>string</td>
+      <td>Pepe Doe</td>
+      <td>User / payer full name.</td>
+    </tr>
+    <tr>
+      <td><strong>email*</strong></td>
+      <td>string</td>
+      <td>pepe@test.test</td>
+      <td>User / payer email.</td>
+    </tr>
+    <tr>
+      <td><strong>phone*</strong></td>
+      <td>string</td>
+      <td>34666999666</td>
+      <td>User / payer phone number.</td>
+    </tr>
+    <tr>
+      <td><strong>userDevice*</strong></td>
+      <td>string</td>
+      <td>User device.</td>
+      <td>ENUM: Array[ MOBILE, DESKTOP, TABLET ]</td>
+    </tr>
+    <tr>
+      <td><strong>userAgent*</strong></td>
+      <td>string</td>
+      <td>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>ip*</strong></td>
+      <td>string</td>
+      <td>84.232.140.77</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>street*</strong></td>
+      <td>string</td>
+      <td>32 Windsor Gardens</td>
+      <td>First line of the address.</td>
+    </tr>
+    <tr>
+      <td><strong>streetNumber</strong></td>
+      <td>string</td>
+      <td>24</td>
+      <td>Street address number.</td>
+    </tr>
+    <tr>
+      <td><strong>country*</strong></td>
+      <td>string</td>
+      <td>GB</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>zipCode*</strong></td>
+      <td>string</td>
+      <td>W9 3RG</td>
+      <td>Customer Postcode</td>
+    </tr>
+    <tr>
+      <td><strong>city</strong></td>
+      <td>string</td>
+      <td>London</td>
+      <td>Shipping City/Town</td>
+    </tr>
+    <tr>
+      <td><strong>state</strong></td>
+      <td>string</td>
+      <td>Great London.</td>
+      <td>Shipping State/ Region.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>number*</strong></td>
+      <td>string</td>
+      <td>76486883X</td>
+      <td>ID Number from end user.</td>
+    </tr>
+    <tr>
+      <td><strong>type</strong></td>
+      <td>string</td>
+      <td>DNI</td>
+      <td>ID number type.</td>
+    </tr>
+    <tr>
+      <td><strong>userId</strong></td>
+      <td>string</td>
+      <td>Merch_User_123</td>
+      <td>User identifier on the merchant system.</td>
+    </tr>
+    <tr>
+      <td><strong>extra1</strong></td>
+      <td>string</td>
+      <td>extraData001</td>
+      <td>Auxiliar parameter for merchant to march payment</td>
+    </tr>
+    <tr>
+      <td><strong>extra2</strong></td>
+      <td>string</td>
+      <td>extraData002</td>
+      <td>Auxiliar parameter for merchant to march payment</td>
+    </tr>
+    <tr>
+      <td><strong>extra3</strong></td>
+      <td>string</td>
+      <td>extraData003</td>
+      <td>Auxiliar parameter for merchant to march payment</td>
+    </tr>
+    <tr>
+      <td><strong>storedToken</strong></td>
+      <td>string</td>
+      <td>index-stored</td>
+      <td>Stored payment credential index on kibramoa.</td>
+    </tr>
+    <tr>
+      <td><strong>tax</strong></td>
+      <td>string</td>
+      <td>21%</td>
+      <td>Tax percentage.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>street</strong></td>
+      <td>string</td>
+      <td>32 Windsor Gardens</td>
+      <td>First line of the address.</td>
+    </tr>
+    <tr>
+      <td><strong>streetNumber</strong></td>
+      <td>string</td>
+      <td>24</td>
+      <td>Street address number.</td>
+    </tr>
+    <tr>
+      <td><strong>country</strong></td>
+      <td>string</td>
+      <td>GB</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>zipCode*</strong></td>
+      <td>string</td>
+      <td>W9 3RG</td>
+      <td>The postcode.</td>
+    </tr>
+    <tr>
+      <td><strong>city</strong></td>
+      <td>string</td>
+      <td>London</td>
+      <td>Shipping City/Town</td>
+    </tr>
+    <tr>
+      <td><strong>state</strong></td>
+      <td>string</td>
+      <td>Great London.</td>
+      <td>Shipping State/ Region.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>productName</strong></td>
+      <td>string</td>
+      <td>shirt-1233474</td>
+      <td>ID Number from end user.</td>
+    </tr>
+    <tr>
+      <td><strong>quantity</strong></td>
+      <td>number</td>
+      <td>1</td>
+      <td>Product quantity.</td>
+    </tr>
+    <tr>
+      <td><strong>dimensions</strong></td>
+      <td>string</td>
+      <td>85x51</td>
+      <td>Product size dimension.</td>
+    </tr>
+    <tr>
+      <td><strong>ApplyPromo</strong></td>
+      <td>boolean</td>
+      <td>1</td>
+      <td>Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. <strong>– Coming soon</strong></td>
+    </tr>
+    <tr>
+      <td><strong>description</strong></td>
+      <td>string</td>
+      <td>Blue sports t-shirt</td>
+      <td>Free description of the order.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiNotifications">
+						/notifications
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/Notifications">Edit</a>
+				</h3>
+				
+					<p class="description">Payment notifications happen once payment reach the PSP, they will be submitted to the merchant notification url previously configured on the merchant portal.</p>
+				
+
+				
+
+				
+<p>📌 All notification communications must be encrypted under TLS/SSL</p>
+
+<h5 id="notification-body-request">Notification body request</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "internalId": "ee40a31b-a14f-48e2-a272-e3fc013f4735",
+    "sessionId": "35eac8b8-e40b-447e-a214-8dd1f0e23996",
+    "merchantName": "Fer Merchant",
+    "userId": "Merch_User_123",
+    "type": "BANK",
+    "paymentOptionName": "Lottery",
+    "country": "BR",
+    "currency": "BRL",
+    "paymentAmount": 130,
+    "merchantReference": "orde123",
+    "status": "COMPLETED",
+    "language": "ES",
+    "paymentReference": "Invoice ABC123",
+    "storedToken": "index-stored",
+    "extra1": "extraData001",
+    "extra2": "extraData002",
+    "extra3": "extraData003",
+    "customer": {
+        "name": "John Doe",
+        "email": "john@email.test",
+        "phone": "+34666999666",
+        "userDevice": "MOBILE",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
+        "ip": "84.232.140.77",
+        "address": {
+        "street": "32 Windsor Gardens",
+        "streetNumber": "24",
+        "country": "GB",
+        "zipCode": "W9 3RG",
+        "city": "London",
+        "state": "Great London."
+        },
+        "identify": {
+        "number": "76486883X",
+        "type": "DNI"
+        }
+    },
+    "orderDetails": [
+        {
+        "productName": "shirt-1233474",
+        "quantity": 1,
+        "dimensions": "85x51",
+        "description": "Blue sports t-shirt "
+        }
+    ],
+    "shippingAddress": {
+        "street": "32 Windsor Gardens",
+        "streetNumber": "24",
+        "country": "GB",
+        "zipCode": "W9 3RG",
+        "city": "London",
+        "state": "Great London."
+    }
+}
+</code></pre></div></div>
+<h5 id="once-notification-reach-merchant-systems-it-must-be-replied-back-returning-a-http-response-with-200-status-code-otherwise-kibramoa-system-will-re-send-every-hour">Once notification reach merchant systems it MUST be replied back returning a HTTP response with 200 status code, otherwise Kibramoa system will re-send every hour.</h5>
+
+<h5 id="merchant-is-able-to-resubmit-a-notification-manually-using-the-merchant-portal">Merchant is able to resubmit a notification manually using the merchant portal.</h5>
+
+<h4 id="transaction-status-table">Transaction status table</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th style="text-align: center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>INIT</td>
+      <td style="text-align: center">Transaction initiated</td>
+    </tr>
+    <tr>
+      <td>USER_CANCEL</td>
+      <td style="text-align: center">User cancel</td>
+    </tr>
+    <tr>
+      <td>PROCESSING</td>
+      <td style="text-align: center">Transaction is sent to PSP and waiting to be settled</td>
+    </tr>
+    <tr>
+      <td>COMPLETED</td>
+      <td style="text-align: center">Transaction is settled and confirmed.</td>
+    </tr>
+    <tr>
+      <td>ERROR</td>
+      <td style="text-align: center">Error happened during the processing.</td>
+    </tr>
+    <tr>
+      <td>DECINED</td>
+      <td style="text-align: center">Transaction was declined by PSP.</td>
+    </tr>
+    <tr>
+      <td>EXPIRED</td>
+      <td style="text-align: center">Expired transaction.</td>
+    </tr>
+    <tr>
+      <td>REFUNDED</td>
+      <td style="text-align: center">Refund transaction completed.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiPayouts">
+						/payout-session
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/Payouts">Edit</a>
+				</h3>
+				
+					<p class="description">This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.</p>
+				
+
+				
+
+				
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p class="success"><strong>Example request</strong></p>
+
+<p>A curl request to request the cashier:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+"country": "BR",
+"currency": "BRL",
+"amount": 150,
+"redirectUrl": "https://merchant1.io/where/to/go",
+"merchantReference": "custom_code 9982674851738108",
+"description": "Additional remark for this payout.",
+"userId": "merchant_user123",
+"userAgent": "Mozilla/5.0 (X11; Linux x86_64)",
+"userDevice": "DESKTOP",
+"ip": "13.12.11.10",
+"language": "PT",
+"extra1": "merchant extra value 1",
+"extra2": "merchant extra value 2",
+"extra3": "merchant extra value 3"
+}
+
+</code></pre></div></div>
+
+<p>A successful response will return an HTTP status code of <code class="language-plaintext highlighter-rouge">201</code> and have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>StatusCode</td>
+      <td>string</td>
+      <td>If an error is returned the error code is shown here</td>
+    </tr>
+    <tr>
+      <td>message</td>
+      <td>string</td>
+      <td>the CashierUrl or A message of the error</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
+   
+   </span><span class="nl">"cashierUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.kibramoa.net/payout/?sessionId=54ed4d33-9c24-4ef0-a7f8-242920a657u5"</span><span class="w">
+
+   </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+
+    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized"</span><span class="w">
+    
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiPayoutParams">
+						Payout Session Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/PayoutParams">Edit</a>
+				</h3>
+				
+					<p class="description">Session Data and Types required to be sent in the /Payout-session request</p>
+				
+
+				
+
+				<p>Data Table
+  The following are the parameteres needed along with the data types that are used.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Parameter</strong></td>
+      <td><strong>Data Type</strong></td>
+      <td><strong>Example</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td>country*</td>
+      <td>string</td>
+      <td>BR</td>
+      <td>Payout country ISO 2 code</td>
+    </tr>
+    <tr>
+      <td>currency*</td>
+      <td>string</td>
+      <td>BRL</td>
+      <td>Payout currency ISO 3 code</td>
+    </tr>
+    <tr>
+      <td>amount*</td>
+      <td>number</td>
+      <td>150</td>
+      <td>Payout amount to be settled, must be integer without decimals: i.e 150 = 1.50</td>
+    </tr>
+    <tr>
+      <td>redirectUrl*</td>
+      <td>string</td>
+      <td>https://merchant1.io/where/to/go</td>
+      <td>Redirect URL to send user back to merchant page.</td>
+    </tr>
+    <tr>
+      <td>merchantReference</td>
+      <td>string</td>
+      <td>custom_code 9982674851738108</td>
+      <td>Merchant reference for the payout. If null, we will generate one ourselves.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string</td>
+      <td>Additional remark for this payout.</td>
+      <td>Payout description to be sent in the bank request.</td>
+    </tr>
+    <tr>
+      <td>userId</td>
+      <td>string</td>
+      <td>merchant_user123</td>
+      <td>User id from end merchant customer.</td>
+    </tr>
+    <tr>
+      <td>userAgent</td>
+      <td>string</td>
+      <td>Mozilla/5.0 (X11; Linux x86_64)</td>
+      <td>User agent from browser system.</td>
+    </tr>
+    <tr>
+      <td>userDevice</td>
+      <td>string</td>
+      <td>DESKTOP</td>
+      <td>User device used in the payout DESKTOP/MOBILE.</td>
+    </tr>
+    <tr>
+      <td>ip</td>
+      <td>string</td>
+      <td>13.12.11.10</td>
+      <td>User device Ip.</td>
+    </tr>
+    <tr>
+      <td>language</td>
+      <td>string</td>
+      <td>PT</td>
+      <td>Language ISO alpha-2 code</td>
+    </tr>
+    <tr>
+      <td>extra1</td>
+      <td>string</td>
+      <td>merchant extra value 1</td>
+      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+    </tr>
+    <tr>
+      <td>extra2</td>
+      <td>string</td>
+      <td>merchant extra value 2</td>
+      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+    </tr>
+    <tr>
+      <td>extra3</td>
+      <td>string</td>
+      <td>merchant extra value 3</td>
+      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="countriesAfrica">
+						Africa
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_countries/Africa">Edit</a>
+				</h3>
+				
+					<p class="description">The following is a list of Supported Countries, Currencies and Methods.</p>
+				
+
+				
+
+				
+<p><strong>Nigeria</strong>: Country: NG Currency: NGN</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Visa</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Verve</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Kenya</strong>: Country: KE  Currency: KES</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MPESA</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Airtel Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Card</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ghana</strong>: Country: GH  Currency: GHS</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>AirtelTigo</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Vodacom</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Transfer</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Card</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Zambia</strong>: Country: ZM  Currency: ZMW</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Zamtel</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Airtel</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Uganda</strong>: Country: UG Currency: UGX</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>AirtelTigo</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Tanzania</strong>: Country:TZ  Currency: TZS</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Vodacom</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Mpesa</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Airtel</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Tigo</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Zimbabwe</strong>: Country: ZW  Currency: ZWB</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Senegal</strong>: Country: SN  Currency: XOF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Free Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>E-Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Wizall</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ivory Coast</strong>: Country: CI  Currency: XOF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Moov</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Wizall</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Yup</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Cameroon</strong>: Country: CM  Currency: XAF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Yup</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Guinea</strong>: Country: GN  Currency: XAF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Mali</strong>: Country: ML  Currency: XOF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Mobi Cash</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Burkina</strong>: Country: BF  Currency: XOF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Mobi Cash</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Yup</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Egypt</strong>: Country: EG  Currency: EGP</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Orange</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Money Etisalat</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>We-Pay</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Mozambique</strong>: Country: MZ  Currency: MZN</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mpesa</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Rwanda</strong>: Country: RW  Currency: RWF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Airtel</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ethiopia</strong>: Country: ET  Currency: ETB</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>South Africa</strong>: Country: ZA  Currency: ZAR</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="countriesIndia">
+						India
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_countries/India">Edit</a>
+				</h3>
+				
+					<p class="description">The following is a list of Supported Countries, Currencies and Methods.</p>
+				
+
+				
+
+				
+<p><strong>India</strong>: Country: IN  Currency: INR</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Net Banking</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>UPI</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="countriesLatam">
+						Latin America
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_countries/Latam">Edit</a>
+				</h3>
+				
+					<p class="description">The following is a list of Supported Countries, Currencies and Methods.</p>
+				
+
+				
+
+				
+<p><strong>Brazil</strong>:  Country: BR Currency: BRL</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PIX</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Deposit/Transfer Express</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Boleto Rapido</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Lotopay</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Mercado Pago</strong></td>
+      <td>eWallet</td>
+    </tr>
+    <tr>
+      <td><strong>Picpay</strong></td>
+      <td>eWallet</td>
+    </tr>
+    <tr>
+      <td><strong>Smileone</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Ame</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Paypal</strong></td>
+      <td>eWallet</td>
+    </tr>
+    <tr>
+      <td><strong>Cartao de Credito</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Payouts</strong></td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Mexico</strong>:  Country: MX Currency: MXN</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>SPEI Payin</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>OXXO</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Seven-Eleven</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Sams Club</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Walmart</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Superama</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Waldos</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Alsuper</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>AirPak</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Superama</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Circulo K</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Todito</strong></td>
+      <td>eWallet</td>
+    </tr>
+    <tr>
+      <td><strong>SPEI Payout</strong></td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Chile</strong>:  Country: CL Currency: CLP</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Banco Estado</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Banco de Chile</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>BCi</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>TBanc</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Scotiabank azul</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>CajaVacina</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>aCuenta</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>ServiEstado</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Lider</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Bank Transfer</strong></td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Colombia</strong>: Country: CO Currency: COP</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PSE Payin</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Efecty</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Su Red</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Baloto</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Tpaga</strong></td>
+      <td>eWallet</td>
+    </tr>
+    <tr>
+      <td><strong>PSE Payout</strong></td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Peru</strong>: Country: PE Currency: PEN</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>BCP</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>BBVA</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Caja Arequipa</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Caja Huancayo</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Caja Tacna</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Caja Trujillo</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Interbank</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Scotiabank</strong></td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ecuador</strong>: Country: EC Currency: USD</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Banco Guayaquil</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Banco Pichincha</strong></td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>El Salvador</strong>:Country: SV Currency: USD</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Punto Express</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Tiendas Galo</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Fedecaces</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Fedecrece</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Superselectos</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>AirPark</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Farmacias Economicas</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Pago724</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Credicomer</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Integral</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>El Gallo mas Gallo</strong></td>
+      <td>Cash</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Panama</strong>: Country: PA Currency: USD</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Punto Express</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Tiendas Galo</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Fedecaces</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Fedecrece</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Superselectos</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>AirPark</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Farmacias Economicas</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Pago724</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Credicomer</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>Integral</strong></td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td><strong>El Gallo mas Gallo</strong></td>
+      <td>Cash</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Costa Rica</strong>: Country: CR Currency: CRC</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Banco Nacional</strong></td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Guatemala</strong>: Country: GT Currency: GTQ</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Banco Industrial</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Punto Express</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Caja Desarrollo</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Banco de Antigua</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Super 24</strong></td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><strong>Fundación Genesis</strong></td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
 			
 		</section>
 	

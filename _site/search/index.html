@@ -90,7 +90,7 @@
 					
 						<li>
 							<a href="/#documentationCashier Authentication">
-								Cashier Authentication
+								Authentication
 								
 							</a>
 						</li>
@@ -109,6 +109,65 @@
 							<a href="/#apicashiersession">
 								/payment-session
 								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiCashierParams">
+								Payment Session Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiNotifications">
+								/notifications
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiPayouts">
+								/payout-session
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiPayoutParams">
+								Payout Session Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>GEOs and Methods</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#countriesAfrica">
+								Africa
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#countriesIndia">
+								India
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#countriesLatam">
+								Latin America
+								<span class="endpoint Data"></span>
 							</a>
 						</li>
 					
@@ -141,13 +200,134 @@
 					
 						
 						
+						"api-cashierparams": {
+							"id": "api-cashierparams",
+							"title": "Payment Session Data",
+							"category": "api",
+							"description": "Session Data and Types required to be sent in the /payment-session request test",
+		  				"type": "Data",
+							"url": "/#apiCashierParams",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-notifications": {
+							"id": "api-notifications",
+							"title": "/notifications",
+							"category": "api",
+							"description": "Payment notifications happen once payment reach the PSP, they will be submitted to the merchant notification url previously configured on the merchant portal.",
+		  				"type": "post",
+							"url": "/#apiNotifications",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-payoutparams": {
+							"id": "api-payoutparams",
+							"title": "Payout Session Data",
+							"category": "api",
+							"description": "Session Data and Types required to be sent in the /Payout-session request",
+		  				"type": "Data",
+							"url": "/#apiPayoutParams",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-payouts": {
+							"id": "api-payouts",
+							"title": "/payout-session",
+							"category": "api",
+							"description": "This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.",
+		  				"type": "post",
+							"url": "/#apiPayouts",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
 						"api-cashiersession": {
 							"id": "api-cashiersession",
 							"title": "/payment-session",
 							"category": "api",
-							"description": "To create a payments page (cashier) session",
+							"description": "This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.",
 		  				"type": "post",
 							"url": "/#apicashiersession",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"countries-africa": {
+							"id": "countries-africa",
+							"title": "Africa",
+							"category": "countries",
+							"description": "The following is a list of Supported Countries, Currencies and Methods.",
+		  				"type": "Data",
+							"url": "/#countriesAfrica",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"countries-india": {
+							"id": "countries-india",
+							"title": "India",
+							"category": "countries",
+							"description": "The following is a list of Supported Countries, Currencies and Methods.",
+		  				"type": "Data",
+							"url": "/#countriesIndia",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"countries-latam": {
+							"id": "countries-latam",
+							"title": "Latin America",
+							"category": "countries",
+							"description": "The following is a list of Supported Countries, Currencies and Methods.",
+		  				"type": "Data",
+							"url": "/#countriesLatam",
 							"content": ""
 						}
 						
@@ -179,7 +359,7 @@
 						
 						"documentation-cashier-authentication": {
 							"id": "documentation-cashier-authentication",
-							"title": "Cashier Authentication",
+							"title": "Authentication",
 							"category": "documentation",
 							"description": "",
 		  				"type": "",

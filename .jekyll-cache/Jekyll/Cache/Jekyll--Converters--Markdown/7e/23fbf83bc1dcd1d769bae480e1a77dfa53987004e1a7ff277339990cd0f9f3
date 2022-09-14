@@ -1,0 +1,110 @@
+I"º
+<p>ðŸ“Œ All notification communications must be encrypted under TLS/SSL</p>
+
+<h5 id="notification-body-request">Notification body request</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "internalId": "ee40a31b-a14f-48e2-a272-e3fc013f4735",
+    "sessionId": "35eac8b8-e40b-447e-a214-8dd1f0e23996",
+    "merchantName": "Fer Merchant",
+    "userId": "Merch_User_123",
+    "type": "BANK",
+    "paymentOptionName": "Lottery",
+    "country": "BR",
+    "currency": "BRL",
+    "paymentAmount": 130,
+    "merchantReference": "orde123",
+    "status": "COMPLETED",
+    "language": "ES",
+    "paymentReference": "Invoice ABC123",
+    "storedToken": "index-stored",
+    "extra1": "extraData001",
+    "extra2": "extraData002",
+    "extra3": "extraData003",
+    "customer": {
+        "name": "John Doe",
+        "email": "john@email.test",
+        "phone": "+34666999666",
+        "userDevice": "MOBILE",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
+        "ip": "84.232.140.77",
+        "address": {
+        "street": "32 Windsor Gardens",
+        "streetNumber": "24",
+        "country": "GB",
+        "zipCode": "W9 3RG",
+        "city": "London",
+        "state": "Great London."
+        },
+        "identify": {
+        "number": "76486883X",
+        "type": "DNI"
+        }
+    },
+    "orderDetails": [
+        {
+        "productName": "shirt-1233474",
+        "quantity": 1,
+        "dimensions": "85x51",
+        "description": "Blue sports t-shirt "
+        }
+    ],
+    "shippingAddress": {
+        "street": "32 Windsor Gardens",
+        "streetNumber": "24",
+        "country": "GB",
+        "zipCode": "W9 3RG",
+        "city": "London",
+        "state": "Great London."
+    }
+}
+</code></pre></div></div>
+<h5 id="once-notification-reach-merchant-systems-it-must-be-replied-back-returning-a-http-response-with-200-status-code-otherwise-kibramoa-system-will-re-send-every-hour">Once notification reach merchant systems it MUST be replied back returning a HTTP response with 200 status code, otherwise Kibramoa system will re-send every hour.</h5>
+
+<h5 id="merchant-is-able-to-resubmit-a-notification-manually-using-the-merchant-portal">Merchant is able to resubmit a notification manually using the merchant portal.</h5>
+
+<h4 id="transaction-status-table">Transaction status table</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th style="text-align: center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>INIT</td>
+      <td style="text-align: center">Transaction initiated</td>
+    </tr>
+    <tr>
+      <td>USER_CANCEL</td>
+      <td style="text-align: center">User cancel</td>
+    </tr>
+    <tr>
+      <td>PROCESSING</td>
+      <td style="text-align: center">Transaction is sent to PSP and waiting to be settled</td>
+    </tr>
+    <tr>
+      <td>COMPLETED</td>
+      <td style="text-align: center">Transaction is settled and confirmed.</td>
+    </tr>
+    <tr>
+      <td>ERROR</td>
+      <td style="text-align: center">Error happened during the processing.</td>
+    </tr>
+    <tr>
+      <td>DECINED</td>
+      <td style="text-align: center">Transaction was declined by PSP.</td>
+    </tr>
+    <tr>
+      <td>EXPIRED</td>
+      <td style="text-align: center">Expired transaction.</td>
+    </tr>
+    <tr>
+      <td>REFUNDED</td>
+      <td style="text-align: center">Refund transaction completed.</td>
+    </tr>
+  </tbody>
+</table>
+:ET

@@ -1,0 +1,583 @@
+I" (
+<p><strong>Nigeria</strong>: Country: NG Currency: NGN</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Visa</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Verve</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Kenya</strong>: Country: KE  Currency: KES</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MPESA</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Airtel Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Card</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ghana</strong>: Country: GH  Currency: GHS</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>AirtelTigo</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Vodacom</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Transfer</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Card</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Card</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Zambia</strong>: Country: ZM  Currency: ZMW</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Zamtel</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Airtel</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Uganda</strong>: Country: UG Currency: UGX</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>AirtelTigo</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Tanzania</strong>: Country:TZ  Currency: TZS</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Vodacom</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Mpesa</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Airtel</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Tigo</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Zimbabwe</strong>: Country: ZW  Currency: ZWB</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Senegal</strong>: Country: SN  Currency: XOF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Free Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>E-Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Wizall</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ivory Coast</strong>: Country: CI  Currency: XOF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Moov</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Wizall</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Yup</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Cameroon</strong>: Country: CM  Currency: XAF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Yup</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Guinea</strong>: Country: GN  Currency: XAF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Mali</strong>: Country: ML  Currency: XOF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Mobi Cash</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Burkina</strong>: Country: BF  Currency: XOF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Orange Money</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Mobi Cash</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Yup</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Egypt</strong>: Country: EG  Currency: EGP</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Orange</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Money Etisalat</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>We-Pay</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Mozambique</strong>: Country: MZ  Currency: MZN</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mpesa</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Visa</td>
+      <td>Cards</td>
+    </tr>
+    <tr>
+      <td>Local Mastercard</td>
+      <td>Cards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Rwanda</strong>: Country: RW  Currency: RWF</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MTN</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Airtel</td>
+      <td>Mobile</td>
+    </tr>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Ethiopia</strong>: Country: ET  Currency: ETB</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>South Africa</strong>: Country: ZA  Currency: ZAR</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local Banks</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+:ET

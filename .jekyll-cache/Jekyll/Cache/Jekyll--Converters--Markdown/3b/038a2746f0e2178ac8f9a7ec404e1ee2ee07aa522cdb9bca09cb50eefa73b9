@@ -1,0 +1,315 @@
+I"�<p>Data Table
+  The following are the parameteres needed along with the data types that are used.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>country*</strong></td>
+      <td>string</td>
+      <td>BR</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>currency*</strong></td>
+      <td>string</td>
+      <td>BRL</td>
+      <td>ISO Currency code</td>
+    </tr>
+    <tr>
+      <td><strong>amount*</strong></td>
+      <td>number</td>
+      <td>1000</td>
+      <td>Amount without coma, format 155 = 1.55 This needs to be sent in cents</td>
+    </tr>
+    <tr>
+      <td><strong>language</strong></td>
+      <td>string</td>
+      <td>ES</td>
+      <td>Alpha-2 ISO Language code</td>
+    </tr>
+    <tr>
+      <td><strong>merchantReference</strong></td>
+      <td>string</td>
+      <td>order_ticket_123</td>
+      <td>Merchant reference, must be unique and generated in merchant system.</td>
+    </tr>
+    <tr>
+      <td><strong>paymentReference</strong></td>
+      <td>string</td>
+      <td>Invoice ABC123</td>
+      <td>Reference to be used for the Payment.</td>
+    </tr>
+    <tr>
+      <td><strong>redirectUrl*</strong></td>
+      <td>string</td>
+      <td>https://merchant.io/where-to-go</td>
+      <td>Merchant redirect page after payment.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>customer*</strong></td>
+      <td> </td>
+      <td> </td>
+      <td>Customer data.</td>
+    </tr>
+    <tr>
+      <td><strong>name*</strong></td>
+      <td>string</td>
+      <td>Pepe Doe</td>
+      <td>User / payer full name.</td>
+    </tr>
+    <tr>
+      <td><strong>email*</strong></td>
+      <td>string</td>
+      <td>pepe@test.test</td>
+      <td>User / payer email.</td>
+    </tr>
+    <tr>
+      <td><strong>phone*</strong></td>
+      <td>string</td>
+      <td>34666999666</td>
+      <td>User / payer phone number.</td>
+    </tr>
+    <tr>
+      <td><strong>userDevice*</strong></td>
+      <td>string</td>
+      <td>User device.</td>
+      <td>ENUM: Array[ MOBILE, DESKTOP, TABLET ]</td>
+    </tr>
+    <tr>
+      <td><strong>userAgent*</strong></td>
+      <td>string</td>
+      <td>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>ip*</strong></td>
+      <td>string</td>
+      <td>84.232.140.77</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>street*</strong></td>
+      <td>string</td>
+      <td>32 Windsor Gardens</td>
+      <td>First line of the address.</td>
+    </tr>
+    <tr>
+      <td><strong>streetNumber</strong></td>
+      <td>string</td>
+      <td>24</td>
+      <td>Street address number.</td>
+    </tr>
+    <tr>
+      <td><strong>country*</strong></td>
+      <td>string</td>
+      <td>GB</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>zipCode*</strong></td>
+      <td>string</td>
+      <td>W9 3RG</td>
+      <td>Customer Postcode</td>
+    </tr>
+    <tr>
+      <td><strong>city</strong></td>
+      <td>string</td>
+      <td>London</td>
+      <td>Shipping City/Town</td>
+    </tr>
+    <tr>
+      <td><strong>state</strong></td>
+      <td>string</td>
+      <td>Great London.</td>
+      <td>Shipping State/ Region.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>number*</strong></td>
+      <td>string</td>
+      <td>76486883X</td>
+      <td>ID Number from end user.</td>
+    </tr>
+    <tr>
+      <td><strong>type</strong></td>
+      <td>string</td>
+      <td>DNI</td>
+      <td>ID number type.</td>
+    </tr>
+    <tr>
+      <td><strong>userId</strong></td>
+      <td>string</td>
+      <td>Merch_User_123</td>
+      <td>User identifier on the merchant system.</td>
+    </tr>
+    <tr>
+      <td><strong>extra1</strong></td>
+      <td>string</td>
+      <td>extraData001</td>
+      <td>Auxiliar parameter for merchant to march payment</td>
+    </tr>
+    <tr>
+      <td><strong>extra2</strong></td>
+      <td>string</td>
+      <td>extraData002</td>
+      <td>Auxiliar parameter for merchant to march payment</td>
+    </tr>
+    <tr>
+      <td><strong>extra3</strong></td>
+      <td>string</td>
+      <td>extraData003</td>
+      <td>Auxiliar parameter for merchant to march payment</td>
+    </tr>
+    <tr>
+      <td><strong>storedToken</strong></td>
+      <td>string</td>
+      <td>index-stored</td>
+      <td>Stored payment credential index on kibramoa.</td>
+    </tr>
+    <tr>
+      <td><strong>tax</strong></td>
+      <td>string</td>
+      <td>21%</td>
+      <td>Tax percentage.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>street</strong></td>
+      <td>string</td>
+      <td>32 Windsor Gardens</td>
+      <td>First line of the address.</td>
+    </tr>
+    <tr>
+      <td><strong>streetNumber</strong></td>
+      <td>string</td>
+      <td>24</td>
+      <td>Street address number.</td>
+    </tr>
+    <tr>
+      <td><strong>country</strong></td>
+      <td>string</td>
+      <td>GB</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>zipCode*</strong></td>
+      <td>string</td>
+      <td>W9 3RG</td>
+      <td>The postcode.</td>
+    </tr>
+    <tr>
+      <td><strong>city</strong></td>
+      <td>string</td>
+      <td>London</td>
+      <td>Shipping City/Town</td>
+    </tr>
+    <tr>
+      <td><strong>state</strong></td>
+      <td>string</td>
+      <td>Great London.</td>
+      <td>Shipping State/ Region.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>productName</strong></td>
+      <td>string</td>
+      <td>shirt-1233474</td>
+      <td>ID Number from end user.</td>
+    </tr>
+    <tr>
+      <td><strong>quantity</strong></td>
+      <td>number</td>
+      <td>1</td>
+      <td>Product quantity.</td>
+    </tr>
+    <tr>
+      <td><strong>dimensions</strong></td>
+      <td>string</td>
+      <td>85x51</td>
+      <td>Product size dimension.</td>
+    </tr>
+    <tr>
+      <td><strong>ApplyPromo</strong></td>
+      <td>boolean</td>
+      <td>1</td>
+      <td>Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. <strong>– Coming soon</strong></td>
+    </tr>
+    <tr>
+      <td><strong>description</strong></td>
+      <td>string</td>
+      <td>Blue sports t-shirt</td>
+      <td>Free description of the order.</td>
+    </tr>
+  </tbody>
+</table>
+:ET

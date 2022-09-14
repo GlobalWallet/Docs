@@ -20,6 +20,9 @@ collections:
   api:
     title: API Endpoints
     position_number: 2
+  countries:
+    title: GEOs and Methods
+    position_number: 3 
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

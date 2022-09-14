@@ -1,0 +1,99 @@
+I"2
+<p>Data Table
+  The following are the parameteres needed along with the data types that are used.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Parameter</strong></td>
+      <td><strong>Data Type</strong></td>
+      <td><strong>Example</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td>country*</td>
+      <td>string</td>
+      <td>BR</td>
+      <td>Payout country ISO 2 code</td>
+    </tr>
+    <tr>
+      <td>currency*</td>
+      <td>string</td>
+      <td>BRL</td>
+      <td>Payout currency ISO 3 code</td>
+    </tr>
+    <tr>
+      <td>amount*</td>
+      <td>number</td>
+      <td>150</td>
+      <td>Payout amount to be settled, must be integer without decimals: i.e 150 = 1.50</td>
+    </tr>
+    <tr>
+      <td>redirectUrl*</td>
+      <td>string</td>
+      <td>https://merchant1.io/where/to/go</td>
+      <td>Redirect URL to send user back to merchant page.</td>
+    </tr>
+    <tr>
+      <td>merchantReference</td>
+      <td>string</td>
+      <td>custom_code 9982674851738108</td>
+      <td>Merchant reference for the payout. If null, we will generate one ourselves.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string</td>
+      <td>Additional remark for this payout.</td>
+      <td>Payout description to be sent in the bank request.</td>
+    </tr>
+    <tr>
+      <td>userId</td>
+      <td>string</td>
+      <td>merchant_user123</td>
+      <td>User id from end merchant customer.</td>
+    </tr>
+    <tr>
+      <td>userAgent</td>
+      <td>string</td>
+      <td>Mozilla/5.0 (X11; Linux x86_64)</td>
+      <td>User agent from browser system.</td>
+    </tr>
+    <tr>
+      <td>userDevice</td>
+      <td>string</td>
+      <td>DESKTOP</td>
+      <td>User device used in the payout DESKTOP/MOBILE.</td>
+    </tr>
+    <tr>
+      <td>ip</td>
+      <td>string</td>
+      <td>13.12.11.10</td>
+      <td>User device Ip.</td>
+    </tr>
+    <tr>
+      <td>language</td>
+      <td>string</td>
+      <td>PT</td>
+      <td>Language ISO alpha-2 code</td>
+    </tr>
+    <tr>
+      <td>extra1</td>
+      <td>string</td>
+      <td>merchant extra value 1</td>
+      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+    </tr>
+    <tr>
+      <td>extra2</td>
+      <td>string</td>
+      <td>merchant extra value 2</td>
+      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+    </tr>
+    <tr>
+      <td>extra3</td>
+      <td>string</td>
+      <td>merchant extra value 3</td>
+      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+    </tr>
+  </tbody>
+</table>
+:ET
