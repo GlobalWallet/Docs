@@ -34,7 +34,7 @@
 		<header>
 			<h1>
 				<button type="button" class="open-nav" id="open-nav"></button>
-				<a href="/"><img src="/images/logo.svg" height="40" alt="Kibramoa logo"></a>
+				<a href="/"><img src="/images/logo.svg" height="40" alt="Kibramoa Docs"></a>
 			</h1>
 
 			<form action="/search/" method="get">
@@ -82,8 +82,8 @@
 						</li>
 					
 						<li>
-							<a href="/#documentationCashier Authentication copy">
-								Cashier Request
+							<a href="/#documentationCashier-request-lifecycle">
+								Cashier Request Life-cycle
 								
 							</a>
 						</li>
@@ -92,6 +92,13 @@
 							<a href="/#documentationCashier Authentication">
 								Authentication
 								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#documentationCountriesSupported">
+								Supported Countries
+								<span class="endpoint Data"></span>
 							</a>
 						</li>
 					
@@ -113,16 +120,9 @@
 						</li>
 					
 						<li>
-							<a href="/#apiCashierParams">
-								Payment Session Data
-								<span class="endpoint Data"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiNotifications">
-								/notifications
-								<span class="endpoint post"></span>
+							<a href="/#apigetTransaction">
+								/payments/{transactionId}
+								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
@@ -134,9 +134,16 @@
 						</li>
 					
 						<li>
-							<a href="/#apiPayoutParams">
-								Payout Session Data
-								<span class="endpoint Data"></span>
+							<a href="/#apirefunds">
+								/refund/by-reference
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apiNotifications">
+								/notifications
+								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
@@ -175,6 +182,30 @@
 			</section>
 		
 	
+		
+			<section>
+				<h6>Useful Data</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#datatablesCashierParams">
+								Payment Session Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#datatablesPayoutParams">
+								Payout Session Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
 
@@ -200,23 +231,6 @@
 					
 						
 						
-						"api-cashierparams": {
-							"id": "api-cashierparams",
-							"title": "Payment Session Data",
-							"category": "api",
-							"description": "Session Data and Types required to be sent in the /payment-session request test",
-		  				"type": "Data",
-							"url": "/#apiCashierParams",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
 						"api-notifications": {
 							"id": "api-notifications",
 							"title": "/notifications",
@@ -234,28 +248,11 @@
 					
 						,
 						
-						"api-payoutparams": {
-							"id": "api-payoutparams",
-							"title": "Payout Session Data",
-							"category": "api",
-							"description": "Session Data and Types required to be sent in the /Payout-session request",
-		  				"type": "Data",
-							"url": "/#apiPayoutParams",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
 						"api-payouts": {
 							"id": "api-payouts",
 							"title": "/payout-session",
 							"category": "api",
-							"description": "This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.",
+							"description": "Initiate a payout request on Kibramoa CashierUI.",
 		  				"type": "post",
 							"url": "/#apiPayouts",
 							"content": ""
@@ -272,9 +269,43 @@
 							"id": "api-cashiersession",
 							"title": "/payment-session",
 							"category": "api",
-							"description": "This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.",
+							"description": "initiates a payment session on Kibramoa CashierUI regarding country and currency.",
 		  				"type": "post",
 							"url": "/#apicashiersession",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-gettransaction": {
+							"id": "api-gettransaction",
+							"title": "/payments/{transactionId}",
+							"category": "api",
+							"description": "Get transaction details from kibramoa.",
+		  				"type": "get",
+							"url": "/#apigetTransaction",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-refunds": {
+							"id": "api-refunds",
+							"title": "/refund/by-reference",
+							"category": "api",
+							"description": "Refund a previous authorized transaction on kibramoa system.",
+		  				"type": "post",
+							"url": "/#apirefunds",
 							"content": ""
 						}
 						
@@ -340,18 +371,37 @@
 					
 						,
 						
-						"documentation-cashier-authentication-copy": {
-							"id": "documentation-cashier-authentication-copy",
-							"title": "Cashier Request",
-							"category": "documentation",
-							"description": "",
-		  				"type": "",
-							"url": "/#documentationCashier Authentication copy",
+						"datatables-cashierparams": {
+							"id": "datatables-cashierparams",
+							"title": "Payment Session Data",
+							"category": "datatables",
+							"description": "Session Data and Types required to be sent in the /payment-session request test",
+		  				"type": "Data",
+							"url": "/#datatablesCashierParams",
 							"content": ""
 						}
 						
 					
 				
+			
+				
+					
+						,
+						
+						"datatables-payoutparams": {
+							"id": "datatables-payoutparams",
+							"title": "Payout Session Data",
+							"category": "datatables",
+							"description": "Session Data and Types required to be sent in the /Payout-session request",
+		  				"type": "Data",
+							"url": "/#datatablesPayoutParams",
+							"content": ""
+						}
+						
+					
+				
+			
+		
 			
 				
 					
@@ -381,6 +431,40 @@
 							"description": "",
 		  				"type": "",
 							"url": "/#documentationCashier Integration",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"documentation-cashier-request-lifecycle": {
+							"id": "documentation-cashier-request-lifecycle",
+							"title": "Cashier Request Life-cycle",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "/#documentationCashier-request-lifecycle",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"documentation-countriessupported": {
+							"id": "documentation-countriessupported",
+							"title": "Supported Countries",
+							"category": "documentation",
+							"description": "The following is a list of Supported Countries, Currencies and Methods.",
+		  				"type": "Data",
+							"url": "/#documentationCountriesSupported",
 							"content": ""
 						}
 						

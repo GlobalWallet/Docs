@@ -34,7 +34,7 @@
 		<header>
 			<h1>
 				<button type="button" class="open-nav" id="open-nav"></button>
-				<a href="/"><img src="/images/logo.svg" height="40" alt="Kibramoa logo"></a>
+				<a href="/"><img src="/images/logo.svg" height="40" alt="Kibramoa Docs"></a>
 			</h1>
 
 			<form action="/search/" method="get">
@@ -82,8 +82,8 @@
 						</li>
 					
 						<li>
-							<a href="#documentationCashier Authentication copy">
-								Cashier Request
+							<a href="#documentationCashier-request-lifecycle">
+								Cashier Request Life-cycle
 								
 							</a>
 						</li>
@@ -92,6 +92,13 @@
 							<a href="#documentationCashier Authentication">
 								Authentication
 								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#documentationCountriesSupported">
+								Supported Countries
+								<span class="endpoint Data"></span>
 							</a>
 						</li>
 					
@@ -113,16 +120,9 @@
 						</li>
 					
 						<li>
-							<a href="#apiCashierParams">
-								Payment Session Data
-								<span class="endpoint Data"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="#apiNotifications">
-								/notifications
-								<span class="endpoint post"></span>
+							<a href="#apigetTransaction">
+								/payments/{transactionId}
+								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
@@ -134,9 +134,16 @@
 						</li>
 					
 						<li>
-							<a href="#apiPayoutParams">
-								Payout Session Data
-								<span class="endpoint Data"></span>
+							<a href="#apirefunds">
+								/refund/by-reference
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#apiNotifications">
+								/notifications
+								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
@@ -167,6 +174,30 @@
 						<li>
 							<a href="#countriesLatam">
 								Latin America
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Useful Data</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#datatablesCashierParams">
+								Payment Session Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#datatablesPayoutParams">
+								Payout Session Data
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
@@ -209,16 +240,28 @@
 
 <p>Kibramoa API provides a modern user interface called CashierUI, this application provides a visual way for the merchant’s customers to initiate and complete payments using their preferred payment options from different countries.</p>
 
-<p class="info">Using the API</p>
+<h3 class="info" id="boarding">Boarding</h3>
 
-<p>You will need a test merchant account to generate the keys for .</p>
+<p>Kibramoa boarding will setup a basic merchant account for access to all the payment options in different supported countries,</p>
 
-<p class="info">Integration Options</p>
+<p>For access to Kibramoa systems you will need:</p>
+<ul>
+  <li>Prefered countries.</li>
+  <li>Merchant account setup.</li>
+  <li>Merchant-portal access with users enabled.</li>
+  <li>Generate an API KEY.</li>
+</ul>
+
+<p>For more boarding details please contact us in <a href="https://kibramoa.com/">Kibramoa</a>.</p>
+
+<p>If you already have an account and want to opperate in more countries, please contact our operations team.</p>
+
+<h3 class="info" id="integration-options">Integration Options</h3>
 
 <p>The Kibramoa API offers the following types of integrations for payment processing:</p>
 <ul>
   <li>Payment Form Integration called Cashier-UI</li>
-  <li>Server to Server Integration (Merchant’s own payment form).</li>
+  <li>Server to Server Integration (comming soon).</li>
 </ul>
 
 
@@ -289,19 +332,25 @@
 
 				
 <p class="info">Sandbox Environment URLs</p>
-<h4 id="sandbox-api">Sandbox API</h4>
-<p>https://api.sandbox.kibramoa.net</p>
-
-<h4 id="sandbox-cashier-hosted-payments-page">Sandbox Cashier (Hosted Payments Page)</h4>
-<p>https://cashier.sandbox.kibramoa.net</p>
+<ul>
+  <li>
+    <p>API: https://api.sandbox.kibramoa.net</p>
+  </li>
+  <li>
+    <p>Cashier (Hosted Payments Page): https://cashier.sandbox.kibramoa.net</p>
+  </li>
+</ul>
 
 <p class="info">Production  Environment URLs</p>
 
-<h4 id="production-api">Production API</h4>
-<p>https://api.kibramoa.net</p>
-
-<h4 id="production-cashier-hosted-payments-page">Production Cashier (Hosted Payments Page)</h4>
-<p>https://cashier.kibramoa.net</p>
+<ul>
+  <li>
+    <p>API: https://api.kibramoa.net</p>
+  </li>
+  <li>
+    <p>Cashier (Hosted Payments Page): https://cashier.kibramoa.net</p>
+  </li>
+</ul>
 
 
 				
@@ -312,19 +361,23 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="documentationCashier Authentication copy">
-						Cashier Request
+					<a id="documentationCashier-request-lifecycle">
+						Cashier Request Life-cycle
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier Authentication copy.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier-request-lifecycle.md">Edit</a>
 				</h3>
 				
 
 				
 
-				<p>When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier and payment methods requested for</p>
+				<p>When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier.</p>
 
-<p><img src="/images/Cashier_Request_Api_Steps.png" alt="API Calls" class="img-responsive" /></p>
+<p>Sequence diagram with the comunication process between systems:</p>
+
+<p><img src="/images/Cashier_Request_Api_Steps.png" alt="kibramoa cashier sequence" /></p>
+
+<p>*Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.</p>
 
 
 				
@@ -373,6 +426,42 @@ Content-Type: application/json
 			
 		</section>
 	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationCountriesSupported">
+						Supported Countries
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/CountriesSupported">Edit</a>
+				</h3>
+				
+					<p class="description">The following is a list of Supported Countries, Currencies and Methods.</p>
+				
+
+				
+
+				
+<ul>
+  <li>
+    <p><a href="/#countriesAfrica">Africa</a></p>
+  </li>
+  <li>
+    <p><a href="#countriesIndia">India</a></p>
+  </li>
+  <li>
+    <p><a href="#countriesLatam">Latin America</a></p>
+  </li>
+</ul>
+
+
+				
+			</section>
+			
+		</section>
+	
 
 	
 	
@@ -388,32 +477,61 @@ Content-Type: application/json
 					<a class="editor-link" href="cloudcannon:collections/_api/cashiersession.md">Edit</a>
 				</h3>
 				
-					<p class="description">This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.</p>
+					<p class="description">initiates a payment session on Kibramoa CashierUI regarding country and currency.</p>
 				
 
 				
 
 				
+<p>This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.</p>
+
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
 
 <p class="success"><strong>Example request</strong></p>
 
-<p>A curl request to request the cashier:</p>
+<p>Body request example for create cashier payment session:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-"country": "BR",
-"currency": "BRL",
-"amount": 13000,
-"redirectUrl": "https://merchant.io/where-to-go",
-"language": "ES",
-"customer": {
-  "name": "John Doe",
-  "email": "john@email.test",
-  "phone": "+34666999666",
-  "userDevice": "MOBILE",
-  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
-  "ip": "84.232.140.77",
-  "address": {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /payment-session
+Host: api.sandbox.kibramoa.net
+X-API-KEY: pjxrlEFwzgYvP13V5LHWLZ5wiN6YHGKA****8-0f95-4771-a36b-d4a928c6457d
+Content-Type: application/json
+Content-Length: 1387
+
+{
+  "country": "BR",
+  "currency": "BRL",
+  "amount": 13000,
+  "redirectUrl": "https://merchant.io/where-to-go",
+  "language": "ES",
+  "customer": {
+    "name": "John Doe",
+    "email": "john@email.test",
+    "phone": "+34666999666",
+    "userDevice": "MOBILE",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
+    "ip": "84.232.140.77",
+    "address": {
+      "street": "32 Windsor Gardens",
+      "streetNumber": "24",
+      "country": "GB",
+      "zipCode": "W9 3RG",
+      "city": "London",
+      "state": "Great London."
+    },
+    "identify": {
+      "number": "76486883X",
+      "type": "DNI"
+    }
+  },
+  "merchantReference": "mustbe18cars",
+  "paymentReference": "Invoice ABC123",
+  "userId": "Merch_User_123",
+  "extra1": "extraData001",
+  "extra2": "extraData002",
+  "extra3": "extraData003",
+  "storedToken": "index-stored",
+  "tax": "21%",
+  "shippingAddress": {
     "street": "32 Windsor Gardens",
     "streetNumber": "24",
     "country": "GB",
@@ -421,40 +539,18 @@ Content-Type: application/json
     "city": "London",
     "state": "Great London."
   },
-  "identify": {
-    "number": "76486883X",
-    "type": "DNI"
-  }
-},
-"merchantReference": "mustbe18cars",
-"paymentReference": "Invoice ABC123",
-"userId": "Merch_User_123",
-"extra1": "extraData001",
-"extra2": "extraData002",
-"extra3": "extraData003",
-"storedToken": "index-stored",
-"tax": "21%",
-"shippingAddress": {
-  "street": "32 Windsor Gardens",
-  "streetNumber": "24",
-  "country": "GB",
-  "zipCode": "W9 3RG",
-  "city": "London",
-  "state": "Great London."
-},
-"orderDetails": [
-  {
-    "productName": "shirt-1233474",
-    "quantity": 1,
-    "dimensions": "85x51",
-    "description": "Blue sports t-shirt "
-  }
-]
+  "orderDetails": [
+    {
+      "productName": "shirt-1233474",
+      "quantity": 1,
+      "dimensions": "85x51",
+      "description": "Blue sports t-shirt "
+    }
+  ]
 }
-
 </code></pre></div></div>
 
-<p>A successful response will return an HTTP status code of <code class="language-plaintext highlighter-rouge">201</code> and have the following schema:</p>
+<p>An error response will return an HTTP error code and have the following schema:</p>
 
 <table>
   <thead>
@@ -514,331 +610,52 @@ Content-Type: application/json
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiCashierParams">
-						Payment Session Data
+					<a id="apigetTransaction">
+						/payments/{transactionId}
 						
-							<span class="endpoint Data"></span>
+							<span class="endpoint get"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/CashierParams">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/getTransaction.md">Edit</a>
 				</h3>
 				
-					<p class="description">Session Data and Types required to be sent in the /payment-session request test</p>
+					<p class="description">Get transaction details from kibramoa.</p>
 				
 
 				
 
-				<p>Data Table
-  The following are the parameteres needed along with the data types that are used.</p>
+				<p>Return all details about the transaction, GET request and a valid transactionId must be present in the route and should match with an uuid in kibramoa transaction DB.</p>
+
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p class="success"><strong>Example request</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /payments/099cdc76-45d1-49e1-8985-e1c82dcfadb3 HTTP/1.1
+Host: api.sandbox.kibramoa.net
+Accept: application/json
+X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
+</code></pre></div></div>
+
+<p>An error response will return an HTTP error code and the following schema:</p>
 
 <table>
   <thead>
     <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>country*</strong></td>
+      <td>statusCode</td>
       <td>string</td>
-      <td>BR</td>
-      <td>Alpha-2 ISO Country code</td>
+      <td>If an error is returned the error code is shown here</td>
     </tr>
     <tr>
-      <td><strong>currency*</strong></td>
+      <td>message</td>
       <td>string</td>
-      <td>BRL</td>
-      <td>ISO Currency code</td>
-    </tr>
-    <tr>
-      <td><strong>amount*</strong></td>
-      <td>number</td>
-      <td>1000</td>
-      <td>Amount without coma, format 155 = 1.55 This needs to be sent in cents</td>
-    </tr>
-    <tr>
-      <td><strong>language</strong></td>
-      <td>string</td>
-      <td>ES</td>
-      <td>Alpha-2 ISO Language code</td>
-    </tr>
-    <tr>
-      <td><strong>merchantReference</strong></td>
-      <td>string</td>
-      <td>order_ticket_123</td>
-      <td>Merchant reference, must be unique and generated in merchant system.</td>
-    </tr>
-    <tr>
-      <td><strong>paymentReference</strong></td>
-      <td>string</td>
-      <td>Invoice ABC123</td>
-      <td>Reference to be used for the Payment.</td>
-    </tr>
-    <tr>
-      <td><strong>redirectUrl*</strong></td>
-      <td>string</td>
-      <td>https://merchant.io/where-to-go</td>
-      <td>Merchant redirect page after payment.</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>customer*</strong></td>
-      <td> </td>
-      <td> </td>
-      <td>Customer data.</td>
-    </tr>
-    <tr>
-      <td><strong>name*</strong></td>
-      <td>string</td>
-      <td>Pepe Doe</td>
-      <td>User / payer full name.</td>
-    </tr>
-    <tr>
-      <td><strong>email*</strong></td>
-      <td>string</td>
-      <td>pepe@test.test</td>
-      <td>User / payer email.</td>
-    </tr>
-    <tr>
-      <td><strong>phone*</strong></td>
-      <td>string</td>
-      <td>34666999666</td>
-      <td>User / payer phone number.</td>
-    </tr>
-    <tr>
-      <td><strong>userDevice*</strong></td>
-      <td>string</td>
-      <td>User device.</td>
-      <td>ENUM: Array[ MOBILE, DESKTOP, TABLET ]</td>
-    </tr>
-    <tr>
-      <td><strong>userAgent*</strong></td>
-      <td>string</td>
-      <td>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>ip*</strong></td>
-      <td>string</td>
-      <td>84.232.140.77</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>street*</strong></td>
-      <td>string</td>
-      <td>32 Windsor Gardens</td>
-      <td>First line of the address.</td>
-    </tr>
-    <tr>
-      <td><strong>streetNumber</strong></td>
-      <td>string</td>
-      <td>24</td>
-      <td>Street address number.</td>
-    </tr>
-    <tr>
-      <td><strong>country*</strong></td>
-      <td>string</td>
-      <td>GB</td>
-      <td>Alpha-2 ISO Country code</td>
-    </tr>
-    <tr>
-      <td><strong>zipCode*</strong></td>
-      <td>string</td>
-      <td>W9 3RG</td>
-      <td>Customer Postcode</td>
-    </tr>
-    <tr>
-      <td><strong>city</strong></td>
-      <td>string</td>
-      <td>London</td>
-      <td>Shipping City/Town</td>
-    </tr>
-    <tr>
-      <td><strong>state</strong></td>
-      <td>string</td>
-      <td>Great London.</td>
-      <td>Shipping State/ Region.</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>number*</strong></td>
-      <td>string</td>
-      <td>76486883X</td>
-      <td>ID Number from end user.</td>
-    </tr>
-    <tr>
-      <td><strong>type</strong></td>
-      <td>string</td>
-      <td>DNI</td>
-      <td>ID number type.</td>
-    </tr>
-    <tr>
-      <td><strong>userId</strong></td>
-      <td>string</td>
-      <td>Merch_User_123</td>
-      <td>User identifier on the merchant system.</td>
-    </tr>
-    <tr>
-      <td><strong>extra1</strong></td>
-      <td>string</td>
-      <td>extraData001</td>
-      <td>Auxiliar parameter for merchant to march payment</td>
-    </tr>
-    <tr>
-      <td><strong>extra2</strong></td>
-      <td>string</td>
-      <td>extraData002</td>
-      <td>Auxiliar parameter for merchant to march payment</td>
-    </tr>
-    <tr>
-      <td><strong>extra3</strong></td>
-      <td>string</td>
-      <td>extraData003</td>
-      <td>Auxiliar parameter for merchant to march payment</td>
-    </tr>
-    <tr>
-      <td><strong>storedToken</strong></td>
-      <td>string</td>
-      <td>index-stored</td>
-      <td>Stored payment credential index on kibramoa.</td>
-    </tr>
-    <tr>
-      <td><strong>tax</strong></td>
-      <td>string</td>
-      <td>21%</td>
-      <td>Tax percentage.</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>street</strong></td>
-      <td>string</td>
-      <td>32 Windsor Gardens</td>
-      <td>First line of the address.</td>
-    </tr>
-    <tr>
-      <td><strong>streetNumber</strong></td>
-      <td>string</td>
-      <td>24</td>
-      <td>Street address number.</td>
-    </tr>
-    <tr>
-      <td><strong>country</strong></td>
-      <td>string</td>
-      <td>GB</td>
-      <td>Alpha-2 ISO Country code</td>
-    </tr>
-    <tr>
-      <td><strong>zipCode*</strong></td>
-      <td>string</td>
-      <td>W9 3RG</td>
-      <td>The postcode.</td>
-    </tr>
-    <tr>
-      <td><strong>city</strong></td>
-      <td>string</td>
-      <td>London</td>
-      <td>Shipping City/Town</td>
-    </tr>
-    <tr>
-      <td><strong>state</strong></td>
-      <td>string</td>
-      <td>Great London.</td>
-      <td>Shipping State/ Region.</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>productName</strong></td>
-      <td>string</td>
-      <td>shirt-1233474</td>
-      <td>ID Number from end user.</td>
-    </tr>
-    <tr>
-      <td><strong>quantity</strong></td>
-      <td>number</td>
-      <td>1</td>
-      <td>Product quantity.</td>
-    </tr>
-    <tr>
-      <td><strong>dimensions</strong></td>
-      <td>string</td>
-      <td>85x51</td>
-      <td>Product size dimension.</td>
-    </tr>
-    <tr>
-      <td><strong>ApplyPromo</strong></td>
-      <td>boolean</td>
-      <td>1</td>
-      <td>Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. <strong>– Coming soon</strong></td>
-    </tr>
-    <tr>
-      <td><strong>description</strong></td>
-      <td>string</td>
-      <td>Blue sports t-shirt</td>
-      <td>Free description of the order.</td>
+      <td>the CashierUrl or A message of the error</td>
     </tr>
   </tbody>
 </table>
@@ -846,6 +663,289 @@ Content-Type: application/json
 
 				
 			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"099cdc76-45d1-49e1-8985-e1c82dcfadb3"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90545ca3-fe0d-457c-a9da-283ee2561d82"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invoice-4726"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant-order-8271"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@email.test"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+34666999666"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOBILE"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"identify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76486883X"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DNI"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"shippingAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"orderDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shirt-328471"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85x51"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue sports t-shirt "</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business failed - duplicate order number"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-04T08:23:50.738Z"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-05T08:23:50.738Z"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Transaction not found."</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiPayouts">
+						/payout-session
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/Payouts">Edit</a>
+				</h3>
+				
+					<p class="description">Initiate a payout request on Kibramoa CashierUI.</p>
+				
+
+				
+
+				
+<p>This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.</p>
+
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p class="success"><strong>Example request</strong></p>
+
+<p>A example request for intiate a payout on the cashier:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /payout-session HTTP/1.1
+Host: api.sandbox.kibramoa.net
+X-API-KEY: pjxrlEFwzgYvP13V5LHWLZ5wiN6YHG***4771-a36b-d4a928c6457d
+Content-Type: application/json
+Content-Length: 485
+
+{
+  "country": "BR",
+  "currency": "BRL",
+  "amount": 150,
+  "redirectUrl": "https://merchant1.io/where/to/go",
+  "merchantReference": "custom8108",
+  "description": "Additional remark for this payout.",
+  "userId": "merchant_user123",
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64)",
+  "userDevice": "DESKTOP",
+  "ip": "13.12.11.10",
+  "language": "PT",
+  "extra1": "merchant extra value 1",
+  "extra2": "merchant extra value 2",
+  "extra3": "merchant extra value 3"
+}
+</code></pre></div></div>
+
+<p>An error response will return an HTTP error code and have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>StatusCode</td>
+      <td>string</td>
+      <td>If an error is returned the error code is shown here</td>
+    </tr>
+    <tr>
+      <td>message</td>
+      <td>string</td>
+      <td>the CashierUrl or A message of the error</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
+   
+   </span><span class="nl">"cashierUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.kibramoa.net/payout/?sessionId=54ed4d33-9c24-4ef0-a7f8-242920a657u5"</span><span class="w">
+
+   </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+
+    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized"</span><span class="w">
+    
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apirefunds">
+						/refund/by-reference
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/refunds.md">Edit</a>
+				</h3>
+				
+					<p class="description">Refund a previous authorized transaction on kibramoa system.</p>
+				
+
+				
+
+				<p>This endpoint will refund a previous authorized transaction on kibramoa system, after this process the money will return to origin account, this process cannot be undone.</p>
+
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p class="success"><strong>Example request</strong></p>
+
+<p>Request example for refunds:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /refund/by-reference HTTP/1.1
+Host: api.sandbox.kibramoa.net
+X-API-KEY: pjxrlEFwzgYvP13V5LHWLZ5wi******71-a36b-d4a928c6457d
+Content-Type: application/json
+Content-Length: 67
+
+{
+  "merchantReference": "your-reference"
+}
+
+</code></pre></div></div>
+
+<p>A successful response will return an HTTP status code of <code class="language-plaintext highlighter-rouge">201</code> and have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>StatusCode</td>
+      <td>string</td>
+      <td>If an error is returned the error code is shown here</td>
+    </tr>
+    <tr>
+      <td>message</td>
+      <td>string</td>
+      <td>the CashierUrl or A message of the error</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">  
+   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"errorReason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REFUNDED"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentOptionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DepositExpress"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchantUser123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order-1235"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"feb6a715-9f7c-49d4-b6f7-10c59d18a194"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/09/2021 23:02:33"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/09/2022 00:00:00"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business Failed"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
 			
 		</section>
 	
@@ -972,227 +1072,6 @@ Content-Type: application/json
     <tr>
       <td>REFUNDED</td>
       <td style="text-align: center">Refund transaction completed.</td>
-    </tr>
-  </tbody>
-</table>
-
-
-				
-			</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="apiPayouts">
-						/payout-session
-						
-							<span class="endpoint post"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/Payouts">Edit</a>
-				</h3>
-				
-					<p class="description">This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.</p>
-				
-
-				
-
-				
-<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
-
-<p class="success"><strong>Example request</strong></p>
-
-<p>A curl request to request the cashier:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-"country": "BR",
-"currency": "BRL",
-"amount": 150,
-"redirectUrl": "https://merchant1.io/where/to/go",
-"merchantReference": "custom_code 9982674851738108",
-"description": "Additional remark for this payout.",
-"userId": "merchant_user123",
-"userAgent": "Mozilla/5.0 (X11; Linux x86_64)",
-"userDevice": "DESKTOP",
-"ip": "13.12.11.10",
-"language": "PT",
-"extra1": "merchant extra value 1",
-"extra2": "merchant extra value 2",
-"extra3": "merchant extra value 3"
-}
-
-</code></pre></div></div>
-
-<p>A successful response will return an HTTP status code of <code class="language-plaintext highlighter-rouge">201</code> and have the following schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>StatusCode</td>
-      <td>string</td>
-      <td>If an error is returned the error code is shown here</td>
-    </tr>
-    <tr>
-      <td>message</td>
-      <td>string</td>
-      <td>the CashierUrl or A message of the error</td>
-    </tr>
-  </tbody>
-</table>
-
-
-				
-			</section>
-			
-					<section class="right-code">
-						
-								
-
-
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
-   
-   </span><span class="nl">"cashierUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.kibramoa.net/payout/?sessionId=54ed4d33-9c24-4ef0-a7f8-242920a657u5"</span><span class="w">
-
-   </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-						
-								
-
-
-<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
-
-    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized"</span><span class="w">
-    
-    </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-						
-				</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="apiPayoutParams">
-						Payout Session Data
-						
-							<span class="endpoint Data"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/PayoutParams">Edit</a>
-				</h3>
-				
-					<p class="description">Session Data and Types required to be sent in the /Payout-session request</p>
-				
-
-				
-
-				<p>Data Table
-  The following are the parameteres needed along with the data types that are used.</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td><strong>Parameter</strong></td>
-      <td><strong>Data Type</strong></td>
-      <td><strong>Example</strong></td>
-      <td><strong>Description</strong></td>
-    </tr>
-    <tr>
-      <td>country*</td>
-      <td>string</td>
-      <td>BR</td>
-      <td>Payout country ISO 2 code</td>
-    </tr>
-    <tr>
-      <td>currency*</td>
-      <td>string</td>
-      <td>BRL</td>
-      <td>Payout currency ISO 3 code</td>
-    </tr>
-    <tr>
-      <td>amount*</td>
-      <td>number</td>
-      <td>150</td>
-      <td>Payout amount to be settled, must be integer without decimals: i.e 150 = 1.50</td>
-    </tr>
-    <tr>
-      <td>redirectUrl*</td>
-      <td>string</td>
-      <td>https://merchant1.io/where/to/go</td>
-      <td>Redirect URL to send user back to merchant page.</td>
-    </tr>
-    <tr>
-      <td>merchantReference</td>
-      <td>string</td>
-      <td>custom_code 9982674851738108</td>
-      <td>Merchant reference for the payout. If null, we will generate one ourselves.</td>
-    </tr>
-    <tr>
-      <td>description</td>
-      <td>string</td>
-      <td>Additional remark for this payout.</td>
-      <td>Payout description to be sent in the bank request.</td>
-    </tr>
-    <tr>
-      <td>userId</td>
-      <td>string</td>
-      <td>merchant_user123</td>
-      <td>User id from end merchant customer.</td>
-    </tr>
-    <tr>
-      <td>userAgent</td>
-      <td>string</td>
-      <td>Mozilla/5.0 (X11; Linux x86_64)</td>
-      <td>User agent from browser system.</td>
-    </tr>
-    <tr>
-      <td>userDevice</td>
-      <td>string</td>
-      <td>DESKTOP</td>
-      <td>User device used in the payout DESKTOP/MOBILE.</td>
-    </tr>
-    <tr>
-      <td>ip</td>
-      <td>string</td>
-      <td>13.12.11.10</td>
-      <td>User device Ip.</td>
-    </tr>
-    <tr>
-      <td>language</td>
-      <td>string</td>
-      <td>PT</td>
-      <td>Language ISO alpha-2 code</td>
-    </tr>
-    <tr>
-      <td>extra1</td>
-      <td>string</td>
-      <td>merchant extra value 1</td>
-      <td>Extra parameter to be used for track the payout using merchant generated data</td>
-    </tr>
-    <tr>
-      <td>extra2</td>
-      <td>string</td>
-      <td>merchant extra value 2</td>
-      <td>Extra parameter to be used for track the payout using merchant generated data</td>
-    </tr>
-    <tr>
-      <td>extra3</td>
-      <td>string</td>
-      <td>merchant extra value 3</td>
-      <td>Extra parameter to be used for track the payout using merchant generated data</td>
     </tr>
   </tbody>
 </table>
@@ -2317,6 +2196,468 @@ Content-Type: application/json
     <tr>
       <td><strong>Fundación Genesis</strong></td>
       <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="datatablesCashierParams">
+						Payment Session Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_datatables/CashierParams">Edit</a>
+				</h3>
+				
+					<p class="description">Session Data and Types required to be sent in the /payment-session request test</p>
+				
+
+				
+
+				<p>Data Table
+  The following are the parameteres needed along with the data types that are used.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>country*</strong></td>
+      <td>string</td>
+      <td>BR</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>currency*</strong></td>
+      <td>string</td>
+      <td>BRL</td>
+      <td>ISO Currency code</td>
+    </tr>
+    <tr>
+      <td><strong>amount*</strong></td>
+      <td>number</td>
+      <td>1000</td>
+      <td>Amount without coma, format 155 = 1.55 This needs to be sent in cents</td>
+    </tr>
+    <tr>
+      <td><strong>language</strong></td>
+      <td>string</td>
+      <td>ES</td>
+      <td>Alpha-2 ISO Language code</td>
+    </tr>
+    <tr>
+      <td><strong>merchantReference</strong></td>
+      <td>string</td>
+      <td>order_ticket_123</td>
+      <td>Merchant reference, must be unique and generated in merchant system.</td>
+    </tr>
+    <tr>
+      <td><strong>paymentReference</strong></td>
+      <td>string</td>
+      <td>Invoice ABC123</td>
+      <td>Reference to be used for the Payment.</td>
+    </tr>
+    <tr>
+      <td><strong>redirectUrl*</strong></td>
+      <td>string</td>
+      <td>https://merchant.io/where-to-go</td>
+      <td>Merchant redirect page after payment.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>customer*</strong></td>
+      <td> </td>
+      <td> </td>
+      <td>Customer data.</td>
+    </tr>
+    <tr>
+      <td><strong>name*</strong></td>
+      <td>string</td>
+      <td>Pepe Doe</td>
+      <td>User / payer full name.</td>
+    </tr>
+    <tr>
+      <td><strong>email*</strong></td>
+      <td>string</td>
+      <td>pepe@test.test</td>
+      <td>User / payer email.</td>
+    </tr>
+    <tr>
+      <td><strong>phone*</strong></td>
+      <td>string</td>
+      <td>34666999666</td>
+      <td>User / payer phone number.</td>
+    </tr>
+    <tr>
+      <td><strong>userDevice*</strong></td>
+      <td>string</td>
+      <td>User device.</td>
+      <td>ENUM: Array[ MOBILE, DESKTOP, TABLET ]</td>
+    </tr>
+    <tr>
+      <td><strong>userAgent*</strong></td>
+      <td>string</td>
+      <td>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>ip*</strong></td>
+      <td>string</td>
+      <td>84.232.140.77</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>street*</strong></td>
+      <td>string</td>
+      <td>32 Windsor Gardens</td>
+      <td>First line of the address.</td>
+    </tr>
+    <tr>
+      <td><strong>streetNumber</strong></td>
+      <td>string</td>
+      <td>24</td>
+      <td>Street address number.</td>
+    </tr>
+    <tr>
+      <td><strong>country*</strong></td>
+      <td>string</td>
+      <td>GB</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>zipCode*</strong></td>
+      <td>string</td>
+      <td>W9 3RG</td>
+      <td>Customer Postcode</td>
+    </tr>
+    <tr>
+      <td><strong>city</strong></td>
+      <td>string</td>
+      <td>London</td>
+      <td>Shipping City/Town</td>
+    </tr>
+    <tr>
+      <td><strong>state</strong></td>
+      <td>string</td>
+      <td>Great London.</td>
+      <td>Shipping State/ Region.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>number*</strong></td>
+      <td>string</td>
+      <td>76486883X</td>
+      <td>ID Number from end user.</td>
+    </tr>
+    <tr>
+      <td><strong>type</strong></td>
+      <td>string</td>
+      <td>DNI</td>
+      <td>ID number type.</td>
+    </tr>
+    <tr>
+      <td><strong>userId</strong></td>
+      <td>string</td>
+      <td>Merch_User_123</td>
+      <td>User identifier on the merchant system.</td>
+    </tr>
+    <tr>
+      <td><strong>extra1</strong></td>
+      <td>string</td>
+      <td>extraData001</td>
+      <td>Auxiliar parameter for merchant to march payment</td>
+    </tr>
+    <tr>
+      <td><strong>extra2</strong></td>
+      <td>string</td>
+      <td>extraData002</td>
+      <td>Auxiliar parameter for merchant to march payment</td>
+    </tr>
+    <tr>
+      <td><strong>extra3</strong></td>
+      <td>string</td>
+      <td>extraData003</td>
+      <td>Auxiliar parameter for merchant to march payment</td>
+    </tr>
+    <tr>
+      <td><strong>storedToken</strong></td>
+      <td>string</td>
+      <td>index-stored</td>
+      <td>Stored payment credential index on kibramoa.</td>
+    </tr>
+    <tr>
+      <td><strong>tax</strong></td>
+      <td>string</td>
+      <td>21%</td>
+      <td>Tax percentage.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>street</strong></td>
+      <td>string</td>
+      <td>32 Windsor Gardens</td>
+      <td>First line of the address.</td>
+    </tr>
+    <tr>
+      <td><strong>streetNumber</strong></td>
+      <td>string</td>
+      <td>24</td>
+      <td>Street address number.</td>
+    </tr>
+    <tr>
+      <td><strong>country</strong></td>
+      <td>string</td>
+      <td>GB</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>zipCode*</strong></td>
+      <td>string</td>
+      <td>W9 3RG</td>
+      <td>The postcode.</td>
+    </tr>
+    <tr>
+      <td><strong>city</strong></td>
+      <td>string</td>
+      <td>London</td>
+      <td>Shipping City/Town</td>
+    </tr>
+    <tr>
+      <td><strong>state</strong></td>
+      <td>string</td>
+      <td>Great London.</td>
+      <td>Shipping State/ Region.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Data Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>productName</strong></td>
+      <td>string</td>
+      <td>shirt-1233474</td>
+      <td>ID Number from end user.</td>
+    </tr>
+    <tr>
+      <td><strong>quantity</strong></td>
+      <td>number</td>
+      <td>1</td>
+      <td>Product quantity.</td>
+    </tr>
+    <tr>
+      <td><strong>dimensions</strong></td>
+      <td>string</td>
+      <td>85x51</td>
+      <td>Product size dimension.</td>
+    </tr>
+    <tr>
+      <td><strong>ApplyPromo</strong></td>
+      <td>boolean</td>
+      <td>1</td>
+      <td>Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. <strong>– Coming soon</strong></td>
+    </tr>
+    <tr>
+      <td><strong>description</strong></td>
+      <td>string</td>
+      <td>Blue sports t-shirt</td>
+      <td>Free description of the order.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="datatablesPayoutParams">
+						Payout Session Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_datatables/PayoutParams">Edit</a>
+				</h3>
+				
+					<p class="description">Session Data and Types required to be sent in the /Payout-session request</p>
+				
+
+				
+
+				<p>Data Table
+  The following are the parameteres needed along with the data types that are used.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Parameter</strong></td>
+      <td><strong>Data Type</strong></td>
+      <td><strong>Example</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td>country*</td>
+      <td>string</td>
+      <td>BR</td>
+      <td>Payout country ISO 2 code</td>
+    </tr>
+    <tr>
+      <td>currency*</td>
+      <td>string</td>
+      <td>BRL</td>
+      <td>Payout currency ISO 3 code</td>
+    </tr>
+    <tr>
+      <td>amount*</td>
+      <td>number</td>
+      <td>150</td>
+      <td>Payout amount to be settled, must be integer without decimals: i.e 150 = 1.50</td>
+    </tr>
+    <tr>
+      <td>redirectUrl*</td>
+      <td>string</td>
+      <td>https://merchant1.io/where/to/go</td>
+      <td>Redirect URL to send user back to merchant page.</td>
+    </tr>
+    <tr>
+      <td>merchantReference</td>
+      <td>string</td>
+      <td>custom_code 9982674851738108</td>
+      <td>Merchant reference for the payout. If null, we will generate one ourselves.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string</td>
+      <td>Additional remark for this payout.</td>
+      <td>Payout description to be sent in the bank request.</td>
+    </tr>
+    <tr>
+      <td>userId</td>
+      <td>string</td>
+      <td>merchant_user123</td>
+      <td>User id from end merchant customer.</td>
+    </tr>
+    <tr>
+      <td>userAgent</td>
+      <td>string</td>
+      <td>Mozilla/5.0 (X11; Linux x86_64)</td>
+      <td>User agent from browser system.</td>
+    </tr>
+    <tr>
+      <td>userDevice</td>
+      <td>string</td>
+      <td>DESKTOP</td>
+      <td>User device used in the payout DESKTOP/MOBILE.</td>
+    </tr>
+    <tr>
+      <td>ip</td>
+      <td>string</td>
+      <td>13.12.11.10</td>
+      <td>User device Ip.</td>
+    </tr>
+    <tr>
+      <td>language</td>
+      <td>string</td>
+      <td>PT</td>
+      <td>Language ISO alpha-2 code</td>
+    </tr>
+    <tr>
+      <td>extra1</td>
+      <td>string</td>
+      <td>merchant extra value 1</td>
+      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+    </tr>
+    <tr>
+      <td>extra2</td>
+      <td>string</td>
+      <td>merchant extra value 2</td>
+      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+    </tr>
+    <tr>
+      <td>extra3</td>
+      <td>string</td>
+      <td>merchant extra value 3</td>
+      <td>Extra parameter to be used for track the payout using merchant generated data</td>
     </tr>
   </tbody>
 </table>

@@ -2,9 +2,11 @@
 title: /payment-session
 position_number: 1
 type: post
-description: This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.
+description: initiates a payment session on Kibramoa CashierUI regarding country and currency.
 
 content_markdown: |-
+
+  This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.
 
   {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
@@ -12,23 +14,50 @@ content_markdown: |-
   {: .success }
   **Example request**
 
-  A curl request to request the cashier:
+  Body request example for create cashier payment session:
 
   ```
+  POST /payment-session
+  Host: api.sandbox.kibramoa.net
+  X-API-KEY: pjxrlEFwzgYvP13V5LHWLZ5wiN6YHGKA****8-0f95-4771-a36b-d4a928c6457d
+  Content-Type: application/json
+  Content-Length: 1387
+
   {
-  "country": "BR",
-  "currency": "BRL",
-  "amount": 13000,
-  "redirectUrl": "https://merchant.io/where-to-go",
-  "language": "ES",
-  "customer": {
-    "name": "John Doe",
-    "email": "john@email.test",
-    "phone": "+34666999666",
-    "userDevice": "MOBILE",
-    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
-    "ip": "84.232.140.77",
-    "address": {
+    "country": "BR",
+    "currency": "BRL",
+    "amount": 13000,
+    "redirectUrl": "https://merchant.io/where-to-go",
+    "language": "ES",
+    "customer": {
+      "name": "John Doe",
+      "email": "john@email.test",
+      "phone": "+34666999666",
+      "userDevice": "MOBILE",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
+      "ip": "84.232.140.77",
+      "address": {
+        "street": "32 Windsor Gardens",
+        "streetNumber": "24",
+        "country": "GB",
+        "zipCode": "W9 3RG",
+        "city": "London",
+        "state": "Great London."
+      },
+      "identify": {
+        "number": "76486883X",
+        "type": "DNI"
+      }
+    },
+    "merchantReference": "mustbe18cars",
+    "paymentReference": "Invoice ABC123",
+    "userId": "Merch_User_123",
+    "extra1": "extraData001",
+    "extra2": "extraData002",
+    "extra3": "extraData003",
+    "storedToken": "index-stored",
+    "tax": "21%",
+    "shippingAddress": {
       "street": "32 Windsor Gardens",
       "streetNumber": "24",
       "country": "GB",
@@ -36,40 +65,18 @@ content_markdown: |-
       "city": "London",
       "state": "Great London."
     },
-    "identify": {
-      "number": "76486883X",
-      "type": "DNI"
-    }
-  },
-  "merchantReference": "mustbe18cars",
-  "paymentReference": "Invoice ABC123",
-  "userId": "Merch_User_123",
-  "extra1": "extraData001",
-  "extra2": "extraData002",
-  "extra3": "extraData003",
-  "storedToken": "index-stored",
-  "tax": "21%",
-  "shippingAddress": {
-    "street": "32 Windsor Gardens",
-    "streetNumber": "24",
-    "country": "GB",
-    "zipCode": "W9 3RG",
-    "city": "London",
-    "state": "Great London."
-  },
-  "orderDetails": [
-    {
-      "productName": "shirt-1233474",
-      "quantity": 1,
-      "dimensions": "85x51",
-      "description": "Blue sports t-shirt "
-    }
-  ]
+    "orderDetails": [
+      {
+        "productName": "shirt-1233474",
+        "quantity": 1,
+        "dimensions": "85x51",
+        "description": "Blue sports t-shirt "
+      }
+    ]
   }
-
   ```
 
-  A successful response will return an HTTP status code of `201` and have the following schema:
+  An error response will return an HTTP error code and have the following schema:
 
 
   | Field   | Type   | Description                        |

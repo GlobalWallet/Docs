@@ -8,20 +8,16 @@ content_markdown: |-
 
   Sandbox Environment URLs
   {: .info }
-  #### Sandbox API 
-  https://api.sandbox.kibramoa.net
+  - API: https://api.sandbox.kibramoa.net
 
-  #### Sandbox Cashier (Hosted Payments Page)
-  https://cashier.sandbox.kibramoa.net
+  - Cashier (Hosted Payments Page): https://cashier.sandbox.kibramoa.net
 
   Production  Environment URLs
   {: .info }
 
-  #### Production API
-  https://api.kibramoa.net
+  - API: https://api.kibramoa.net
 
-  #### Production Cashier (Hosted Payments Page)
-  https://cashier.kibramoa.net
+  - Cashier (Hosted Payments Page): https://cashier.kibramoa.net
 
  
 left_code_blocks:

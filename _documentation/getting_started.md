@@ -9,17 +9,27 @@ content_markdown: |-
 
   Kibramoa API provides a modern user interface called CashierUI, this application provides a visual way for the merchant’s customers to initiate and complete payments using their preferred payment options from different countries. 
 
-  Using the API
+  ### Boarding
   {: .info }
 
-  You will need a test merchant account to generate the keys for .
+  Kibramoa boarding will setup a basic merchant account for access to all the payment options in different supported countries,
 
-  Integration Options
+  For access to Kibramoa systems you will need:
+    - Prefered countries.
+    - Merchant account setup.
+    - Merchant-portal access with users enabled.
+    - Generate an API KEY.
+
+  For more boarding details please contact us in [Kibramoa](https://kibramoa.com/).
+
+  If you already have an account and want to opperate in more countries, please contact our operations team.
+
+  ### Integration Options
   {: .info }
   
   The Kibramoa API offers the following types of integrations for payment processing:
   - Payment Form Integration called Cashier-UI
-  - Server to Server Integration (Merchant’s own payment form).
+  - Server to Server Integration (comming soon).
 
  
 left_code_blocks:

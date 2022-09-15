@@ -22,7 +22,10 @@ collections:
     position_number: 2
   countries:
     title: GEOs and Methods
-    position_number: 3 
+    position_number: 3
+  datatables:
+    title: Useful Data
+    position_number: 4
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

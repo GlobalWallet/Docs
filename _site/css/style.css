@@ -6,7 +6,7 @@ html { font-size: 62.5%; color: #474a54; background: #232323; height: 100vh; }
 
 img { max-width: 100%; }
 
-@media (max-width: 700px) { .sidebar, header > form { display: none; } .sidebar h6 { font-size: 1.4em; } .sidebar a { padding: 10px 0; } body .main { margin: 45px 0 0 0; } }
+@media (max-width: 1300px) { .sidebar, header > form { display: none; } .sidebar h6 { font-size: 1.4em; } .sidebar a { padding: 10px 0; } body .main { margin: 45px 0 0 0; } }
 
 body { font-size: 1.8em; line-height: 1.6; font-weight: 400; font-family: system, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Lucida Grande", sans-serif; background: #fbfbfb; }
 
@@ -90,13 +90,13 @@ h3 .endpoint { padding: 4px 6px; font-size: 19px; }
 
 .endpoint.post:after { content: "POST"; }
 
-.main { margin: 0 0 0 210px; border-left: 1px solid #eee; }
+.main { margin: 0 0 0 300px; border-left: 1px solid #eee; }
 
 .main h6 { font-size: 1.01em; padding: 0 0 6px 0; margin: 0; }
 
 .main .description { color: #aaa; margin-top: -11px; }
 
-@media (max-width: 700px) { .main { margin: 0; } }
+@media (max-width: 1300px) { .main { margin: 0; } }
 
 hr { border: 0; border-top: 1px solid #ddd; margin: 20px 0; }
 
@@ -162,7 +162,7 @@ header .open-nav:focus { outline: none; background-color: rgba(0, 0, 0, 0.05); }
 
 header .open-nav:hover { background-color: rgba(0, 0, 0, 0.1); }
 
-@media (min-width: 700px) { header { background-color: transparent; width: 210px; right: auto; bottom: auto; } header .copyright { display: block; } header .open-nav { display: none; } header h1 { box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1); } }
+@media (min-width: 1300px) { header { background-color: transparent; width: 300px; right: auto; bottom: auto; } header .copyright { display: block; } header .open-nav { display: none; } header h1 { box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1); } }
 
 #search-input { -webkit-appearance: none; display: block; margin: 0; padding: 10px 20px; width: 100%; box-sizing: border-box; border: 0; border-bottom: 1px solid rgba(0, 0, 0, 0.075); font-size: 1.5rem; font-weight: 600; line-height: 1.8; }
 

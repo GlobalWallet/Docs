@@ -2,9 +2,12 @@
 title: /payout-session
 position_number: 4
 type: post
-description: This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.
+description: Initiate a payout request on Kibramoa CashierUI.
 
 content_markdown: |-
+
+  This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.
+
 
   {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
@@ -12,29 +15,34 @@ content_markdown: |-
   {: .success }
   **Example request**
 
-  A curl request to request the cashier:
+  A example request for intiate a payout on the cashier:
 
   ```
+  POST /payout-session HTTP/1.1
+  Host: api.sandbox.kibramoa.net
+  X-API-KEY: pjxrlEFwzgYvP13V5LHWLZ5wiN6YHG***4771-a36b-d4a928c6457d
+  Content-Type: application/json
+  Content-Length: 485
+
   {
-  "country": "BR",
-  "currency": "BRL",
-  "amount": 150,
-  "redirectUrl": "https://merchant1.io/where/to/go",
-  "merchantReference": "custom_code 9982674851738108",
-  "description": "Additional remark for this payout.",
-  "userId": "merchant_user123",
-  "userAgent": "Mozilla/5.0 (X11; Linux x86_64)",
-  "userDevice": "DESKTOP",
-  "ip": "13.12.11.10",
-  "language": "PT",
-  "extra1": "merchant extra value 1",
-  "extra2": "merchant extra value 2",
-  "extra3": "merchant extra value 3"
+    "country": "BR",
+    "currency": "BRL",
+    "amount": 150,
+    "redirectUrl": "https://merchant1.io/where/to/go",
+    "merchantReference": "custom8108",
+    "description": "Additional remark for this payout.",
+    "userId": "merchant_user123",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64)",
+    "userDevice": "DESKTOP",
+    "ip": "13.12.11.10",
+    "language": "PT",
+    "extra1": "merchant extra value 1",
+    "extra2": "merchant extra value 2",
+    "extra3": "merchant extra value 3"
   }
-
   ```
 
-  A successful response will return an HTTP status code of `201` and have the following schema:
+  An error response will return an HTTP error code and have the following schema:
 
 
   | Field   | Type   | Description                        |
