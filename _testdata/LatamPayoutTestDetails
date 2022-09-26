@@ -21,23 +21,31 @@ content_markdown: |-
 
 
     # Mexico
-    Beneficiary's name: testname
-    Beneficiary's phone: 123456
-    Beneficiary's email: test@test.com
-    Beneficiary's account type: clabe
-    Beneficiary's account:  646180209100000014
-    Beneficiary's personal identification type:  RFC
-    Beneficiary's personal identification number: MAMB780915969
-    Beneficiary's Bank: Transfer
+
+    ## SPEI
+        Beneficiary's name: testname
+        Beneficiary's phone: 123456
+        Beneficiary's email: test@test.com
+        Beneficiary's account type: clabe
+        Beneficiary's account:  646180209100000014
+        Beneficiary's personal identification type:  RFC
+        Beneficiary's personal identification number: MAMB780915969
+        Beneficiary's Bank: Transfer
     
 
-    #Chile#
-    
+    # Ecuador
 
-    #Peru#
-    
+    ## Bank Transfer
+        Beneficiary's name: testname
+        Beneficiary's phone: 123456
+        Beneficiary's email: test@test.com
+        Beneficiary's account type: Savings
+        Beneficiary's account:  1111111111111
+        Account Digit: 1
+        Beneficiary's personal identification type:  DNI
+        Beneficiary's personal identification number: 11111111
+        Beneficiary's Bank: Transfer
 
-    #Ecuador#
 
       
 ---
