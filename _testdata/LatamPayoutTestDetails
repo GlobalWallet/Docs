@@ -9,13 +9,13 @@ content_markdown: |-
     
     #Brazil#
     ##PIX##
-    Beneficiary's name: testname
-    Beneficiary's phone: 123456
-    Beneficiary's email: test@test.com
-    Beneficiary's PIX account type: CPF
-    Beneficiary's PIX account:  12341234
-    Beneficiary's personal identification type:  CPF
-    Beneficiary's personal identification number: 50284414727
+        Beneficiary's name: testname
+        Beneficiary's phone: 123456
+        Beneficiary's email: test@test.com
+        Beneficiary's PIX account type: CPF
+        Beneficiary's PIX account:  12341234
+        Beneficiary's personal identification type:  CPF
+        Beneficiary's personal identification number: 50284414727
 
 
 
