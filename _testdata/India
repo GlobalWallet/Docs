@@ -1,0 +1,20 @@
+---
+title: Indian Solutions Test Data
+position_number: 2
+type: Data
+description: The following details to be used to simulate successful transactions in India
+
+content_markdown: |-
+    The following are details are needed to accept a successful Transaction on Sandbox.
+
+    UPI: 
+
+    Enter email test@test.com when asked for the UPI ID or the VPA
+
+
+
+    NetBanking:
+
+    Select KOTAK Bank from the bank list and Submit the Transaction on the following Page.
+      
+---

@@ -26,8 +26,8 @@ collections:
   datatables:
     title: Useful Data
     position_number: 4
-  TestData:
-    Title: Testing Details
+  testdata:
+    title: Testing Details
     position_number: 5
 plugins:
   - jekyll-sitemap
