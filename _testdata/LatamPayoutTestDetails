@@ -7,9 +7,9 @@ description: Payout details to be used to simulate Transactions in Latin America
 content_markdown: |-
     The following are details are needed to accept a successful Payout on Sandbox.
     
-    #Brazils#
+    # Brazil
 
-    ##PIX##
+    ## PIX
         Beneficiary's name: testname
         Beneficiary's phone: 123456
         Beneficiary's email: test@test.com
@@ -20,7 +20,7 @@ content_markdown: |-
 
 
 
-    #Mexico#
+    # Mexico
     Beneficiary's name: testname
     Beneficiary's phone: 123456
     Beneficiary's email: test@test.com
