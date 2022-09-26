@@ -1,0 +1,34 @@
+---
+title: Cards
+position_number: 1
+type: Data
+description: The following is a list of Card Countries and Currencies.
+
+
+content_markdown: |-
+
+    **Worldwide Countries**
+
+    | **Country**    | **Currency** |
+    | ---------------------------- | ------------------------- |
+    | **Europe**                      | EUR                  |
+    | **United Kingdom** | GBP                  |
+    | **Bulgarian Lev**    | BGN |
+    | **Swiss Franc**      | CHF |
+    | **Danish krone**     | DKK |
+    | **Euro**             | EUR |
+    | **Pound Sterling**   | GBP |
+    | **Croatian kuna**    | HRK |
+    | **Hungarian forint** | HUF |
+    | **Islandic krona**   | ISK |
+    | **Norwegian krona**  | NOK |
+    | **Polish złoty**     | PLN |
+    | **Romanian leu**     | RON |
+    | **Swedish krona**    | SEK |
+    
+
+
+    
+
+
+---
