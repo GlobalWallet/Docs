@@ -13,22 +13,15 @@ content_markdown: |-
     | ---------------------------- | ------------------------- |
     | **Europe**                      | EUR                  |
     | **United Kingdom** | GBP                  |
-    | **Bulgarian Lev**    | BGN |
-    | **Swiss Franc**      | CHF |
-    | **Danish krone**     | DKK |
-    | **Euro**             | EUR |
-    | **Pound Sterling**   | GBP |
-    | **Croatian kuna**    | HRK |
-    | **Hungarian forint** | HUF |
-    | **Islandic krona**   | ISK |
-    | **Norwegian krona**  | NOK |
-    | **Polish złoty**     | PLN |
-    | **Romanian leu**     | RON |
-    | **Swedish krona**    | SEK |
-    
-
-
-    
-
+    | **Bulgaria**    | BGN |
+    | **Switzerland**      | CHF |
+    | **Denmark**     | DKK |
+    | **Croatia**    | HRK |
+    | **Hungary** | HUF |
+    | **Iceland**   | ISK |
+    | **Norway**  | NOK |
+    | **Poland**     | PLN |
+    | **Romania**     | RON |
+    | **Sweden**    | SEK |
 
 ---
