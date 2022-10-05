@@ -39,12 +39,12 @@ content_markdown: |-
         Beneficiary's name: testname
         Beneficiary's phone: 123456
         Beneficiary's email: test@test.com
-        Beneficiary's account type: Savings
-        Beneficiary's account:  1111111111111
+        Beneficiary's account type: Checkings
+        Beneficiary's account:  00219400254640654321
         Account Digit: 1
-        Beneficiary's personal identification type:  DNI
-        Beneficiary's personal identification number: 11111111
-        Beneficiary's Bank: Transfer
+        Beneficiary's personal identification type:  PAS
+        Beneficiary's personal identification number: 123456789001
+        Beneficiary's Bank: Banco Central del Ecuador
 
 
       
