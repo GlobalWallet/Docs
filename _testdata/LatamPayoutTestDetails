@@ -10,11 +10,11 @@ content_markdown: |-
     # Brazil
 
     ## PIX
-        Beneficiary's name: testname
+        Beneficiary's name: John Doe
         Beneficiary's phone: 123456
         Beneficiary's email: test@test.com
         Beneficiary's PIX account type: CPF
-        Beneficiary's PIX account:  12341234
+        Beneficiary's PIX account:  50284414727
         Beneficiary's personal identification type:  CPF
         Beneficiary's personal identification number: 50284414727
 
@@ -37,15 +37,12 @@ content_markdown: |-
 
     ## Bank Transfer
         Beneficiary's name: testname
-        Beneficiary's phone: 123456
+        Beneficiary's phone: 4681234068
         Beneficiary's email: test@test.com
         Beneficiary's account type: Checkings
         Beneficiary's account:  00219400254640654321
-        Account Digit: 1
         Beneficiary's personal identification type:  PAS
-        Beneficiary's personal identification number: 123456789001
+        Beneficiary's personal identification number: 1235456789001
         Beneficiary's Bank: Banco Central del Ecuador
-
-
       
 ---
