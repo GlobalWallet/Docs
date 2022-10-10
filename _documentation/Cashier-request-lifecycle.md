@@ -1,5 +1,5 @@
 ---
-title: Cashier Request Life-cycle
+title: Cashier Payin Request Life-cycle
 position_number: 5
 parameters:
   - name:
@@ -12,7 +12,7 @@ content_markdown: |-
    ![kibramoa cashier sequence](/images/Cashier_Request_Api_Steps.png)
 
    *Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.
-
+---
 left_code_blocks:
   - code_block: |-
     title: 
@@ -21,5 +21,5 @@ right_code_blocks:
   - code_block:
     title:
     language:
----
+
 
