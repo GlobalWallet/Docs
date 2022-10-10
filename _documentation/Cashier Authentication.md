@@ -1,6 +1,6 @@
 ---
 title: Authentication
-position_number: 6
+position_number: 7
 parameters:
   - name:
     content:
