@@ -8,15 +8,22 @@ content_markdown: |-
     The following are details are needed to accept a successful Transaction on Sandbox.
 
      Card Number: 5200000000000007
+
       Card expiry : 01/2023
+
       Card CVV: 111
+
       Name on Card: cardholder name
+
       Currency: EUR
 
      Card Number: 5457210001000019
       Card expiry : 01/2023
+
       Card CVV: 111
+
       Name on Card: cardholder name
+      
       Currency: USD
 
       
