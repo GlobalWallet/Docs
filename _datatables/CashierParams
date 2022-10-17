@@ -35,7 +35,7 @@ content_markdown: |-
     | **country\***    | string        | GB                 | Alpha-2 ISO Country code   |
     | **zipCode\***    | string        | W9 3RG             | Customer Postcode          |
     | **city***         | string        | London             | Shipping City/Town         |
-    | **state***        | string        | Great London.      | Shipping State/ Region.    |
+    | **state**        | string        | Great London.      | Shipping State/ Region.    |
 
     | **Parameter**   | **Data Type** | **Example**      | **Description**                                  |
     | --------------- | ------------- | ---------------- | ------------------------------------------------ |
@@ -55,7 +55,7 @@ content_markdown: |-
     | **country**      | string        | GB                 | Alpha-2 ISO Country code   |
     | **zipCode\***    | string        | W9 3RG             | The postcode.              |
     | **city***         | string        | London             | Shipping City/Town         |
-    | **state***        | string        | Great London.      | Shipping State/ Region.    |
+    | **state**        | string        | Great London.      | Shipping State/ Region.    |
 
     | **Parameter**   | **Data Type** | **Example**         | **Description**                                                                                             |
     | --------------- | ------------- | ------------------- | ----------------------------------------------------------------------------------------------------------- |
