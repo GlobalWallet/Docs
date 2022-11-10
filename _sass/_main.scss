@@ -449,6 +449,7 @@ header {
 	background-color: $nav-background-color;
 
 	h1 {
+		overflow-y: hidden;
 		height: $nav-header-height;
 		box-sizing: border-box;
 		background-color: $brand-colour;
