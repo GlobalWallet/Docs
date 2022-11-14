@@ -11,113 +11,182 @@ content_markdown: |-
 
     | **Payment Solution Name**    | **Payment Solution Type** |
     | ---------------------------- | ------------------------- |
-    | **PIX**                      | Transfer                  |
-    | **Deposit/Transfer Express** | Transfer                  |
-    | **Boleto Rapido**            | Cash                      |
-    | **Lotopay**                  | Cash                      |
-    | **Mercado Pago**             | eWallet                   |
-    | **Picpay**                   | eWallet                   |
-    | **Smileone**                 | Cash                      |
-    | **Ame**                      | Cash                      |
-    | **Paypal**                   | eWallet                   |
-    | **Cartao de Credito**        | Cash                      |
-    | **Payouts**                  | Transfer                  |
+    |PIX|Transfer|
+    |Deposit/Transfer Express|Transfer|
+    |Boleto Rapido|Cash|
+    |Lotopay|Cash|
+    |Mercado Pago|eWallet|
+    |Picpay|eWallet|
+    |Smileone|Cash|
+    |Ame|Cash|
+    |Paypal|eWallet|
+    |Cartao de Credito|Cash|
+    |Payouts|Transfer|
+    |Banco Du Brasil|Transfer|
+    |Banrisul|Transfer|
+    |Itau|Transfer|
+    |Santander|Transfer|
+    |Bradesco|Transfer|
+    |Loterias Caixa|Cash|
+    |Bradesco|Cash|
+    |Boleto Bancario|Cash|
+    |Boleto Flash|Cash|
+
 
     **Mexico**:  Country: MX Currency: MXN
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
-    | **SPEI Payin**            | Transfer                  |
-    | **OXXO**                  | Cash                      |
-    | **Seven-Eleven**          | Cash                      |
-    | **Sams Club**             | Cash                      |
-    | **Walmart**               | Cash                      |
-    | **Superama**              | Cash                      |
-    | **Waldos**                | Cash                      |
-    | **Alsuper**               | Cash                      |
-    | **AirPak**                | Cash                      |
-    | **Superama**              | Cash                      |
-    | **Circulo K**             | Cash                      |
-    | **Todito**                | eWallet                   |
-    | **SPEI Payout**           | Transfer                  |
+    |SPEI Payin|Transfer|
+    |OXXO|Cash|
+    |Seven-Eleven|Cash|
+    |Sams Club|Cash|
+    |Walmart|Cash|
+    |Superama|Cash|
+    |Waldos|Cash|
+    |Alsuper|Cash|
+    |AirPak|Cash|
+    |Circulo K|Cash|
+    |Todito|eWallet|
+    |SPEI Payout|Transfer|
+    |Santander|Transfer|
+    |BBVA|Transfer|
+    |Scotiabank|Transfer|
+    |HSBC|Transfer|
+    |Afirme|Transfer|
+    |Banorte|Transfer|
+    |SPEI|Transfer|
+    |Santander|Cash|
+    |Scotiabank|Cash|
+    |Banco Azteca|Cash|
+    |BBVA|Cash|
+    |HSBC|Cash|
+    |Afirme|Cash|
+    |Banorte|Cash|
+    |Bodega Aurrera|Cash|
+    |Super Farmacia|Cash|
+    |Farmacias del Ahorro|Cash|
+    |Prenda Mex|Cash|
+    |benavides|Cash|
+    |Extra|Cash|
+    |Chrohrua|Cash|
+    |Telecomm|Cash|
+    |Comercial Mexicana|Cash|
+    |Farmacias Santa Maria|Cash|
+    |Soriana|Cash|
+    |Calimax|Cash|
+    |Roma|Cash|
+    |Farmacia La Mad Barata|Cash|
+    |Waldo's|Cash|
 
     **Chile**:  Country: CL Currency: CLP
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
-    | **Banco Estado**          | Transfer                  |
-    | **Banco de Chile**        | Transfer                  |
-    | **BCi**                   | Transfer                  |
-    | **TBanc**                 | Transfer                  |
-    | **Scotiabank azul**       | Transfer                  |
-    | **CajaVacina**            | Cash                      |
-    | **aCuenta**               | Cash                      |
-    | **ServiEstado**           | Cash                      |
-    | **Lider**                 | Cash                      |
-    | **Bank Transfer**         | Transfer                  |
+    |Banco Estado|Transfer|
+    |Banco de Chile|Transfer|
+    |BCi|Transfer|
+    |TBanc|Transfer|
+    |Scotiabank azul|Transfer|
+    |CajaVacina|Cash|
+    |aCuenta|Cash|
+    |ServiEstado|Cash|
+    |Lider|Cash|
+    |Bank Transfer|Transfer|
+    |express Lider|Cash|
+    |Mach|QR|
+
 
     **Colombia**: Country: CO Currency: COP
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
-    | **PSE Payin**             | Transfer                  |
-    | **Efecty**                | Cash                      |
-    | **Su Red**                | Cash                      |
-    | **Baloto**                | Cash                      |
-    | **Tpaga**                 | eWallet                   |
-    | **PSE Payout**            | Transfer                  |
+    |PSE Payin|Transfer|
+    |Efecty|Cash|
+    |Su Red|Cash|
+    |Baloto|Cash|
+    |Tpaga (ewallet)|eWallet|
+    |Dimonex|Cash|
+    |MovilRed|Cash|
+    |PSE Payout|Transfer|
 
     **Peru**: Country: PE Currency: PEN
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
-    | **BCP**                   | Transfer                  |
-    | **BBVA**                  | Transfer                  |
-    | **Caja Arequipa**         | Transfer                  |
-    | **Caja Huancayo**         | Transfer                  |
-    | **Caja Tacna**            | Transfer                  |
-    | **Caja Trujillo**         | Transfer                  |
-    | **Interbank**             | Transfer                  |
-    | **Scotiabank**            | Transfer                  |
+    |BCP                        |Transfer|
+    |BBVA                       |Transfer|
+    |Caja Arequipa              |Transfer|
+    |Caja Huancayo|Transfer|
+    |Caja Tacna|Transfer|
+    |Caja Trujillo|Transfer|
+    |Interbank|Transfer|
+    |Scotiabank|Transfer|
+    |PSE Bank Transfer|Transfer|
+    |BCP|Cash|
+    |BBVA|Cash|
+    |Interbank|Cash|
+    |Caja Tacna|Cash|
+    |Bankco Ripley|Cash|
+    |Raiz|Cash|
+    |Western Union|Cash|
+    |Caja Arequipa|Cash|
+    |Scotiabank|Cash|
+    |Leon XIII|Cash|
+    |Caja Trujillo|Cash|
+    |Norandino|Cash|
+    |Banco Pichincha|Cash|
+    |Caja Lost Andes|Cash|
+    |Caja Del Santa|Cash|
+    |Caja Huancayo|Cash|
+    |Qapaq|Cash|
+    |CajaPaita|Cash|
+    |Scotiabank Agente|Cash|
+    |Agente Kasnet|Cash|
+    |Tambo|Cash|
+    |BCP Agente|Cash|
+    |BBVA Agente|Cash|
+    |Interbank Agenta|Cash|
+    |Banco Azteca|Cash|
+    |Cuotealo BCP|Loan|
 
     **Ecuador**: Country: EC Currency: USD
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
-    | **Banco Guayaquil**       | Transfer                  |
-    | **Banco Pichincha**       | Transfer                  |
+    |Banco Guayaquil|Transfer|
+    |Banco Pichincha |Transfer|
+    |Banco Pichincha|Cash|
+    |Banco del Barrio|Cash|
+    |Farmacias 911|Cash|
+    |TIA|Cash|
+    |MiVecino|Cash|
+    |active Wester Union|Cash|
+    |mi comisaraio|Cash|
 
     **El Salvador**:Country: SV Currency: USD
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
-    | **Punto Express**         | Cash                      |
-    | **Tiendas Galo**          | Cash                      |
-    | **Fedecaces**             | Cash                      |
-    | **Fedecrece**             | Cash                      |
-    | **Superselectos**         | Cash                      |
-    | **AirPark**               | Cash                      |
-    | **Farmacias Economicas**  | Cash                      |
-    | **Pago724**               | Cash                      |
-    | **Credicomer**            | Cash                      |
-    | **Integral**              | Cash                      |
-    | **El Gallo mas Gallo**    | Cash                      |
+    |Punto Express |Cash|
+    |Tiendas Galo|Cash|
+    |Fedecaces|Cash|
+    |Fedecrece|Cash|
+    |Superselectos|Cash|
+    |AirPark|Cash|
+    |Farmacias Economicas|Cash|
+    |Pago724|Cash|
+    |Credicomer|Cash|
+    |Integral|Cash|
+    |El Gallo mas Gallo|Cash|
 
     **Panama**: Country: PA Currency: USD
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
-    | **Punto Express**         | Cash                      |
-    | **Tiendas Galo**          | Cash                      |
-    | **Fedecaces**             | Cash                      |
-    | **Fedecrece**             | Cash                      |
-    | **Superselectos**         | Cash                      |
-    | **AirPark**               | Cash                      |
-    | **Farmacias Economicas**  | Cash                      |
-    | **Pago724**               | Cash                      |
-    | **Credicomer**            | Cash                      |
-    | **Integral**              | Cash                      |
-    | **El Gallo mas Gallo**    | Cash                      |
+    |Western Union|	Transfer|
+    |Western Union|	Cash|
+
 
     **Costa Rica**: Country: CR Currency: CRC
 
@@ -129,12 +198,17 @@ content_markdown: |-
 
     | **Payment Solution Name** | **Payment Solution Type** |
     | ------------------------- | ------------------------- |
-    | **Banco Industrial**      | Transfer                  |
-    | **Punto Express**         | Transfer                  |
-    | **Caja Desarrollo**       | Transfer                  |
-    | **Banco de Antigua**      | Transfer                  |
-    | **Super 24**              | Transfer                  |
-    | **Fundación Genesis**     | Transfer                  |
+    |Banco Industrial|Transfer|
+    |Punto Express|Cash|
+    |Caja Desarrollo|Transfer|
+    |Banco de Antigua|Transfer|
+    |Super 24|Transfer|
+    |Fundación Genesis|Transfer|
+    |Punto Express|Cash|
+    |Fundación Genesis|Cash|
+    |Caja Desarrollo|Cash|
+    |Banco de Antigua|Cash|
+    |Super 24|Cash|
 
 
 ---
