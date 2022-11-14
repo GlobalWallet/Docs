@@ -1,0 +1,63 @@
+---
+title: South East Asia
+position_number: 5
+type: Data
+description: The following is a list of Supported Countries, Currencies and Methods.
+
+
+content_markdown: |-
+
+
+    **Malaysia**: Country: MY Currency: MYR
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    |Maybank|Transfer|
+    |Hong Leong|Transfer|
+    |CIMB|Transfer|
+    |Public|Transfer|
+    |RHB|Transfer|
+    |BSN Bank|Transfer|
+    |Ambank|Transfer|
+    |Bank Rakyat|Transfer|
+    |Bank Islam |Transfer|
+    |Dutnow QR|QR|
+    |Tng Ewallet |eWallet|
+
+
+    **Singapore**: Country: SG Currency: SGD
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    |DBS/POSB|Transfer|
+    |UOB|Transfer|
+    |OCBC|Transfer|
+    |Standard Charter|Transfer|
+    |Maybank|Transfer|
+
+    **Thailand**: Country: TH Currency: THB
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    |Kasikornbank|Transfer|
+    |Siam Commercial Bank|Transfer|
+    |Krung thai |Transfer|
+    |Bangkok Bank |Transfer|
+    |ThaiQR|QR|
+
+    **Vietnam**: Country: VN Currency: VND
+
+    | **Payment Solution Name** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    |BIDV|Transfer|
+    |SACOM|Transfer|
+    |Techcom|Transfer|
+    |Vietcom|Transfer|
+    |Vietin|Transfer|
+    |VietQR|QR|
+
+
+
+
+
+---    
