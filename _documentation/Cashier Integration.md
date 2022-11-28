@@ -5,12 +5,15 @@ parameters:
   - name:
     content:
 content_markdown: |-
-  The Cashier will allow the merchants to manage payments fast and safe :
-  - A link to CashierUI will be generated for the merchant platform after session requesting.
-  - To load the cashier the merchant would have to be boarded and generate an API key from merchant portal. This API key once generated needs to be used when calling the Kibramoa Gateway cashier.
-  - The HTTP header needs to have the Merchant API key added before the cashier can be called.
+  CashierUI displays all the payment options available for the merchant, users can choose their favourite payment option, later the payment is managed and secured by kibramoa.
 
+  Fast integration flow:
+  - A link to CashierUI will be generated for the merchant platform after session requesting.
+  - Merchant would have to be boarded and generate his API key from merchant portal in order to access CashierUI API.
+  - The HTTP header must attach the Merchant API key before open a new session on the CashierUI API call.
+  - When payment is completed by user, Kibramoa will redirect to merchant website and notify the payment by a webhook.
  
+  ![User and merchant actions on CashierUI](/images/FLOW2.png)
 left_code_blocks:
   - code_block:
     title:
