@@ -1,6 +1,6 @@
 ---
 title: /notifications
-position_number: 8
+position_number: 5
 type: post
 description: Payment notifications happen once payment reach the PSP, they will be submitted to the merchant notification url previously configured on the merchant portal.
 

@@ -1,6 +1,6 @@
 ---
 title: /payout-session
-position_number: 4
+position_number: 2
 type: post
 description: Initiate a payout request on Kibramoa CashierUI.
 

@@ -1,6 +1,6 @@
 ---
 title: /payout-options/{country}
-position_number: 1
+position_number: 2
 type: get
 description: Get Payout options based on country
 

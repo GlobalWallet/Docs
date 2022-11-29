@@ -17,11 +17,11 @@ collections:
   documentation:
     title: Overview
     position_number: 1
-  api:
-    title: API Endpoints
-    position_number: 2
   cashier:
-    title: Cashier Api Endpoints
+    title: CashierUI API Endpoints
+    position_number: 2  
+  api:
+    title: Direct API Endpoints
     position_number: 3
   countries:
     title: GEOs and Methods

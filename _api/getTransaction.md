@@ -1,6 +1,6 @@
 ---
 title: /payments/{transactionId}
-position_number: 3
+position_number: 1
 type: get
 description: Get transaction details from kibramoa. 
 
