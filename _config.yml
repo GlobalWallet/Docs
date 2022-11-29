@@ -20,15 +20,18 @@ collections:
   api:
     title: API Endpoints
     position_number: 2
+  cashier:
+    title: Cashier Api Endpoints
+    position_number: 3
   countries:
     title: GEOs and Methods
-    position_number: 3
+    position_number: 4
   datatables:
     title: Useful Data
-    position_number: 4
+    position_number: 5
   testdata:
     title: Testing Details
-    position_number: 5
+    position_number: 6
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
