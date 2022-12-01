@@ -1,0 +1,45 @@
+---
+title: Easy P2P
+position_number: 6
+type: Data
+description: The following is a list of Supported Countries, Currencies and Methods.
+
+
+content_markdown: |-
+
+    **India**: Country: IN Currency: INR
+
+    | **Bank** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    |UPI                        |Transfer                   |
+    |PayTM                      |Transfer                   |
+    |IMPS                       |Transfer                   |
+    |NEFT                       |Transfer                   |
+    |RTGS                       |Transfer                   |
+
+    **Russia**: Country: RU Currency: RUB
+
+    | **Bank** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    |VTB                        |Transfer                   |
+    |Mobile Sberbank            |Transfer                   |
+    |Alfa Bank                  |Transfer                   |
+    |Qiwi                       |Transfer                   |
+
+    **Turkey**: Country: TR Currency: TRY
+
+    | **Bank** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    |Akbank                     |Transfer                   |
+    |IsBankasi                  |Transfer                   |
+
+    **UAE**: Country: AE Currency: AED
+
+    | **Bank** | **Payment Solution Type** |
+    | ------------------------- | ------------------------- |
+    |ADCB                       |Transfer                   |
+    |Emirates NBD               |Transfer                   |
+    |Any Bank Dubai             |Transfer                   |
+
+
+---
