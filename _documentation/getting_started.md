@@ -22,7 +22,7 @@ content_markdown: |-
 
   For more boarding details please contact us in [Kibramoa](https://kibramoa.com/).
 
-  If you already have an account and want to opperate in more countries, please contact our operations team.
+  If you already have an account and want to operate in more countries, please contact our operations team.
 
   ### Integration Options
   {: .info }

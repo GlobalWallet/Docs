@@ -7,21 +7,13 @@ description: The following is a list of Card Countries and Currencies.
 
 content_markdown: |-
 
-    **Worldwide Countries**
+    **Worldwide Card processing**
+
+    Global Processing with KYC Under MCC: 8999(Wallet)
 
     | **Country**    | **Currency** |
     | ---------------------------- | ------------------------- |
-    | **Europe**                      | EUR                  |
-    | **United Kingdom** | GBP                  |
-    | **Bulgaria**    | BGN |
-    | **Switzerland**      | CHF |
-    | **Denmark**     | DKK |
-    | **Croatia**    | HRK |
-    | **Hungary** | HUF |
-    | **Iceland**   | ISK |
-    | **Norway**  | NOK |
-    | **Poland**     | PLN |
-    | **Romania**     | RON |
-    | **Sweden**    | SEK |
+    | **Europe**                   | EUR                       |
+    |**WorldWide                   | USD                       |
 
 ---
