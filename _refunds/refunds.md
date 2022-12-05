@@ -10,23 +10,11 @@ content_markdown: |-
   {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
-  {: .success }
-  **Example request**
+  Request parameters: 
 
-  Request example for refunds:
-
-  ```
-  POST /refund/by-reference HTTP/1.1
-  Host: api.sandbox.kibramoa.net
-  X-API-KEY: pjxrlEFwzgYvP13V5LHWLZ5wi******71-a36b-d4a928c6457d
-  Content-Type: application/json
-  Content-Length: 67
-
-  {
-    "merchantReference": "your-reference"
-  }
-
-  ```
+  | Field   | Type   | Description                        |
+  | ------- | ------ | ---------------------------------- |
+  | merchantReference | string | Reference of the transaction submitted by the merchant |
 
   A successful response will return an HTTP status code of `201` and have the following schema:
 
@@ -35,11 +23,15 @@ content_markdown: |-
   | ------- | ------ | ---------------------------------- |
   | StatusCode | string | If an error is returned the error code is shown here |
   | message | string | the CashierUrl or A message of the error             |
-
-
   
 right_code_blocks:
-  - code_block: |1-
+  - code_block: |1-    
+        {
+          "merchantReference": "your-reference"
+        }
+    title: Request
+    language: json
+  - code_block: |2-
       {  
         "statusCode": "000",
         "errorReason": "Success",
@@ -57,7 +49,7 @@ right_code_blocks:
       }
     title: Response
     language: json
-  - code_block: |2-    
+  - code_block: |3-    
           {
             "statusCode": 400,
             "message": "Business Failed"
