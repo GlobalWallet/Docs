@@ -78,36 +78,48 @@ right_code_blocks:
     title: Redirect
     language: json
   - code_block: |4-    
-        {
-          "statusCode": "082",
-          "resultType": "request",
-          "result": {
-            "targetUrl": "https://sandbox.paymentgt.com/fundtransfer",
-            "method": "POST",
-            "contentType": "application/json",
-            "externalId": "my-00002",
-            "status": "PROCESSING",
-            "bodyPayload": {
-              "bankcode": "RHB",
-              "merchant": "Surepay88",
-              "amount": "130",
-              "refid": "my-00002",
-              "token": "a883c0f2c78cf5c0815ed97c1c06a5a5",
-              "customer": "Merch_User_123",
-              "currency": "MYR",
-              "language": "en",
-              "clientip": "84.232.140.77",
-              "post_url": "https://api.dev.kibramoa.net/notifications/surepay-apm/987441d2-c3b1-41e5-941a-000867bbd4a6",
-              "failed_return_url": "https://merchant.io/where-to-go",
-              "return_url": "https://merchant.io/where-to-go"
-            },
-            "queryParams": null,
-            "transactionId": "33aa5301-4056-41bb-99db-33b56121de37"
+         {
+            "statusCode": "081",
+            "resultType": "qrcode",
+            "result": {
+                "qrCodeString": "00020126600014BR.GOV.BCB.PIX011434882109000111022022120528C2DB42465B9D5204000053039865406130.005802BR5909Transfero6012RioDeJaneiro6224052022120528C2DB42465B9D6304108C",
+                "base64QRCode": "iVBORw0KGgoAAAANSUhEUgAAAVkAAAFZCAYAAAAy8lzbAAAAAXNSR0IArs4c...VVXXdC+J/.YII=",
+                "transactionId": "08174da1-9b12-431f-a1b2-0b676b9b80ea"
+            }
+         }
+    title: QRCode
+    language: json
+  - code_block: |5-    
+          {
+            "statusCode": "082",
+            "resultType": "request",
+            "result": {
+              "targetUrl": "https://sandbox.paymentgt.com/fundtransfer",
+              "method": "POST",
+              "contentType": "application/json",
+              "externalId": "my-00002",
+              "status": "PROCESSING",
+              "bodyPayload": {
+                "bankcode": "RHB",
+                "merchant": "Surepay88",
+                "amount": "130",
+                "refid": "my-00002",
+                "token": "a883c0f2c78cf5c0815ed97c1c06a5a5",
+                "customer": "Merch_User_123",
+                "currency": "MYR",
+                "language": "en",
+                "clientip": "84.232.140.77",
+                "post_url": "https://api.dev.kibramoa.net/notifications/surepay-apm/987441d2-c3b1-41e5-941a-000867bbd4a6",
+                "failed_return_url": "https://merchant.io/where-to-go",
+                "return_url": "https://merchant.io/where-to-go"
+              },
+              "queryParams": null,
+              "transactionId": "33aa5301-4056-41bb-99db-33b56121de37"
+            }
           }
-        }
     title: Request
     language: json 
-  - code_block: |5-
+  - code_block: |6-
           {
             "statusCode": "083",
             "resultType": "receipt",
@@ -141,38 +153,38 @@ right_code_blocks:
            }
     title: Receipt
     language: json
-  - code_block: |6-    
-          {
-          "statusCode": "084",
-          "resultType": "info",
-          "result": {
-            "transactionId": "f5659201-a219-4be3-b14f-f2513280f236",
-            "bankName": "Banco do Brasil",
-            "paymentDetails": [],
-            "paymentLocations": [
-              {
-                "name": "Banco do Brasil",
-                "instructions": [
-                  "Após clicar no link para o seu Internet Banking, seguir as instruções abaixo",
-                  "Selecione a opção \"Débito em Conta\" e informe sua agência e conta corrente",
-                  "Verifique se seu nome aparece corretamente e digite sua senha eletrônica",
-                  "Digite sua senha de 6 dígitos e clique no botão continuar",
-                  "Clique no botão \"Concordo\" e confirme sua compra"
-                ]
-              }
-            ],
-            "redirectUrl": "https://sandbox-gateway.safetypay.com/banksgateway/9165/251168"
-          }
-          }
-    title: Info
-    language: json
   - code_block: |7-    
            {
+            "statusCode": "084",
+            "resultType": "info",
+            "result": {
+              "transactionId": "f5659201-a219-4be3-b14f-f2513280f236",
+              "bankName": "Banco do Brasil",
+              "paymentDetails": [],
+              "paymentLocations": [
+                {
+                  "name": "Banco do Brasil",
+                  "instructions": [
+                    "Após clicar no link para o seu Internet Banking, seguir as instruções abaixo",
+                    "Selecione a opção \"Débito em Conta\" e informe sua agência e conta corrente",
+                    "Verifique se seu nome aparece corretamente e digite sua senha eletrônica",
+                    "Digite sua senha de 6 dígitos e clique no botão continuar",
+                    "Clique no botão \"Concordo\" e confirme sua compra"
+                  ]
+                }
+              ],
+              "redirectUrl": "https://sandbox-gateway.safetypay.com/banksgateway/9165/251168"
+            }
+           }
+    title: Info
+    language: json
+  - code_block: |8-    
+            {
             "statusCode": 400,
             "message": [
                 "This session was completed."
             ]
-           }
+            }
     title: Error
     language: json 
 ---
