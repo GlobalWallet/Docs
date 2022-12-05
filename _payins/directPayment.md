@@ -180,10 +180,10 @@ right_code_blocks:
     language: json
   - code_block: |8-    
             {
-            "statusCode": 400,
-            "message": [
-                "This session was completed."
-            ]
+              "statusCode": 400,
+              "message": [
+                  "This session was completed."
+              ]
             }
     title: Error
     language: json 
