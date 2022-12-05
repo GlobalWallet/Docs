@@ -27,5 +27,26 @@ content_markdown: |-
 
       Currency: USD
 
+    Test Card for Global Processing with KYC
+
+    EUR
+
+     Card Number: 4596610015729187
+      
+      Card Expiry: 12/27
+      
+      Card CVV: 431
+      
+      Name on Card: LORENZO CARDELLI
+
+    USD
+     Card Number: Card number: 4761739001010036
+      
+      Card Expiry: 12/23
+      
+      Card CVV: 123
+      
+      Name on Card: Card test
+
       
 ---
