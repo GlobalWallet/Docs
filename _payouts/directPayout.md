@@ -26,15 +26,11 @@ content_markdown: |-
   | extra | string(255) | Optional payload for help merchant to track this payout. |
   | *formData | Object | Form parameters filled by end user, they change regarding the 'option' chosen, check Testing Details for more info. |
 
-  Success response have the following schema:
+  Response:
 
   | Field   | Type   | Description                        |
   | ------- | ------ | ---------------------------------- |
-  | currencies | array | Array of strings indicating the currencies allowed. | 
-  | arrivalCurrency | string | Currency of used by the destination account. | 
-  | name | string | Name of the payout option. | 
-  | logo | string | Payment option logo url. | 
-  | formInputs | array | Array that represent a set of input fields to be filled by end-user. Refer to Useful Data section for futher details. | 
+  | result | string | Payout result message. |
 
   An error response will return an HTTP error code and have the following schema:
 
