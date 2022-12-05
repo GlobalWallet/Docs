@@ -30,7 +30,11 @@ content_markdown: |-
 
   | Field   | Type   | Description                        |
   | ------- | ------ | ---------------------------------- |
-  | *result | string | If an error is returned the error code is shown here. | 
+  | currencies | array | Array of strings indicating the currencies allowed. | 
+  | arrivalCurrency | string | Currency of used by the destination account. | 
+  | name | string | Name of the payout option. | 
+  | logo | string | Payment option logo url. | 
+  | formInputs | array | Array that represent a set of input fields to be filled by end-user. Refer to Useful Data section for futher details. | 
 
   An error response will return an HTTP error code and have the following schema:
 
