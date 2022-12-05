@@ -83,7 +83,14 @@
 					
 						<li>
 							<a href="/#documentationCashier-request-lifecycle">
-								Cashier Request Life-cycle
+								Cashier Payin Request Life-cycle
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#documentationCashier-Payout">
+								Cashier Payout Request Life-cycle
 								
 							</a>
 						</li>
@@ -108,40 +115,128 @@
 	
 		
 			<section>
-				<h6>API Endpoints</h6>
+				<h6>CashierUI API Endpoints</h6>
 				<ul>
 					
 					
 						<li>
-							<a href="/#apicashiersession">
+							<a href="/#cashiercashiersession">
 								/payment-session
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apigetTransaction">
-								/payments/{transactionId}
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#apiPayouts">
+							<a href="/#cashierpayouts">
 								/payout-session
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Direct API Endpoints</h6>
+				<ul>
+					
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Payins</h6>
+				<ul>
+					
+					
 						<li>
-							<a href="/#apirefunds">
-								/refund/by-reference
+							<a href="/#payinspaymentOptions">
+								/payment-options
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apiNotifications">
+							<a href="/#payinsdirectPayment">
+								/direct-payment
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Payouts</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#payoutspayoutOptions">
+								/payout-options
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#payoutsdirectPayout">
+								/direct-payout
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Transaction Query</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#transaction-querygetTransaction">
+								/payments/{transactionId}
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Refunds</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#refundsrefunds">
+								/refund/by-reference
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Notifications</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#notificationsnotifications">
 								/notifications
 								<span class="endpoint post"></span>
 							</a>
@@ -156,6 +251,13 @@
 				<h6>GEOs and Methods</h6>
 				<ul>
 					
+					
+						<li>
+							<a href="/#countriesWorldwide">
+								Cards
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
 					
 						<li>
 							<a href="/#countriesAfrica">
@@ -174,6 +276,20 @@
 						<li>
 							<a href="/#countriesLatam">
 								Latin America
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#countriesSouthEastAsia">
+								South East Asia
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#countriesEasyP2P">
+								Easy P2P
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
@@ -206,6 +322,37 @@
 			</section>
 		
 	
+		
+			<section>
+				<h6>Testing Details</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#testdataLatamPayoutTestDetails">
+								Latin America Test Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#testdataCardTestingDetails">
+								Card Test Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#testdataIndia">
+								Indian Solutions Test Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
 </div>
 
 
@@ -227,51 +374,19 @@
 	window.data = {
 		
 			
-				
-					
-						
-						
-						"api-notifications": {
-							"id": "api-notifications",
-							"title": "/notifications",
-							"category": "api",
-							"description": "Payment notifications happen once payment reach the PSP, they will be submitted to the merchant notification url previously configured on the merchant portal.",
-		  				"type": "post",
-							"url": "/#apiNotifications",
-							"content": ""
-						}
-						
-					
-				
+		
 			
 				
 					
-						,
 						
-						"api-payouts": {
-							"id": "api-payouts",
-							"title": "/payout-session",
-							"category": "api",
-							"description": "Initiate a payout request on Kibramoa CashierUI.",
-		  				"type": "post",
-							"url": "/#apiPayouts",
-							"content": ""
-						}
 						
-					
-				
-			
-				
-					
-						,
-						
-						"api-cashiersession": {
-							"id": "api-cashiersession",
+						"cashier-cashiersession": {
+							"id": "cashier-cashiersession",
 							"title": "/payment-session",
-							"category": "api",
+							"category": "cashier",
 							"description": "initiates a payment session on Kibramoa CashierUI regarding country and currency.",
 		  				"type": "post",
-							"url": "/#apicashiersession",
+							"url": "/#cashiercashiersession",
 							"content": ""
 						}
 						
@@ -282,30 +397,13 @@
 					
 						,
 						
-						"api-gettransaction": {
-							"id": "api-gettransaction",
-							"title": "/payments/{transactionId}",
-							"category": "api",
-							"description": "Get transaction details from kibramoa.",
-		  				"type": "get",
-							"url": "/#apigetTransaction",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"api-refunds": {
-							"id": "api-refunds",
-							"title": "/refund/by-reference",
-							"category": "api",
-							"description": "Refund a previous authorized transaction on kibramoa system.",
+						"cashier-payouts": {
+							"id": "cashier-payouts",
+							"title": "/payout-session",
+							"category": "cashier",
+							"description": "Initiate a payout request on Kibramoa CashierUI.",
 		  				"type": "post",
-							"url": "/#apirefunds",
+							"url": "/#cashierpayouts",
 							"content": ""
 						}
 						
@@ -325,6 +423,23 @@
 							"description": "The following is a list of Supported Countries, Currencies and Methods.",
 		  				"type": "Data",
 							"url": "/#countriesAfrica",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"countries-easyp2p": {
+							"id": "countries-easyp2p",
+							"title": "Easy P2P",
+							"category": "countries",
+							"description": "The following is a list of Supported Countries, Currencies and Methods.",
+		  				"type": "Data",
+							"url": "/#countriesEasyP2P",
 							"content": ""
 						}
 						
@@ -359,6 +474,40 @@
 							"description": "The following is a list of Supported Countries, Currencies and Methods.",
 		  				"type": "Data",
 							"url": "/#countriesLatam",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"countries-southeastasia": {
+							"id": "countries-southeastasia",
+							"title": "South East Asia",
+							"category": "countries",
+							"description": "The following is a list of Supported Countries, Currencies and Methods.",
+		  				"type": "Data",
+							"url": "/#countriesSouthEastAsia",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"countries-worldwide": {
+							"id": "countries-worldwide",
+							"title": "Cards",
+							"category": "countries",
+							"description": "The following is a list of Card Countries and Currencies.",
+		  				"type": "Data",
+							"url": "/#countriesWorldwide",
 							"content": ""
 						}
 						
@@ -441,14 +590,31 @@
 					
 						,
 						
+						"documentation-cashier-payout": {
+							"id": "documentation-cashier-payout",
+							"title": "Cashier Payout Request Life-cycle",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "/#documentationCashier-Payout",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
 						"documentation-cashier-request-lifecycle": {
 							"id": "documentation-cashier-request-lifecycle",
-							"title": "Cashier Request Life-cycle",
+							"title": "Cashier Payin Request Life-cycle",
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
 							"url": "/#documentationCashier-request-lifecycle",
-							"content": ""
+							"content": "left_code_blocks:\n\n  code_block: |-\ntitle: \nlanguage: \nright_code_blocks:\n  code_block:\ntitle:\nlanguage:"
 						}
 						
 					
@@ -523,6 +689,188 @@
 				
 			
 		
+			
+				
+					
+						,
+						
+						"notifications-notifications": {
+							"id": "notifications-notifications",
+							"title": "/notifications",
+							"category": "notifications",
+							"description": "Payment notifications happen once payment reach the PSP, they will be submitted to the merchant notification url previously configured on the merchant portal.",
+		  				"type": "post",
+							"url": "/#notificationsnotifications",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"payins-directpayment": {
+							"id": "payins-directpayment",
+							"title": "/direct-payment",
+							"category": "payins",
+							"description": "Payment API endpoint to complete the session previously generated on Kibramoa.",
+		  				"type": "post",
+							"url": "/#payinsdirectPayment",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"payins-paymentoptions": {
+							"id": "payins-paymentoptions",
+							"title": "/payment-options",
+							"category": "payins",
+							"description": "Retreive all available payment options for given country, currency and amount parameters. Your merchant must be properly configured in order to retreive the payment options.",
+		  				"type": "post",
+							"url": "/#payinspaymentOptions",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"payouts-directpayout": {
+							"id": "payouts-directpayout",
+							"title": "/direct-payout",
+							"category": "payouts",
+							"description": "Initiates a Direct Payout on Kibramoa using the direct API.",
+		  				"type": "post",
+							"url": "/#payoutsdirectPayout",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"payouts-payoutoptions": {
+							"id": "payouts-payoutoptions",
+							"title": "/payout-options",
+							"category": "payouts",
+							"description": "Retreive all the payout options allowed for country, currency and amounts limits.",
+		  				"type": "post",
+							"url": "/#payoutspayoutOptions",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+		
+			
+				
+					
+						,
+						
+						"refunds-refunds": {
+							"id": "refunds-refunds",
+							"title": "/refund/by-reference",
+							"category": "refunds",
+							"description": "Refund a previous authorized transaction on kibramoa system.",
+		  				"type": "post",
+							"url": "/#refundsrefunds",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"testdata-cardtestingdetails": {
+							"id": "testdata-cardtestingdetails",
+							"title": "Card Test Data",
+							"category": "testdata",
+							"description": "Card details to be used to simulate card Transactions on Sandbox",
+		  				"type": "Data",
+							"url": "/#testdataCardTestingDetails",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"testdata-india": {
+							"id": "testdata-india",
+							"title": "Indian Solutions Test Data",
+							"category": "testdata",
+							"description": "The following details to be used to simulate successful transactions in India",
+		  				"type": "Data",
+							"url": "/#testdataIndia",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"testdata-latampayouttestdetails": {
+							"id": "testdata-latampayouttestdetails",
+							"title": "Latin America Test Data",
+							"category": "testdata",
+							"description": "Payout details to be used to simulate Transactions in Latin American solutions on Sandbox",
+		  				"type": "Data",
+							"url": "/#testdataLatamPayoutTestDetails",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"transaction-query-gettransaction": {
+							"id": "transaction-query-gettransaction",
+							"title": "/payments/{transactionId}",
+							"category": "transaction-query",
+							"description": "Get transaction details from kibramoa.",
+		  				"type": "get",
+							"url": "/#transaction-querygetTransaction",
+							"content": ""
+						}
+						
+					
+				
 			
 		
 	};

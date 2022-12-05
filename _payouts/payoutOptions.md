@@ -1,38 +1,42 @@
 ---
-title: /payout-options/{country}
-position_number: 2
-type: get
-description: Get Payout options based on country
+title: /payout-options
+position_number: 1
+type: post
+description: Retreive all the payout options allowed for country, currency and amounts limits.
 
 content_markdown: |-
-  This endpoint returns all payout options based on a country. It's a GET request and a valid ISO country code must be present in the route.  
+  This endpoint returns all payout options based on a country. It's a POST request with a json body specifing country, currency and amount for the payout.  
+  You can review the request and responses from kibramoa API on the right side.
 
   {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
-  {: .success }
-  **Example request**
+  Request parameters:
 
-  ```
-  GET /payout-options/BR HTTP/1.1
-  Host: api.sandbox.kibramoa.net
-  Accept: application/json
-  X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
-  ```
+  | Field   | Type   | Description                        |
+  | ------- | ------ | ---------------------------------- |
+  | country | string(2) | Country code ISO alpha 2. |
+  | currency | string(3) | Currency code ISO alpha 3. |
+  | amount | integer | Amount in decimal format, I.E: 100 = 1$ |
 
   An error response will return an HTTP error code and the following schema:
-
 
   | Field   | Type   | Description                        |
   | ------- | ------ | ---------------------------------- |
   | statusCode | string | If an error is returned the error code is shown here |
   | message | string | the CashierUrl or A message of the error             |
 
-
-  
 right_code_blocks:
-  - code_block: |1-
-     [
+  - code_block: |1-    
+     {
+        "country": "BR",
+        "currency": "BRL",
+        "amount": 1500
+     }
+    title: Request
+    language: json
+  - code_block: |2-
+      [
         {
         "name": "Bank Transfer",
         "logo": null,
@@ -81,7 +85,7 @@ right_code_blocks:
       ]
     title: Response
     language: json
-  - code_block: |2-    
+  - code_block: |3-    
          {
             "statusCode": 400,
             "message": [

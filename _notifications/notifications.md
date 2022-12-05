@@ -1,6 +1,6 @@
 ---
 title: /notifications
-position_number: 5
+position_number: 1
 type: post
 description: Payment notifications happen once payment reach the PSP, they will be submitted to the merchant notification url previously configured on the merchant portal.
 
@@ -10,8 +10,26 @@ content_markdown: |-
         
     ##### Notification body request
 
-    ```    
-    {
+    #####  Once notification reach merchant systems it MUST be replied back returning a HTTP response with 200 status code, otherwise Kibramoa system will re-send every hour.
+    
+    ##### Merchant is able to resubmit a notification manually using the merchant portal.
+     
+    #### Transaction status table
+
+    | Status| Description|
+    | ------------- |:-------------:|
+    | INIT          | Transaction initiated|
+    | USER_CANCEL   | User cancel        |
+    | PROCESSING    | Transaction is sent to PSP and waiting to be settled|
+    | COMPLETED     | Transaction is settled and confirmed.|
+    | ERROR         | Error happened during the processing.|
+    | DECINED       | Transaction was declined by PSP.|
+    | EXPIRED       | Expired transaction.|
+    | REFUNDED      | Refund transaction completed.|
+
+right_code_blocks:
+  - code_block: |1-    
+      {
         "internalId": "ee40a31b-a14f-48e2-a272-e3fc013f4735",
         "sessionId": "35eac8b8-e40b-447e-a214-8dd1f0e23996",
         "merchantName": "Fer Merchant",
@@ -65,23 +83,17 @@ content_markdown: |-
             "city": "London",
             "state": "Great London."
         }
-    }
-    ```
-    #####  Once notification reach merchant systems it MUST be replied back returning a HTTP response with 200 status code, otherwise Kibramoa system will re-send every hour.
-    
-    ##### Merchant is able to resubmit a notification manually using the merchant portal.
-     
-    #### Transaction status table
-
-    | Status| Description|
-    | ------------- |:-------------:|
-    | INIT          | Transaction initiated|
-    | USER_CANCEL   | User cancel        |
-    | PROCESSING    | Transaction is sent to PSP and waiting to be settled|
-    | COMPLETED     | Transaction is settled and confirmed.|
-    | ERROR         | Error happened during the processing.|
-    | DECINED       | Transaction was declined by PSP.|
-    | EXPIRED       | Expired transaction.|
-    | REFUNDED      | Refund transaction completed.|
-  
+      }
+    title: Notification Payload
+    language: json
+  - code_block: |2-    
+      {
+        "statusCode": 404,
+        "message": [
+          "Not found"
+        ],
+        "error": "Not found"
+       }
+    title: Error 404
+    language: json
 ---

@@ -93,7 +93,7 @@ right_code_blocks:
               "Transaction not found."
             ]
           }
-    title: Error 401
+    title: Error 404
     language: json
    
 ---

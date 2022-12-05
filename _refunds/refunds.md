@@ -1,6 +1,6 @@
 ---
 title: /refund/by-reference
-position_number: 4
+position_number: 1
 type: post
 description: Refund a previous authorized transaction on kibramoa system. 
 

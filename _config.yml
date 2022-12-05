@@ -23,15 +23,30 @@ collections:
   api:
     title: Direct API Endpoints
     position_number: 3
+  payins:
+    title: Payins
+    position_number: 4
+  payouts:
+    title: Payouts
+    position_number: 5
+  transaction-query:
+    title: Transaction Query
+    position_number: 6
+  refunds:
+    title: Refunds
+    position_number: 7
+  notifications:
+    title: Notifications
+    position_number: 8
   countries:
     title: GEOs and Methods
-    position_number: 4
+    position_number: 9
   datatables:
     title: Useful Data
-    position_number: 5
+    position_number: 10
   testdata:
     title: Testing Details
-    position_number: 6
+    position_number: 11
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

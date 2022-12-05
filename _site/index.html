@@ -83,7 +83,14 @@
 					
 						<li>
 							<a href="#documentationCashier-request-lifecycle">
-								Cashier Request Life-cycle
+								Cashier Payin Request Life-cycle
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#documentationCashier-Payout">
+								Cashier Payout Request Life-cycle
 								
 							</a>
 						</li>
@@ -108,40 +115,128 @@
 	
 		
 			<section>
-				<h6>API Endpoints</h6>
+				<h6>CashierUI API Endpoints</h6>
 				<ul>
 					
 					
 						<li>
-							<a href="#apicashiersession">
+							<a href="#cashiercashiersession">
 								/payment-session
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apigetTransaction">
-								/payments/{transactionId}
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a href="#apiPayouts">
+							<a href="#cashierpayouts">
 								/payout-session
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Direct API Endpoints</h6>
+				<ul>
+					
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Payins</h6>
+				<ul>
+					
+					
 						<li>
-							<a href="#apirefunds">
-								/refund/by-reference
+							<a href="#payinspaymentOptions">
+								/payment-options
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#apiNotifications">
+							<a href="#payinsdirectPayment">
+								/direct-payment
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Payouts</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#payoutspayoutOptions">
+								/payout-options
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#payoutsdirectPayout">
+								/direct-payout
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Transaction Query</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#transaction-querygetTransaction">
+								/payments/{transactionId}
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Refunds</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#refundsrefunds">
+								/refund/by-reference
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Notifications</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#notificationsnotifications">
 								/notifications
 								<span class="endpoint post"></span>
 							</a>
@@ -156,6 +251,13 @@
 				<h6>GEOs and Methods</h6>
 				<ul>
 					
+					
+						<li>
+							<a href="#countriesWorldwide">
+								Cards
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
 					
 						<li>
 							<a href="#countriesAfrica">
@@ -174,6 +276,20 @@
 						<li>
 							<a href="#countriesLatam">
 								Latin America
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#countriesSouthEastAsia">
+								South East Asia
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#countriesEasyP2P">
+								Easy P2P
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
@@ -198,6 +314,37 @@
 						<li>
 							<a href="#datatablesPayoutParams">
 								Payout Session Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Testing Details</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#testdataLatamPayoutTestDetails">
+								Latin America Test Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#testdataCardTestingDetails">
+								Card Test Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="#testdataIndia">
+								Indian Solutions Test Data
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
@@ -254,7 +401,7 @@
 
 <p>For more boarding details please contact us in <a href="https://kibramoa.com/">Kibramoa</a>.</p>
 
-<p>If you already have an account and want to opperate in more countries, please contact our operations team.</p>
+<p>If you already have an account and want to operate in more countries, please contact our operations team.</p>
 
 <h3 class="info" id="integration-options">Integration Options</h3>
 
@@ -283,12 +430,17 @@
 
 				
 
-				<p>The Cashier will allow the merchants to manage payments fast and safe :</p>
+				<p>CashierUI displays all the payment options available for the merchant, users can choose their favourite payment option, later the payment is managed and secured by kibramoa.</p>
+
+<p>Fast integration flow:</p>
 <ul>
   <li>A link to CashierUI will be generated for the merchant platform after session requesting.</li>
-  <li>To load the cashier the merchant would have to be boarded and generate an API key from merchant portal. This API key once generated needs to be used when calling the Kibramoa Gateway cashier.</li>
-  <li>The HTTP header needs to have the Merchant API key added before the cashier can be called.</li>
+  <li>Merchant would have to be boarded and generate his API key from merchant portal in order to access CashierUI API.</li>
+  <li>The HTTP header must attach the Merchant API key before open a new session on the CashierUI API call.</li>
+  <li>When payment is completed by user, Kibramoa will redirect to merchant website and notify the payment by a webhook.</li>
 </ul>
+
+<p><img src="/images/FLOW2.png" alt="User and merchant actions on CashierUI" /></p>
 
 
 				
@@ -362,7 +514,7 @@
 			<section class="left-docs">
 				<h3>
 					<a id="documentationCashier-request-lifecycle">
-						Cashier Request Life-cycle
+						Cashier Payin Request Life-cycle
 						
 					</a>
 					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier-request-lifecycle.md">Edit</a>
@@ -381,15 +533,33 @@
 
 
 				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationCashier-Payout">
+						Cashier Payout Request Life-cycle
 						
-								
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier-Payout">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier to process payouts.</p>
+
+<p>Sequence diagram with the comunication process between systems:</p>
+
+<p><img src="/images/Payout_flow.png" alt="kibramoa cashier sequence" /></p>
+
+<p>*Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.</p>
 
 
-<div title="" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-</code></pre></div></div>
-
-								
-						
+				
 			</section>
 			
 		</section>
@@ -446,6 +616,9 @@ Content-Type: application/json
 				
 <ul>
   <li>
+    <p><a href="/#countriesWorldwide">Worldwide</a></p>
+  </li>
+  <li>
     <p><a href="/#countriesAfrica">Africa</a></p>
   </li>
   <li>
@@ -453,6 +626,12 @@ Content-Type: application/json
   </li>
   <li>
     <p><a href="#countriesLatam">Latin America</a></p>
+  </li>
+  <li>
+    <p><a href="#countriesSouthEastAsia">South-East Asia</a></p>
+  </li>
+  <li>
+    <p><a href="#EasyP2P">Easy P2P</a></p>
   </li>
 </ul>
 
@@ -468,13 +647,13 @@ Content-Type: application/json
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apicashiersession">
+					<a id="cashiercashiersession">
 						/payment-session
 						
 							<span class="endpoint post"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/cashiersession.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_cashier/cashiersession.md">Edit</a>
 				</h3>
 				
 					<p class="description">initiates a payment session on Kibramoa CashierUI regarding country and currency.</p>
@@ -482,73 +661,13 @@ Content-Type: application/json
 
 				
 
-				
-<p>This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.</p>
+				<p>This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.</p>
 
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
 
-<p class="success"><strong>Example request</strong></p>
+<p>Payment will take place on cashierUI interface, user will need to complete the payment accordingly to the instruction and will be redirected back to merchant website indicated on the request.</p>
 
-<p>Body request example for create cashier payment session:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /payment-session
-Host: api.sandbox.kibramoa.net
-X-API-KEY: pjxrlEFwzgYvP13V5LHWLZ5wiN6YHGKA****8-0f95-4771-a36b-d4a928c6457d
-Content-Type: application/json
-Content-Length: 1387
-
-{
-  "country": "BR",
-  "currency": "BRL",
-  "amount": 13000,
-  "redirectUrl": "https://merchant.io/where-to-go",
-  "language": "ES",
-  "customer": {
-    "name": "John Doe",
-    "email": "john@email.test",
-    "phone": "+34666999666",
-    "userDevice": "MOBILE",
-    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
-    "ip": "84.232.140.77",
-    "address": {
-      "street": "32 Windsor Gardens",
-      "streetNumber": "24",
-      "country": "GB",
-      "zipCode": "W9 3RG",
-      "city": "London",
-      "state": "Great London."
-    },
-    "identify": {
-      "number": "76486883X",
-      "type": "DNI"
-    }
-  },
-  "merchantReference": "mustbe18cars",
-  "paymentReference": "Invoice ABC123",
-  "userId": "Merch_User_123",
-  "extra1": "extraData001",
-  "extra2": "extraData002",
-  "extra3": "extraData003",
-  "storedToken": "index-stored",
-  "tax": "21%",
-  "shippingAddress": {
-    "street": "32 Windsor Gardens",
-    "streetNumber": "24",
-    "country": "GB",
-    "zipCode": "W9 3RG",
-    "city": "London",
-    "state": "Great London."
-  },
-  "orderDetails": [
-    {
-      "productName": "shirt-1233474",
-      "quantity": 1,
-      "dimensions": "85x51",
-      "description": "Blue sports t-shirt "
-    }
-  ]
-}
-</code></pre></div></div>
+<p>Asynchronously Kibramoa will submit a request to the merchant server. It will be triggered once the payment result is returned from the payment processors.</p>
 
 <p>An error response will return an HTTP error code and have the following schema:</p>
 
@@ -583,23 +702,76 @@ Content-Length: 1387
 								
 
 
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
-   
-   </span><span class="nl">"cashierUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.dev.kibramoa.net?sessionId=54ed4d33-9c24-4ef0-a7f8-242920a657u5"</span><span class="w">
-
-   </span><span class="p">}</span><span class="w">
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13000</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@email.test"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+34666999666"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOBILE"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"identify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76486883X"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DNI"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mustbe18cars"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice ABC123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merch_User_123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData001"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData002"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData003"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"storedToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index-stored"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21%"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"shippingAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"orderDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shirt-1233474"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85x51"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue sports t-shirt "</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						
 								
 
 
-<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"cashierUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.dev.kibramoa.net?sessionId=54ed4d33-9c24-4ef0-a7f8-242920a657u5"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
-    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized"</span><span class="w">
-    
-    </span><span class="p">}</span><span class="w">
+						
+								
+
+
+<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						
@@ -610,13 +782,1082 @@ Content-Length: 1387
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apigetTransaction">
+					<a id="cashierpayouts">
+						/payout-session
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_cashier/payouts.md">Edit</a>
+				</h3>
+				
+					<p class="description">Initiate a payout request on Kibramoa CashierUI.</p>
+				
+
+				
+
+				<p>This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.</p>
+
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p class="success"><strong>Example request</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>StatusCode</td>
+      <td>string</td>
+      <td>If an error is returned the error code is shown here.</td>
+    </tr>
+    <tr>
+      <td>message</td>
+      <td>string</td>
+      <td>the CashierUrl or A message of the error.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant1.io/where/to/go"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom8108"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional remark for this payout."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant_user123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64)"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DESKTOP"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.12.11.10"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 1"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 2"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 3"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"cashierUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.kibramoa.net/payout/?sessionId=54ed4d33-9c24-4ef0-a7f8-242920a657u5"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+
+	
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="payinspaymentOptions">
+						/payment-options
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_payins/paymentOptions.md">Edit</a>
+				</h3>
+				
+					<p class="description">Retreive all available payment options for given country, currency and amount parameters. Your merchant must be properly configured in order to retreive the payment options.</p>
+				
+
+				
+
+				<p>Use this endpoint to initiate a payment session and retreive all the payment options available.</p>
+
+<p class="info">Session expires after 30 min, only 1 payment is allowed for each session.</p>
+
+<p>The response will return the sessionId and an array, with the different payment options found for your merchant.</p>
+
+<p>All the relevant data to display the payment option itself will be provided on the paymentOptions array, each one contain all the required extraData or bankIds to be rendered on yout app.</p>
+
+<p class="info">Keep in mind that some payment options must require end-users to select things, such bank list or build a form in order to get the extra data.</p>
+
+<p>Request parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*country</td>
+      <td>string(2)</td>
+      <td>Country code ISO alpha 2.</td>
+    </tr>
+    <tr>
+      <td>*currency</td>
+      <td>string(3)</td>
+      <td>Currency code ISO alpha 3.</td>
+    </tr>
+    <tr>
+      <td>*amount</td>
+      <td>integer</td>
+      <td>Amount in decimal format, I.E: 100 = 1$</td>
+    </tr>
+    <tr>
+      <td>*language</td>
+      <td>string(2)</td>
+      <td>Language code ISO alha 2. Values: ‘EN’, ‘ES’, ‘PT’, ‘IN’.</td>
+    </tr>
+    <tr>
+      <td>*redirectUrl</td>
+      <td>string</td>
+      <td>Merchant page to be redirected after the payout.</td>
+    </tr>
+    <tr>
+      <td>*customer</td>
+      <td>object</td>
+      <td>Customer object with end user details, refer to Useful Data section for more information.</td>
+    </tr>
+    <tr>
+      <td>merchantReference</td>
+      <td>string(36)</td>
+      <td>Merchant generated id for the transaction, if not provided Kibramoa will auto generate one.</td>
+    </tr>
+    <tr>
+      <td>paymentReference</td>
+      <td>string(36)</td>
+      <td>Payment reference id, optional for merchant transaction trace purporses</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string(255)</td>
+      <td>Description text for the payout.</td>
+    </tr>
+    <tr>
+      <td>userId</td>
+      <td>string(255)</td>
+      <td>User id generated by the merchant system.</td>
+    </tr>
+    <tr>
+      <td>extra</td>
+      <td>string(255)</td>
+      <td>Optional payload for help merchant to track this payout.</td>
+    </tr>
+    <tr>
+      <td>tax</td>
+      <td>string</td>
+      <td>Percentage tax, only for informational purporses, it is not applied to end amount.</td>
+    </tr>
+    <tr>
+      <td>shippingAddress</td>
+      <td>object</td>
+      <td>Allow to add a different shipping address, otherwise Customer address object is used. Refer to Useful Data section for more information.</td>
+    </tr>
+    <tr>
+      <td>orderDetails</td>
+      <td>array</td>
+      <td>Optional, it allow merchants to indicate productd details, like quantity, dimesions, description etc. Refer to Useful Data section for more information.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p>Success response have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sessionId</td>
+      <td>string</td>
+      <td>Unique session Id generated for this payment.</td>
+    </tr>
+    <tr>
+      <td>paymentOptions</td>
+      <td>array</td>
+      <td>Array of payment options available.</td>
+    </tr>
+    <tr>
+      <td>paymentOptions.name</td>
+      <td>string</td>
+      <td>Name of the payment option.</td>
+    </tr>
+    <tr>
+      <td>paymentOptions.paymentOptionId</td>
+      <td>string</td>
+      <td>Id of the payment option.</td>
+    </tr>
+    <tr>
+      <td>paymentOptions.logo</td>
+      <td>string</td>
+      <td>Payment option logo url.</td>
+    </tr>
+    <tr>
+      <td>paymentOptions.extraData</td>
+      <td>array</td>
+      <td>Array that represent a set of input fields to be filled by end-user. Refer to Useful Data section for futher details.</td>
+    </tr>
+    <tr>
+      <td>paymentOptions.banks</td>
+      <td>array</td>
+      <td>Array with bank ids and bank names that end-user must select. Refer to Useful Data section for futher details.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>An error response will return an HTTP error code and have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*statusCode</td>
+      <td>integer</td>
+      <td>If an error is returned the error code is shown here.</td>
+    </tr>
+    <tr>
+      <td>*message</td>
+      <td>array</td>
+      <td>Array containing all the error messages.</td>
+    </tr>
+    <tr>
+      <td>error</td>
+      <td>string</td>
+      <td>Error description.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13000</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@email.test"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+34666999666"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOBILE"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"identify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36570630563"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA_CPF"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="p">},</span><span class="w">
+ </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mx-000000001"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice ABC123"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merch_User_123"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"extra1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData001"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"extra2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData002"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"extra3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData003"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21%"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"shippingAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+ </span><span class="p">},</span><span class="w">
+ </span><span class="nl">"orderDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shirt-1233474"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85x51"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue sports t-shirt "</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c3ee84b7-6ef7-4541-a2c7-5881fe86bb30"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"paymentOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"paymentOptionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4fb6f4dfab76be51616d18e1f679409cc1d0711dc29399676a7c0fe52ad7d585462e19a1f95f8bff5c3583352c220bd43cca3ca6f04d2be17fbb20ee659fe797eb35395d8b9760faa477e4006fe8e00383eb26572a6a40467acf7503f5ba9f8344eeededf2765b2323"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"banks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8326"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bradesco"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8338"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Banco Itau"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8339"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Banco do Brasil"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"paymentOptionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4fb6f4dfab76be51616d18e1f679409cc1d0711d91cc9a613f235ab52a84808f472e19adaa0a8ba75d3583352c2c038035c632abaf127fb67fbb20ee659fe797eb35395d8b9760faa477e4006fe8e00383eb26572a6a40467acf7503f5ba9f8344eeededf2765b2323"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIX"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kibramoa-dev.s3.eu-west-1.amazonaws.com/payment-options/79a14f6d-b026-44cf-a829-07900884ff0d/pix-1661669301772-400px.png"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+      </span><span class="nl">"banks"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 400" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="s2">"The merchant reference needs to unique."</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="payinsdirectPayment">
+						/direct-payment
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_payins/directPayment.md">Edit</a>
+				</h3>
+				
+					<p class="description">Payment API endpoint to complete the session previously generated on Kibramoa.</p>
+				
+
+				
+
+				<p>Last endpoint for complete the payment session and connect with the payment processors.</p>
+
+<p>You must previously initiate a session and retreive a correct paymentOptionId to this endpoint to get a proper response</p>
+
+<p>Request parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*sessionId</td>
+      <td>string</td>
+      <td>UUID of the session generated previously.</td>
+    </tr>
+    <tr>
+      <td>*paymentOptionId</td>
+      <td>string</td>
+      <td>Payment option string.</td>
+    </tr>
+    <tr>
+      <td>bankId</td>
+      <td>string</td>
+      <td>Bank id chosen by the end user.</td>
+    </tr>
+    <tr>
+      <td>extraData</td>
+      <td>array</td>
+      <td>Set of extra parameters taken from end-user input.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="info">The responses from this endpoint differ depending on the payment option chosen on the /payment-options call, please reveiw the statusCode response parameter on the table below.</p>
+
+<p>Response have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*statusCode</td>
+      <td>string</td>
+      <td>Code indicating the action.<br /> Values: <br />000 -&gt; ‘success’: payment completed with success. <br /> 300 -&gt; ‘redirect’: redirect end user. <br /> 081 -&gt; ‘qrcode’: display or render QR code. <br /> 082 -&gt; ‘request’: build a HTTP request with provided details. <br /> 083 -&gt;’receipt’: print a recepit to end user with the provided details. <br /> 084 -&gt; ‘info’: display instructions about the payment before redirect. <br />  999 -&gt; ‘error’: payment failed.</td>
+    </tr>
+    <tr>
+      <td>resultType</td>
+      <td>string</td>
+      <td>Action to execute after the payment, could be redirect to new page, build a request, etc.</td>
+    </tr>
+    <tr>
+      <td>result</td>
+      <td>object</td>
+      <td>Details result with next step to take in order to complete the payment process.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p>An error response will return an HTTP error code and have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*statusCode</td>
+      <td>integer</td>
+      <td>If an error is returned the error code is shown here.</td>
+    </tr>
+    <tr>
+      <td>*message</td>
+      <td>array</td>
+      <td>Array containing all the error messages.</td>
+    </tr>
+    <tr>
+      <td>error</td>
+      <td>string</td>
+      <td>Error description.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3b21a1e2-e8c2-4e86-8de8-8441ea5c7dba"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"paymentOptionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4fb6f4dfab76be51616d18e1f679409cc1d0711dc597c86033235ab72a85d384492e19f8f90e8bff04638c3579290bd336986ca9ff432de17fbb20ee659fe797eb35395b8d9f67f0fb21ec0069bee85083eb22057f6a40152b9d7507f0b895851ebbbbbca679092323"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"bankId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"cardnum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"520000*0007"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"expiryyear"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"expirymonth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"cardcvv"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"cardholder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cardholder name"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Success" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"000"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15be2828-c286-48f0-ae73-7a9f151dc0f2"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Redirect" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"redirect"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sandbox.kibramoa.net/paycc.aspx?authcode=276c69d5-1a75-41c6-a6d6-398e4a52e72e&amp;token=QfZSjdyG8HT%2b464XqRkil42Jr0zCGY%2bZ"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f5773e8a-697e-4b25-a01d-bd3701091a8f"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"request"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sandbox.paymentgt.com/fundtransfer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-00002"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCESSING"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"bodyPayload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"bankcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RHB"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surepay88"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"refid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-00002"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a883c0f2c78cf5c0815ed97c1c06a5a5"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merch_User_123"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MYR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clientip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"post_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dev.kibramoa.net/notifications/surepay-apm/987441d2-c3b1-41e5-941a-000867bbd4a6"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"failed_return_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"return_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"queryParams"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33aa5301-4056-41bb-99db-33b56121de37"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Receipt" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"083"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"receipt"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdfa8140-e0a3-49e0-8b3a-7717be3a1a76"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85fb951a-e8b9-4451-9007-2e8c1d582061"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Any Emirate Bank"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"paymentDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rate"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.72387</span><span class="w">
+           </span><span class="p">},</span><span class="w">
+           </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amount"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">3161.3</span><span class="w">
+           </span><span class="p">},</span><span class="w">
+           </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Currency"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AED"</span><span class="w">
+           </span><span class="p">},</span><span class="w">
+           </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account info"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdd12121212121"</span><span class="w">
+           </span><span class="p">},</span><span class="w">
+           </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment info"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Recipient_Name"</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+       </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Info" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"084"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span><span class="w">
+</span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f5659201-a219-4be3-b14f-f2513280f236"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Banco do Brasil"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"paymentDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="nl">"paymentLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Banco do Brasil"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"Após clicar no link para o seu Internet Banking, seguir as instruções abaixo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Selecione a opção </span><span class="se">\"</span><span class="s2">Débito em Conta</span><span class="se">\"</span><span class="s2"> e informe sua agência e conta corrente"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Verifique se seu nome aparece corretamente e digite sua senha eletrônica"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Digite sua senha de 6 dígitos e clique no botão continuar"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Clique no botão </span><span class="se">\"</span><span class="s2">Concordo</span><span class="se">\"</span><span class="s2"> e confirme sua compra"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sandbox-gateway.safetypay.com/banksgateway/9165/251168"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="s2">"This session was completed."</span><span class="w">
+ </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="payoutspayoutOptions">
+						/payout-options
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_payouts/payoutOptions.md">Edit</a>
+				</h3>
+				
+					<p class="description">Retreive all the payout options allowed for country, currency and amounts limits.</p>
+				
+
+				
+
+				<p>This endpoint returns all payout options based on a country. It’s a POST request with a json body specifing country, currency and amount for the payout.<br />
+You can review the request and responses from kibramoa API on the right side.</p>
+
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p>Request parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>country</td>
+      <td>string(2)</td>
+      <td>Country code ISO alpha 2.</td>
+    </tr>
+    <tr>
+      <td>currency</td>
+      <td>string(3)</td>
+      <td>Currency code ISO alpha 3.</td>
+    </tr>
+    <tr>
+      <td>amount</td>
+      <td>integer</td>
+      <td>Amount in decimal format, I.E: 100 = 1$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>An error response will return an HTTP error code and the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>statusCode</td>
+      <td>string</td>
+      <td>If an error is returned the error code is shown here</td>
+    </tr>
+    <tr>
+      <td>message</td>
+      <td>string</td>
+      <td>the CashierUrl or A message of the error</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BRL"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"arrivalCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+  </span><span class="err">.....</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIX"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kibramoa-sandbox.s3.eu-west-1.amazonaws.com/payment-options/79a14f6d-b026-44cf-a829-07900884ff0d/pix-1661669301772-400px.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"BRL"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"arrivalCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"formInputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beneficiary's name"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"validations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beneficiary's phone"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"validations"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="err">.....</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 400" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="s2">"Country must be 2 alpha character ISO country code."</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="payoutsdirectPayout">
+						/direct-payout
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_payouts/directPayout.md">Edit</a>
+				</h3>
+				
+					<p class="description">Initiates a Direct Payout on Kibramoa using the direct API.</p>
+				
+
+				
+
+				<p>After the payout is accepted within the merchant system, it must be approved or declined from the merchant-portal of Kibramoa.</p>
+
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p>Request parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*country</td>
+      <td>string(2)</td>
+      <td>Alpha-2 ISO Country code.</td>
+    </tr>
+    <tr>
+      <td>*currency</td>
+      <td>string(3)</td>
+      <td>Alpha-3 ISO Currency code.</td>
+    </tr>
+    <tr>
+      <td>*option</td>
+      <td>string</td>
+      <td>Payout option chosen. Values: ‘Bank Transfer’, ‘PIX’, ‘SPEI’, ‘Tpaga’, ‘Easy P2P’</td>
+    </tr>
+    <tr>
+      <td>*amount</td>
+      <td>integer</td>
+      <td>Amount in decimal format, I.E: 100 = 1$</td>
+    </tr>
+    <tr>
+      <td>*redirectUrl</td>
+      <td>string</td>
+      <td>Merchant page to be redirected after the payout.</td>
+    </tr>
+    <tr>
+      <td>merchantReference</td>
+      <td>string(36)</td>
+      <td>Merchant generated id for the given payout.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string(255)</td>
+      <td>Description text for the payout.</td>
+    </tr>
+    <tr>
+      <td>userId</td>
+      <td>string(255)</td>
+      <td>User id generated by the merchant system.</td>
+    </tr>
+    <tr>
+      <td>ip</td>
+      <td>string</td>
+      <td>End user IP.</td>
+    </tr>
+    <tr>
+      <td>extra</td>
+      <td>string(255)</td>
+      <td>Optional payload for help merchant to track this payout.</td>
+    </tr>
+    <tr>
+      <td>*formData</td>
+      <td>Object</td>
+      <td>Form parameters filled by end user, they change regarding the ‘option’ chosen, check Testing Details for more info.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Success response have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*result</td>
+      <td>string</td>
+      <td>If an error is returned the error code is shown here.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>An error response will return an HTTP error code and have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*statusCode</td>
+      <td>integer</td>
+      <td>If an error is returned the error code is shown here.</td>
+    </tr>
+    <tr>
+      <td>*message</td>
+      <td>array</td>
+      <td>Array containing all the error messages.</td>
+    </tr>
+    <tr>
+      <td>error</td>
+      <td>string</td>
+      <td>Error description.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIX"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant1.io/where/to/go"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom8626666"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional remark for this payout."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant_user123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.12.11.10"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 1"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 2"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 3"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"formData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIX"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kibramoa-sandbox.s3.eu-west-1.amazonaws.com/payment-options/79a14f6d-b026-44cf-a829-07900884ff0d/pix-1661669301772-400px.png"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+           </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+           </span><span class="s2">"BRL"</span><span class="w">
+       </span><span class="p">],</span><span class="w">
+       </span><span class="nl">"arrivalCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"account_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doc12354"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w"> 
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payout request was submitted successfully."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 400" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+ </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+   </span><span class="s2">"currency must be a string"</span><span class="w">
+ </span><span class="p">],</span><span class="w">
+ </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="transaction-querygetTransaction">
 						/payments/{transactionId}
 						
 							<span class="endpoint get"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/getTransaction.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_transaction-query/getTransaction.md">Edit</a>
 				</h3>
 				
 					<p class="description">Get transaction details from kibramoa.</p>
@@ -727,7 +1968,7 @@ X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
 								
 
 
-<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
+<div title="Error 404" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
       </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
       </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"Transaction not found."</span><span class="w">
@@ -740,123 +1981,19 @@ X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
 			
 		</section>
 	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="apiPayouts">
-						/payout-session
-						
-							<span class="endpoint post"></span>
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/Payouts">Edit</a>
-				</h3>
-				
-					<p class="description">Initiate a payout request on Kibramoa CashierUI.</p>
-				
 
-				
-
-				
-<p>This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.</p>
-
-<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
-
-<p class="success"><strong>Example request</strong></p>
-
-<p>A example request for intiate a payout on the cashier:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST /payout-session HTTP/1.1
-Host: api.sandbox.kibramoa.net
-X-API-KEY: pjxrlEFwzgYvP13V5LHWLZ5wiN6YHG***4771-a36b-d4a928c6457d
-Content-Type: application/json
-Content-Length: 485
-
-{
-  "country": "BR",
-  "currency": "BRL",
-  "amount": 150,
-  "redirectUrl": "https://merchant1.io/where/to/go",
-  "merchantReference": "custom8108",
-  "description": "Additional remark for this payout.",
-  "userId": "merchant_user123",
-  "userAgent": "Mozilla/5.0 (X11; Linux x86_64)",
-  "userDevice": "DESKTOP",
-  "ip": "13.12.11.10",
-  "language": "PT",
-  "extra1": "merchant extra value 1",
-  "extra2": "merchant extra value 2",
-  "extra3": "merchant extra value 3"
-}
-</code></pre></div></div>
-
-<p>An error response will return an HTTP error code and have the following schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>StatusCode</td>
-      <td>string</td>
-      <td>If an error is returned the error code is shown here</td>
-    </tr>
-    <tr>
-      <td>message</td>
-      <td>string</td>
-      <td>the CashierUrl or A message of the error</td>
-    </tr>
-  </tbody>
-</table>
-
-
-				
-			</section>
-			
-					<section class="right-code">
-						
-								
-
-
-<div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
-   
-   </span><span class="nl">"cashierUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.kibramoa.net/payout/?sessionId=54ed4d33-9c24-4ef0-a7f8-242920a657u5"</span><span class="w">
-
-   </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-						
-								
-
-
-<div title="Error 401" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">    </span><span class="p">{</span><span class="w">
-
-    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">401</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized"</span><span class="w">
-    
-    </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-						
-				</section>
-			
-		</section>
+	
 	
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apirefunds">
+					<a id="refundsrefunds">
 						/refund/by-reference
 						
 							<span class="endpoint post"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/refunds.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_refunds/refunds.md">Edit</a>
 				</h3>
 				
 					<p class="description">Refund a previous authorized transaction on kibramoa system.</p>
@@ -949,16 +2086,19 @@ Content-Length: 67
 			
 		</section>
 	
+
+	
+	
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="apiNotifications">
+					<a id="notificationsnotifications">
 						/notifications
 						
 							<span class="endpoint post"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_api/Notifications">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_notifications/notifications.md">Edit</a>
 				</h3>
 				
 					<p class="description">Payment notifications happen once payment reach the PSP, they will be submitted to the merchant notification url previously configured on the merchant portal.</p>
@@ -971,62 +2111,6 @@ Content-Length: 67
 
 <h5 id="notification-body-request">Notification body request</h5>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-    "internalId": "ee40a31b-a14f-48e2-a272-e3fc013f4735",
-    "sessionId": "35eac8b8-e40b-447e-a214-8dd1f0e23996",
-    "merchantName": "Fer Merchant",
-    "userId": "Merch_User_123",
-    "type": "BANK",
-    "paymentOptionName": "Lottery",
-    "country": "BR",
-    "currency": "BRL",
-    "paymentAmount": 130,
-    "merchantReference": "orde123",
-    "status": "COMPLETED",
-    "language": "ES",
-    "paymentReference": "Invoice ABC123",
-    "storedToken": "index-stored",
-    "extra1": "extraData001",
-    "extra2": "extraData002",
-    "extra3": "extraData003",
-    "customer": {
-        "name": "John Doe",
-        "email": "john@email.test",
-        "phone": "+34666999666",
-        "userDevice": "MOBILE",
-        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
-        "ip": "84.232.140.77",
-        "address": {
-        "street": "32 Windsor Gardens",
-        "streetNumber": "24",
-        "country": "GB",
-        "zipCode": "W9 3RG",
-        "city": "London",
-        "state": "Great London."
-        },
-        "identify": {
-        "number": "76486883X",
-        "type": "DNI"
-        }
-    },
-    "orderDetails": [
-        {
-        "productName": "shirt-1233474",
-        "quantity": 1,
-        "dimensions": "85x51",
-        "description": "Blue sports t-shirt "
-        }
-    ],
-    "shippingAddress": {
-        "street": "32 Windsor Gardens",
-        "streetNumber": "24",
-        "country": "GB",
-        "zipCode": "W9 3RG",
-        "city": "London",
-        "state": "Great London."
-    }
-}
-</code></pre></div></div>
 <h5 id="once-notification-reach-merchant-systems-it-must-be-replied-back-returning-a-http-response-with-200-status-code-otherwise-kibramoa-system-will-re-send-every-hour">Once notification reach merchant systems it MUST be replied back returning a HTTP response with 200 status code, otherwise Kibramoa system will re-send every hour.</h5>
 
 <h5 id="merchant-is-able-to-resubmit-a-notification-manually-using-the-merchant-portal">Merchant is able to resubmit a notification manually using the merchant portal.</h5>
@@ -1080,10 +2164,137 @@ Content-Length: 67
 				
 			</section>
 			
+					<section class="right-code">
+						
+								
+
+
+<div title="Notification Payload" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"internalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ee40a31b-a14f-48e2-a272-e3fc013f4735"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35eac8b8-e40b-447e-a214-8dd1f0e23996"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fer Merchant"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merch_User_123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BANK"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentOptionName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lottery"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orde123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice ABC123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"storedToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index-stored"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData001"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData002"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData003"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@email.test"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+34666999666"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOBILE"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="nl">"identify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76486883X"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DNI"</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"orderDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shirt-1233474"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85x51"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue sports t-shirt "</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"shippingAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 404" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"Not found"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not found"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
 		</section>
 	
 
 	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="countriesWorldwide">
+						Cards
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_countries/Worldwide">Edit</a>
+				</h3>
+				
+					<p class="description">The following is a list of Card Countries and Currencies.</p>
+				
+
+				
+
+				
+<p><strong>Worldwide Card processing</strong></p>
+
+<p>Global Processing with KYC Under MCC: 8999(Wallet)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Country</strong></th>
+      <th><strong>Currency</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Europe</strong></td>
+      <td>EUR</td>
+    </tr>
+    <tr>
+      <td><strong>WorldWide</strong></td>
+      <td>USD</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We have a global coverage of currencies for cards.</p>
+
+
+				
+			</section>
+			
+		</section>
 	
 		<section class="doc-content">
 			<section class="left-docs">
@@ -1727,6 +2938,10 @@ Content-Length: 67
       <td>UPI</td>
       <td>Transfer</td>
     </tr>
+    <tr>
+      <td>IMPS</td>
+      <td>Transfer</td>
+    </tr>
   </tbody>
 </table>
 
@@ -1765,48 +2980,84 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>PIX</strong></td>
+      <td>PIX</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Deposit/Transfer Express</strong></td>
+      <td>Deposit/Transfer Express</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Boleto Rapido</strong></td>
+      <td>Boleto Rapido</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Lotopay</strong></td>
+      <td>Lotopay</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Mercado Pago</strong></td>
+      <td>Mercado Pago</td>
       <td>eWallet</td>
     </tr>
     <tr>
-      <td><strong>Picpay</strong></td>
+      <td>Picpay</td>
       <td>eWallet</td>
     </tr>
     <tr>
-      <td><strong>Smileone</strong></td>
+      <td>Smileone</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Ame</strong></td>
+      <td>Ame</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Paypal</strong></td>
+      <td>Paypal</td>
       <td>eWallet</td>
     </tr>
     <tr>
-      <td><strong>Cartao de Credito</strong></td>
+      <td>Cartao de Credito</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Payouts</strong></td>
+      <td>Payouts</td>
       <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Banco Du Brasil</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Banrisul</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Itau</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Santander</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Bradesco</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Loterias Caixa</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Bradesco</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Boleto Bancario</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Boleto Flash</td>
+      <td>Cash</td>
     </tr>
   </tbody>
 </table>
@@ -1822,56 +3073,168 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>SPEI Payin</strong></td>
+      <td>SPEI Payin</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>OXXO</strong></td>
+      <td>OXXO</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Seven-Eleven</strong></td>
+      <td>Seven-Eleven</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Sams Club</strong></td>
+      <td>Sams Club</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Walmart</strong></td>
+      <td>Walmart</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Superama</strong></td>
+      <td>Superama</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Waldos</strong></td>
+      <td>Waldos</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Alsuper</strong></td>
+      <td>Alsuper</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>AirPak</strong></td>
+      <td>AirPak</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Superama</strong></td>
+      <td>Circulo K</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Circulo K</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>Todito</strong></td>
+      <td>Todito</td>
       <td>eWallet</td>
     </tr>
     <tr>
-      <td><strong>SPEI Payout</strong></td>
+      <td>SPEI Payout</td>
       <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Santander</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>BBVA</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Scotiabank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>HSBC</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Afirme</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Banorte</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>SPEI</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Santander</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Scotiabank</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Banco Azteca</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>BBVA</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>HSBC</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Afirme</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Banorte</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Bodega Aurrera</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Super Farmacia</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Farmacias del Ahorro</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Prenda Mex</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>benavides</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Extra</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Chrohrua</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Telecomm</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Comercial Mexicana</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Farmacias Santa Maria</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Soriana</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Calimax</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Roma</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Farmacia La Mad Barata</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Waldo’s</td>
+      <td>Cash</td>
     </tr>
   </tbody>
 </table>
@@ -1887,44 +3250,52 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>Banco Estado</strong></td>
+      <td>Banco Estado</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Banco de Chile</strong></td>
+      <td>Banco de Chile</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>BCi</strong></td>
+      <td>BCi</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>TBanc</strong></td>
+      <td>TBanc</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Scotiabank azul</strong></td>
+      <td>Scotiabank azul</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>CajaVacina</strong></td>
+      <td>CajaVacina</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>aCuenta</strong></td>
+      <td>aCuenta</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>ServiEstado</strong></td>
+      <td>ServiEstado</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Lider</strong></td>
+      <td>Lider</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Bank Transfer</strong></td>
+      <td>Bank Transfer</td>
       <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>express Lider</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Mach</td>
+      <td>QR</td>
     </tr>
   </tbody>
 </table>
@@ -1940,27 +3311,35 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>PSE Payin</strong></td>
+      <td>PSE Payin</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Efecty</strong></td>
+      <td>Efecty</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Su Red</strong></td>
+      <td>Su Red</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Baloto</strong></td>
+      <td>Baloto</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Tpaga</strong></td>
+      <td>Tpaga (ewallet)</td>
       <td>eWallet</td>
     </tr>
     <tr>
-      <td><strong>PSE Payout</strong></td>
+      <td>Dimonex</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>MovilRed</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>PSE Payout</td>
       <td>Transfer</td>
     </tr>
   </tbody>
@@ -1977,36 +3356,144 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>BCP</strong></td>
+      <td>BCP</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>BBVA</strong></td>
+      <td>BBVA</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Caja Arequipa</strong></td>
+      <td>Caja Arequipa</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Caja Huancayo</strong></td>
+      <td>Caja Huancayo</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Caja Tacna</strong></td>
+      <td>Caja Tacna</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Caja Trujillo</strong></td>
+      <td>Caja Trujillo</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Interbank</strong></td>
+      <td>Interbank</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Scotiabank</strong></td>
+      <td>Scotiabank</td>
       <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>PSE Bank Transfer</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>BCP</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>BBVA</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Interbank</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Caja Tacna</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Bankco Ripley</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Raiz</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Western Union</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Caja Arequipa</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Scotiabank</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Leon XIII</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Caja Trujillo</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Norandino</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Banco Pichincha</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Caja Lost Andes</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Caja Del Santa</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Caja Huancayo</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Qapaq</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>CajaPaita</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Scotiabank Agente</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Agente Kasnet</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Tambo</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>BCP Agente</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>BBVA Agente</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Interbank Agenta</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Banco Azteca</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Cuotealo BCP</td>
+      <td>Loan</td>
     </tr>
   </tbody>
 </table>
@@ -2022,12 +3509,40 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>Banco Guayaquil</strong></td>
+      <td>Banco Guayaquil</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Banco Pichincha</strong></td>
+      <td>Banco Pichincha</td>
       <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Banco Pichincha</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Banco del Barrio</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Farmacias 911</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>TIA</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>MiVecino</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>active Wester Union</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>mi comisaraio</td>
+      <td>Cash</td>
     </tr>
   </tbody>
 </table>
@@ -2043,47 +3558,47 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>Punto Express</strong></td>
+      <td>Punto Express</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Tiendas Galo</strong></td>
+      <td>Tiendas Galo</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Fedecaces</strong></td>
+      <td>Fedecaces</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Fedecrece</strong></td>
+      <td>Fedecrece</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Superselectos</strong></td>
+      <td>Superselectos</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>AirPark</strong></td>
+      <td>AirPark</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Farmacias Economicas</strong></td>
+      <td>Farmacias Economicas</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Pago724</strong></td>
+      <td>Pago724</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Credicomer</strong></td>
+      <td>Credicomer</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>Integral</strong></td>
+      <td>Integral</td>
       <td>Cash</td>
     </tr>
     <tr>
-      <td><strong>El Gallo mas Gallo</strong></td>
+      <td>El Gallo mas Gallo</td>
       <td>Cash</td>
     </tr>
   </tbody>
@@ -2100,47 +3615,11 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>Punto Express</strong></td>
-      <td>Cash</td>
+      <td>Western Union</td>
+      <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Tiendas Galo</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>Fedecaces</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>Fedecrece</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>Superselectos</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>AirPark</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>Farmacias Economicas</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>Pago724</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>Credicomer</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>Integral</strong></td>
-      <td>Cash</td>
-    </tr>
-    <tr>
-      <td><strong>El Gallo mas Gallo</strong></td>
+      <td>Western Union</td>
       <td>Cash</td>
     </tr>
   </tbody>
@@ -2157,7 +3636,7 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>Banco Nacional</strong></td>
+      <td>Banco Nacional</td>
       <td>Transfer</td>
     </tr>
   </tbody>
@@ -2174,27 +3653,363 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>Banco Industrial</strong></td>
+      <td>Banco Industrial</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Punto Express</strong></td>
+      <td>Punto Express</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Caja Desarrollo</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Caja Desarrollo</strong></td>
+      <td>Banco de Antigua</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Banco de Antigua</strong></td>
+      <td>Super 24</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Super 24</strong></td>
+      <td>Fundación Genesis</td>
       <td>Transfer</td>
     </tr>
     <tr>
-      <td><strong>Fundación Genesis</strong></td>
+      <td>Punto Express</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Fundación Genesis</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Caja Desarrollo</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Banco de Antigua</td>
+      <td>Cash</td>
+    </tr>
+    <tr>
+      <td>Super 24</td>
+      <td>Cash</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="countriesSouthEastAsia">
+						South East Asia
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_countries/SouthEastAsia">Edit</a>
+				</h3>
+				
+					<p class="description">The following is a list of Supported Countries, Currencies and Methods.</p>
+				
+
+				
+
+				
+<p><strong>Malaysia</strong>: Country: MY Currency: MYR</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maybank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Hong Leong</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>CIMB</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Public</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>RHB</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>BSN Bank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Ambank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Bank Rakyat</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Bank Islam</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Dutnow QR</td>
+      <td>QR</td>
+    </tr>
+    <tr>
+      <td>Tng Ewallet</td>
+      <td>eWallet</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Singapore</strong>: Country: SG Currency: SGD</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DBS/POSB</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>UOB</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>OCBC</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Standard Charter</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Maybank</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Thailand</strong>: Country: TH Currency: THB</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kasikornbank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Siam Commercial Bank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Krung thai</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Bangkok Bank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>ThaiQR</td>
+      <td>QR</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Vietnam</strong>: Country: VN Currency: VND</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Payment Solution Name</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BIDV</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>SACOM</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Techcom</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Vietcom</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Vietin</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>VietQR</td>
+      <td>QR</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="countriesEasyP2P">
+						Easy P2P
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_countries/EasyP2P">Edit</a>
+				</h3>
+				
+					<p class="description">The following is a list of Supported Countries, Currencies and Methods.</p>
+				
+
+				
+
+				
+<p><strong>India</strong>: Country: IN Currency: INR</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Bank</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>UPI</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>PayTM</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>IMPS</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>NEFT</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>RTGS</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Russia</strong>: Country: RU Currency: RUB</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Bank</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VTB</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Mobile Sberbank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Alfa Bank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Qiwi</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Turkey</strong>: Country: TR Currency: TRY</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Bank</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Akbank</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>IsBankasi</td>
+      <td>Transfer</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>UAE</strong>: Country: AE Currency: AED</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Bank</strong></th>
+      <th><strong>Payment Solution Type</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ADCB</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Emirates NBD</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td>Any Bank Dubai</td>
       <td>Transfer</td>
     </tr>
   </tbody>
@@ -2356,7 +4171,7 @@ Content-Length: 67
       <td>First line of the address.</td>
     </tr>
     <tr>
-      <td><strong>streetNumber</strong></td>
+      <td><strong>streetNumber</strong>*</td>
       <td>string</td>
       <td>24</td>
       <td>Street address number.</td>
@@ -2374,7 +4189,7 @@ Content-Length: 67
       <td>Customer Postcode</td>
     </tr>
     <tr>
-      <td><strong>city</strong></td>
+      <td><strong>city</strong>*</td>
       <td>string</td>
       <td>London</td>
       <td>Shipping City/Town</td>
@@ -2460,7 +4275,7 @@ Content-Length: 67
   </thead>
   <tbody>
     <tr>
-      <td><strong>street</strong></td>
+      <td><strong>street</strong>*</td>
       <td>string</td>
       <td>32 Windsor Gardens</td>
       <td>First line of the address.</td>
@@ -2484,7 +4299,7 @@ Content-Length: 67
       <td>The postcode.</td>
     </tr>
     <tr>
-      <td><strong>city</strong></td>
+      <td><strong>city</strong>*</td>
       <td>string</td>
       <td>London</td>
       <td>Shipping City/Town</td>
@@ -2661,6 +4476,179 @@ Content-Length: 67
     </tr>
   </tbody>
 </table>
+
+
+				
+			</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="testdataLatamPayoutTestDetails">
+						Latin America Test Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_testdata/LatamPayoutTestDetails">Edit</a>
+				</h3>
+				
+					<p class="description">Payout details to be used to simulate Transactions in Latin American solutions on Sandbox</p>
+				
+
+				
+
+				<p>The following are details are needed to accept a successful Payout on Sandbox.</p>
+
+<h1 id="brazil">Brazil</h1>
+
+<h2 id="pix">PIX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beneficiary's name: John Doe
+Beneficiary's phone: 123456
+Beneficiary's email: test@test.com
+Beneficiary's PIX account type: CPF
+Beneficiary's PIX account:  50284414727
+Beneficiary's personal identification type:  CPF
+Beneficiary's personal identification number: 50284414727
+</code></pre></div></div>
+
+<h1 id="mexico">Mexico</h1>
+
+<h2 id="spei">SPEI</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beneficiary's name: testname
+Beneficiary's phone: 123456
+Beneficiary's email: test@test.com
+Beneficiary's account type: clabe
+Beneficiary's account:  646180209100000014
+Beneficiary's personal identification type:  RFC
+Beneficiary's personal identification number: MAMB780915969
+Beneficiary's Bank: Transfer
+</code></pre></div></div>
+
+<h1 id="ecuador">Ecuador</h1>
+
+<h2 id="bank-transfer">Bank Transfer</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beneficiary's name: testname
+Beneficiary's phone: 4681234068
+Beneficiary's email: test@test.com
+Beneficiary's account type: Checkings
+Beneficiary's account:  00219400254640654321
+Beneficiary's personal identification type:  PAS
+Beneficiary's personal identification number: 1235456789001
+Beneficiary's Bank: Banco Central del Ecuador
+</code></pre></div></div>
+
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="testdataCardTestingDetails">
+						Card Test Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_testdata/CardTestingDetails">Edit</a>
+				</h3>
+				
+					<p class="description">Card details to be used to simulate card Transactions on Sandbox</p>
+				
+
+				
+
+				<p>The following are details are needed to accept a successful Transaction on Sandbox.</p>
+
+<p><strong><em>Card Processing</em></strong></p>
+
+<p>Card Number: 5200000000000007 - 3D Enabled Card</p>
+
+<p>Card expiry : 01/2023</p>
+
+<p>Card CVV: 111</p>
+
+<p>Name on Card: cardholder name</p>
+
+<p>Currency: EUR/USD</p>
+
+<p>Card Number: 5457210001000019 - non-3D enabled Card</p>
+
+<p>Card expiry : 01/2023</p>
+
+<p>Card CVV: 111</p>
+
+<p>Name on Card: cardholder name</p>
+
+<p>Currency: USD</p>
+
+<p><strong><em>Test Card for Global Processing with KYC</em></strong></p>
+
+<p><u>EUR</u></p>
+
+<p>Card Number: 4596610015729187</p>
+
+<p>Card Expiry: 12/27</p>
+
+<p>Card CVV: 431</p>
+
+<p>Name on Card: LORENZO CARDELLI</p>
+
+<p>Amount: 3.00 EUR</p>
+
+<p><u>USD</u></p>
+
+<p>Card Number: Card number: 4761739001010036</p>
+
+<p>Card Expiry: 12/23</p>
+
+<p>Card CVV: 123</p>
+
+<p>Name on Card: Card test</p>
+
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="testdataIndia">
+						Indian Solutions Test Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_testdata/India">Edit</a>
+				</h3>
+				
+					<p class="description">The following details to be used to simulate successful transactions in India</p>
+				
+
+				
+
+				<p>The following are details are needed to accept a successful Transaction on Sandbox.</p>
+
+<p>UPI:</p>
+
+<p>Enter email test@test.com when asked for the UPI ID or the VPA</p>
+
+<p>NetBanking:</p>
+
+<p>Select KOTAK Bank from the bank list and Submit the Transaction on the following Page.</p>
+
 
 
 				
