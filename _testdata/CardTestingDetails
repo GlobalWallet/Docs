@@ -31,7 +31,7 @@ content_markdown: |-
 
     ***Test Card for Global Processing with KYC***
 
-    ****EUR****
+    <u>EUR</u>
 
      Card Number: 4596610015729187
       
@@ -41,7 +41,9 @@ content_markdown: |-
       
       Name on Card: LORENZO CARDELLI
 
-    ****USD****
+      Amount: 3.00 EUR
+
+    <u>USD</u>
      Card Number: Card number: 4761739001010036
       
       Card Expiry: 12/23
