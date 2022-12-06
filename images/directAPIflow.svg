@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="701.0417px" preserveAspectRatio="none" style="width:1167px;height:701px;" version="1.1" viewBox="0 0 1167 701" width="1167.7083px" zoomAndPan="magnify"><defs><linearGradient id="g1aqp72funskq90" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#59B6EC"/><stop offset="100%" stop-color="#2FA4E7"/></linearGradient></defs><g><rect fill="none" height="155.0456" rx="4.1667" ry="4.1667" style="stroke:#59B6EC;stroke-width:1.0416666666666667;" width="1135.9375" x="20.8333" y="439.2578"/><line style="stroke:#BABDBF;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="100" x2="100" y1="51.0091" y2="651.5625"/><line style="stroke:#BABDBF;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="593.75" x2="593.75" y1="51.0091" y2="651.5625"/><line style="stroke:#BABDBF;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="852.6042" x2="852.6042" y1="51.0091" y2="651.5625"/><line style="stroke:#BABDBF;stroke-width:1.0416666666666667;stroke-dasharray:5.0,5.0;" x1="1059.8958" x2="1059.8958" y1="51.0091" y2="651.5625"/><rect fill="url(#g1aqp72funskq90)" height="39.5508" rx="4.1667" ry="4.1667" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;" width="55.2083" x="72.9167" y="10.4167"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="30.2083" x="85.4167" y="34.5194">User</text><rect fill="url(#g1aqp72funskq90)" height="39.5508" rx="4.1667" ry="4.1667" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;" width="55.2083" x="72.9167" y="650.5208"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="30.2083" x="85.4167" y="674.6236">User</text><rect fill="url(#g1aqp72funskq90)" height="39.5508" rx="4.1667" ry="4.1667" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;" width="82.2917" x="553.125" y="10.4167"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="57.2917" x="565.625" y="34.5194">Merchant</text><rect fill="url(#g1aqp72funskq90)" height="39.5508" rx="4.1667" ry="4.1667" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;" width="82.2917" x="553.125" y="650.5208"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="57.2917" x="565.625" y="674.6236">Merchant</text><rect fill="url(#g1aqp72funskq90)" height="39.5508" rx="4.1667" ry="4.1667" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;" width="139.5833" x="782.8125" y="10.4167"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="114.5833" x="795.3125" y="34.5194">KibramoaDirectAPI</text><rect fill="url(#g1aqp72funskq90)" height="39.5508" rx="4.1667" ry="4.1667" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;" width="139.5833" x="782.8125" y="650.5208"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="114.5833" x="795.3125" y="674.6236">KibramoaDirectAPI</text><rect fill="url(#g1aqp72funskq90)" height="39.5508" rx="4.1667" ry="4.1667" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;" width="88.5417" x="1016.1458" y="10.4167"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="63.5417" x="1028.6458" y="34.5194">Processor</text><rect fill="url(#g1aqp72funskq90)" height="39.5508" rx="4.1667" ry="4.1667" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;" width="88.5417" x="1016.1458" y="650.5208"/><text fill="#FFFFFF" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="63.5417" x="1028.6458" y="674.6236">Processor</text><polygon fill="#2FA4E7" points="581.7708,88.4766,592.1875,92.6432,581.7708,96.8099,585.9375,92.6432" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="100.5208" x2="588.0208" y1="92.6432" y2="92.6432"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="26.0417" x="113.0208" y="82.4036">Pay!</text><polygon fill="#2FA4E7" points="840.1042,128.0273,850.5208,132.194,840.1042,136.3607,844.2708,132.194" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="594.2708" x2="846.3542" y1="132.194" y2="132.194"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="205.2083" x="606.7708" y="121.9543">Payment/payout options Request</text><polygon fill="#2FA4E7" points="605.7292,167.5781,595.3125,171.7448,605.7292,175.9115,601.5625,171.7448" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="599.4792" x2="851.5625" y1="171.7448" y2="171.7448"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="222.9167" x="617.1875" y="161.5051">Supported payment/payout options</text><polygon fill="#2FA4E7" points="111.9792,207.1289,101.5625,211.2956,111.9792,215.4622,107.8125,211.2956" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="105.7292" x2="593.2292" y1="211.2956" y2="211.2956"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="143.75" x="123.4375" y="201.0559">Show payment options</text><polygon fill="#2FA4E7" points="581.7708,246.6797,592.1875,250.8464,581.7708,255.013,585.9375,250.8464" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="100.5208" x2="588.0208" y1="250.8464" y2="250.8464"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="91.6667" x="113.0208" y="240.6067">Choose option</text><polygon fill="#2FA4E7" points="840.1042,286.2305,850.5208,290.3971,840.1042,294.5638,844.2708,290.3971" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="594.2708" x2="846.3542" y1="290.3971" y2="290.3971"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="152.0833" x="606.7708" y="280.1575">Process payment option</text><polygon fill="#2FA4E7" points="1047.9167,300.8138,1058.3333,304.9805,1047.9167,309.1471,1052.0833,304.9805" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="852.6042" x2="1054.1667" y1="304.9805" y2="304.9805"/><polygon fill="#2FA4E7" points="864.0625,340.3646,853.6458,344.5313,864.0625,348.6979,859.8958,344.5313" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="857.8125" x2="1059.375" y1="344.5313" y2="344.5313"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="37.5" x="875.5208" y="334.2916">Result</text><polygon fill="#2FA4E7" points="605.7292,379.9154,595.3125,384.082,605.7292,388.2487,601.5625,384.082" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="599.4792" x2="851.5625" y1="384.082" y2="384.082"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="81.25" x="617.1875" y="373.8424">Return action</text><polygon fill="#2FA4E7" points="111.9792,419.4661,101.5625,423.6328,111.9792,427.7995,107.8125,423.6328" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="105.7292" x2="593.2292" y1="423.6328" y2="423.6328"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="458.3333" x="123.4375" y="413.3931">Perform Action: Success / Error /Redirect / QrCode / Form / Receipt / Info</text><path d="M25,439.2578 L98.9583,439.2578 L98.9583,455.8919 L88.5417,466.3086 L20.8333,466.3086 L20.8333,443.4245 A4.1667,4.1667 0 0 1 25,439.2578 " fill="#E9ECEF" style="stroke:#868E96;stroke-width:1.0416666666666667;"/><rect fill="none" height="155.0456" rx="4.1667" ry="4.1667" style="stroke:#59B6EC;stroke-width:1.0416666666666667;" width="1135.9375" x="20.8333" y="439.2578"/><text fill="#033C73" font-family="&quot;Verdana&quot;" font-size="12.5" font-weight="bold" lengthAdjust="spacing" textLength="20.8333" x="41.6667" y="457.1106">alt</text><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" font-weight="bold" lengthAdjust="spacing" textLength="210.4167" x="119.7917" y="458.1523">[action = !success || !error]</text><polygon fill="#2FA4E7" points="1047.9167,502.7018,1058.3333,506.8685,1047.9167,511.0352,1052.0833,506.8685" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="100.5208" x2="1054.1667" y1="506.8685" y2="506.8685"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="191.6667" x="113.0208" y="496.6288">Complete payment in provider</text><polygon fill="#2FA4E7" points="864.0625,542.2526,853.6458,546.4193,864.0625,550.5859,859.8958,546.4193" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="857.8125" x2="1059.375" y1="546.4193" y2="546.4193"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="91.6667" x="875.5208" y="536.1796">Payment result</text><polygon fill="#2FA4E7" points="111.9792,581.8034,101.5625,585.9701,111.9792,590.1367,107.8125,585.9701" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;" x1="105.7292" x2="1059.375" y1="585.9701" y2="585.9701"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="207.2917" x="123.4375" y="575.7304">Redirect to merchant result page</text><polygon fill="#2FA4E7" points="605.7292,628.6458,595.3125,632.8125,605.7292,636.9792,601.5625,632.8125" style="stroke:#2FA4E7;stroke-width:1.0416666666666667;"/><line style="stroke:#2FA4E7;stroke-width:3.125;stroke-dasharray:2.0,2.0;" x1="599.4792" x2="851.5625" y1="632.8125" y2="632.8125"/><text fill="#343A40" font-family="&quot;Verdana&quot;" font-size="12.5" lengthAdjust="spacing" textLength="123.9583" x="617.1875" y="622.5728">Payment notification</text><!--MD5=[a9dd113b7df050f7d4783131677c597d]
+@startuml
+!theme cerulean
+User -> Merchant : Pay!
+Merchant -> KibramoaDirectAPI: Payment/payout options Request
+KibramoaDirectAPI -> Merchant : Supported payment/payout options
+
+Merchant -> User: Show payment options
+User -> Merchant: Choose option
+
+Merchant -> KibramoaDirectAPI: Process payment option
+KibramoaDirectAPI -> Processor
+Processor -> KibramoaDirectAPI : Result
+
+KibramoaDirectAPI -> Merchant: Return action
+
+
+Merchant -> User: Perform Action: Success / Error /Redirect / QrCode / Form / Receipt / Info
+alt action = !success || !error
+User -> Processor: Complete payment in provider
+
+Processor - -> KibramoaDirectAPI: Payment result
+Processor -> User: Redirect to merchant result page
+
+end
+
+KibramoaDirectAPI - -> Merchant: Payment notification
+@enduml
+
+@startuml
+
+
+
+skinparam backgroundColor transparent
+skinparam useBetaStyle false
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor transparent
+    FontColor #FFF
+    HyperLinkColor #FD7E14
+    LineColor #2683B9
+    LineThickness 1
+    Margin 10
+    Padding 6
+    Shadowing 0.0
+  }
+  node {
+   Padding 15
+   roundcorner 20
+   BackgroundColor #2FA4E7-#2683B9
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  groupHeader {
+    BackgroundColor #E9ECEF
+    FontColor #033C73
+    FontStyle bold
+  }
+  header {
+    LineThickness 0
+  }
+  referenceHeader {
+    BackgroundColor transparent
+    FontColor #343A40
+    FontStyle bold
+  }
+  separator {
+    BackgroundColor #343A40
+    FontColor transparent
+    FontStyle bold
+  }
+  title {
+	FontSize 20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor  #EDF0F2-#E9ECEF
+	FontColor #2FA4E7
+	BorderColor #E9ECEF
+  }
+  nwdiagDiagram {
+	network {
+			FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7    
+		LineColor #2FA4E7
+		LineThickness 1.0
+		FontColor #2683B9
+	}
+	server {
+			FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	}
+	arrow {
+		FontColor #2683B9
+		LineColor #2683B9
+	}
+	group {
+		BackGroundColor #F8F9FA
+		LineColor $LIGHT_DARK
+		LineThickness 2.0
+		Margin 5
+		Padding 5
+	}
+  }
+  ganttDiagram {
+	task {
+			FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+		LineColor #2FA4E7
+		Margin 10
+		Padding 6
+	}
+	note {
+		FontColor #FFF
+		LineColor #02305C
+		BackGroundColor #033C73
+	}
+	separator {
+		LineColor #E9ECEF
+		BackGroundColor #E9ECEF-#BABDBF
+		FontColor #343A40
+	}
+	milestone {
+		FontColor #033C73
+		FontSize 16
+		FontStyle italic
+		BackGroundColor #E9ECEF
+		LineColor #BABDBF
+	}
+	timeline {
+		BackgroundColor #E9ECEF
+		FontColor #343A40
+	}
+	closed {
+		BackgroundColor #B14500
+		FontColor #FFF
+	}
+  }
+</style>
+skinparam defaultFontName        "Verdana"
+skinparam defaultFontSize        12
+skinparam dpi                    100
+skinparam shadowing              false
+skinparam roundcorner            8
+skinparam ParticipantPadding     40
+skinparam BoxPadding             40
+skinparam Padding                5
+skinparam ArrowColor             #868E96
+skinparam stereotype {
+    CBackgroundColor #EDF0F2
+    CBorderColor #BABDBF
+    ABackgroundColor #8FB961
+    ABorderColor #5C862E
+    IBackgroundColor #D2494E
+    IBorderColor #9F161B
+    EBackgroundColor #E47833
+    EBorderColor #B14500
+    NBackgroundColor #35638F
+    NBorderColor #02305C
+}
+skinparam title {
+	FontColor	                 #2FA4E7
+	BorderColor	                 #BABDBF
+	FontSize	    	         20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor              #EDF0F2-#E9ECEF
+}
+
+
+skinparam legend {
+	BackgroundColor #E9ECEF
+	BorderColor #BABDBF
+	FontColor #343A40
+}
+
+skinparam swimlane {
+	BorderColor #033C73
+	BorderThickness 2
+	TitleBackgroundColor  #EDF0F2-#E9ECEF
+	TitleFontColor #2FA4E7
+}
+
+
+skinparam activity {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	BarColor #73A839
+	StartColor #033C73
+	EndColor #033C73
+	DiamondBackgroundColor #FFF-#EDF0F2
+  	DiamondBorderColor #BABDBF
+	DiamondFontColor #343A40
+}
+
+
+skinparam participant {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	ParticipantBorderThickness 2
+}
+
+
+skinparam actor {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	FontColor #343A40
+}
+
+
+skinparam arrow {
+	Thickness 3
+	Color #2FA4E7
+	FontColor #343A40
+}
+
+
+skinparam sequence {
+	BorderColor #2FA4E7
+	TitleFontColor #2FA4E7
+	BackgroundColor transparent
+	StartColor #2FA4E7
+	EndColor #2FA4E7
+	BoxBackgroundColor #F8F9FA
+	BoxBorderColor #868E96
+	BoxFontColor #343A40
+	DelayFontColor #343A40
+	LifeLineBorderColor #BABDBF
+	LifeLineBorderThickness 2
+	LifeLineBackgroundColor #EDF0F2
+	GroupBorderColor #868E96
+	GroupFontColor #343A40
+	GroupHeaderFontColor #033C73
+	DividerBackgroundColor #FFF-#F8F9FA
+    DividerBorderColor #868E96
+    DividerBorderThickness 2
+    DividerFontColor #343A40
+	ReferenceBackgroundColor transparent
+	ReferenceBorderColor #868E96
+	ReferenceFontColor #343A40
+	ReferenceHeaderFontColor #033C73
+	StereotypeFontColor #FFF
+}
+
+
+skinparam partition {
+	BorderColor #2FA4E7
+	FontColor #2FA4E7
+	BackgroundColor transparent
+}
+
+
+skinparam collections {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+}
+
+
+skinparam control {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	FontColor #343A40
+}
+
+
+skinparam entity {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	FontColor #343A40
+}
+
+
+skinparam boundary {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	FontColor #343A40
+}
+
+
+skinparam agent {
+	BackgroundColor #orange
+	BorderColor #999999
+	FontColor #333333
+}
+
+
+skinparam note {
+	BorderThickness 1
+	BackgroundColor #35638F-#033C73
+	BorderColor #033C73
+	FontColor #FFF
+}
+
+
+skinparam artifact {
+	BackgroundColor #FFF-#F8F9FA
+	BorderColor #BABDBF
+	FontColor #343A40
+}
+
+
+skinparam component {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+}
+
+
+skinparam interface {
+	BackgroundColor  #D2494E
+	BorderColor  #C71C22
+	FontColor #343A40
+}
+
+
+skinparam storage {
+	BackgroundColor #E47833-#DD5600
+  	BorderColor #DD5600
+	FontColor #FFF
+}
+
+
+skinparam node {
+	BackgroundColor #EDF0F2-#E9ECEF
+	BorderColor #E9ECEF
+	FontColor #343A40
+}
+
+
+skinparam cloud {
+	BackgroundColor #F2FCFE-#eeeeee
+	BorderColor #F2FCFE
+	FontColor #2FA4E7
+}
+
+
+skinparam database {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	FontColor #343A40
+}
+
+
+skinparam class {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	HeaderBackgroundColor #2FA4E7-#2683B9
+	StereotypeFontColor #343A40
+	BorderThickness 1
+	AttributeFontColor #F8F9FA
+	AttributeFontSize 11
+}
+
+
+skinparam object {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	StereotypeFontColor #343A40
+	BorderThickness 1
+	AttributeFontColor #343A40
+	AttributeFontSize 11
+}
+
+
+skinparam usecase {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	BorderThickness 2
+	StereotypeFontColor #2FA4E7
+}
+
+
+skinparam rectangle {
+	FontColor #2FA4E7
+	BorderColor #59B6EC
+	BackgroundColor transparent
+	BorderThickness 2
+	StereotypeFontColor #2FA4E7
+}
+
+
+skinparam package {
+	FontColor #2FA4E7
+	BorderColor #59B6EC
+	BackgroundColor transparent
+	BorderThickness 2
+}
+
+
+skinparam folder {
+	BackgroundColor #FFF-#EDF0F2
+  	BorderColor #DD5600
+	FontColor #DD5600
+	BorderThickness 2
+}
+
+
+skinparam frame {
+	BackgroundColor #FFF-#EDF0F2
+  	BorderColor #033C73
+	FontColor #033C73
+	BorderThickness 2
+}
+
+
+skinparam state {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+	BorderColor #2683B9
+	StartColor #033C73
+	EndColor #033C73
+	AttributeFontColor #343A40
+	AttributeFontSize 11
+}
+
+
+skinparam queue {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+}
+
+
+skinparam card {
+	BackgroundColor #35638F-#033C73
+	BorderColor #033C73
+	FontColor #FFF
+}
+
+
+skinparam file {
+	BackgroundColor #EDF0F2-#E9ECEF
+	BorderColor #033C73
+	FontColor #868E96
+
+}
+
+
+skinparam stack {
+		FontColor #FFF
+	BorderColor #2FA4E7
+	BackgroundColor #59B6EC-#2FA4E7
+}
+User -> Merchant : Pay!
+Merchant -> KibramoaDirectAPI: Payment/payout options Request
+KibramoaDirectAPI -> Merchant : Supported payment/payout options
+
+Merchant -> User: Show payment options
+User -> Merchant: Choose option
+
+Merchant -> KibramoaDirectAPI: Process payment option
+KibramoaDirectAPI -> Processor
+Processor -> KibramoaDirectAPI : Result
+
+KibramoaDirectAPI -> Merchant: Return action
+
+
+Merchant -> User: Perform Action: Success / Error /Redirect / QrCode / Form / Receipt / Info
+alt action = !success || !error
+User -> Processor: Complete payment in provider
+
+Processor - -> KibramoaDirectAPI: Payment result
+Processor -> User: Redirect to merchant result page
+
+end
+
+KibramoaDirectAPI - -> Merchant: Payment notification
+@enduml
+
+PlantUML version 1.2022.14beta7(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

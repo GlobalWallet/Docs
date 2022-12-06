@@ -1,6 +1,6 @@
 ---
-title: Cashier Payin Request Life-cycle
-position_number: 5
+title: Payin Request Life-cycle
+position_number: 1
 parameters:
   - name:
     content:

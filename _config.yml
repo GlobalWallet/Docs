@@ -1,9 +1,9 @@
 # ----
 # Site
 
-title: Kibramoa
-description: Jekyll template for API documentation.
-url: https://example.com
+title: Kibramoa Docs
+description: Kibramoa API documentation.
+url: https://kibramoa.com
 google_analytics_key:
 permalink: pretty
 baseurl:
@@ -18,35 +18,41 @@ collections:
     title: Overview
     position_number: 1
   cashier:
-    title: CashierUI API Endpoints
-    position_number: 2  
-  api:
-    title: Direct API Endpoints
+    title: CashierUI
+    position_number: 2 
+  cashier-payin:
+    title: Payin
     position_number: 3
+  cashier-payout:
+    title: Payout
+    position_number: 4
+  api:
+    title: Direct API
+    position_number: 5
   payins:
     title: Payins
-    position_number: 4
+    position_number: 6
   payouts:
     title: Payouts
-    position_number: 5
+    position_number: 7
   transaction-query:
     title: Transaction Query
-    position_number: 6
+    position_number: 8
   refunds:
     title: Refunds
-    position_number: 7
+    position_number: 9
   notifications:
     title: Notifications
-    position_number: 8
+    position_number: 10
   countries:
     title: GEOs and Methods
-    position_number: 9
+    position_number: 11
   datatables:
     title: Useful Data
-    position_number: 10
+    position_number: 12
   testdata:
     title: Testing Details
-    position_number: 11
+    position_number: 13
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -90,6 +96,7 @@ languages:
   php: PHP
   python: Python
   ruby: Ruby
+  http: HTTP
 
 _options:
   content_markdown:

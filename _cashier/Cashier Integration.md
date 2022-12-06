@@ -1,6 +1,6 @@
 ---
-title: Cashier Integration
-position_number: 2
+title: Cashier Overview
+position_number: 1
 parameters:
   - name:
     content:

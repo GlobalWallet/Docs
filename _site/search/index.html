@@ -5,20 +5,20 @@
 		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Search | Kibramoa</title>
+<title>Search | Kibramoa Docs</title>
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="Search" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Jekyll template for API documentation." />
-<meta property="og:description" content="Jekyll template for API documentation." />
+<meta name="description" content="Kibramoa API documentation." />
+<meta property="og:description" content="Kibramoa API documentation." />
 <link rel="canonical" href="http://localhost:4000/search/" />
 <meta property="og:url" content="http://localhost:4000/search/" />
-<meta property="og:site_name" content="Kibramoa" />
+<meta property="og:site_name" content="Kibramoa Docs" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Search" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Jekyll template for API documentation.","headline":"Search","url":"http://localhost:4000/search/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Kibramoa API documentation.","headline":"Search","url":"http://localhost:4000/search/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -34,7 +34,7 @@
 		<header>
 			<h1>
 				<button type="button" class="open-nav" id="open-nav"></button>
-				<a href="/"><img src="/images/logo.svg" height="40" alt="Kibramoa Docs"></a>
+				<a href="/"><img src="/images/logo.svg" height="40" alt="Kibramoa Docs Docs"></a>
 			</h1>
 
 			<form action="/search/" method="get">
@@ -55,49 +55,21 @@
 					
 						<li>
 							<a href="/#documentationgetting_started">
-								Getting Started
+								API Reference
 								
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#documentationCashier Integration">
-								Cashier Integration
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#documentationServer to Server Integration">
-								Server to Server Integration
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#documentationGateway Interface">
-								Gateway URLs
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#documentationCashier-request-lifecycle">
-								Cashier Payin Request Life-cycle
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#documentationCashier-Payout">
-								Cashier Payout Request Life-cycle
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="/#documentationCashier Authentication">
+							<a href="/#documentationAuthentication">
 								Authentication
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#documentationAPIEndpoints">
+								Environment Endpoints
 								
 							</a>
 						</li>
@@ -115,19 +87,60 @@
 	
 		
 			<section>
-				<h6>CashierUI API Endpoints</h6>
+				<h6>CashierUI</h6>
 				<ul>
 					
 					
 						<li>
-							<a href="/#cashiercashiersession">
+							<a href="/#cashierCashier Integration">
+								Cashier Overview
+								
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Payin</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#cashier-payinCashier-request-lifecycle">
+								Payin Request Life-cycle
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#cashier-payincashiersession">
 								/payment-session
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Payout</h6>
+				<ul>
+					
+					
 						<li>
-							<a href="/#cashierpayouts">
+							<a href="/#cashier-payoutCashier-Payout-request-lifecycle">
+								Payout Request Life-cycle
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#cashier-payoutpayouts">
 								/payout-session
 								<span class="endpoint post"></span>
 							</a>
@@ -139,9 +152,16 @@
 	
 		
 			<section>
-				<h6>Direct API Endpoints</h6>
+				<h6>Direct API</h6>
 				<ul>
 					
+					
+						<li>
+							<a href="/#apiServer to Server Integration">
+								Direct API overview
+								
+							</a>
+						</li>
 					
 				</ul>
 			</section>
@@ -374,19 +394,91 @@
 	window.data = {
 		
 			
-		
-			
 				
 					
 						
 						
-						"cashier-cashiersession": {
-							"id": "cashier-cashiersession",
-							"title": "/payment-session",
+						"api-server-to-server-integration": {
+							"id": "api-server-to-server-integration",
+							"title": "Direct API overview",
+							"category": "api",
+							"description": "",
+		  				"type": "",
+							"url": "/#apiServer to Server Integration",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"cashier-cashier-integration": {
+							"id": "cashier-cashier-integration",
+							"title": "Cashier Overview",
 							"category": "cashier",
-							"description": "initiates a payment session on Kibramoa CashierUI regarding country and currency.",
+							"description": "",
+		  				"type": "",
+							"url": "/#cashierCashier Integration",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"cashier-payin-cashier-request-lifecycle": {
+							"id": "cashier-payin-cashier-request-lifecycle",
+							"title": "Payin Request Life-cycle",
+							"category": "cashier-payin",
+							"description": "",
+		  				"type": "",
+							"url": "/#cashier-payinCashier-request-lifecycle",
+							"content": "left_code_blocks:\n\n  code_block: |-\ntitle: \nlanguage: \nright_code_blocks:\n  code_block:\ntitle:\nlanguage:"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"cashier-payin-cashiersession": {
+							"id": "cashier-payin-cashiersession",
+							"title": "/payment-session",
+							"category": "cashier-payin",
+							"description": "Initiates a payment session on Kibramoa CashierUI regarding country and currency.",
 		  				"type": "post",
-							"url": "/#cashiercashiersession",
+							"url": "/#cashier-payincashiersession",
+							"content": ""
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"cashier-payout-cashier-payout-request-lifecycle": {
+							"id": "cashier-payout-cashier-payout-request-lifecycle",
+							"title": "Payout Request Life-cycle",
+							"category": "cashier-payout",
+							"description": "",
+		  				"type": "",
+							"url": "/#cashier-payoutCashier-Payout-request-lifecycle",
 							"content": ""
 						}
 						
@@ -397,13 +489,13 @@
 					
 						,
 						
-						"cashier-payouts": {
-							"id": "cashier-payouts",
+						"cashier-payout-payouts": {
+							"id": "cashier-payout-payouts",
 							"title": "/payout-session",
-							"category": "cashier",
+							"category": "cashier-payout",
 							"description": "Initiate a payout request on Kibramoa CashierUI.",
 		  				"type": "post",
-							"url": "/#cashierpayouts",
+							"url": "/#cashier-payoutpayouts",
 							"content": ""
 						}
 						
@@ -556,65 +648,31 @@
 					
 						,
 						
-						"documentation-cashier-authentication": {
-							"id": "documentation-cashier-authentication",
+						"documentation-apiendpoints": {
+							"id": "documentation-apiendpoints",
+							"title": "Environment Endpoints",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "/#documentationAPIEndpoints",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"documentation-authentication": {
+							"id": "documentation-authentication",
 							"title": "Authentication",
 							"category": "documentation",
 							"description": "",
 		  				"type": "",
-							"url": "/#documentationCashier Authentication",
+							"url": "/#documentationAuthentication",
 							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"documentation-cashier-integration": {
-							"id": "documentation-cashier-integration",
-							"title": "Cashier Integration",
-							"category": "documentation",
-							"description": "",
-		  				"type": "",
-							"url": "/#documentationCashier Integration",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"documentation-cashier-payout": {
-							"id": "documentation-cashier-payout",
-							"title": "Cashier Payout Request Life-cycle",
-							"category": "documentation",
-							"description": "",
-		  				"type": "",
-							"url": "/#documentationCashier-Payout",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"documentation-cashier-request-lifecycle": {
-							"id": "documentation-cashier-request-lifecycle",
-							"title": "Cashier Payin Request Life-cycle",
-							"category": "documentation",
-							"description": "",
-		  				"type": "",
-							"url": "/#documentationCashier-request-lifecycle",
-							"content": "left_code_blocks:\n\n  code_block: |-\ntitle: \nlanguage: \nright_code_blocks:\n  code_block:\ntitle:\nlanguage:"
 						}
 						
 					
@@ -641,43 +699,9 @@
 					
 						,
 						
-						"documentation-gateway-interface": {
-							"id": "documentation-gateway-interface",
-							"title": "Gateway URLs",
-							"category": "documentation",
-							"description": "",
-		  				"type": "",
-							"url": "/#documentationGateway Interface",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
-						"documentation-server-to-server-integration": {
-							"id": "documentation-server-to-server-integration",
-							"title": "Server to Server Integration",
-							"category": "documentation",
-							"description": "",
-		  				"type": "",
-							"url": "/#documentationServer to Server Integration",
-							"content": ""
-						}
-						
-					
-				
-			
-				
-					
-						,
-						
 						"documentation-getting-started": {
 							"id": "documentation-getting-started",
-							"title": "Getting Started",
+							"title": "API Reference",
 							"category": "documentation",
 							"description": "",
 		  				"type": "",

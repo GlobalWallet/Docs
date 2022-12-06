@@ -5,20 +5,20 @@
 		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>API Docs | Kibramoa</title>
+<title>API Docs | Kibramoa Docs</title>
 <meta name="generator" content="Jekyll v4.2.2" />
 <meta property="og:title" content="API Docs" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Jekyll template for API documentation." />
-<meta property="og:description" content="Jekyll template for API documentation." />
+<meta name="description" content="Kibramoa API documentation." />
+<meta property="og:description" content="Kibramoa API documentation." />
 <link rel="canonical" href="http://localhost:4000/" />
 <meta property="og:url" content="http://localhost:4000/" />
-<meta property="og:site_name" content="Kibramoa" />
+<meta property="og:site_name" content="Kibramoa Docs" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="API Docs" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Jekyll template for API documentation.","headline":"API Docs","name":"Kibramoa","url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"Kibramoa API documentation.","headline":"API Docs","name":"Kibramoa Docs","url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -34,7 +34,7 @@
 		<header>
 			<h1>
 				<button type="button" class="open-nav" id="open-nav"></button>
-				<a href="/"><img src="/images/logo.svg" height="40" alt="Kibramoa Docs"></a>
+				<a href="/"><img src="/images/logo.svg" height="40" alt="Kibramoa Docs Docs"></a>
 			</h1>
 
 			<form action="/search/" method="get">
@@ -55,49 +55,21 @@
 					
 						<li>
 							<a href="#documentationgetting_started">
-								Getting Started
+								API Reference
 								
 							</a>
 						</li>
 					
 						<li>
-							<a href="#documentationCashier Integration">
-								Cashier Integration
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="#documentationServer to Server Integration">
-								Server to Server Integration
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="#documentationGateway Interface">
-								Gateway URLs
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="#documentationCashier-request-lifecycle">
-								Cashier Payin Request Life-cycle
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="#documentationCashier-Payout">
-								Cashier Payout Request Life-cycle
-								
-							</a>
-						</li>
-					
-						<li>
-							<a href="#documentationCashier Authentication">
+							<a href="#documentationAuthentication">
 								Authentication
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#documentationAPIEndpoints">
+								Environment Endpoints
 								
 							</a>
 						</li>
@@ -115,19 +87,60 @@
 	
 		
 			<section>
-				<h6>CashierUI API Endpoints</h6>
+				<h6>CashierUI</h6>
 				<ul>
 					
 					
 						<li>
-							<a href="#cashiercashiersession">
+							<a href="#cashierCashier Integration">
+								Cashier Overview
+								
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Payin</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="#cashier-payinCashier-request-lifecycle">
+								Payin Request Life-cycle
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#cashier-payincashiersession">
 								/payment-session
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>Payout</h6>
+				<ul>
+					
+					
 						<li>
-							<a href="#cashierpayouts">
+							<a href="#cashier-payoutCashier-Payout-request-lifecycle">
+								Payout Request Life-cycle
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="#cashier-payoutpayouts">
 								/payout-session
 								<span class="endpoint post"></span>
 							</a>
@@ -139,9 +152,16 @@
 	
 		
 			<section>
-				<h6>Direct API Endpoints</h6>
+				<h6>Direct API</h6>
 				<ul>
 					
+					
+						<li>
+							<a href="#apiServer to Server Integration">
+								Direct API overview
+								
+							</a>
+						</li>
 					
 				</ul>
 			</section>
@@ -374,7 +394,7 @@
 			<section class="left-docs">
 				<h3>
 					<a id="documentationgetting_started">
-						Getting Started
+						API Reference
 						
 					</a>
 					<a class="editor-link" href="cloudcannon:collections/_documentation/getting_started.md">Edit</a>
@@ -383,11 +403,20 @@
 
 				
 
-				<p>This document covers all the technical aspects for accomplish an integration with Kibramoa API, a platform that aggregates most popular payments methods from different countries around the world.</p>
+				<p>The Kibramoa API allow merchants to accept payment from most popular payments methods on different countries around the world.</p>
 
-<p>Kibramoa API provides a modern user interface called CashierUI, this application provides a visual way for the merchant’s customers to initiate and complete payments using their preferred payment options from different countries.</p>
+<p>This API is designed using API REST, and supports two different types of integrations:</p>
 
-<h3 class="info" id="boarding">Boarding</h3>
+<ul>
+  <li>
+    <p>CashierUI: a modern user interface that provides a visual way for the merchant’s customers to initiate and complete payments using their preferred payment options from different countries.</p>
+  </li>
+  <li>
+    <p>Direct API: set of endpoints that provides all required data to display all available payment options and initiate the payment directly on Kibramoa systems.</p>
+  </li>
+</ul>
+
+<h3 id="merchant-boarding">Merchant Boarding</h3>
 
 <p>Kibramoa boarding will setup a basic merchant account for access to all the payment options in different supported countries,</p>
 
@@ -403,12 +432,12 @@
 
 <p>If you already have an account and want to operate in more countries, please contact our operations team.</p>
 
-<h3 class="info" id="integration-options">Integration Options</h3>
+<h3 id="integration-options">Integration Options</h3>
 
 <p>The Kibramoa API offers the following types of integrations for payment processing:</p>
 <ul>
-  <li>Payment Form Integration called Cashier-UI</li>
-  <li>Server to Server Integration (comming soon).</li>
+  <li><a href="/#cashierCashier%20Integration">Cashier-UI: rapid integration using a profesional UI hosted on Kibramoa.</a></li>
+  <li><a href="#apiServer%20to%20Server%20Integration">Direct API: direct integration to Kibramoa API.</a></li>
 </ul>
 
 
@@ -420,179 +449,103 @@
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="documentationCashier Integration">
-						Cashier Integration
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier Integration.md">Edit</a>
-				</h3>
-				
-
-				
-
-				<p>CashierUI displays all the payment options available for the merchant, users can choose their favourite payment option, later the payment is managed and secured by kibramoa.</p>
-
-<p>Fast integration flow:</p>
-<ul>
-  <li>A link to CashierUI will be generated for the merchant platform after session requesting.</li>
-  <li>Merchant would have to be boarded and generate his API key from merchant portal in order to access CashierUI API.</li>
-  <li>The HTTP header must attach the Merchant API key before open a new session on the CashierUI API call.</li>
-  <li>When payment is completed by user, Kibramoa will redirect to merchant website and notify the payment by a webhook.</li>
-</ul>
-
-<p><img src="/images/FLOW2.png" alt="User and merchant actions on CashierUI" /></p>
-
-
-				
-			</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="documentationServer to Server Integration">
-						Server to Server Integration
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_documentation/Server to Server Integration.md">Edit</a>
-				</h3>
-				
-
-				
-
-				<p>Server-side integration coming soon.</p>
-
-
-				
-			</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="documentationGateway Interface">
-						Gateway URLs
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_documentation/Gateway Interface.md">Edit</a>
-				</h3>
-				
-
-				
-
-				
-<p class="info">Sandbox Environment URLs</p>
-<ul>
-  <li>
-    <p>API: https://api.sandbox.kibramoa.net</p>
-  </li>
-  <li>
-    <p>Cashier (Hosted Payments Page): https://cashier.sandbox.kibramoa.net</p>
-  </li>
-</ul>
-
-<p class="info">Production  Environment URLs</p>
-
-<ul>
-  <li>
-    <p>API: https://api.kibramoa.net</p>
-  </li>
-  <li>
-    <p>Cashier (Hosted Payments Page): https://cashier.kibramoa.net</p>
-  </li>
-</ul>
-
-
-				
-			</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="documentationCashier-request-lifecycle">
-						Cashier Payin Request Life-cycle
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier-request-lifecycle.md">Edit</a>
-				</h3>
-				
-
-				
-
-				<p>When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier.</p>
-
-<p>Sequence diagram with the comunication process between systems:</p>
-
-<p><img src="/images/Cashier_Request_Api_Steps.png" alt="kibramoa cashier sequence" /></p>
-
-<p>*Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.</p>
-
-
-				
-			</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="documentationCashier-Payout">
-						Cashier Payout Request Life-cycle
-						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier-Payout">Edit</a>
-				</h3>
-				
-
-				
-
-				<p>When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier to process payouts.</p>
-
-<p>Sequence diagram with the comunication process between systems:</p>
-
-<p><img src="/images/Payout_flow.png" alt="kibramoa cashier sequence" /></p>
-
-<p>*Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.</p>
-
-
-				
-			</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="documentationCashier Authentication">
+					<a id="documentationAuthentication">
 						Authentication
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_documentation/Cashier Authentication.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/Authentication.md">Edit</a>
 				</h3>
 				
 
 				
 
 				
-<p>Within the header of the calls to Kibramoa that will contain the cashier request the Merchant API key needs to be declared.</p>
+<p>API requests must be authenticated using an API key, tied to the merchant configuration and generated during the boarding process.</p>
+
+<p class="info">The X-API-KEY header grant access to merchant servers on kibramoa API, all the requests that contain this header must be executed from a back-end.</p>
+
+<p>See the example of the headers included on this authenticated request in right side of the screen.</p>
 
 
 				
+			</section>
+			
+					<section class="right-code">
 						
 								
 
 
-<div title="Session ID Format" class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>X-API-KEY: 48wL6TGO3K0be*3ff6-b255-c19a2d2c164b
-Content-Type: application/json
+<div title="HTTP" class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">POST</span> <span class="nn">/direct-payment</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.dev.kibramoa.net</span>
+<span class="na">X-API-KEY</span><span class="p">:</span> <span class="s">PoQFx3ZBafIXsyA06vN7h3HJNu9...xZI=.c4c1f3748b3982162</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
 </code></pre></div></div>
 
-								
 						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationAPIEndpoints">
+						Environment Endpoints
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/APIEndpoints.md">Edit</a>
+				</h3>
+				
+
+				
+
+				
+<p>Sandbox will be used for integrate with KibramoaAPI, all sandbox transactions are simulations with fake money.</p>
+
+<p class="success">Sandbox Environment URLs</p>
+<ul>
+  <li>CashierUI (Hosted Payments Page):  https://cashier.sandbox.kibramoa.net</li>
+  <li>Direct API endpoint:  https://api.sandbox.kibramoa.net</li>
+</ul>
+
+<p>*Note: Check useful data section to find all related test data to use.</p>
+
+<p>Real transactions happen on production environment.</p>
+
+<p class="info">Production Environment URLs</p>
+
+<ul>
+  <li>CashierUI (Hosted Payments Page):  https://cashier.kibramoa.net</li>
+  <li>API: https://api.kibramoa.net</li>
+</ul>
+
+
+				
 			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="SANDBOX" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"cashierUIEndpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.sandbox.kibramoa.net"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"directAPIendpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.sandbox.kibramoa.net"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="PRODUCTION" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"cashierUIEndpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.kibramoa.net"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"directAPIendpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.kibramoa.net"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
 			
 		</section>
 	
@@ -647,16 +600,77 @@ Content-Type: application/json
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="cashiercashiersession">
+					<a id="cashierCashier Integration">
+						Cashier Overview
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_cashier/Cashier Integration.md">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>CashierUI displays all the payment options available for the merchant, users can choose their favourite payment option, later the payment is managed and secured by kibramoa.</p>
+
+<p>Fast integration flow:</p>
+<ul>
+  <li>A link to CashierUI will be generated for the merchant platform after session requesting.</li>
+  <li>Merchant would have to be boarded and generate his API key from merchant portal in order to access CashierUI API.</li>
+  <li>The HTTP header must attach the Merchant API key before open a new session on the CashierUI API call.</li>
+  <li>When payment is completed by user, Kibramoa will redirect to merchant website and notify the payment by a webhook.</li>
+</ul>
+
+<p><img src="/images/FLOW2.png" alt="User and merchant actions on CashierUI" /></p>
+
+
+				
+			</section>
+			
+		</section>
+	
+
+	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="cashier-payinCashier-request-lifecycle">
+						Payin Request Life-cycle
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_cashier-payin/Cashier-request-lifecycle.md">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier.</p>
+
+<p>Sequence diagram with the comunication process between systems:</p>
+
+<p><img src="/images/Cashier_Request_Api_Steps.png" alt="kibramoa cashier sequence" /></p>
+
+<p>*Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.</p>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="cashier-payincashiersession">
 						/payment-session
 						
 							<span class="endpoint post"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_cashier/cashiersession.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_cashier-payin/cashiersession.md">Edit</a>
 				</h3>
 				
-					<p class="description">initiates a payment session on Kibramoa CashierUI regarding country and currency.</p>
+					<p class="description">Initiates a payment session on Kibramoa CashierUI regarding country and currency.</p>
 				
 
 				
@@ -779,16 +793,46 @@ Content-Type: application/json
 			
 		</section>
 	
+
+	
+	
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
-					<a id="cashierpayouts">
+					<a id="cashier-payoutCashier-Payout-request-lifecycle">
+						Payout Request Life-cycle
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_cashier-payout/Cashier-Payout-request-lifecycle.md">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier to process payouts.</p>
+
+<p>Sequence diagram with the comunication process between systems:</p>
+
+<p><img src="/images/Payout_flow.png" alt="kibramoa cashier sequence" /></p>
+
+<p>*Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.</p>
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="cashier-payoutpayouts">
 						/payout-session
 						
 							<span class="endpoint post"></span>
 						
 					</a>
-					<a class="editor-link" href="cloudcannon:collections/_cashier/payouts.md">Edit</a>
+					<a class="editor-link" href="cloudcannon:collections/_cashier-payout/payouts.md">Edit</a>
 				</h3>
 				
 					<p class="description">Initiate a payout request on Kibramoa CashierUI.</p>
@@ -877,6 +921,40 @@ Content-Type: application/json
 	
 
 	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiServer to Server Integration">
+						Direct API overview
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_api/Server to Server Integration.md">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>Direct API allow merchants to create their own payment page, providing all the required data to:</p>
+
+<ul>
+  <li>Initiate a payment through your back-end to Kibramoa.</li>
+  <li>You will get all the available payment options to be rendered.</li>
+  <li>Display all supported banks.</li>
+  <li>Trigger actions to complete the payment, such redirections, receipts or QrCodes.</li>
+</ul>
+
+<p><img src="/images/directAPIflow.svg" alt="kibramoa Direct API sequence" /></p>
+
+<p>Notification callback always will be triggered after the comunication with the payment processor is completed or closed. Merchants must always response with 200 HTTP status, otherwise notification will be triggered again up to 10 times.</p>
+
+<h4 id="note-transactions-notified-with-error-status-are-never-processed-due-to-validation-or-networking-issues">*Note: transactions notified with ERROR status are never processed due to validation or networking issues.</h4>
+
+
+				
+			</section>
+			
+		</section>
 	
 
 	
@@ -1363,70 +1441,85 @@ Content-Type: application/json
 								
 
 
-<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"request"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sandbox.paymentgt.com/fundtransfer"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-00002"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCESSING"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"bodyPayload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"bankcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RHB"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surepay88"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"refid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-00002"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a883c0f2c78cf5c0815ed97c1c06a5a5"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merch_User_123"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MYR"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"clientip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"post_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dev.kibramoa.net/notifications/surepay-apm/987441d2-c3b1-41e5-941a-000867bbd4a6"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"failed_return_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"return_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"queryParams"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33aa5301-4056-41bb-99db-33b56121de37"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<div title="QRCode" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"081"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qrcode"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"qrCodeString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00020126600014BR.GOV.BCB.PIX011434882109000111022022120528C2DB42465B9D5204000053039865406130.005802BR5909Transfero6012RioDeJaneiro6224052022120528C2DB42465B9D6304108C"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"base64QRCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"iVBORw0KGgoAAAANSUhEUgAAAVkAAAFZCAYAAAAy8lzbAAAAAXNSR0IArs4c...VVXXdC+J/.YII="</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08174da1-9b12-431f-a1b2-0b676b9b80ea"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						
 								
 
 
-<div title="Receipt" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
-   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"083"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"receipt"</span><span class="p">,</span><span class="w">
+<div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"082"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"request"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-       </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdfa8140-e0a3-49e0-8b3a-7717be3a1a76"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85fb951a-e8b9-4451-9007-2e8c1d582061"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Any Emirate Bank"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"paymentDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-           </span><span class="p">{</span><span class="w">
-               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rate"</span><span class="p">,</span><span class="w">
-               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.72387</span><span class="w">
-           </span><span class="p">},</span><span class="w">
-           </span><span class="p">{</span><span class="w">
-               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amount"</span><span class="p">,</span><span class="w">
-               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">3161.3</span><span class="w">
-           </span><span class="p">},</span><span class="w">
-           </span><span class="p">{</span><span class="w">
-               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Currency"</span><span class="p">,</span><span class="w">
-               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AED"</span><span class="w">
-           </span><span class="p">},</span><span class="w">
-           </span><span class="p">{</span><span class="w">
-               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account info"</span><span class="p">,</span><span class="w">
-               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdd12121212121"</span><span class="w">
-           </span><span class="p">},</span><span class="w">
-           </span><span class="p">{</span><span class="w">
-               </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment info"</span><span class="p">,</span><span class="w">
-               </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Recipient_Name"</span><span class="w">
-           </span><span class="p">}</span><span class="w">
-       </span><span class="p">]</span><span class="w">
+     </span><span class="nl">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sandbox.paymentgt.com/fundtransfer"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"externalId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-00002"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PROCESSING"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"bodyPayload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"bankcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RHB"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surepay88"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"refid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-00002"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a883c0f2c78cf5c0815ed97c1c06a5a5"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merch_User_123"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MYR"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"clientip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"post_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.dev.kibramoa.net/notifications/surepay-apm/987441d2-c3b1-41e5-941a-000867bbd4a6"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"failed_return_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"return_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"queryParams"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33aa5301-4056-41bb-99db-33b56121de37"</span><span class="w">
    </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Receipt" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"083"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"receipt"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bdfa8140-e0a3-49e0-8b3a-7717be3a1a76"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85fb951a-e8b9-4451-9007-2e8c1d582061"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Any Emirate Bank"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"paymentDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rate"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.72387</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amount"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">3161.3</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Currency"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AED"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Account info"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdd12121212121"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Payment info"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Recipient_Name"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						
@@ -1434,26 +1527,26 @@ Content-Type: application/json
 
 
 <div title="Info" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-</span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"084"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span><span class="w">
-</span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f5659201-a219-4be3-b14f-f2513280f236"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Banco do Brasil"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"paymentDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="nl">"paymentLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Banco do Brasil"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"Após clicar no link para o seu Internet Banking, seguir as instruções abaixo"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Selecione a opção </span><span class="se">\"</span><span class="s2">Débito em Conta</span><span class="se">\"</span><span class="s2"> e informe sua agência e conta corrente"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Verifique se seu nome aparece corretamente e digite sua senha eletrônica"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Digite sua senha de 6 dígitos e clique no botão continuar"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"Clique no botão </span><span class="se">\"</span><span class="s2">Concordo</span><span class="se">\"</span><span class="s2"> e confirme sua compra"</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sandbox-gateway.safetypay.com/banksgateway/9165/251168"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+ </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"084"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f5659201-a219-4be3-b14f-f2513280f236"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Banco do Brasil"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+   </span><span class="nl">"paymentLocations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Banco do Brasil"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="s2">"Após clicar no link para o seu Internet Banking, seguir as instruções abaixo"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Selecione a opção </span><span class="se">\"</span><span class="s2">Débito em Conta</span><span class="se">\"</span><span class="s2"> e informe sua agência e conta corrente"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Verifique se seu nome aparece corretamente e digite sua senha eletrônica"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Digite sua senha de 6 dígitos e clique no botão continuar"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Clique no botão </span><span class="se">\"</span><span class="s2">Concordo</span><span class="se">\"</span><span class="s2"> e confirme sua compra"</span><span class="w">
+       </span><span class="p">]</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://sandbox-gateway.safetypay.com/banksgateway/9165/251168"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1462,10 +1555,10 @@ Content-Type: application/json
 
 
 <div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
- </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
- </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-     </span><span class="s2">"This session was completed."</span><span class="w">
- </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"This session was completed."</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -1511,19 +1604,58 @@ You can review the request and responses from kibramoa API on the right side.</p
   </thead>
   <tbody>
     <tr>
-      <td>country</td>
+      <td>*country</td>
       <td>string(2)</td>
       <td>Country code ISO alpha 2.</td>
     </tr>
     <tr>
-      <td>currency</td>
+      <td>*currency</td>
       <td>string(3)</td>
       <td>Currency code ISO alpha 3.</td>
     </tr>
     <tr>
-      <td>amount</td>
+      <td>*amount</td>
       <td>integer</td>
       <td>Amount in decimal format, I.E: 100 = 1$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Success response have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>currencies</td>
+      <td>array</td>
+      <td>Array of strings indicating the currencies allowed.</td>
+    </tr>
+    <tr>
+      <td>arrivalCurrency</td>
+      <td>string</td>
+      <td>Currency of used by the destination account.</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>string</td>
+      <td>Name of the payout option.</td>
+    </tr>
+    <tr>
+      <td>logo</td>
+      <td>string</td>
+      <td>Payment option logo url.</td>
+    </tr>
+    <tr>
+      <td>formInputs</td>
+      <td>array</td>
+      <td>Array that represent a set of input fields to be filled by end-user. Refer to Useful Data section for futher details.</td>
     </tr>
   </tbody>
 </table>
@@ -1728,7 +1860,7 @@ You can review the request and responses from kibramoa API on the right side.</p
   </tbody>
 </table>
 
-<p>Success response have the following schema:</p>
+<p>Response:</p>
 
 <table>
   <thead>
@@ -1740,9 +1872,9 @@ You can review the request and responses from kibramoa API on the right side.</p
   </thead>
   <tbody>
     <tr>
-      <td>*result</td>
+      <td>result</td>
       <td>string</td>
-      <td>If an error is returned the error code is shown here.</td>
+      <td>Payout result message.</td>
     </tr>
   </tbody>
 </table>

@@ -1,16 +1,19 @@
 ---
-title: Getting Started
+title: API Reference
 position_number: 1
 parameters:
   - name:
     content:
 content_markdown: |-
-  This document covers all the technical aspects for accomplish an integration with Kibramoa API, a platform that aggregates most popular payments methods from different countries around the world.
+  The Kibramoa API allow merchants to accept payment from most popular payments methods on different countries around the world.
 
-  Kibramoa API provides a modern user interface called CashierUI, this application provides a visual way for the merchant’s customers to initiate and complete payments using their preferred payment options from different countries. 
+  This API is designed using API REST, and supports two different types of integrations:
+  
+  - CashierUI: a modern user interface that provides a visual way for the merchant’s customers to initiate and complete payments using their preferred payment options from different countries. 
 
-  ### Boarding
-  {: .info }
+  - Direct API: set of endpoints that provides all required data to display all available payment options and initiate the payment directly on Kibramoa systems.
+
+  ### Merchant Boarding
 
   Kibramoa boarding will setup a basic merchant account for access to all the payment options in different supported countries,
 
@@ -25,11 +28,10 @@ content_markdown: |-
   If you already have an account and want to operate in more countries, please contact our operations team.
 
   ### Integration Options
-  {: .info }
   
   The Kibramoa API offers the following types of integrations for payment processing:
-  - Payment Form Integration called Cashier-UI
-  - Server to Server Integration (comming soon).
+  - [Cashier-UI: rapid integration using a profesional UI hosted on Kibramoa.](/#cashierCashier%20Integration)
+  - [Direct API: direct integration to Kibramoa API.](#apiServer%20to%20Server%20Integration)
 
  
 left_code_blocks:

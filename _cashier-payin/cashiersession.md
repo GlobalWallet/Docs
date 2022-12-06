@@ -1,8 +1,8 @@
 ---
 title: /payment-session
-position_number: 1
+position_number: 2
 type: post
-description: initiates a payment session on Kibramoa CashierUI regarding country and currency.
+description: Initiates a payment session on Kibramoa CashierUI regarding country and currency.
 
 content_markdown: |-
   This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.

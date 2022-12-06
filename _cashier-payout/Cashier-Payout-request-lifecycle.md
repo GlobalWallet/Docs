@@ -1,6 +1,6 @@
 ---
-title: Cashier Payout Request Life-cycle
-position_number: 6
+title: Payout Request Life-cycle
+position_number: 1
 parameters:
   - name:
     content:
