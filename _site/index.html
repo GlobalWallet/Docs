@@ -187,6 +187,13 @@
 							</a>
 						</li>
 					
+						<li>
+							<a href="#payinsconfirmPayment">
+								/confirm-payment
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
 				</ul>
 			</section>
 		
@@ -1560,6 +1567,149 @@
       </span><span class="s2">"This session was completed."</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="payinsconfirmPayment">
+						/confirm-payment
+						
+							<span class="endpoint post"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_payins/confirmPayment.md">Edit</a>
+				</h3>
+				
+					<p class="description">Payment API endpoint to confirm a direct payment by uploading a receipt.</p>
+				
+
+				
+
+				<p>Confirm payment is an optional extra step for some processors that requires to upload the payment receipt or payment ticket by the end user.</p>
+
+<p class="info">*Note: this request is only required when /direct-payment call returns the ‘receipt’ action code.</p>
+
+<p>The file must have the following formats: .peg, .png, .jpg, .gif, .pdf.</p>
+
+<p class="info">Request must include the header: “Content-Type: multipart/form-data;”</p>
+
+<p>Request parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*sessionId</td>
+      <td>string</td>
+      <td>UUID of the session generated previously.</td>
+    </tr>
+    <tr>
+      <td>*document</td>
+      <td>string(binary)</td>
+      <td>Uploaded file string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Success response have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*message</td>
+      <td>string</td>
+      <td>Success text message.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
+
+<p>An error response will return an HTTP error code and have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*statusCode</td>
+      <td>integer</td>
+      <td>If an error is returned the error code is shown here.</td>
+    </tr>
+    <tr>
+      <td>*message</td>
+      <td>array</td>
+      <td>Array containing all the error messages.</td>
+    </tr>
+    <tr>
+      <td>error</td>
+      <td>string</td>
+      <td>Error description.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Request" class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">curl -X 'POST' \
+   'https://api.sandbox.kibramoa.net/confirm-payment' \
+   -H 'accept: application/json' \
+   -H 'X-API-KEY: qHAnwVwu6Ivfs32NZ9xrZV6V...2d6-bcca3a87e8aa' \
+   -H 'Content-Type: multipart/form-data' \
+   -F 'sessionId=d88605f8-99e4-493b-98c7-4bbe8ba5df33' \
+   -F 'document=@Captura.JPG;type=image/jpeg'
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Success" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error 404" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="s2">"Invalid session id."</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						
@@ -4715,49 +4865,43 @@ Beneficiary's Bank: Banco Central del Ecuador
 
 <p><strong><em>Card Processing</em></strong></p>
 
-<p>Card Number: 5200000000000007 - 3D Enabled Card</p>
+<h4 id="3ds-enabled-card">3DS Enabled Card</h4>
+<ul>
+  <li>Card Number: 5200000000000007</li>
+  <li>Card expiry : 01/2023</li>
+  <li>CVV: 111</li>
+  <li>Name on Card: cardholder name</li>
+  <li>Currency: EUR/USD</li>
+</ul>
 
-<p>Card expiry : 01/2023</p>
-
-<p>Card CVV: 111</p>
-
-<p>Name on Card: cardholder name</p>
-
-<p>Currency: EUR/USD</p>
-
-<p>Card Number: 5457210001000019 - non-3D enabled Card</p>
-
-<p>Card expiry : 01/2023</p>
-
-<p>Card CVV: 111</p>
-
-<p>Name on Card: cardholder name</p>
-
-<p>Currency: USD</p>
+<h4 id="non-3d-enabled-card">Non-3D enabled Card</h4>
+<ul>
+  <li>Card Number: 5457210001000019</li>
+  <li>Card expiry : 01/2023</li>
+  <li>CVV: 111</li>
+  <li>Name on Card: cardholder name</li>
+  <li>Currency: USD</li>
+</ul>
 
 <p><strong><em>Test Card for Global Processing with KYC</em></strong></p>
 
 <p><u>EUR</u></p>
 
-<p>Card Number: 4596610015729187</p>
-
-<p>Card Expiry: 12/27</p>
-
-<p>Card CVV: 431</p>
-
-<p>Name on Card: LORENZO CARDELLI</p>
-
-<p>Amount: 3.00 EUR</p>
+<ul>
+  <li>Card Number: 4596610015729187</li>
+  <li>Card Expiry: 12/27</li>
+  <li>CVV: 431</li>
+  <li>Name on Card: LORENZO CARDELLI</li>
+  <li>Amount: 3.00 EUR</li>
+</ul>
 
 <p><u>USD</u></p>
-
-<p>Card Number: Card number: 4761739001010036</p>
-
-<p>Card Expiry: 12/23</p>
-
-<p>Card CVV: 123</p>
-
-<p>Name on Card: Card test</p>
+<ul>
+  <li>Card Number: 4761739001010036</li>
+  <li>Card Expiry: 12/23</li>
+  <li>CVV: 123</li>
+  <li>Name on Card: Card test</li>
+</ul>
 
 
 

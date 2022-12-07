@@ -9,49 +9,35 @@ content_markdown: |-
 
     ***Card Processing***
 
-     Card Number: 5200000000000007 - 3D Enabled Card
+    #### 3DS Enabled Card
+    - Card Number: 5200000000000007 
+    - Card expiry : 01/2023
+    - CVV: 111
+    - Name on Card: cardholder name
+    - Currency: EUR/USD
 
-      Card expiry : 01/2023
+    #### Non-3D enabled Card 
+    - Card Number: 5457210001000019 
+    - Card expiry : 01/2023
+    - CVV: 111
+    - Name on Card: cardholder name
+    - Currency: USD
 
-      Card CVV: 111
-
-      Name on Card: cardholder name
-
-      Currency: EUR/USD
-
-     Card Number: 5457210001000019 - non-3D enabled Card 
-     
-      Card expiry : 01/2023
-
-      Card CVV: 111
-
-      Name on Card: cardholder name
-
-      Currency: USD
 
     ***Test Card for Global Processing with KYC***
 
     <u>EUR</u>
 
-     Card Number: 4596610015729187
-      
-      Card Expiry: 12/27
-      
-      Card CVV: 431
-      
-      Name on Card: LORENZO CARDELLI
-
-      Amount: 3.00 EUR
+    - Card Number: 4596610015729187
+    - Card Expiry: 12/27
+    - CVV: 431
+    - Name on Card: LORENZO CARDELLI
+    - Amount: 3.00 EUR
 
     <u>USD</u>
-    
-     Card Number: Card number: 4761739001010036
-      
-      Card Expiry: 12/23
-      
-      Card CVV: 123
-      
-      Name on Card: Card test
-
+    - Card Number: 4761739001010036
+    - Card Expiry: 12/23
+    - CVV: 123  
+    - Name on Card: Card test
       
 ---

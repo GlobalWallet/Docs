@@ -1,0 +1,28 @@
+@startuml
+!theme cerulean
+User -> Merchant : Pay!
+Merchant -> KibramoaDirectAPI: Payment/payout options Request
+KibramoaDirectAPI -> Merchant : Supported payment/payout options
+
+Merchant -> User: Show payment options
+User -> Merchant: Choose option
+
+Merchant -> KibramoaDirectAPI: Process payment option
+KibramoaDirectAPI -> Processor
+Processor -> KibramoaDirectAPI : Result
+
+KibramoaDirectAPI -> Merchant: Return action
+
+
+Merchant -> User: Perform Action: Success / Error /Redirect / QrCode / Form / Receipt / Info
+alt action = !success || !error
+User -> Processor: Complete payment in provider
+
+Processor --> KibramoaDirectAPI: Payment result
+Processor -> User: Redirect to merchant result page
+
+end
+
+KibramoaDirectAPI --> Merchant: Payment notification
+
+@enduml
