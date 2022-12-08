@@ -32,13 +32,6 @@ content_markdown: |-
   | ------- | ------ | ---------------------------------- |
   | result | string | Payout result message. |
 
-  An error response will return an HTTP error code and have the following schema:
-
-  | Field   | Type   | Description                        |
-  | ------- | ------ | ---------------------------------- |
-  | *statusCode | integer | If an error is returned the error code is shown here. |
-  | *message | array | Array containing all the error messages. |
-  | error | string | Error description. | 
 
 right_code_blocks:
   - code_block: |1-

@@ -32,14 +32,6 @@ content_markdown: |-
   {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
-  An error response will return an HTTP error code and have the following schema:
-
-  | Field   | Type   | Description                        |
-  | ------- | ------ | ---------------------------------- |
-  | *statusCode | integer | If an error is returned the error code is shown here. |
-  | *message | array | Array containing all the error messages. |
-  | error | string | Error description. |
-
 right_code_blocks:
   - code_block: |1-
       {
@@ -180,11 +172,27 @@ right_code_blocks:
     language: json
   - code_block: |8-    
             {
+              "statusCode": "999",
+              "resultType": "error",
+              "result": {
+                  "errors": [
+                      {
+                          "code": "2005 - 2005205",
+                          "message": "Non 3DS card is not allowed"
+                      }
+                  ],
+                  "transactionId": "6bbffe09-429f-4929-8a9b-934792099164"
+              }
+            }
+    title: Declined
+    language: json 
+  - code_block: |8-    
+             {
               "statusCode": 400,
               "message": [
                   "This session was completed."
               ]
-            }
+             }
     title: Error
     language: json 
 ---

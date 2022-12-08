@@ -75,6 +75,13 @@
 						</li>
 					
 						<li>
+							<a href="#documentationErrors">
+								Errors
+								
+							</a>
+						</li>
+					
+						<li>
 							<a href="#documentationCountriesSupported">
 								Supported Countries
 								<span class="endpoint Data"></span>
@@ -280,6 +287,13 @@
 					
 					
 						<li>
+							<a href="#countriesPaymentOptions">
+								Payment Options
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="#countriesWorldwide">
 								Cards
 								<span class="endpoint Data"></span>
@@ -466,10 +480,11 @@
 
 				
 
-				
-<p>API requests must be authenticated using an API key, tied to the merchant configuration and generated during the boarding process.</p>
+				<p>API requests must be authenticated using an API key, tied to the merchant configuration and generated during the boarding process.</p>
 
-<p class="info">The X-API-KEY header grant access to merchant servers on kibramoa API, all the requests that contain this header must be executed from a back-end.</p>
+<h4 id="important">Important!</h4>
+
+<p class="info">The X-API-KEY header grant access to merchant servers on kibramoa API, all the requests that contain this header must be executed from a back-end under TLS/SSL.</p>
 
 <p>See the example of the headers included on this authenticated request in right side of the screen.</p>
 
@@ -506,10 +521,9 @@
 
 				
 
-				
+				<h3 id="sandbox-environment">Sandbox environment</h3>
 <p>Sandbox will be used for integrate with KibramoaAPI, all sandbox transactions are simulations with fake money.</p>
 
-<p class="success">Sandbox Environment URLs</p>
 <ul>
   <li>CashierUI (Hosted Payments Page):  https://cashier.sandbox.kibramoa.net</li>
   <li>Direct API endpoint:  https://api.sandbox.kibramoa.net</li>
@@ -517,9 +531,8 @@
 
 <p>*Note: Check useful data section to find all related test data to use.</p>
 
+<h3 id="production-environment">Production environment</h3>
 <p>Real transactions happen on production environment.</p>
-
-<p class="info">Production Environment URLs</p>
 
 <ul>
   <li>CashierUI (Hosted Payments Page):  https://cashier.kibramoa.net</li>
@@ -535,7 +548,7 @@
 								
 
 
-<div title="SANDBOX" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+<div title="Sandbox" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="nl">"cashierUIEndpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.sandbox.kibramoa.net"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"directAPIendpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.sandbox.kibramoa.net"</span><span class="w">
  </span><span class="p">}</span><span class="w">
@@ -545,10 +558,101 @@
 								
 
 
-<div title="PRODUCTION" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+<div title="Production" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"cashierUIEndpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cashier.kibramoa.net"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"directAPIendpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.kibramoa.net"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="documentationErrors">
+						Errors
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_documentation/Errors.md">Edit</a>
+				</h3>
+				
+
+				
+
+				<p>Kibramoa uses conventional HTTP response codes to indicate the success or failure of an API response.</p>
+
+<p>Http status code in 2xx range means a correct response, 4xx for request validation, resources access, etc and 5xx indicate errors with Kibramoa servers (rarely you will get an 5xx error, but if it happens, please let us know!).</p>
+
+<p>Error response will return an HTTP 4xx or 5xx status code and have the following schema:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*statusCode</td>
+      <td>integer</td>
+      <td>Status code.</td>
+    </tr>
+    <tr>
+      <td>*message</td>
+      <td>array</td>
+      <td>Array containing all the error messages.</td>
+    </tr>
+    <tr>
+      <td>error</td>
+      <td>string</td>
+      <td>Error description.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="errors-vs-declines">Errors vs Declines</h4>
+
+<p class="warning">Errors are different from declines. Declines will always have a correct HTTP status code 2xx, and means, for some reason, the processor got the request but decided to decline the payment.</p>
+
+<p>See more error details on the right side of the screen.</p>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="HTTP status codes" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"200 - 201"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK Request processed."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"400"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request Required parameter is missing."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"401"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unauthorized	No valid API key provided."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"402"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Request Failed."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"403"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Forbidden Your API-KEY doesn't have permissions."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"404"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Found Resource doesn't exist."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"429"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Too Many Requests."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"500 - 502 - 503 - 504"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Server Errors."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error response example" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"currency must be a string"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						
@@ -690,7 +794,7 @@
 
 <p>Asynchronously Kibramoa will submit a request to the merchant server. It will be triggered once the payment result is returned from the payment processors.</p>
 
-<p>An error response will return an HTTP error code and have the following schema:</p>
+<p>An error response will return an HTTP 2xx status code and have the following schema:</p>
 
 <table>
   <thead>
@@ -850,30 +954,6 @@
 				<p>This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.</p>
 
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
-
-<p class="success"><strong>Example request</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>StatusCode</td>
-      <td>string</td>
-      <td>If an error is returned the error code is shown here.</td>
-    </tr>
-    <tr>
-      <td>message</td>
-      <td>string</td>
-      <td>the CashierUrl or A message of the error.</td>
-    </tr>
-  </tbody>
-</table>
 
 
 				
@@ -1128,35 +1208,6 @@
   </tbody>
 </table>
 
-<p>An error response will return an HTTP error code and have the following schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>*statusCode</td>
-      <td>integer</td>
-      <td>If an error is returned the error code is shown here.</td>
-    </tr>
-    <tr>
-      <td>*message</td>
-      <td>array</td>
-      <td>Array containing all the error messages.</td>
-    </tr>
-    <tr>
-      <td>error</td>
-      <td>string</td>
-      <td>Error description.</td>
-    </tr>
-  </tbody>
-</table>
-
 
 				
 			</section>
@@ -1365,35 +1416,6 @@
 
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
 
-<p>An error response will return an HTTP error code and have the following schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>*statusCode</td>
-      <td>integer</td>
-      <td>If an error is returned the error code is shown here.</td>
-    </tr>
-    <tr>
-      <td>*message</td>
-      <td>array</td>
-      <td>Array containing all the error messages.</td>
-    </tr>
-    <tr>
-      <td>error</td>
-      <td>string</td>
-      <td>Error description.</td>
-    </tr>
-  </tbody>
-</table>
-
 
 				
 			</section>
@@ -1561,12 +1583,31 @@
 								
 
 
-<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+<div title="Declined" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2005 - 2005205"</span><span class="p">,</span><span class="w">
+              </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Non 3DS card is not allowed"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"transactionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6bbffe09-429f-4929-8a9b-934792099164"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Error" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
   </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"This session was completed."</span><span class="w">
   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						
@@ -1643,35 +1684,6 @@
 </table>
 
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
-
-<p>An error response will return an HTTP error code and have the following schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>*statusCode</td>
-      <td>integer</td>
-      <td>If an error is returned the error code is shown here.</td>
-    </tr>
-    <tr>
-      <td>*message</td>
-      <td>array</td>
-      <td>Array containing all the error messages.</td>
-    </tr>
-    <tr>
-      <td>error</td>
-      <td>string</td>
-      <td>Error description.</td>
-    </tr>
-  </tbody>
-</table>
 
 
 				
@@ -1806,30 +1818,6 @@ You can review the request and responses from kibramoa API on the right side.</p
       <td>formInputs</td>
       <td>array</td>
       <td>Array that represent a set of input fields to be filled by end-user. Refer to Useful Data section for futher details.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>An error response will return an HTTP error code and the following schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>statusCode</td>
-      <td>string</td>
-      <td>If an error is returned the error code is shown here</td>
-    </tr>
-    <tr>
-      <td>message</td>
-      <td>string</td>
-      <td>the CashierUrl or A message of the error</td>
     </tr>
   </tbody>
 </table>
@@ -2029,35 +2017,6 @@ You can review the request and responses from kibramoa API on the right side.</p
   </tbody>
 </table>
 
-<p>An error response will return an HTTP error code and have the following schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>*statusCode</td>
-      <td>integer</td>
-      <td>If an error is returned the error code is shown here.</td>
-    </tr>
-    <tr>
-      <td>*message</td>
-      <td>array</td>
-      <td>Array containing all the error messages.</td>
-    </tr>
-    <tr>
-      <td>error</td>
-      <td>string</td>
-      <td>Error description.</td>
-    </tr>
-  </tbody>
-</table>
-
 
 				
 			</section>
@@ -2151,37 +2110,7 @@ You can review the request and responses from kibramoa API on the right side.</p
 
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
 
-<p class="success"><strong>Example request</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET /payments/099cdc76-45d1-49e1-8985-e1c82dcfadb3 HTTP/1.1
-Host: api.sandbox.kibramoa.net
-Accept: application/json
-X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
-</code></pre></div></div>
-
-<p>An error response will return an HTTP error code and the following schema:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>statusCode</td>
-      <td>string</td>
-      <td>If an error is returned the error code is shown here</td>
-    </tr>
-    <tr>
-      <td>message</td>
-      <td>string</td>
-      <td>the CashierUrl or A message of the error</td>
-    </tr>
-  </tbody>
-</table>
+<p>For more details about the transaction object, please check useful data section.</p>
 
 
 				
@@ -2192,57 +2121,67 @@ X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
 								
 
 
+<div title="Request" class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">GET</span> <span class="nn">/payments/099cdc76-45d1-49e1-8985-e1c82dcfadb3</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">api.sandbox.kibramoa.net</span>
+<span class="na">Accept</span><span class="p">:</span> <span class="s">application/json</span>
+<span class="na">X-API-KEY</span><span class="p">:</span> <span class="s">pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d</span>
+</code></pre></div></div>
+
+						
+								
+
+
 <div title="Response" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"099cdc76-45d1-49e1-8985-e1c82dcfadb3"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90545ca3-fe0d-457c-a9da-283ee2561d82"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invoice-4726"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant-order-8271"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@email.test"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+34666999666"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOBILE"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-       </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
-     </span><span class="p">},</span><span class="w">
-     </span><span class="nl">"identify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76486883X"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DNI"</span><span class="w">
-     </span><span class="p">}</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="nl">"shippingAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="nl">"orderDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-     </span><span class="p">{</span><span class="w">
-       </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shirt-328471"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85x51"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue sports t-shirt "</span><span class="w">
-     </span><span class="p">}</span><span class="w">
-   </span><span class="p">],</span><span class="w">
-   </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-     </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999"</span><span class="p">,</span><span class="w">
-     </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business failed - duplicate order number"</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-04T08:23:50.738Z"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-05T08:23:50.738Z"</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"099cdc76-45d1-49e1-8985-e1c82dcfadb3"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90545ca3-fe0d-457c-a9da-283ee2561d82"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invoice-4726"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant-order-8271"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@email.test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+34666999666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOBILE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"identify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"76486883X"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DNI"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"shippingAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"orderDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shirt-328471"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85x51"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue sports t-shirt "</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Business failed - duplicate order number"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-04T08:23:50.738Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-08-05T08:23:50.738Z"</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
@@ -2250,12 +2189,12 @@ X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
 								
 
 
-<div title="Error 404" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">   </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"Transaction not found."</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+<div title="Error 404" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"statusCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">404</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="s2">"Transaction not found."</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+   </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						
@@ -2306,7 +2245,7 @@ X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
   </tbody>
 </table>
 
-<p>A successful response will return an HTTP status code of <code class="language-plaintext highlighter-rouge">201</code> and have the following schema:</p>
+<p>A successful response will return an HTTP status code of 2xx and have the following schema:</p>
 
 <table>
   <thead>
@@ -2320,7 +2259,7 @@ X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
     <tr>
       <td>StatusCode</td>
       <td>string</td>
-      <td>If an error is returned the error code is shown here</td>
+      <td>Status code.</td>
     </tr>
     <tr>
       <td>message</td>
@@ -2540,6 +2479,305 @@ X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
 	
 
 	
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="countriesPaymentOptions">
+						Payment Options
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_countries/PaymentOptions.md">Edit</a>
+				</h3>
+				
+					<p class="description">The following is a list of all supported payment options in Kibramoa.</p>
+				
+
+				
+
+				<h4 id="payment-options">Payment options</h4>
+
+<ul>
+  <li>AME
+    <ul>
+      <li>Country: BR, Currency: BRL
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>Bank Transfer
+    <ul>
+      <li>Country: CR, Currency: CRC
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: EC, Currency: USD
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: PE, Currency: PEN
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: GB, Currency: GBP
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: BR, Currency: BRL
+Min Amount:  - 
+Max Amount: 46,000.00</li>
+      <li>Country: MX, Currency: MXN
+Min Amount:  - 
+Max Amount: 190,000.00</li>
+      <li>Country: CL, Currency: CLP
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: CO, Currency: COP
+Min Amount:  - 
+Max Amount: 32,000,000.00</li>
+      <li>Country: GT, Currency: GTQ
+Min Amount:  - 
+Max Amount: 65,000.00</li>
+      <li>Country: MY, Currency: MYR
+Min Amount: 10.00
+Max Amount: 50,000.00</li>
+      <li>Country: SG, Currency: SGD
+Min Amount: 10.00
+Max Amount: 15,000.00</li>
+      <li>Country: TH, Currency: THB
+Min Amount: 100.00
+Max Amount: 200,000.00</li>
+      <li>Country: VN, Currency: VND
+Min Amount: 50,000
+Max Amount: 100,000,000</li>
+      <li>Country: ID, Currency: IDN
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: KH, Currency: KHM
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>Boleto
+    <ul>
+      <li>Country: BR, Currency: BRL
+Min Amount: 1.00
+Max Amount: 46,000.00</li>
+    </ul>
+  </li>
+  <li>BP Wallet
+    <ul>
+      <li>Country: Global, Currency: USD
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: Global, Currency: EUR
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>Card
+    <ul>
+      <li>Country: Global, Currency: USD
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: Global, Currency: EUR
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: Global, Currency: GBP
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>Cash
+    <ul>
+      <li>Country: MX, Currency: MXN
+Min Amount:  - 
+Max Amount: 10,000.00</li>
+      <li>Country: GT, Currency: GTQ
+Min Amount:  - 
+Max Amount: 65,000.00</li>
+      <li>Country: CR, Currency: CRC
+Min Amount:  - 
+Max Amount: 1,790,000.00</li>
+      <li>Country: SV, Currency: USD
+Min Amount:  - 
+Max Amount: 500.00</li>
+      <li>Country: PA, Currency: USD
+Min Amount:  - 
+Max Amount: 1,500.00</li>
+      <li>Country: PE, Currency: PEN
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: BR, Currency: BRL
+Min Amount:  - 
+Max Amount: 2,680.00</li>
+      <li>Country: CL, Currency: CLP
+Min Amount:  - 
+Max Amount: 6,700,000</li>
+      <li>Country: CO, Currency: COP
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: EC, Currency: USD
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>Deposit Express
+    <ul>
+      <li>Country: BR, Currency: BRL
+Min Amount: 4.00
+Max Amount: 50,000.00</li>
+    </ul>
+  </li>
+  <li>Efecty
+    <ul>
+      <li>Country: CO, Currency: COP
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>Khipu
+    <ul>
+      <li>Country: CL, Currency: CLP
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: AR, Currency: ARS
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>Lottery
+    <ul>
+      <li>Country: BR, Currency: BRL
+Min Amount: 4.00
+Max Amount: 2,000.00</li>
+    </ul>
+  </li>
+  <li>Net banking
+    <ul>
+      <li>Country: IN, Currency: INR
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>Oxxo
+    <ul>
+      <li>Country: MX, Currency: MXN
+Min Amount: 20.00
+Max Amount: 10,000.00</li>
+    </ul>
+  </li>
+  <li>Pago Facil
+    <ul>
+      <li>Country: AR, Currency: ARS
+Min Amount: 50.00
+Max Amount: 200,000.00</li>
+    </ul>
+  </li>
+  <li>Easy P2P
+    <ul>
+      <li>Country: RU, Currency: RUB
+Min Amount: 1,500.00
+Max Amount: 500,000.00</li>
+      <li>Country: KZ, Currency: KZT
+Min Amount: 10,000.00
+Max Amount: 2,000,000.00</li>
+      <li>Country: IN, Currency: INR
+Min Amount: 500.00
+Max Amount: 200,000.00</li>
+      <li>Country: TR, Currency: TRY
+Min Amount: 400.00
+Max Amount: 13,000.00</li>
+      <li>Country: TR, Currency: USD
+Min Amount: 25.00
+Max Amount: 700.00</li>
+      <li>Country: UA, Currency: UAH
+Min Amount: 1,000.00
+Max Amount: 50,000.00</li>
+      <li>Country: MX, Currency: MXN
+Min Amount: 500.00
+Max Amount: 12,000.00</li>
+      <li>Country: MD, Currency: MDL
+Min Amount: 200.00
+Max Amount: 10,000.00</li>
+      <li>Country: UZ, Currency: UZS
+Min Amount: 225,000.00
+Max Amount: 330,000,000.00</li>
+      <li>Country: AZ, Currency: AZN
+Min Amount: 34.00
+Max Amount: 1,700.00</li>
+      <li>Country: VN, Currency: VND
+Min Amount: 100,000
+Max Amount: 10,000,000</li>
+      <li>Country: KR, Currency: KRW
+Min Amount: 30,000
+Max Amount: 8,000,000</li>
+      <li>Country: AE, Currency: AED
+Min Amount: 500.00
+Max Amount: 100,000.00</li>
+    </ul>
+  </li>
+  <li>PicPay
+    <ul>
+      <li>Country: BR, Currency: BRL
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>PIX
+    <ul>
+      <li>Country: BR, Currency: BRL
+Min Amount: 1.00
+Max Amount: 5,000.00</li>
+    </ul>
+  </li>
+  <li>PSE
+    <ul>
+      <li>Country: CO, Currency: COP
+Min Amount: 1,000.00
+Max Amount:  -</li>
+    </ul>
+  </li>
+  <li>Rapipago
+    <ul>
+      <li>Country: AR, Currency: ARS
+Min Amount: 50.00
+Max Amount: 200,000.00</li>
+    </ul>
+  </li>
+  <li>SPEI
+    <ul>
+      <li>Country: MX, Currency: MXN
+Min Amount:  - 
+Max Amount: 10,000.00</li>
+    </ul>
+  </li>
+  <li>Todito
+    <ul>
+      <li>Country: MX, Currency: MXN
+Min Amount: 1.00
+Max Amount: 190,000.00</li>
+    </ul>
+  </li>
+  <li>TPaga
+    <ul>
+      <li>Country: CO, Currency: COP
+Min Amount:  - 
+Max Amount: 3,000,000.00</li>
+    </ul>
+  </li>
+  <li>UPI
+    <ul>
+      <li>Country: IN, Currency: INR
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
+</ul>
+
+
+				
+			</section>
+			
+		</section>
 	
 		<section class="doc-content">
 			<section class="left-docs">

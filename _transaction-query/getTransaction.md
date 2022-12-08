@@ -10,29 +10,18 @@ content_markdown: |-
   {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
-  {: .success }
-  **Example request**
+  For more details about the transaction object, please check useful data section.
 
-  ```
-  GET /payments/099cdc76-45d1-49e1-8985-e1c82dcfadb3 HTTP/1.1
-  Host: api.sandbox.kibramoa.net
-  Accept: application/json
-  X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
-  ```
-
-  An error response will return an HTTP error code and the following schema:
-
-
-  | Field   | Type   | Description                        |
-  | ------- | ------ | ---------------------------------- |
-  | statusCode | string | If an error is returned the error code is shown here |
-  | message | string | the CashierUrl or A message of the error             |
-
-
-  
 right_code_blocks:
   - code_block: |1-
-     {
+     GET /payments/099cdc76-45d1-49e1-8985-e1c82dcfadb3 HTTP/1.1
+     Host: api.sandbox.kibramoa.net
+     Accept: application/json
+     X-API-KEY: pjxrlEFwzgYvP13V5LH***c8-0f95-4771-a36b-d4a928c6457d
+    title: Request
+    language: http
+  - code_block: |2-
+      {
         "id": "099cdc76-45d1-49e1-8985-e1c82dcfadb3",
         "sessionId": "90545ca3-fe0d-457c-a9da-283ee2561d82",
         "country": "GB",
@@ -83,10 +72,10 @@ right_code_blocks:
         },
         "createdAt": "2022-08-04T08:23:50.738Z",
         "updatedAt": "2022-08-05T08:23:50.738Z"
-      }
+       }
     title: Response
     language: json
-  - code_block: |2-    
+  - code_block: |3-    
          {
             "statusCode": 404,
             "message": [

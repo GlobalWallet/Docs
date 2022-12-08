@@ -11,13 +11,6 @@ content_markdown: |-
   {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
-  {: .success }
-  **Example request**
-
-  | Field   | Type   | Description                        |
-  | ------- | ------ | ---------------------------------- |
-  | StatusCode | string | If an error is returned the error code is shown here. |
-  | message | string | the CashierUrl or A message of the error.             |
 
 right_code_blocks:
   - code_block: |1-

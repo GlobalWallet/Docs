@@ -29,13 +29,6 @@ content_markdown: |-
   | logo | string | Payment option logo url. | 
   | formInputs | array | Array that represent a set of input fields to be filled by end-user. Refer to Useful Data section for futher details. | 
 
-  An error response will return an HTTP error code and the following schema:
-
-  | Field   | Type   | Description                        |
-  | ------- | ------ | ---------------------------------- |
-  | statusCode | string | If an error is returned the error code is shown here |
-  | message | string | the CashierUrl or A message of the error             |
-
 right_code_blocks:
   - code_block: |1-    
      {

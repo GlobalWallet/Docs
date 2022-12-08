@@ -5,11 +5,12 @@ parameters:
   - name:
     content:
 content_markdown: |-
-
   API requests must be authenticated using an API key, tied to the merchant configuration and generated during the boarding process. 
   
+  #### Important!
+
   {: .info }
-  The X-API-KEY header grant access to merchant servers on kibramoa API, all the requests that contain this header must be executed from a back-end. 
+  The X-API-KEY header grant access to merchant servers on kibramoa API, all the requests that contain this header must be executed from a back-end under TLS/SSL. 
   
   See the example of the headers included on this authenticated request in right side of the screen.
   

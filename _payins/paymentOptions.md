@@ -51,13 +51,6 @@ content_markdown: |-
   | paymentOptions.extraData | array | Array that represent a set of input fields to be filled by end-user. Refer to Useful Data section for futher details. | 
   | paymentOptions.banks | array | Array with bank ids and bank names that end-user must select. Refer to Useful Data section for futher details. | 
 
-  An error response will return an HTTP error code and have the following schema:
-
-  | Field   | Type   | Description                        |
-  | ------- | ------ | ---------------------------------- |
-  | *statusCode | integer | If an error is returned the error code is shown here. |
-  | *message | array | Array containing all the error messages. |
-  | error | string | Error description. |
 
 right_code_blocks:
   - code_block: |1-

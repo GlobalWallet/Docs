@@ -16,12 +16,11 @@ content_markdown: |-
   | ------- | ------ | ---------------------------------- |
   | merchantReference | string | Reference of the transaction submitted by the merchant |
 
-  A successful response will return an HTTP status code of `201` and have the following schema:
-
+  A successful response will return an HTTP status code of 2xx and have the following schema:
 
   | Field   | Type   | Description                        |
   | ------- | ------ | ---------------------------------- |
-  | StatusCode | string | If an error is returned the error code is shown here |
+  | StatusCode | string | Status code. |
   | message | string | the CashierUrl or A message of the error             |
   
 right_code_blocks:

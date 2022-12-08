@@ -14,7 +14,7 @@ content_markdown: |-
 
   Asynchronously Kibramoa will submit a request to the merchant server. It will be triggered once the payment result is returned from the payment processors. 
 
-  An error response will return an HTTP error code and have the following schema:
+  An error response will return an HTTP 2xx status code and have the following schema:
 
   | Field   | Type   | Description                        |
   | ------- | ------ | ---------------------------------- |
