@@ -5,6 +5,11 @@ type: post
 description: Payment API endpoint to complete the session previously generated on Kibramoa.
 
 content_markdown: |-
+  #### Direct API payment endpoint
+
+  {: .info }
+  https://api.{env}.kibramoa.net/direct-payment
+
   Last endpoint for complete the payment session and connect with the payment processors.
 
   You must previously initiate a session and retreive a correct paymentOptionId to this endpoint to get a proper response

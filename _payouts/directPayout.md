@@ -5,6 +5,11 @@ type: post
 description: Initiates a Direct Payout on Kibramoa using the direct API.
 
 content_markdown: |-
+  #### Direct API direct payout endpoint
+
+  {: .info }
+  https://api.{env}.kibramoa.net/direct-payout
+
   After the payout is accepted within the merchant system, it must be approved or declined from the merchant-portal of Kibramoa.
 
   {: .info }
@@ -50,7 +55,7 @@ right_code_blocks:
         "extra3": "merchant extra value 3",
         "formData": {
             "name": "PIX",
-            "logo": "https://kibramoa-sandbox.s3.eu-west-1.amazonaws.com/payment-options/79a14f6d-b026-44cf-a829-07900884ff0d/pix-1661669301772-400px.png",
+            "logo": "https://kibramoa-sandbox...pix-1661669301772-400px.png",
             "currencies": [
                 "USD",
                 "EUR",

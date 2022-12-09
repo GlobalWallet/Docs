@@ -225,6 +225,13 @@
 							</a>
 						</li>
 					
+						<li>
+							<a href="#payoutsPayoutFormData">
+								Payout Form Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
 				</ul>
 			</section>
 		
@@ -346,15 +353,22 @@
 					
 					
 						<li>
+							<a href="#datatablesTransactionData">
+								Transaction Object
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="#datatablesCashierParams">
-								Payment Session Data
+								CashierUI Payment Session Object
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="#datatablesPayoutParams">
-								Payout Session Data
+								Payout Session Object
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
@@ -370,15 +384,15 @@
 					
 					
 						<li>
-							<a href="#testdataLatamPayoutTestDetails">
-								Latin America Test Data
+							<a href="#testdataCardTestingDetails">
+								Card Test Data
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="#testdataCardTestingDetails">
-								Card Test Data
+							<a href="#testdataLatamPayoutTestDetails">
+								Latin America Test Data
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
@@ -529,7 +543,7 @@
   <li>Direct API endpoint:  https://api.sandbox.kibramoa.net</li>
 </ul>
 
-<p>*Note: Check useful data section to find all related test data to use.</p>
+<p><strong>Note</strong>: Check <a href="/#testdataLatamPayoutTestDetails">Testing Details</a> section to find all related test data to use.</p>
 
 <h3 id="production-environment">Production environment</h3>
 <p>Real transactions happen on production environment.</p>
@@ -672,12 +686,12 @@
 					<a class="editor-link" href="cloudcannon:collections/_documentation/CountriesSupported">Edit</a>
 				</h3>
 				
-					<p class="description">The following is a list of Supported Countries, Currencies and Methods.</p>
+					<p class="description">The following is a list with supported Payins and Payouts coverage methods regarding countries.</p>
 				
 
 				
 
-				
+				<h3 id="payins">Payins</h3>
 <ul>
   <li>
     <p><a href="/#countriesWorldwide">Worldwide</a></p>
@@ -695,7 +709,20 @@
     <p><a href="#countriesSouthEastAsia">South-East Asia</a></p>
   </li>
   <li>
-    <p><a href="#EasyP2P">Easy P2P</a></p>
+    <p><a href="#countriesEasyP2P">Easy P2P</a></p>
+  </li>
+</ul>
+
+<h3 id="payouts">Payouts</h3>
+<ul>
+  <li>
+    <p><a href="#countriesLatam">Latin America</a></p>
+  </li>
+  <li>
+    <p><a href="#countriesSouthEastAsia">South-East Asia</a></p>
+  </li>
+  <li>
+    <p><a href="#countriesEasyP2P">Easy P2P</a></p>
   </li>
 </ul>
 
@@ -757,6 +784,8 @@
 
 				<p>When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier.</p>
 
+<p class="info"><strong>Note:</strong> Session expires after 30 min, only 1 payment is allowed for each session.</p>
+
 <p>Sequence diagram with the comunication process between systems:</p>
 
 <p><img src="/images/Cashier_Request_Api_Steps.png" alt="kibramoa cashier sequence" /></p>
@@ -786,7 +815,13 @@
 
 				
 
-				<p>This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.</p>
+				<h4 id="cashierui-session-endpoint">CashierUI session endpoint</h4>
+
+<p class="info">https://api.{env}.kibramoa.net/payment-session</p>
+
+<p>This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.</p>
+
+<p>For details about request payload data, please refer to <a href="/#datatablesCashierParams">Useful Data</a> section.</p>
 
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
 
@@ -926,7 +961,7 @@
 
 <p><img src="/images/Payout_flow.png" alt="kibramoa cashier sequence" /></p>
 
-<p>*Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.</p>
+<p class="warning"><strong>Note:</strong> Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.</p>
 
 
 				
@@ -951,7 +986,85 @@
 
 				
 
-				<p>This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.</p>
+				<h4 id="cashierui-payout-session-endpoint">CashierUI payout session endpoint</h4>
+
+<p class="info">https://api.{env}.kibramoa.net/payout-session</p>
+
+<p>This endpoint will generate a payout session to the load cashierUI within the merchant system. The cashierUI will display several payout options available to the customer using the given country/currency parameters.</p>
+
+<p>Request parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>*country</td>
+      <td>string(2)</td>
+      <td>Alpha-2 ISO Country code.</td>
+    </tr>
+    <tr>
+      <td>*currency</td>
+      <td>string(3)</td>
+      <td>Alpha-3 ISO Currency code.</td>
+    </tr>
+    <tr>
+      <td>*amount</td>
+      <td>integer</td>
+      <td>Amount in decimal format, I.E: 100 = 1$</td>
+    </tr>
+    <tr>
+      <td>*redirectUrl</td>
+      <td>string</td>
+      <td>Merchant page to be redirected after the payout.</td>
+    </tr>
+    <tr>
+      <td>merchantReference</td>
+      <td>string(36)</td>
+      <td>Merchant generated id for the given payout.</td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td>string(255)</td>
+      <td>Description text for the payout.</td>
+    </tr>
+    <tr>
+      <td>userId</td>
+      <td>string(36)</td>
+      <td>User id generated by the merchant system.</td>
+    </tr>
+    <tr>
+      <td>userAgent</td>
+      <td>string(255)</td>
+      <td>User agent browser details.</td>
+    </tr>
+    <tr>
+      <td>userDevice</td>
+      <td>string(255)</td>
+      <td>Values supported: MOBILE, DESKTOP, TABLET</td>
+    </tr>
+    <tr>
+      <td>ip</td>
+      <td>string</td>
+      <td>End user IP.</td>
+    </tr>
+    <tr>
+      <td>language</td>
+      <td>string(2)</td>
+      <td>Language code ISO alpha 2. Values: ‘EN’, ‘ES’, ‘PT’, ‘IN’..</td>
+    </tr>
+    <tr>
+      <td>extra</td>
+      <td>string(255)</td>
+      <td>Optional payload for help merchant to track this payout.</td>
+    </tr>
+  </tbody>
+</table>
 
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
 
@@ -1035,7 +1148,7 @@
 
 <p>Notification callback always will be triggered after the comunication with the payment processor is completed or closed. Merchants must always response with 200 HTTP status, otherwise notification will be triggered again up to 10 times.</p>
 
-<h4 id="note-transactions-notified-with-error-status-are-never-processed-due-to-validation-or-networking-issues">*Note: transactions notified with ERROR status are never processed due to validation or networking issues.</h4>
+<h4 id="note-transactions-notified-with-error-status-are-never-processed-due-to-validation-or-networking-issues"><strong>Note</strong>: transactions notified with ERROR status are never processed due to validation or networking issues.</h4>
 
 
 				
@@ -1063,9 +1176,11 @@
 
 				
 
-				<p>Use this endpoint to initiate a payment session and retreive all the payment options available.</p>
+				<h4 id="direct-api-payment-options-endpoint">Direct API payment options endpoint</h4>
 
-<p class="info">Session expires after 30 min, only 1 payment is allowed for each session.</p>
+<p class="info">https://api.{env}.kibramoa.net/payment-options</p>
+
+<p>Use this endpoint to initiate a payment session and retreive all the payment options available.</p>
 
 <p>The response will return the sessionId and an array, with the different payment options found for your merchant.</p>
 
@@ -1102,7 +1217,7 @@
     <tr>
       <td>*language</td>
       <td>string(2)</td>
-      <td>Language code ISO alha 2. Values: ‘EN’, ‘ES’, ‘PT’, ‘IN’.</td>
+      <td>Language code ISO alpha 2. Values: ‘EN’, ‘ES’, ‘PT’, ‘IN’.</td>
     </tr>
     <tr>
       <td>*redirectUrl</td>
@@ -1160,6 +1275,8 @@
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
 
 <p>Success response have the following schema:</p>
+
+<p class="warning"><strong>Note:</strong> Session expires after 30 min, only 1 payment is allowed for each session.</p>
 
 <table>
   <thead>
@@ -1345,7 +1462,11 @@
 
 				
 
-				<p>Last endpoint for complete the payment session and connect with the payment processors.</p>
+				<h4 id="direct-api-payment-endpoint">Direct API payment endpoint</h4>
+
+<p class="info">https://api.{env}.kibramoa.net/direct-payment</p>
+
+<p>Last endpoint for complete the payment session and connect with the payment processors.</p>
 
 <p>You must previously initiate a session and retreive a correct paymentOptionId to this endpoint to get a proper response</p>
 
@@ -1632,9 +1753,13 @@
 
 				
 
-				<p>Confirm payment is an optional extra step for some processors that requires to upload the payment receipt or payment ticket by the end user.</p>
+				<h4 id="direct-api-confirm-receipt-endpoint">Direct API confirm receipt endpoint</h4>
 
-<p class="info">*Note: this request is only required when /direct-payment call returns the ‘receipt’ action code.</p>
+<p class="info">https://api.{env}.kibramoa.net/confirm-payment</p>
+
+<p>Confirm payment is an optional extra step for some processors that requires to upload the payment receipt or payment ticket by the end user.</p>
+
+<p class="info"><strong>Note</strong>: this request is only required when /direct-payment call returns the ‘receipt’ action code.</p>
 
 <p>The file must have the following formats: .peg, .png, .jpg, .gif, .pdf.</p>
 
@@ -1749,7 +1874,11 @@
 
 				
 
-				<p>This endpoint returns all payout options based on a country. It’s a POST request with a json body specifing country, currency and amount for the payout.<br />
+				<h4 id="direct-api-payout-options-endpoint">Direct API payout options endpoint</h4>
+
+<p class="info">https://api.{env}.kibramoa.net/payout-options</p>
+
+<p>This endpoint returns all payout options based on a country. It’s a POST request with a json body specifing country, currency and amount for the payout.<br />
 You can review the request and responses from kibramoa API on the right side.</p>
 
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
@@ -1817,7 +1946,7 @@ You can review the request and responses from kibramoa API on the right side.</p
     <tr>
       <td>formInputs</td>
       <td>array</td>
-      <td>Array that represent a set of input fields to be filled by end-user. Refer to Useful Data section for futher details.</td>
+      <td>Array that represent a set of input fields to be filled by end-user. Refer <a href="#payoutsPayoutFormData">Test Data</a> section for futher details.</td>
     </tr>
   </tbody>
 </table>
@@ -1857,7 +1986,7 @@ You can review the request and responses from kibramoa API on the right side.</p
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIX"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kibramoa-sandbox.s3.eu-west-1.amazonaws.com/payment-options/79a14f6d-b026-44cf-a829-07900884ff0d/pix-1661669301772-400px.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kibramoa-sandbox...pix-1661669301772-400px.png"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
@@ -1925,7 +2054,11 @@ You can review the request and responses from kibramoa API on the right side.</p
 
 				
 
-				<p>After the payout is accepted within the merchant system, it must be approved or declined from the merchant-portal of Kibramoa.</p>
+				<h4 id="direct-api-direct-payout-endpoint">Direct API direct payout endpoint</h4>
+
+<p class="info">https://api.{env}.kibramoa.net/direct-payout</p>
+
+<p>After the payout is accepted within the merchant system, it must be approved or declined from the merchant-portal of Kibramoa.</p>
 
 <p class="info"><strong>Note</strong>: The <code class="language-plaintext highlighter-rouge">Content-Type</code> header should be set to <code class="language-plaintext highlighter-rouge">application/json</code> along with the merchant API key</p>
 
@@ -2041,7 +2174,7 @@ You can review the request and responses from kibramoa API on the right side.</p
    </span><span class="nl">"extra3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 3"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"formData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIX"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kibramoa-sandbox.s3.eu-west-1.amazonaws.com/payment-options/79a14f6d-b026-44cf-a829-07900884ff0d/pix-1661669301772-400px.png"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://kibramoa-sandbox...pix-1661669301772-400px.png"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"currencies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
            </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
            </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
@@ -2079,6 +2212,174 @@ You can review the request and responses from kibramoa API on the right side.</p
  </span><span class="p">],</span><span class="w">
  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad Request"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="payoutsPayoutFormData">
+						Payout Form Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_payouts/PayoutFormData.md">Edit</a>
+				</h3>
+				
+					<p class="description">Direct payouts requires to get certains details from end-users in order to complete /payout-session request.</p>
+				
+
+				
+
+				<p>Form data details comes from the response retreived from /payout-options, indicated on the array “formInputs”.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>Parameter</strong></td>
+      <td><strong>Data Type</strong></td>
+      <td><strong>Example</strong></td>
+      <td><strong>Description</strong></td>
+    </tr>
+    <tr>
+      <td>label*</td>
+      <td>string</td>
+      <td>Bank Code</td>
+      <td>Input label name to display.</td>
+    </tr>
+    <tr>
+      <td>name*</td>
+      <td>string</td>
+      <td>bankCode</td>
+      <td>Name of the input to submit.</td>
+    </tr>
+    <tr>
+      <td>type*</td>
+      <td>string</td>
+      <td>select</td>
+      <td>Type of the input to render, supported types: string, select, boolean.</td>
+    </tr>
+    <tr>
+      <td>values*</td>
+      <td>array</td>
+      <td>[ {“value”: “0001”, “name”: “TEST BANK”} ]</td>
+      <td>Array of objects that indicates values for the input field.</td>
+    </tr>
+    <tr>
+      <td>required*</td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Indicates if the input field is required.</td>
+    </tr>
+    <tr>
+      <td>validations</td>
+      <td>object</td>
+      <td>{ “minLength”: 5, “maxLength”: 100 }</td>
+      <td>Record object to indicate some extra validations.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="warning"><strong>Note</strong>: Integration must process this array of inputs and build later the request on the formData object to be submited on /direct-payout call.</p>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Form Inputs array example" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="err">...</span><span class="w">
+   </span><span class="nl">"formInputs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beneficiary's name"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+           </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"queryOptions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"validations"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="nl">"minLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+           </span><span class="p">}</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beneficiary's phone"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+           </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"queryOptions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"validations"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beneficiary's email"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+           </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"queryOptions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"validations"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+           </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beneficiary's PIX account type"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account_type"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"select"</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                   </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+                   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                   </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PHONE"</span><span class="p">,</span><span class="w">
+                   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Phone"</span><span class="w">
+               </span><span class="p">},</span><span class="w">
+               </span><span class="p">{</span><span class="w">
+                   </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMAIL"</span><span class="p">,</span><span class="w">
+                   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Email"</span><span class="w">
+               </span><span class="p">}</span><span class="w">
+           </span><span class="p">],</span><span class="w">
+           </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"queryOptions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+           </span><span class="nl">"validations"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+       </span><span class="err">...</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+						
+								
+
+
+<div title="Direct payout example" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIX"</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant1.io/where/to/go"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customRef-999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional remark for this payout."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant_user123"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.12.11.10"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"extra1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"extra2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"extra3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"formData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"account_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EMAIL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"account"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant@pagsmile.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPF"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"document_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50284414727"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
 						
@@ -4438,8 +4739,7 @@ Max Amount:  -</li>
 
 				
 
-				
-<p><strong>India</strong>: Country: IN Currency: INR</p>
+				<p><strong>India</strong>: Country: IN Currency: INR</p>
 
 <table>
   <thead>
@@ -4559,8 +4859,354 @@ Max Amount:  -</li>
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
+					<a id="datatablesTransactionData">
+						Transaction Object
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_datatables/TransactionData.md">Edit</a>
+				</h3>
+				
+					<p class="description">Transaction data and types stored on Kibramoa systems, this details will be returned by the [/\payments/transactionId](#transaction-querygetTransaction) request.</p>
+				
+
+				
+
+				<p>Result data of the <a href="#transaction-querygetTransaction">/payments/:transactionId</a> call, the transaction object stored on Kibramoa DB has the following parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Parameter</strong></th>
+      <th><strong>Type</strong></th>
+      <th><strong>Example</strong></th>
+      <th><strong>Description</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>id*</strong></td>
+      <td>string</td>
+      <td>c31cd72b-0c46-4c4c-a499-1d4040af44cc</td>
+      <td>Uuid of the transaction on kibramoa</td>
+    </tr>
+    <tr>
+      <td><strong>sessionId*</strong></td>
+      <td>string</td>
+      <td>c12cd72b-0c46-4c4c-a499-1d4040ax0321</td>
+      <td>Uuid of the payment session</td>
+    </tr>
+    <tr>
+      <td><strong>country*</strong></td>
+      <td>string</td>
+      <td>BR</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>currency*</strong></td>
+      <td>string</td>
+      <td>BRL</td>
+      <td>ISO Currency code</td>
+    </tr>
+    <tr>
+      <td><strong>paymentAmount*</strong></td>
+      <td>number</td>
+      <td>1000</td>
+      <td>Amount without coma.</td>
+    </tr>
+    <tr>
+      <td><strong>status</strong></td>
+      <td>string</td>
+      <td>INIT</td>
+      <td>Refer to notification status table.</td>
+    </tr>
+    <tr>
+      <td><strong>merchantReference</strong></td>
+      <td>string</td>
+      <td>order_ticket_123</td>
+      <td>Merchant reference, must be unique and generated in merchant system.</td>
+    </tr>
+    <tr>
+      <td><strong>paymentReference</strong></td>
+      <td>string</td>
+      <td>Invoice ABC123</td>
+      <td>Reference to be used for the Payment.</td>
+    </tr>
+    <tr>
+      <td><strong>redirectUrl*</strong></td>
+      <td>string</td>
+      <td>https://merchant.io/where-to-go</td>
+      <td>Merchant redirect page after payment.</td>
+    </tr>
+    <tr>
+      <td><strong>customer*</strong></td>
+      <td>object</td>
+      <td> </td>
+      <td>Json object with the following details.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.name*</strong></td>
+      <td>string</td>
+      <td>Pepe Doe</td>
+      <td>User / payer full name.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.email*</strong></td>
+      <td>string</td>
+      <td>pepe@test.test</td>
+      <td>User / payer email.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.phone*</strong></td>
+      <td>string</td>
+      <td>34666999666</td>
+      <td>User / payer phone number.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.userDevice*</strong></td>
+      <td>string</td>
+      <td>User device.</td>
+      <td>ENUM: [ MOBILE, DESKTOP, TABLET]</td>
+    </tr>
+    <tr>
+      <td><strong>customer.userAgent*</strong></td>
+      <td>string</td>
+      <td>Mozilla/5.0 (X11; Linux x86_64) … hrome/51.0.2704.103 Safari/37.</td>
+      <td>Browser User Agent data.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.ip*</strong></td>
+      <td>string</td>
+      <td>84.232.140.77</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>customer.address*</strong></td>
+      <td>object</td>
+      <td> </td>
+      <td>End user address.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.address.street*</strong></td>
+      <td>string</td>
+      <td>32 Windsor Gardens</td>
+      <td>First line of the address.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.address.streetNumber</strong>*</td>
+      <td>string</td>
+      <td>24</td>
+      <td>Street address number.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.address.country*</strong></td>
+      <td>string</td>
+      <td>GB</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>customer.address.zipCode*</strong></td>
+      <td>string</td>
+      <td>W9 3RG</td>
+      <td>Customer Postcode</td>
+    </tr>
+    <tr>
+      <td><strong>customer.address.city</strong>*</td>
+      <td>string</td>
+      <td>London</td>
+      <td>Shipping City/Town</td>
+    </tr>
+    <tr>
+      <td><strong>customer.address.state</strong></td>
+      <td>string</td>
+      <td>Great London.</td>
+      <td>Shipping State/ Region.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.identify*</strong></td>
+      <td>object</td>
+      <td> </td>
+      <td>User legal document details.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.identify.number*</strong></td>
+      <td>string</td>
+      <td>76486883X</td>
+      <td>ID Number from end user.</td>
+    </tr>
+    <tr>
+      <td><strong>customer.identify.type*</strong></td>
+      <td>string</td>
+      <td>DNI</td>
+      <td>ID number type.</td>
+    </tr>
+    <tr>
+      <td><strong>shippingAddress</strong></td>
+      <td>object</td>
+      <td> </td>
+      <td>Shipping address object.</td>
+    </tr>
+    <tr>
+      <td><strong>shippingAddress.street</strong>*</td>
+      <td>string</td>
+      <td>32 Windsor Gardens</td>
+      <td>First line of the address.</td>
+    </tr>
+    <tr>
+      <td><strong>shippingAddress.streetNumber</strong></td>
+      <td>string</td>
+      <td>24</td>
+      <td>Street address number.</td>
+    </tr>
+    <tr>
+      <td><strong>shippingAddress.country</strong></td>
+      <td>string</td>
+      <td>GB</td>
+      <td>Alpha-2 ISO Country code</td>
+    </tr>
+    <tr>
+      <td><strong>shippingAddress.zipCode*</strong></td>
+      <td>string</td>
+      <td>W9 3RG</td>
+      <td>The postcode.</td>
+    </tr>
+    <tr>
+      <td><strong>shippingAddress.city</strong>*</td>
+      <td>string</td>
+      <td>London</td>
+      <td>Shipping City/Town</td>
+    </tr>
+    <tr>
+      <td><strong>shippingAddress.state</strong></td>
+      <td>string</td>
+      <td>Great London.</td>
+      <td>Shipping State/ Region.</td>
+    </tr>
+    <tr>
+      <td><strong>orderDetails</strong></td>
+      <td>array</td>
+      <td> </td>
+      <td>Array with products details.</td>
+    </tr>
+    <tr>
+      <td><strong>orderDetails.productName</strong></td>
+      <td>string</td>
+      <td>shirt-1233474</td>
+      <td>Product name.</td>
+    </tr>
+    <tr>
+      <td><strong>orderDetails.quantity</strong></td>
+      <td>number</td>
+      <td>1</td>
+      <td>Units.</td>
+    </tr>
+    <tr>
+      <td><strong>orderDetails.dimensions</strong></td>
+      <td>string</td>
+      <td>85x51</td>
+      <td>Product size.</td>
+    </tr>
+    <tr>
+      <td><strong>orderDetails.description</strong></td>
+      <td>string</td>
+      <td>Blue sports t-shirt</td>
+      <td>Free description of the order.</td>
+    </tr>
+    <tr>
+      <td><strong>errors</strong></td>
+      <td>object</td>
+      <td>-</td>
+      <td>Error reasons.</td>
+    </tr>
+    <tr>
+      <td><strong>createdAt</strong></td>
+      <td>string</td>
+      <td>2022-12-09T11:07:05.484Z</td>
+      <td>DB timestamp.</td>
+    </tr>
+    <tr>
+      <td><strong>updatedAt</strong></td>
+      <td>string</td>
+      <td>2022-12-12T09:15:01.891Z</td>
+      <td>DB timestamp.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="Transaction Object Example" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"d31cd72b-0c46-4c4c-a499-1d4040af44cc"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17faf8e7-5170-4719-b797-7acba3e7cd05"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INIT"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice ABC123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdaº123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"shippingAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"orderDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shirt-1233474"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85x51"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue sports t-shirt "</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9cead2b4-0e6a-4a78-9726-d2ff7c05644a"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">],</span><span class="w">
+   </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"customerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84b79373-c84a-4e0a-9b73-899320fe42fa"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@email.test"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+34666999666"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOBILE"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"identify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36570630563"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA_CPF"</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f05577a3-c60c-48e8-8aa3-d2254f7c6ed0"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"errors"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T11:07:05.484Z"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-12-09T11:07:05.484Z"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
 					<a id="datatablesCashierParams">
-						Payment Session Data
+						CashierUI Payment Session Object
 						
 							<span class="endpoint Data"></span>
 						
@@ -4568,19 +5214,19 @@ Max Amount:  -</li>
 					<a class="editor-link" href="cloudcannon:collections/_datatables/CashierParams">Edit</a>
 				</h3>
 				
-					<p class="description">Session Data and Types required to be sent in the /payment-session request test</p>
+					<p class="description">Session Data and Types required to be sent in the cashierUI /payment-session request test</p>
 				
 
 				
 
 				<p>Data Table
-  The following are the parameteres needed along with the data types that are used.</p>
+The following are all the parameteres needed along with the data types that are used on cashierUI requests.</p>
 
 <table>
   <thead>
     <tr>
       <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
+      <th><strong>Type</strong></th>
       <th><strong>Example</strong></th>
       <th><strong>Description</strong></th>
     </tr>
@@ -4628,131 +5274,104 @@ Max Amount:  -</li>
       <td>https://merchant.io/where-to-go</td>
       <td>Merchant redirect page after payment.</td>
     </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>customer*</strong></td>
+      <td>object</td>
       <td> </td>
-      <td> </td>
-      <td>Customer data.</td>
+      <td>Json object with the following details.</td>
     </tr>
     <tr>
-      <td><strong>name*</strong></td>
+      <td><strong>customer.name*</strong></td>
       <td>string</td>
       <td>Pepe Doe</td>
       <td>User / payer full name.</td>
     </tr>
     <tr>
-      <td><strong>email*</strong></td>
+      <td><strong>customer.email*</strong></td>
       <td>string</td>
       <td>pepe@test.test</td>
       <td>User / payer email.</td>
     </tr>
     <tr>
-      <td><strong>phone*</strong></td>
+      <td><strong>customer.phone*</strong></td>
       <td>string</td>
       <td>34666999666</td>
       <td>User / payer phone number.</td>
     </tr>
     <tr>
-      <td><strong>userDevice*</strong></td>
+      <td><strong>customer.userDevice*</strong></td>
       <td>string</td>
       <td>User device.</td>
-      <td>ENUM: Array[ MOBILE, DESKTOP, TABLET ]</td>
+      <td>ENUM: [ MOBILE, DESKTOP, TABLET]</td>
     </tr>
     <tr>
-      <td><strong>userAgent*</strong></td>
+      <td><strong>customer.userAgent*</strong></td>
       <td>string</td>
-      <td>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36</td>
-      <td> </td>
+      <td>Mozilla/5.0 (X11; Linux x86_64) … hrome/51.0.2704.103 Safari/37.</td>
+      <td>Browser User Agent data.</td>
     </tr>
     <tr>
-      <td><strong>ip*</strong></td>
+      <td><strong>customer.ip*</strong></td>
       <td>string</td>
       <td>84.232.140.77</td>
       <td> </td>
     </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
     <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
+      <td><strong>customer.address*</strong></td>
+      <td>object</td>
+      <td> </td>
+      <td>End user address.</td>
     </tr>
-  </thead>
-  <tbody>
     <tr>
-      <td><strong>street*</strong></td>
+      <td><strong>customer.address.street*</strong></td>
       <td>string</td>
       <td>32 Windsor Gardens</td>
       <td>First line of the address.</td>
     </tr>
     <tr>
-      <td><strong>streetNumber</strong>*</td>
+      <td><strong>customer.address.streetNumber</strong>*</td>
       <td>string</td>
       <td>24</td>
       <td>Street address number.</td>
     </tr>
     <tr>
-      <td><strong>country*</strong></td>
+      <td><strong>customer.address.country*</strong></td>
       <td>string</td>
       <td>GB</td>
       <td>Alpha-2 ISO Country code</td>
     </tr>
     <tr>
-      <td><strong>zipCode*</strong></td>
+      <td><strong>customer.address.zipCode*</strong></td>
       <td>string</td>
       <td>W9 3RG</td>
       <td>Customer Postcode</td>
     </tr>
     <tr>
-      <td><strong>city</strong>*</td>
+      <td><strong>customer.address.city</strong>*</td>
       <td>string</td>
       <td>London</td>
       <td>Shipping City/Town</td>
     </tr>
     <tr>
-      <td><strong>state</strong></td>
+      <td><strong>customer.address.state</strong></td>
       <td>string</td>
       <td>Great London.</td>
       <td>Shipping State/ Region.</td>
     </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
     <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
+      <td><strong>customer.identify*</strong></td>
+      <td>object</td>
+      <td> </td>
+      <td>User legal document details.</td>
     </tr>
-  </thead>
-  <tbody>
     <tr>
-      <td><strong>number*</strong></td>
+      <td><strong>customer.identify.number*</strong></td>
       <td>string</td>
       <td>76486883X</td>
       <td>ID Number from end user.</td>
     </tr>
     <tr>
-      <td><strong>type</strong></td>
+      <td><strong>customer.identify.type*</strong></td>
       <td>string</td>
       <td>DNI</td>
       <td>ID number type.</td>
@@ -4767,19 +5386,19 @@ Max Amount:  -</li>
       <td><strong>extra1</strong></td>
       <td>string</td>
       <td>extraData001</td>
-      <td>Auxiliar parameter for merchant to march payment</td>
+      <td>Extra parameter to match payment.</td>
     </tr>
     <tr>
       <td><strong>extra2</strong></td>
       <td>string</td>
       <td>extraData002</td>
-      <td>Auxiliar parameter for merchant to march payment</td>
+      <td>Extra parameter to match payment.</td>
     </tr>
     <tr>
       <td><strong>extra3</strong></td>
       <td>string</td>
       <td>extraData003</td>
-      <td>Auxiliar parameter for merchant to march payment</td>
+      <td>Extra parameter to match payment.</td>
     </tr>
     <tr>
       <td><strong>storedToken</strong></td>
@@ -4793,94 +5412,86 @@ Max Amount:  -</li>
       <td>21%</td>
       <td>Tax percentage.</td>
     </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
     <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
+      <td><strong>enableBonus</strong></td>
+      <td>boolean</td>
+      <td>true</td>
+      <td>Enable payment bonus.</td>
     </tr>
-  </thead>
-  <tbody>
     <tr>
-      <td><strong>street</strong>*</td>
+      <td><strong>enablePromoCode</strong></td>
+      <td>boolean</td>
+      <td>false</td>
+      <td>Display an input to enter the promo code.</td>
+    </tr>
+    <tr>
+      <td><strong>shippingAddress</strong></td>
+      <td>object</td>
+      <td> </td>
+      <td>Shipping address object.</td>
+    </tr>
+    <tr>
+      <td><strong>shippingAddress.street</strong>*</td>
       <td>string</td>
       <td>32 Windsor Gardens</td>
       <td>First line of the address.</td>
     </tr>
     <tr>
-      <td><strong>streetNumber</strong></td>
+      <td><strong>shippingAddress.streetNumber</strong></td>
       <td>string</td>
       <td>24</td>
       <td>Street address number.</td>
     </tr>
     <tr>
-      <td><strong>country</strong></td>
+      <td><strong>shippingAddress.country</strong></td>
       <td>string</td>
       <td>GB</td>
       <td>Alpha-2 ISO Country code</td>
     </tr>
     <tr>
-      <td><strong>zipCode*</strong></td>
+      <td><strong>shippingAddress.zipCode*</strong></td>
       <td>string</td>
       <td>W9 3RG</td>
       <td>The postcode.</td>
     </tr>
     <tr>
-      <td><strong>city</strong>*</td>
+      <td><strong>shippingAddress.city</strong>*</td>
       <td>string</td>
       <td>London</td>
       <td>Shipping City/Town</td>
     </tr>
     <tr>
-      <td><strong>state</strong></td>
+      <td><strong>shippingAddress.state</strong></td>
       <td>string</td>
       <td>Great London.</td>
       <td>Shipping State/ Region.</td>
     </tr>
-  </tbody>
-</table>
-
-<table>
-  <thead>
     <tr>
-      <th><strong>Parameter</strong></th>
-      <th><strong>Data Type</strong></th>
-      <th><strong>Example</strong></th>
-      <th><strong>Description</strong></th>
+      <td><strong>orderDetails</strong></td>
+      <td>array</td>
+      <td> </td>
+      <td>Array with products details.</td>
     </tr>
-  </thead>
-  <tbody>
     <tr>
-      <td><strong>productName</strong></td>
+      <td><strong>orderDetails.productName</strong></td>
       <td>string</td>
       <td>shirt-1233474</td>
-      <td>ID Number from end user.</td>
+      <td>Product name.</td>
     </tr>
     <tr>
-      <td><strong>quantity</strong></td>
+      <td><strong>orderDetails.quantity</strong></td>
       <td>number</td>
       <td>1</td>
-      <td>Product quantity.</td>
+      <td>Units.</td>
     </tr>
     <tr>
-      <td><strong>dimensions</strong></td>
+      <td><strong>orderDetails.dimensions</strong></td>
       <td>string</td>
       <td>85x51</td>
-      <td>Product size dimension.</td>
+      <td>Product size.</td>
     </tr>
     <tr>
-      <td><strong>ApplyPromo</strong></td>
-      <td>boolean</td>
-      <td>1</td>
-      <td>Merchant will send 1 or 0 across as to whether a promotion or bonus code will be applied. <strong>– Coming soon</strong></td>
-    </tr>
-    <tr>
-      <td><strong>description</strong></td>
+      <td><strong>orderDetails.description</strong></td>
       <td>string</td>
       <td>Blue sports t-shirt</td>
       <td>Free description of the order.</td>
@@ -4892,13 +5503,76 @@ Max Amount:  -</li>
 				
 			</section>
 			
+					<section class="right-code">
+						
+								
+
+
+<div title="CashierUI Example Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13000</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@email.test"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+34666999666"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MOBILE"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84.232.140.77"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+     </span><span class="p">},</span><span class="w">
+     </span><span class="nl">"identify"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36570630563"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRA_CPF"</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"enableBonus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"enablePromoCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdaº123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice ABC123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merch_User_123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData001"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData002"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"extraData003"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"storedToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index-stored"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21%"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"shippingAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="nl">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"32 Windsor Gardens"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"streetNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"W9 3RG"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"London"</span><span class="p">,</span><span class="w">
+     </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Great London."</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="nl">"orderDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="w">
+       </span><span class="nl">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shirt-1233474"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"dimensions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"85x51"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue sports t-shirt "</span><span class="w">
+     </span><span class="p">}</span><span class="w">
+   </span><span class="p">]</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+						
+				</section>
+			
 		</section>
 	
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
 					<a id="datatablesPayoutParams">
-						Payout Session Data
+						Payout Session Object
 						
 							<span class="endpoint Data"></span>
 						
@@ -4906,13 +5580,12 @@ Max Amount:  -</li>
 					<a class="editor-link" href="cloudcannon:collections/_datatables/PayoutParams">Edit</a>
 				</h3>
 				
-					<p class="description">Session Data and Types required to be sent in the /Payout-session request</p>
+					<p class="description">Payload and data types description for the /payout-session request</p>
 				
 
 				
 
-				<p>Data Table
-  The following are the parameteres needed along with the data types that are used.</p>
+				<p>The following are the parameteres needed along with the data types that are used in a payout session request.</p>
 
 <table>
   <tbody>
@@ -4938,7 +5611,7 @@ Max Amount:  -</li>
       <td>amount*</td>
       <td>number</td>
       <td>150</td>
-      <td>Payout amount to be settled, must be integer without decimals: i.e 150 = 1.50</td>
+      <td>Payout amount to be settled, without decimals: i.e 150 = $1.50</td>
     </tr>
     <tr>
       <td>redirectUrl*</td>
@@ -4992,19 +5665,19 @@ Max Amount:  -</li>
       <td>extra1</td>
       <td>string</td>
       <td>merchant extra value 1</td>
-      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+      <td>Extra parameter to match payment.</td>
     </tr>
     <tr>
       <td>extra2</td>
       <td>string</td>
       <td>merchant extra value 2</td>
-      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+      <td>Extra parameter to match payment.</td>
     </tr>
     <tr>
       <td>extra3</td>
       <td>string</td>
       <td>merchant extra value 3</td>
-      <td>Extra parameter to be used for track the payout using merchant generated data</td>
+      <td>Extra parameter to match payment.</td>
     </tr>
   </tbody>
 </table>
@@ -5013,74 +5686,36 @@ Max Amount:  -</li>
 				
 			</section>
 			
-		</section>
-	
-
-	
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="testdataLatamPayoutTestDetails">
-						Latin America Test Data
+					<section class="right-code">
 						
-							<span class="endpoint Data"></span>
+								
+
+
+<div title="CashierUI Payout Example Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant1.io/where/to/go"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom8108"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional remark for this payout."</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant_user123"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userAgent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mozilla/5.0 (X11; Linux x86_64)"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"userDevice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DESKTOP"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.12.11.10"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PT"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 1"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 2"</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"extra3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"merchant extra value 3"</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 						
-					</a>
-					<a class="editor-link" href="cloudcannon:collections/_testdata/LatamPayoutTestDetails">Edit</a>
-				</h3>
-				
-					<p class="description">Payout details to be used to simulate Transactions in Latin American solutions on Sandbox</p>
-				
-
-				
-
-				<p>The following are details are needed to accept a successful Payout on Sandbox.</p>
-
-<h1 id="brazil">Brazil</h1>
-
-<h2 id="pix">PIX</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beneficiary's name: John Doe
-Beneficiary's phone: 123456
-Beneficiary's email: test@test.com
-Beneficiary's PIX account type: CPF
-Beneficiary's PIX account:  50284414727
-Beneficiary's personal identification type:  CPF
-Beneficiary's personal identification number: 50284414727
-</code></pre></div></div>
-
-<h1 id="mexico">Mexico</h1>
-
-<h2 id="spei">SPEI</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beneficiary's name: testname
-Beneficiary's phone: 123456
-Beneficiary's email: test@test.com
-Beneficiary's account type: clabe
-Beneficiary's account:  646180209100000014
-Beneficiary's personal identification type:  RFC
-Beneficiary's personal identification number: MAMB780915969
-Beneficiary's Bank: Transfer
-</code></pre></div></div>
-
-<h1 id="ecuador">Ecuador</h1>
-
-<h2 id="bank-transfer">Bank Transfer</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beneficiary's name: testname
-Beneficiary's phone: 4681234068
-Beneficiary's email: test@test.com
-Beneficiary's account type: Checkings
-Beneficiary's account:  00219400254640654321
-Beneficiary's personal identification type:  PAS
-Beneficiary's personal identification number: 1235456789001
-Beneficiary's Bank: Banco Central del Ecuador
-</code></pre></div></div>
-
-
-
-				
-			</section>
+				</section>
 			
 		</section>
+	
+
+	
 	
 		<section class="doc-content">
 			<section class="left-docs">
@@ -5140,6 +5775,70 @@ Beneficiary's Bank: Banco Central del Ecuador
   <li>CVV: 123</li>
   <li>Name on Card: Card test</li>
 </ul>
+
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="testdataLatamPayoutTestDetails">
+						Latin America Test Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_testdata/LatamPayoutTestDetails">Edit</a>
+				</h3>
+				
+					<p class="description">Payout details to be used to simulate Transactions in Latin American solutions on Sandbox</p>
+				
+
+				
+
+				<p>The following are details are needed to accept a successful Payout on Sandbox.</p>
+
+<h1 id="brazil">Brazil</h1>
+
+<h2 id="pix">PIX</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beneficiary's name: John Doe
+Beneficiary's phone: 123456
+Beneficiary's email: test@test.com
+Beneficiary's PIX account type: CPF
+Beneficiary's PIX account:  50284414727
+Beneficiary's personal identification type:  CPF
+Beneficiary's personal identification number: 50284414727
+</code></pre></div></div>
+
+<h1 id="mexico">Mexico</h1>
+
+<h2 id="spei">SPEI</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beneficiary's name: testname
+Beneficiary's phone: 123456
+Beneficiary's email: test@test.com
+Beneficiary's account type: clabe
+Beneficiary's account:  646180209100000014
+Beneficiary's personal identification type:  RFC
+Beneficiary's personal identification number: MAMB780915969
+Beneficiary's Bank: Transfer
+</code></pre></div></div>
+
+<h1 id="ecuador">Ecuador</h1>
+
+<h2 id="bank-transfer">Bank Transfer</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Beneficiary's name: testname
+Beneficiary's phone: 4681234068
+Beneficiary's email: test@test.com
+Beneficiary's account type: Checkings
+Beneficiary's account:  00219400254640654321
+Beneficiary's personal identification type:  PAS
+Beneficiary's personal identification number: 1235456789001
+Beneficiary's Bank: Banco Central del Ecuador
+</code></pre></div></div>
 
 
 

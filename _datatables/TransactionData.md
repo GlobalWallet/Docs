@@ -1,19 +1,20 @@
 ---
-title: CashierUI Payment Session Object
-position_number: 2
+title: Transaction Object
+position_number: 1
 type: Data
-description: Session Data and Types required to be sent in the cashierUI /payment-session request test
-
+description: Transaction data and types stored on Kibramoa systems, this details will be returned by the [/\payments/transactionId](#transaction-querygetTransaction) request.
 content_markdown: |-
-  Data Table
-  The following are all the parameteres needed along with the data types that are used on cashierUI requests.
+  Result data of the [/payments/:transactionId](#transaction-querygetTransaction) call, the transaction object stored on Kibramoa DB has the following parameters:
+  
 
     | **Parameter**         | **Type** | **Example**                     | **Description**                                                       |
     | --------------------- | ------------- | ------------------------------- | --------------------------------------------------------------------- |
+    | **id\***         | string        | c31cd72b-0c46-4c4c-a499-1d4040af44cc | Uuid of the transaction on kibramoa                                   |
+    | **sessionId\***         | string        | c12cd72b-0c46-4c4c-a499-1d4040ax0321 | Uuid of the payment session                                   |
     | **country\***         | string        | BR                              | Alpha-2 ISO Country code                                              |
     | **currency\***        | string        | BRL                             | ISO Currency code                                                     |
-    | **amount\***          | number        | 1000                            | Amount without coma, format 155 = 1.55 This needs to be sent in cents |
-    | **language**          | string        | ES                              | Alpha-2 ISO Language code                                             |
+    | **paymentAmount\***   | number        | 1000                            | Amount without coma. |
+    | **status**          | string        | INIT                              | Refer to notification status table.                                    |
     | **merchantReference** | string        | order\_ticket\_123              | Merchant reference, must be unique and generated in merchant system.  |
     | **paymentReference**  | string        | Invoice ABC123                  | Reference to be used for the Payment.                                 |
     | **redirectUrl\***     | string        | https://merchant.io/where-to-go | Merchant redirect page after payment.                                 |
@@ -34,14 +35,6 @@ content_markdown: |-
     | **customer.identify\***           | object        |  | User legal document details.  |
     | **customer.identify.number\***    | string        | 76486883X        | ID Number from end user.                         |
     | **customer.identify.type\***        | string        | DNI              | ID number type.                                  |
-    | **userId**      | string        | Merch\_User\_123 | User identifier on the merchant system.          |
-    | **extra1**      | string        | extraData001     | Extra parameter to match payment. |
-    | **extra2**      | string        | extraData002     | Extra parameter to match payment. |
-    | **extra3**      | string        | extraData003     | Extra parameter to match payment. |
-    | **storedToken** | string        | index-stored     | Stored payment credential index on kibramoa.     |
-    | **tax**         | string        | 21%              | Tax percentage. |
-    | **enableBonus** | boolean     | true               | Enable payment bonus. |
-    | **enablePromoCode**  | boolean | false             | Display an input to enter the promo code. |
     | **shippingAddress**  | object    |                 | Shipping address object.     |
     | **shippingAddress.street***      | string        | 32 Windsor Gardens | First line of the address. |
     | **shippingAddress.streetNumber** | string        | 24                 | Street address number.     |
@@ -54,18 +47,42 @@ content_markdown: |-
     | **orderDetails.quantity**    | number        | 1                   | Units. |
     | **orderDetails.dimensions**  | string        | 85x51               | Product size. |
     | **orderDetails.description** | string        | Blue sports t-shirt | Free description of the order. |
+    | **errors**      | object        | - | Error reasons.          |
+    | **createdAt**      | string        | 2022-12-09T11:07:05.484Z | DB timestamp.          |
+    | **updatedAt**      | string        | 2022-12-12T09:15:01.891Z | DB timestamp.            |
 
 right_code_blocks:
   - code_block: |1-
      {
+        "id": "d31cd72b-0c46-4c4c-a499-1d4040af44cc",
+        "sessionId": "17faf8e7-5170-4719-b797-7acba3e7cd05",
         "country": "BR",
         "currency": "BRL",
-        "amount": 13000,
-        "redirectUrl": "https://merchant.io/where-to-go",
-        "language": "ES",
+        "paymentAmount": 130,
+        "status": "INIT",
+        "paymentReference": "Invoice ABC123",
+        "merchantReference": "asdaº123",
+        "shippingAddress": {
+          "street": "32 Windsor Gardens",
+          "streetNumber": "24",
+          "country": "GB",
+          "zipCode": "W9 3RG",
+          "city": "London",
+          "state": "Great London."
+        },
+        "orderDetails": [
+          {
+            "productName": "shirt-1233474",
+            "quantity": 1,
+            "dimensions": "85x51",
+            "description": "Blue sports t-shirt ",
+            "_id": "9cead2b4-0e6a-4a78-9726-d2ff7c05644a"
+          }
+        ],
         "customer": {
-          "name": "John Doe",
+          "customerId": "84b79373-c84a-4e0a-9b73-899320fe42fa",
           "email": "john@email.test",
+          "name": "John Doe",
           "phone": "+34666999666",
           "userDevice": "MOBILE",
           "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
@@ -81,35 +98,13 @@ right_code_blocks:
           "identify": {
             "number": "36570630563",
             "type": "BRA_CPF"
-          }
+          },
+          "_id": "f05577a3-c60c-48e8-8aa3-d2254f7c6ed0"
         },
-        "enableBonus": true,
-        "enablePromoCode": true,
-        "merchantReference": "asdaº123",
-        "paymentReference": "Invoice ABC123",
-        "userId": "Merch_User_123",
-        "extra1": "extraData001",
-        "extra2": "extraData002",
-        "extra3": "extraData003",
-        "storedToken": "index-stored",
-        "tax": "21%",
-        "shippingAddress": {
-          "street": "32 Windsor Gardens",
-          "streetNumber": "24",
-          "country": "GB",
-          "zipCode": "W9 3RG",
-          "city": "London",
-          "state": "Great London."
-        },
-        "orderDetails": [
-          {
-            "productName": "shirt-1233474",
-            "quantity": 1,
-            "dimensions": "85x51",
-            "description": "Blue sports t-shirt "
-          }
-        ]
+        "errors": null,
+        "createdAt": "2022-12-09T11:07:05.484Z",
+        "updatedAt": "2022-12-09T11:07:05.484Z"
       }
-    title: CashierUI Example Request
+    title: Transaction Object Example
     language: json
 ---

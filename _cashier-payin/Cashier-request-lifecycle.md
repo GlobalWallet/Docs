@@ -7,6 +7,9 @@ parameters:
 content_markdown: |-
    When the API is correctly built and accepted the Kibramoa system will send back a URL with the Kibramoa cashier.
    
+   {: .info }
+   **Note:** Session expires after 30 min, only 1 payment is allowed for each session.
+
    Sequence diagram with the comunication process between systems:
    
    ![kibramoa cashier sequence](/images/Cashier_Request_Api_Steps.png)

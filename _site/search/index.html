@@ -225,6 +225,13 @@
 							</a>
 						</li>
 					
+						<li>
+							<a href="/#payoutsPayoutFormData">
+								Payout Form Data
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
 				</ul>
 			</section>
 		
@@ -346,15 +353,22 @@
 					
 					
 						<li>
+							<a href="/#datatablesTransactionData">
+								Transaction Object
+								<span class="endpoint Data"></span>
+							</a>
+						</li>
+					
+						<li>
 							<a href="/#datatablesCashierParams">
-								Payment Session Data
+								CashierUI Payment Session Object
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
 					
 						<li>
 							<a href="/#datatablesPayoutParams">
-								Payout Session Data
+								Payout Session Object
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
@@ -370,15 +384,15 @@
 					
 					
 						<li>
-							<a href="/#testdataLatamPayoutTestDetails">
-								Latin America Test Data
+							<a href="/#testdataCardTestingDetails">
+								Card Test Data
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#testdataCardTestingDetails">
-								Card Test Data
+							<a href="/#testdataLatamPayoutTestDetails">
+								Latin America Test Data
 								<span class="endpoint Data"></span>
 							</a>
 						</li>
@@ -652,9 +666,9 @@
 						
 						"datatables-cashierparams": {
 							"id": "datatables-cashierparams",
-							"title": "Payment Session Data",
+							"title": "CashierUI Payment Session Object",
 							"category": "datatables",
-							"description": "Session Data and Types required to be sent in the /payment-session request test",
+							"description": "Session Data and Types required to be sent in the cashierUI /payment-session request test",
 		  				"type": "Data",
 							"url": "/#datatablesCashierParams",
 							"content": ""
@@ -669,11 +683,28 @@
 						
 						"datatables-payoutparams": {
 							"id": "datatables-payoutparams",
-							"title": "Payout Session Data",
+							"title": "Payout Session Object",
 							"category": "datatables",
-							"description": "Session Data and Types required to be sent in the /Payout-session request",
+							"description": "Payload and data types description for the /payout-session request",
 		  				"type": "Data",
 							"url": "/#datatablesPayoutParams",
+							"content": ""
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"datatables-transactiondata": {
+							"id": "datatables-transactiondata",
+							"title": "Transaction Object",
+							"category": "datatables",
+							"description": "Transaction data and types stored on Kibramoa systems, this details will be returned by the [/\payments/transactionId](#transaction-querygetTransaction) request.",
+		  				"type": "Data",
+							"url": "/#datatablesTransactionData",
 							"content": ""
 						}
 						
@@ -724,7 +755,7 @@
 							"id": "documentation-countriessupported",
 							"title": "Supported Countries",
 							"category": "documentation",
-							"description": "The following is a list of Supported Countries, Currencies and Methods.",
+							"description": "The following is a list with supported Payins and Payouts coverage methods regarding countries.",
 		  				"type": "Data",
 							"url": "/#documentationCountriesSupported",
 							"content": ""
@@ -840,6 +871,23 @@
 				
 			
 		
+			
+				
+					
+						,
+						
+						"payouts-payoutformdata": {
+							"id": "payouts-payoutformdata",
+							"title": "Payout Form Data",
+							"category": "payouts",
+							"description": "Direct payouts requires to get certains details from end-users in order to complete /payout-session request.",
+		  				"type": "Data",
+							"url": "/#payoutsPayoutFormData",
+							"content": ""
+						}
+						
+					
+				
 			
 				
 					

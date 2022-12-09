@@ -5,6 +5,11 @@ type: post
 description: Retreive all the payout options allowed for country, currency and amounts limits.
 
 content_markdown: |-
+  #### Direct API payout options endpoint
+
+  {: .info }
+  https://api.{env}.kibramoa.net/payout-options
+
   This endpoint returns all payout options based on a country. It's a POST request with a json body specifing country, currency and amount for the payout.  
   You can review the request and responses from kibramoa API on the right side.
 
@@ -27,7 +32,7 @@ content_markdown: |-
   | arrivalCurrency | string | Currency of used by the destination account. | 
   | name | string | Name of the payout option. | 
   | logo | string | Payment option logo url. | 
-  | formInputs | array | Array that represent a set of input fields to be filled by end-user. Refer to Useful Data section for futher details. | 
+  | formInputs | array | Array that represent a set of input fields to be filled by end-user. Refer [Test Data](#payoutsPayoutFormData) section for futher details. | 
 
 right_code_blocks:
   - code_block: |1-    
@@ -54,7 +59,7 @@ right_code_blocks:
         },
         {
         "name": "PIX",
-        "logo": "https://kibramoa-sandbox.s3.eu-west-1.amazonaws.com/payment-options/79a14f6d-b026-44cf-a829-07900884ff0d/pix-1661669301772-400px.png",
+        "logo": "https://kibramoa-sandbox...pix-1661669301772-400px.png",
         "currencies": [
             "USD",
             "EUR",

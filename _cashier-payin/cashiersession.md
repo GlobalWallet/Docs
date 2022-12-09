@@ -5,7 +5,14 @@ type: post
 description: Initiates a payment session on Kibramoa CashierUI regarding country and currency.
 
 content_markdown: |-
+  #### CashierUI session endpoint
+
+  {: .info }
+  https://api.{env}.kibramoa.net/payment-session
+
   This endpoint will generate a payment session to the load cashierUI within the merchant system. The cashierUI will display several payment options available using the given country/currency parameters.
+
+  For details about request payload data, please refer to [Useful Data](/#datatablesCashierParams) section.
 
   {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key

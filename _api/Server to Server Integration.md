@@ -16,7 +16,7 @@ content_markdown: |-
 
   Notification callback always will be triggered after the comunication with the payment processor is completed or closed. Merchants must always response with 200 HTTP status, otherwise notification will be triggered again up to 10 times.
   
-  #### *Note: transactions notified with ERROR status are never processed due to validation or networking issues.
+  #### **Note**: transactions notified with ERROR status are never processed due to validation or networking issues.
 
 left_code_blocks:
   - code_block:

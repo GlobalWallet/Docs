@@ -11,7 +11,7 @@ content_markdown: |-
   - CashierUI (Hosted Payments Page):  https://cashier.sandbox.kibramoa.net
   - Direct API endpoint:  https://api.sandbox.kibramoa.net
 
-  *Note: Check useful data section to find all related test data to use.
+  **Note**: Check [Testing Details](/#testdataLatamPayoutTestDetails) section to find all related test data to use.
 
   ### Production environment
   Real transactions happen on production environment.

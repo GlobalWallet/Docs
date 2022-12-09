@@ -2,11 +2,11 @@
 title: Supported Countries
 position_number: 6
 type: Data
-description: The following is a list of Supported Countries, Currencies and Methods.
+description: The following is a list with supported Payins and Payouts coverage methods regarding countries.
 
 
 content_markdown: |-
-
+    ### Payins
     - [Worldwide](/#countriesWorldwide)
 
     - [Africa](/#countriesAfrica)
@@ -17,6 +17,13 @@ content_markdown: |-
     
     - [South-East Asia](#countriesSouthEastAsia)
   
+    - [Easy P2P](#countriesEasyP2P)
+
+    ### Payouts
+    - [Latin America](#countriesLatam)
+
+    - [South-East Asia](#countriesSouthEastAsia)
+
     - [Easy P2P](#countriesEasyP2P)
 
 ---

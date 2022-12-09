@@ -5,10 +5,15 @@ type: post
 description: Payment API endpoint to confirm a direct payment by uploading a receipt.
 
 content_markdown: |-
+  #### Direct API confirm receipt endpoint
+
+  {: .info }
+  https://api.{env}.kibramoa.net/confirm-payment
+
   Confirm payment is an optional extra step for some processors that requires to upload the payment receipt or payment ticket by the end user.
 
   {: .info }
-  *Note: this request is only required when /direct-payment call returns the 'receipt' action code.
+  **Note**: this request is only required when /direct-payment call returns the 'receipt' action code.
 
   The file must have the following formats: .peg, .png, .jpg, .gif, .pdf.
 

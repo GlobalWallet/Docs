@@ -11,5 +11,6 @@ content_markdown: |-
    
    ![kibramoa cashier sequence](/images/Payout_flow.png)
 
-   *Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.
+   {: .warning }
+   **Note:** Merchant system must always respond to notification with Http 200 code, otherwise Kibramoa API will retry at least 10 times.
 ---

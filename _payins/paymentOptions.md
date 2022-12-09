@@ -5,10 +5,12 @@ type: post
 description: Retreive all available payment options for given country, currency and amount parameters. Your merchant must be properly configured in order to retreive the payment options.
 
 content_markdown: |-
-  Use this endpoint to initiate a payment session and retreive all the payment options available.
-    
+  #### Direct API payment options endpoint
+
   {: .info }
-  Session expires after 30 min, only 1 payment is allowed for each session.
+  https://api.{env}.kibramoa.net/payment-options
+
+  Use this endpoint to initiate a payment session and retreive all the payment options available.
 
   The response will return the sessionId and an array, with the different payment options found for your merchant. 
 
@@ -24,7 +26,7 @@ content_markdown: |-
   | *country | string(2) | Country code ISO alpha 2. |
   | *currency | string(3) | Currency code ISO alpha 3. |
   | *amount | integer | Amount in decimal format, I.E: 100 = 1$ |
-  | *language | string(2) | Language code ISO alha 2. Values: 'EN', 'ES', 'PT', 'IN'. |
+  | *language | string(2) | Language code ISO alpha 2. Values: 'EN', 'ES', 'PT', 'IN'. |
   | *redirectUrl | string | Merchant page to be redirected after the payout. |
   | *customer | object | Customer object with end user details, refer to Useful Data section for more information. |
   | merchantReference | string(36) | Merchant generated id for the transaction, if not provided Kibramoa will auto generate one. |
@@ -39,7 +41,11 @@ content_markdown: |-
   {: .info }
   **Note**: The `Content-Type` header should be set to `application/json` along with the merchant API key
 
+
   Success response have the following schema:
+  
+  {: .warning }
+  **Note:** Session expires after 30 min, only 1 payment is allowed for each session.
 
   | Field   | Type   | Description                        |
   | ------- | ------ | ---------------------------------- |
