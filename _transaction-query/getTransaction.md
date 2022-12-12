@@ -26,7 +26,7 @@ right_code_blocks:
         "sessionId": "90545ca3-fe0d-457c-a9da-283ee2561d82",
         "country": "GB",
         "currency": "GBP",
-        "paymentAmount": 1000,
+        "paymentAmount": 10.00,
         "method": "Bank Transfer",
         "status": "COMPLETED",
         "paymentReference": "invoice-4726",

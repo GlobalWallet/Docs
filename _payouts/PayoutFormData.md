@@ -84,7 +84,7 @@ right_code_blocks:
           "country": "BR",
           "currency": "BRL",
           "option": "PIX", 
-          "amount": 150,
+          "amount": 150.00,
           "redirectUrl": "https://merchant1.io/where/to/go",
           "merchantReference": "customRef-999",
           "description": "Additional remark for this payout.",

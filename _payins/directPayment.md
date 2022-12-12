@@ -99,7 +99,7 @@ right_code_blocks:
               "bodyPayload": {
                 "bankcode": "RHB",
                 "merchant": "Surepay88",
-                "amount": "130",
+                "amount": "130.00",
                 "refid": "my-00002",
                 "token": "a883c0f2c78cf5c0815ed97c1c06a5a5",
                 "customer": "Merch_User_123",

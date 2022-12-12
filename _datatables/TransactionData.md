@@ -13,7 +13,7 @@ content_markdown: |-
     | **sessionId\***         | string        | c12cd72b-0c46-4c4c-a499-1d4040ax0321 | Uuid of the payment session                                   |
     | **country\***         | string        | BR                              | Alpha-2 ISO Country code                                              |
     | **currency\***        | string        | BRL                             | ISO Currency code                                                     |
-    | **paymentAmount\***   | number        | 1000                            | Amount without coma. |
+    | **paymentAmount\***   | number        | 10.00                            | Amount. |
     | **status**          | string        | INIT                              | Refer to notification status table.                                    |
     | **merchantReference** | string        | order\_ticket\_123              | Merchant reference, must be unique and generated in merchant system.  |
     | **paymentReference**  | string        | Invoice ABC123                  | Reference to be used for the Payment.                                 |
@@ -58,7 +58,7 @@ right_code_blocks:
         "sessionId": "17faf8e7-5170-4719-b797-7acba3e7cd05",
         "country": "BR",
         "currency": "BRL",
-        "paymentAmount": 130,
+        "paymentAmount": 130.00,
         "status": "INIT",
         "paymentReference": "Invoice ABC123",
         "merchantReference": "asdaº123",

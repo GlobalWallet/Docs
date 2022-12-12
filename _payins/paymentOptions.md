@@ -25,7 +25,7 @@ content_markdown: |-
   | ------- | ------ | ---------------------------------- |
   | *country | string(2) | Country code ISO alpha 2. |
   | *currency | string(3) | Currency code ISO alpha 3. |
-  | *amount | integer | Amount in decimal format, I.E: 100 = 1$ |
+  | *amount | decimal | Decimal amount. For fiat must be 2 digits length. Crypto currencies allow 8 digits max. |
   | *language | string(2) | Language code ISO alpha 2. Values: 'EN', 'ES', 'PT', 'IN'. |
   | *redirectUrl | string | Merchant page to be redirected after the payout. |
   | *customer | object | Customer object with end user details, refer to Useful Data section for more information. |
@@ -63,7 +63,7 @@ right_code_blocks:
      {
       "country": "BR",
       "currency": "BRL",
-      "amount": 13000,
+      "amount": 130.00,
       "redirectUrl": "https://merchant.io/where-to-go",
       "language": "ES",
       "customer": {

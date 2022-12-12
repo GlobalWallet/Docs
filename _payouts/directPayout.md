@@ -22,7 +22,7 @@ content_markdown: |-
   | *country | string(2) | Alpha-2 ISO Country code. |
   | *currency | string(3) | Alpha-3 ISO Currency code. |
   | *option | string | Payout option chosen. Values: 'Bank Transfer', 'PIX', 'SPEI', 'Tpaga', 'Easy P2P' |
-  | *amount | integer | Amount in decimal format, I.E: 100 = 1$ |
+  | *amount | decimal | Decimal amount. For fiat must be 2 digits length. Crypto currencies allow 8 digits max. |
   | *redirectUrl | string | Merchant page to be redirected after the payout. |
   | merchantReference | string(36) | Merchant generated id for the given payout. |
   | description | string(255) | Description text for the payout. |
@@ -44,7 +44,7 @@ right_code_blocks:
         "country": "BR",
         "currency": "BRL",
         "option": "PIX",
-        "amount": 150,
+        "amount": 150.00,
         "redirectUrl": "https://merchant1.io/where/to/go",
         "merchantReference": "custom8626666",
         "description": "Additional remark for this payout.",

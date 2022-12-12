@@ -12,7 +12,7 @@ content_markdown: |-
     | --------------------- | ------------- | ------------------------------- | --------------------------------------------------------------------- |
     | **country\***         | string        | BR                              | Alpha-2 ISO Country code                                              |
     | **currency\***        | string        | BRL                             | ISO Currency code                                                     |
-    | **amount\***          | number        | 1000                            | Amount without coma, format 155 = 1.55 This needs to be sent in cents |
+    | *amount               | decimal | Decimal amount. For fiat must be 2 digits length. Crypto currencies allow 8 digits max. |
     | **language**          | string        | ES                              | Alpha-2 ISO Language code                                             |
     | **merchantReference** | string        | order\_ticket\_123              | Merchant reference, must be unique and generated in merchant system.  |
     | **paymentReference**  | string        | Invoice ABC123                  | Reference to be used for the Payment.                                 |
@@ -60,7 +60,7 @@ right_code_blocks:
      {
         "country": "BR",
         "currency": "BRL",
-        "amount": 13000,
+        "amount": 130.00,
         "redirectUrl": "https://merchant.io/where-to-go",
         "language": "ES",
         "customer": {

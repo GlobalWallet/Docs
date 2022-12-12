@@ -22,7 +22,7 @@ content_markdown: |-
   | ------- | ------ | ---------------------------------- |
   | *country | string(2) | Country code ISO alpha 2. |
   | *currency | string(3) | Currency code ISO alpha 3. |
-  | *amount | integer | Amount in decimal format, I.E: 100 = 1$ |
+  | *amount | decimal | Decimal amount. For fiat must be 2 digits length. |
 
   Success response have the following schema:
 

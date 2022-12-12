@@ -33,7 +33,7 @@ right_code_blocks:
      {
         "country": "BR",
         "currency": "BRL",
-        "amount": 13000,
+        "amount": 130.00,
         "redirectUrl": "https://merchant.io/where-to-go",
         "language": "ES",
         "customer": {
