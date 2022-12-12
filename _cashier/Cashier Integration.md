@@ -1,5 +1,18 @@
 ---
 title: Cashier Overview
+title2: Payin
+title3: Payout
+title21: Payin Request Life-cycle
+title21-id: cashier-payinCashier-request-lifecycle
+title22: /payment-session
+title22-id: cashier-payincashiersession
+title22-type: post
+title31: Payin Request Life-cycle
+title31-id: cashier-payoutCashier-Payout-request-lifecycle
+title32: /payment-session
+title32-id: cashier-payoutpayouts
+title32-type: post
+
 position_number: 1
 parameters:
   - name:

@@ -53,6 +53,7 @@ collections:
   testdata:
     title: Testing Details
     position_number: 13
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag

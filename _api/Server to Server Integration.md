@@ -1,5 +1,26 @@
 ---
 title: Direct API overview
+title2: Payin
+title3: Payout
+title21: /payment-options 
+title21-id: payinspaymentOptions
+title21-type: post
+title22: /direct-payment
+title22-id: payinsdirectPayment
+title22-type: post
+title23: /confirm-payment
+title23-id: payinsconfirmPayment
+title23-type: post
+title31: /payout-options 
+title31-id: payoutspayoutOptions
+title31-type: post
+title32: /direct-payout
+title32-id: payoutsdirectPayout
+title32-type: post
+title33: Payout Form Data
+title33-id: payoutsPayoutFormData
+
+
 position_number: 1
 parameters:
   - name:
