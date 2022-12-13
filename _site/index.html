@@ -50,7 +50,7 @@
 		
 
 			<section>
-				<h6>Overview documentation</h6>
+				<h6>Overview</h6>
 				<ul>
 					
 					
@@ -101,7 +101,7 @@
 		
 
 			<section>
-				<h6>CashierUI cashier</h6>
+				<h6>CashierUI</h6>
 				<ul>
 					
 					
@@ -191,7 +191,7 @@
 		
 
 			<section>
-				<h6>Direct API api</h6>
+				<h6>Direct API</h6>
 				<ul>
 					
 					
@@ -281,7 +281,7 @@
 		
 
 			<section>
-				<h6>Transaction Query transaction-query</h6>
+				<h6>Transaction Query</h6>
 				<ul>
 					
 					
@@ -300,7 +300,7 @@
 		
 
 			<section>
-				<h6>Refunds refunds</h6>
+				<h6>Refunds</h6>
 				<ul>
 					
 					
@@ -319,7 +319,7 @@
 		
 
 			<section>
-				<h6>Notifications notifications</h6>
+				<h6>Notifications</h6>
 				<ul>
 					
 					
@@ -331,6 +331,14 @@
 						
 						</li>
 					
+						<li>
+							<a href="#notificationsnotifications-signature">
+								Signature Verification									
+								
+							</a>
+						
+						</li>
+					
 				</ul>
 			</section>
 		
@@ -338,7 +346,7 @@
 		
 
 			<section>
-				<h6>GEOs and Methods countries</h6>
+				<h6>GEOs and Methods</h6>
 				<ul>
 					
 					
@@ -405,7 +413,7 @@
 		
 
 			<section>
-				<h6>Useful Data datatables</h6>
+				<h6>Useful Data</h6>
 				<ul>
 					
 					
@@ -440,7 +448,7 @@
 		
 
 			<section>
-				<h6>Testing Details testdata</h6>
+				<h6>Testing Details</h6>
 				<ul>
 					
 					
@@ -2705,10 +2713,8 @@ You can review the request and responses from kibramoa API on the right side.</p
 				
 
 				
-<p>📌 All notification communications must be encrypted under TLS/SSL</p>
-
-<h5 id="notification-body-request">Notification body request</h5>
-
+<p>📌 All notification communications must be encrypted under TLS/SSL 
+    crypto.createHmac(‘sha256’, ‘SECRET’).update(JSON.stringify(payload)).digest(‘base64’)</p>
 <h5 id="once-notification-reach-merchant-systems-it-must-be-replied-back-returning-a-http-response-with-200-status-code-otherwise-kibramoa-system-will-re-send-every-hour">Once notification reach merchant systems it MUST be replied back returning a HTTP response with 200 status code, otherwise Kibramoa system will re-send every hour.</h5>
 
 <h5 id="merchant-is-able-to-resubmit-a-notification-manually-using-the-merchant-portal">Merchant is able to resubmit a notification manually using the merchant portal.</h5>
@@ -2836,6 +2842,70 @@ You can review the request and responses from kibramoa API on the right side.</p
   </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not found"</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
+
+						
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="notificationsnotifications-signature">
+						Signature Verification
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_notifications/notifications-signature.md">Edit</a>
+				</h3>
+				
+					<p class="description">Payment notifications security are based on signature hashing, your system must verify the integrity of the notification request received using your merchant secret password to verify the hash.</p>
+				
+
+				
+
+				
+<p>📌 The x-signature header is provided with the expected result hash.</p>
+
+<h4 id="how-to-obtain-the-signature">How to obtain the signature</h4>
+<ul>
+  <li>
+    <h5 id="get-the-json-notification-payload-from-the-request-and-stringify-it-and-encode-using-base64">Get the json notification payload from the request and stringify it and encode using base64.</h5>
+  </li>
+  <li>
+    <h5 id="the-result-must-will-be-used-with-your-secret-password-to-calculate-the-signature-hash-using-hmac-algorithm-with-sha256">The result must will be used with your secret password to calculate the signature hash using HMAC algorithm with sha256.</h5>
+  </li>
+  <li>
+    <h5 id="compare-the-result-with-the-one-provided-on-the-x-signature-header">Compare the result with the one provided on the x-signature header.</h5>
+  </li>
+  <li>
+    <h5 id="both-hashes-must-match-in-order-to-consider-the-notification-as-valid">Both hashes must match in order to consider the notification as valid.</h5>
+  </li>
+  <li>
+    <h5 id="process-the-notification-acordingly-and-respond-to-kibramoa-with-200-status-code">Process the notification acordingly and respond to Kibramoa with 200 status code.</h5>
+  </li>
+</ul>
+
+<p class="info"><strong>Note:</strong> For obtain the secret password attached to your merchant please contact kibramoa support.</p>
+
+
+				
+			</section>
+			
+					<section class="right-code">
+						
+								
+
+
+<div title="JavaScript - TypeScript" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">crypto</span><span class="p">.</span><span class="nx">createHmac</span><span class="p">(</span><span class="dl">'</span><span class="s1">sha256</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">SECRET</span><span class="dl">'</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">notificationPayload</span><span class="p">)).</span><span class="nx">digest</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+						
+								
+
+
+<div title="PHP" class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$notificationPayload</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$payload</span><span class="p">);</span>
+<span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span><span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$notificationPayload</span><span class="p">),</span><span class="s1">'SECRET'</span><span class="p">);</span>
+</code></pre></div></div>
 
 						
 				</section>
