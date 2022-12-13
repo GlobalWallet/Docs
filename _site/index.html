@@ -275,39 +275,6 @@
 		
 	
 		
-
-			<section>
-				<h6>Payins payins</h6>
-				<ul>
-					
-					
-						<li>
-							<a href="#payinspaymentOptions">
-								/payment-options									
-								<span class="endpoint post"></span>
-							</a>
-						
-						</li>
-					
-						<li>
-							<a href="#payinsdirectPayment">
-								/direct-payment									
-								<span class="endpoint post"></span>
-							</a>
-						
-						</li>
-					
-						<li>
-							<a href="#payinsconfirmPayment">
-								/confirm-payment									
-								<span class="endpoint post"></span>
-							</a>
-						
-						</li>
-					
-				</ul>
-			</section>
-		
 	
 		
 	
@@ -962,7 +929,7 @@
 <div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13000</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">130.00</span><span class="p">,</span><span class="w">
    </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1112,8 +1079,8 @@
     </tr>
     <tr>
       <td>*amount</td>
-      <td>integer</td>
-      <td>Amount in decimal format, I.E: 100 = 1$</td>
+      <td>decimal</td>
+      <td>Decimal amount. For fiat must be 2 digits length.</td>
     </tr>
     <tr>
       <td>*redirectUrl</td>
@@ -1177,7 +1144,7 @@
 <div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">150.00</span><span class="p">,</span><span class="w">
    </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant1.io/where/to/go"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom8108"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional remark for this payout."</span><span class="p">,</span><span class="w">
@@ -1308,8 +1275,8 @@
     </tr>
     <tr>
       <td>*amount</td>
-      <td>integer</td>
-      <td>Amount in decimal format, I.E: 100 = 1$</td>
+      <td>decimal</td>
+      <td>Decimal amount. For fiat must be 2 digits length. Crypto currencies allow 8 digits max.</td>
     </tr>
     <tr>
       <td>*language</td>
@@ -1434,7 +1401,7 @@
 <div title="Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
  </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
- </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13000</span><span class="p">,</span><span class="w">
+ </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">130.00</span><span class="p">,</span><span class="w">
  </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
  </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1715,7 +1682,7 @@
      </span><span class="nl">"bodyPayload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
        </span><span class="nl">"bankcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RHB"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"merchant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surepay88"</span><span class="p">,</span><span class="w">
-       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130"</span><span class="p">,</span><span class="w">
+       </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.00"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"refid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-00002"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a883c0f2c78cf5c0815ed97c1c06a5a5"</span><span class="p">,</span><span class="w">
        </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Merch_User_123"</span><span class="p">,</span><span class="w">
@@ -2003,8 +1970,8 @@ You can review the request and responses from kibramoa API on the right side.</p
     </tr>
     <tr>
       <td>*amount</td>
-      <td>integer</td>
-      <td>Amount in decimal format, I.E: 100 = 1$</td>
+      <td>decimal</td>
+      <td>Decimal amount. For fiat must be 2 digits length.</td>
     </tr>
   </tbody>
 </table>
@@ -2187,8 +2154,8 @@ You can review the request and responses from kibramoa API on the right side.</p
     </tr>
     <tr>
       <td>*amount</td>
-      <td>integer</td>
-      <td>Amount in decimal format, I.E: 100 = 1$</td>
+      <td>decimal</td>
+      <td>Decimal amount. For fiat must be 2 digits length. Crypto currencies allow 8 digits max.</td>
     </tr>
     <tr>
       <td>*redirectUrl</td>
@@ -2260,7 +2227,7 @@ You can review the request and responses from kibramoa API on the right side.</p
    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIX"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">150.00</span><span class="p">,</span><span class="w">
    </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant1.io/where/to/go"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom8626666"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional remark for this payout."</span><span class="p">,</span><span class="w">
@@ -2460,7 +2427,7 @@ You can review the request and responses from kibramoa API on the right side.</p
     </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"option"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PIX"</span><span class="p">,</span><span class="w"> 
-    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">150.00</span><span class="p">,</span><span class="w">
     </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant1.io/where/to/go"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customRef-999"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional remark for this payout."</span><span class="p">,</span><span class="w">
@@ -2534,7 +2501,7 @@ You can review the request and responses from kibramoa API on the right side.</p
   </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"90545ca3-fe0d-457c-a9da-283ee2561d82"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GB"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.00</span><span class="p">,</span><span class="w">
   </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bank Transfer"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invoice-4726"</span><span class="p">,</span><span class="w">
@@ -5009,8 +4976,8 @@ Max Amount:  -</li>
     <tr>
       <td><strong>paymentAmount*</strong></td>
       <td>number</td>
-      <td>1000</td>
-      <td>Amount without coma.</td>
+      <td>10.00</td>
+      <td>Amount.</td>
     </tr>
     <tr>
       <td><strong>status</strong></td>
@@ -5245,7 +5212,7 @@ Max Amount:  -</li>
    </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17faf8e7-5170-4719-b797-7acba3e7cd05"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">130</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"paymentAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">130.00</span><span class="p">,</span><span class="w">
    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INIT"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invoice ABC123"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdaº123"</span><span class="p">,</span><span class="w">
@@ -5342,10 +5309,10 @@ The following are all the parameteres needed along with the data types that are 
       <td>ISO Currency code</td>
     </tr>
     <tr>
-      <td><strong>amount*</strong></td>
-      <td>number</td>
-      <td>1000</td>
-      <td>Amount without coma, format 155 = 1.55 This needs to be sent in cents</td>
+      <td>*amount</td>
+      <td>decimal</td>
+      <td>Decimal amount. For fiat must be 2 digits length. Crypto currencies allow 8 digits max.</td>
+      <td> </td>
     </tr>
     <tr>
       <td><strong>language</strong></td>
@@ -5608,7 +5575,7 @@ The following are all the parameteres needed along with the data types that are 
 <div title="CashierUI Example Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">13000</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">130.00</span><span class="p">,</span><span class="w">
    </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant.io/where-to-go"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -5705,10 +5672,10 @@ The following are all the parameteres needed along with the data types that are 
       <td>Payout currency ISO 3 code</td>
     </tr>
     <tr>
-      <td>amount*</td>
-      <td>number</td>
-      <td>150</td>
-      <td>Payout amount to be settled, without decimals: i.e 150 = $1.50</td>
+      <td>*amount</td>
+      <td>decimal</td>
+      <td>Decimal amount. For fiat must be 2 digits length.</td>
+      <td> </td>
     </tr>
     <tr>
       <td>redirectUrl*</td>
@@ -5791,7 +5758,7 @@ The following are all the parameteres needed along with the data types that are 
 <div title="CashierUI Payout Example Request" class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BR"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRL"</span><span class="p">,</span><span class="w">
-   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="p">,</span><span class="w">
+   </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">150.00</span><span class="p">,</span><span class="w">
    </span><span class="nl">"redirectUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://merchant1.io/where/to/go"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"merchantReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom8108"</span><span class="p">,</span><span class="w">
    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Additional remark for this payout."</span><span class="p">,</span><span class="w">
