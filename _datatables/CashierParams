@@ -12,7 +12,7 @@ content_markdown: |-
     | --------------------- | ------------- | ------------------------------- | --------------------------------------------------------------------- |
     | **country\***         | string        | BR                              | Alpha-2 ISO Country code                                              |
     | **currency\***        | string        | BRL                             | ISO Currency code                                                     |
-    | *amount               | decimal | Decimal amount. For fiat must be 2 digits length. Crypto currencies allow 8 digits max. |
+    | *amount               | decimal 		| 10.50 for fiat or 0.00000001 for crypto									  |	Decimal value allowing max two digits after the decimal point. If the amount is a crypto currency, 8 digits are allowed after the decimal point. |
     | **language**          | string        | ES                              | Alpha-2 ISO Language code                                             |
     | **merchantReference** | string        | order\_ticket\_123              | Merchant reference, must be unique and generated in merchant system.  |
     | **paymentReference**  | string        | Invoice ABC123                  | Reference to be used for the Payment.                                 |

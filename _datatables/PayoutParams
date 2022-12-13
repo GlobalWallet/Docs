@@ -10,7 +10,7 @@ content_markdown: |-
     | **Parameter**         | **Data Type** | **Example**                     | **Description**                                                       |
     | country\*         | string    | BR                                 | Payout country ISO 2 code |
     | currency\*        | string    | BRL                                | Payout currency ISO 3 code |
-    | *amount           | decimal | Decimal amount. For fiat must be 2 digits length.  |
+    | *amount           | decimal 	| 10.50 for fiat or 0.00000001 for crypto									 | Decimal value allowing max two digits after the decimal point. If the amount is a crypto currency, 8 digits are allowed after the decimal point.  
     | redirectUrl\*     | string    | https://merchant1.io/where/to/go   | Redirect URL to send user back to merchant page. |
     | merchantReference | string    | custom\_code 9982674851738108      | Merchant reference for the payout. If null, we will generate one ourselves.   |
     | description       | string    | Additional remark for this payout. | Payout description to be sent in the bank request. |

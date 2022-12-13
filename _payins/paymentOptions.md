@@ -25,7 +25,7 @@ content_markdown: |-
   | ------- | ------ | ---------------------------------- |
   | *country | string(2) | Country code ISO alpha 2. |
   | *currency | string(3) | Currency code ISO alpha 3. |
-  | *amount | decimal | Decimal amount. For fiat must be 2 digits length. Crypto currencies allow 8 digits max. |
+  | *amount | decimal | Decimal value allowing max two digits after the decimal point. If the amount is a crypto currency, 8 digits are allowed after the decimal point. |
   | *language | string(2) | Language code ISO alpha 2. Values: 'EN', 'ES', 'PT', 'IN'. |
   | *redirectUrl | string | Merchant page to be redirected after the payout. |
   | *customer | object | Customer object with end user details, refer to Useful Data section for more information. |
