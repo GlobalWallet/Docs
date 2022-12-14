@@ -2858,24 +2858,24 @@ You can review the request and responses from kibramoa API on the right side.</p
 					<a class="editor-link" href="cloudcannon:collections/_notifications/notifications-signature.md">Edit</a>
 				</h3>
 				
-					<p class="description">Payment notifications security are based on signature hashing, your system must verify the integrity of the notification request received using your merchant secret password to verify the hash.</p>
+					<p class="description">Payment notifications security are based on signature hashing, your system must verify the integrity of the notification request received using your merchant signature secret key to verify the hash.</p>
 				
 
 				
 
 				
-<p>📌 The x-signature header is provided with the expected result hash.</p>
+<p>📌 Notifications headers arrives with x-signature header, it includes the expected result hash.</p>
 
 <h4 id="how-to-obtain-the-signature">How to obtain the signature</h4>
 <ul>
   <li>
-    <h5 id="get-the-json-notification-payload-from-the-request-and-stringify-it-and-encode-using-base64">Get the json notification payload from the request and stringify it and encode using base64.</h5>
+    <h5 id="get-the-json-notification-payload-from-the-request">Get the json notification payload from the request.</h5>
   </li>
   <li>
-    <h5 id="the-result-must-will-be-used-with-your-secret-password-to-calculate-the-signature-hash-using-hmac-algorithm-with-sha256">The result must will be used with your secret password to calculate the signature hash using HMAC algorithm with sha256.</h5>
+    <h5 id="use-your-signature-secret-key-to-calculate-the-signature-hash-using-hmac-algorithm-with-sha256">Use your signature secret key to calculate the signature hash using HMAC algorithm with sha256.</h5>
   </li>
   <li>
-    <h5 id="compare-the-result-with-the-one-provided-on-the-x-signature-header">Compare the result with the one provided on the x-signature header.</h5>
+    <h5 id="encode-the-hmac-result-using-base64-and-compare-the-result-with-the-one-provided-on-the-x-signature-header">Encode the HMAC result using base64 and compare the result with the one provided on the x-signature header.</h5>
   </li>
   <li>
     <h5 id="both-hashes-must-match-in-order-to-consider-the-notification-as-valid">Both hashes must match in order to consider the notification as valid.</h5>
@@ -2885,7 +2885,7 @@ You can review the request and responses from kibramoa API on the right side.</p
   </li>
 </ul>
 
-<p class="info"><strong>Note:</strong> For obtain the secret password attached to your merchant please contact kibramoa support.</p>
+<p class="info"><strong>Note:</strong> For obtain the signature secret key attached to your merchant please contact kibramoa support.</p>
 
 
 				
@@ -2896,7 +2896,7 @@ You can review the request and responses from kibramoa API on the right side.</p
 								
 
 
-<div title="JavaScript - TypeScript" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">crypto</span><span class="p">.</span><span class="nx">createHmac</span><span class="p">(</span><span class="dl">'</span><span class="s1">sha256</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">SECRET</span><span class="dl">'</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">notificationPayload</span><span class="p">)).</span><span class="nx">digest</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">)</span>
+<div title="NodeJs" class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">crypto</span><span class="p">.</span><span class="nx">createHmac</span><span class="p">(</span><span class="dl">'</span><span class="s1">sha256</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">SECRET</span><span class="dl">'</span><span class="p">).</span><span class="nx">update</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">notificationPayload</span><span class="p">)).</span><span class="nx">digest</span><span class="p">(</span><span class="dl">'</span><span class="s1">base64</span><span class="dl">'</span><span class="p">)</span>
 </code></pre></div></div>
 
 						
