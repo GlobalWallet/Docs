@@ -10,11 +10,11 @@ content_markdown: |-
     📌 The x-signature header is provided with the expected result hash. 
     
     #### How to obtain the signature
-    - ##### Get the json notification payload from the request and stringify it and encode using base64.
+    - ##### Get the json notification payload from the request.
 
-    - ##### The result must will be used with your secret password to calculate the signature hash using HMAC algorithm with sha256.
+    - ##### Use your secret password to calculate the signature hash using HMAC algorithm with sha256.
     
-    - ##### Compare the result with the one provided on the x-signature header.
+    - ##### Encode the HMAC result using base64 and compare the result with the one provided on the x-signature header.
     
     - ##### Both hashes must match in order to consider the notification as valid.
 
@@ -29,8 +29,9 @@ right_code_blocks:
     title: JavaScript - TypeScript
     language: javascript
   - code_block: |2-    
-      $notificationPayload = json_encode($payload);
-      hash_hmac('sha256',base64_encode($notificationPayload),'SECRET');
+      <?php 
+        base64_encode(hash_hmac('sha256', json_encode($requestBody), $secret, true));
+      ?>
     title: PHP
     language: php
 ---

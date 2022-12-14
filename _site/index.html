@@ -2903,8 +2903,9 @@ You can review the request and responses from kibramoa API on the right side.</p
 								
 
 
-<div title="PHP" class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$notificationPayload</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$payload</span><span class="p">);</span>
-<span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span><span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$notificationPayload</span><span class="p">),</span><span class="s1">'SECRET'</span><span class="p">);</span>
+<div title="PHP" class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+  <span class="nb">base64_encode</span><span class="p">(</span><span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$requestBody</span><span class="p">),</span> <span class="nv">$secret</span><span class="p">,</span> <span class="kc">true</span><span class="p">));</span>
+<span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 						
