@@ -67,7 +67,7 @@ content_markdown: |-
       Max Amount: 46,000.00
 
 
-  - BP Wallet
+  - Global Wallet
     + Country: Global, Currency: USD
       Min Amount:  - 
       Max Amount:  - 
