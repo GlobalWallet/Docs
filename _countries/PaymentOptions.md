@@ -255,4 +255,141 @@ content_markdown: |-
       Min Amount:  - 
       Max Amount:  - 
 
+  - Crypto payment
+    + Country: `Global`, Currency: `USD`
+      Min Amount:  - 
+      Max Amount:  - 
+
+    + Country: `Global`, Currency: `AAVE`
+      Min Amount:  - 
+      Max Amount:  - 
+
+    + Country: `Global`, Currency: `ADA`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `AXS`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `BAT`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `BCH`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `BNB`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `BTC`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `BUSD`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `CHZ`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `COMP`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `DAI`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `DOGE`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `DOT`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `ENJ`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `ETH`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `KNC`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `LINK`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `LTC`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `LUNA`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `MKR`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `SAND`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `SHIB`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `SOL`
+      Min Amount:  - 
+      Max Amount:  - 
+         
+    + Country: `Global`, Currency: `SUSHI`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `TRX`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `UNI`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `USDC`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `USDT`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `WBTC`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `XLM`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `XRP`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `XTZ`
+      Min Amount:  - 
+      Max Amount:  - 
+          
+    + Country: `Global`, Currency: `YFI`
+      Min Amount:  - 
+      Max Amount:  - 
+      
 ---
