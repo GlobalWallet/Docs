@@ -35,7 +35,7 @@ content_markdown: |-
     | **customer.identify.number\***    | string        | 76486883X        | ID Number from end user.                         |
     | **customer.identify.type\***        | string        | DNI              | ID number type.                                  |
     | **userId**      | string        | Merch\_User\_123 | User identifier on the merchant system.          |
-    | **extra1**      | string        | extraData001     | Extra parameter to match payment. |
+    | **extra1**      | string        | crypto-wallet0001     | *Use this parameter for indicate the user crypto wallet. |
     | **extra2**      | string        | extraData002     | Extra parameter to match payment. |
     | **extra3**      | string        | extraData003     | Extra parameter to match payment. |
     | **storedToken** | string        | index-stored     | Stored payment credential index on kibramoa.     |
