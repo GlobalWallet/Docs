@@ -21,6 +21,6 @@ content_markdown: |-
     Message: TR800243700158007312861665
 
     #### Mobile (Qiwi, PAYTM, etc)
-    Mobile: message: +911234567890
+    Message: +911234567890
       
 ---
