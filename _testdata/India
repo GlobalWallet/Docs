@@ -7,14 +7,14 @@ description: The following details to be used to simulate successful transaction
 content_markdown: |-
     The following are details are needed to accept a successful Transaction on Sandbox.
 
-    UPI: 
+    #### UPI:
 
-    Enter email test@test.com when asked for the UPI ID or the VPA
+    - Email: test@test.com.
+    - UPI ID / VPA: test@vpa
 
+    #### NetBanking:
 
-
-    NetBanking:
-
-    Select KOTAK Bank from the bank list and Submit the Transaction on the following Page.
+     - Select KOTAK Bank from the bank list
+     - Submit the Transaction.
       
 ---

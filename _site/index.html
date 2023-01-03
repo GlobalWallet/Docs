@@ -406,6 +406,14 @@
 						
 						</li>
 					
+						<li>
+							<a href="#countriesCrypto">
+								Crypto									
+								<span class="endpoint Data"></span>
+							</a>
+						
+						</li>
+					
 				</ul>
 			</section>
 		
@@ -463,6 +471,14 @@
 						<li>
 							<a href="#testdataLatamPayoutTestDetails">
 								Latin America Test Data									
+								<span class="endpoint Data"></span>
+							</a>
+						
+						</li>
+					
+						<li>
+							<a href="#testdataeasyP2P">
+								EasyP2P Test Data									
 								<span class="endpoint Data"></span>
 							</a>
 						
@@ -2712,9 +2728,8 @@ You can review the request and responses from kibramoa API on the right side.</p
 
 				
 
-				
-<p>📌 All notification communications must be encrypted under TLS/SSL 
-    crypto.createHmac(‘sha256’, ‘SECRET’).update(JSON.stringify(payload)).digest(‘base64’)</p>
+				<p>📌 All notification communications must be encrypted under TLS/SSL</p>
+
 <h5 id="once-notification-reach-merchant-systems-it-must-be-replied-back-returning-a-http-response-with-200-status-code-otherwise-kibramoa-system-will-re-send-every-hour">Once notification reach merchant systems it MUST be replied back returning a HTTP response with 200 status code, otherwise Kibramoa system will re-send every hour.</h5>
 
 <h5 id="merchant-is-able-to-resubmit-a-notification-manually-using-the-merchant-portal">Merchant is able to resubmit a notification manually using the merchant portal.</h5>
@@ -2999,7 +3014,7 @@ Min Amount: 1.00
 Max Amount: 46,000.00</li>
     </ul>
   </li>
-  <li>BP Wallet
+  <li>Global Wallet
     <ul>
       <li>Country: Global, Currency: USD
 Min Amount:  - 
@@ -3207,7 +3222,114 @@ Min Amount:  -
 Max Amount:  -</li>
     </ul>
   </li>
+  <li>Crypto payment
+    <ul>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: USD
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: AAVE
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: ADA
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: AXS
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: BAT
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: BCH
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: BNB
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: BTC
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: BUSD
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: CHZ
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: COMP
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: DAI
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: DOGE
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: DOT
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: ENJ
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: ETH
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: KNC
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: LINK
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: LTC
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: LUNA
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: MKR
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: SAND
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: SHIB
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: SOL
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: SUSHI
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: TRX
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: UNI
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: USDC
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: USDT
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: WBTC
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: XLM
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: XRP
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: XTZ
+Min Amount:  - 
+Max Amount:  -</li>
+      <li>Country: <code class="language-plaintext highlighter-rouge">Global</code>, Currency: YFI
+Min Amount:  - 
+Max Amount:  -</li>
+    </ul>
+  </li>
 </ul>
+
 
 
 				
@@ -4988,6 +5110,90 @@ Max Amount:  -</li>
 			
 		</section>
 	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="countriesCrypto">
+						Crypto
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_countries/Crypto">Edit</a>
+				</h3>
+				
+					<p class="description">The following is a list of Supported Countries, Currencies and Methods.</p>
+				
+
+				
+
+				
+<p>Crypto is accepted in most countries around the world except for the following:</p>
+
+<ul>
+  <li>Afghanistan</li>
+  <li>Albania</li>
+  <li>Bahamas</li>
+  <li>Bangladesh</li>
+  <li>Barbados</li>
+  <li>Belarus</li>
+  <li>Bolivia</li>
+  <li>Botswana</li>
+  <li>Burkina Faso</li>
+  <li>Cambodia</li>
+  <li>Cayman Islands</li>
+  <li>The Central African Republic</li>
+  <li>China</li>
+  <li>Congo</li>
+  <li>Côte d’Ivoire</li>
+  <li>Cuba</li>
+  <li>Ecuador</li>
+  <li>Ghana</li>
+  <li>Haiti</li>
+  <li>Iceland</li>
+  <li>Iran</li>
+  <li>Iraq</li>
+  <li>Jamaica</li>
+  <li>Kosovo</li>
+  <li>North Korea</li>
+  <li>Liberia</li>
+  <li>Malta</li>
+  <li>Mauritius</li>
+  <li>Mongolia</li>
+  <li>Morocco</li>
+  <li>Myanmar</li>
+  <li>Nicaragua</li>
+  <li>Pakistan</li>
+  <li>Panama</li>
+  <li>Russian Federation</li>
+  <li>Senegal</li>
+  <li>South Sudan</li>
+  <li>Sudan</li>
+  <li>The Syrian Arab Republic</li>
+  <li>Trinidad and Tobago</li>
+  <li>Uganda</li>
+  <li>Ukraine</li>
+  <li>Virgin Islands</li>
+  <li>Vanuatu</li>
+  <li>Venezuela</li>
+  <li>Yemen</li>
+  <li>Zimbabwe</li>
+</ul>
+
+<p>In the USA, our services cannot be used by residents of the following states:</p>
+
+<ul>
+  <li>Louisiana</li>
+  <li>New York</li>
+  <li>US Virgin Islands</li>
+</ul>
+
+
+				
+			</section>
+			
+		</section>
+	
 
 	
 	
@@ -5520,8 +5726,8 @@ The following are all the parameteres needed along with the data types that are 
     <tr>
       <td><strong>extra1</strong></td>
       <td>string</td>
-      <td>extraData001</td>
-      <td>Extra parameter to match payment.</td>
+      <td>crypto-wallet0001</td>
+      <td>*Use this parameter for indicate the user crypto wallet.</td>
     </tr>
     <tr>
       <td><strong>extra2</strong></td>
@@ -5985,6 +6191,48 @@ Beneficiary's Bank: Banco Central del Ecuador
 		<section class="doc-content">
 			<section class="left-docs">
 				<h3>
+					<a id="testdataeasyP2P">
+						EasyP2P Test Data
+						
+							<span class="endpoint Data"></span>
+						
+					</a>
+					<a class="editor-link" href="cloudcannon:collections/_testdata/easyP2P.MD">Edit</a>
+				</h3>
+				
+					<p class="description">Find below testing data for EasyP2P transaction processing.</p>
+				
+
+				
+
+				<p>Simulate successful transaction on Sandbox environment for EasyP2P options:</p>
+
+<h4 id="beneficiary-details">Beneficiary Details:</h4>
+<p>Name: qwerty
+Email: test@test.com</p>
+
+<h4 id="imps--cards">IMPS / Cards</h4>
+<p>Message: 5468123196093920</p>
+
+<h4 id="upi">UPI</h4>
+<p>Message: SDg1234567 / xxxxx@vpa</p>
+
+<h4 id="iban">IBAN</h4>
+<p>Message: TR800243700158007312861665</p>
+
+<h4 id="mobile-qiwi-paytm-etc">Mobile (Qiwi, PAYTM, etc)</h4>
+<p>Mobile: message: +911234567890</p>
+
+
+
+				
+			</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
 					<a id="testdataIndia">
 						Indian Solutions Test Data
 						
@@ -6001,13 +6249,19 @@ Beneficiary's Bank: Banco Central del Ecuador
 
 				<p>The following are details are needed to accept a successful Transaction on Sandbox.</p>
 
-<p>UPI:</p>
+<h4 id="upi">UPI:</h4>
 
-<p>Enter email test@test.com when asked for the UPI ID or the VPA</p>
+<ul>
+  <li>Email: test@test.com.</li>
+  <li>UPI ID / VPA: test@vpa</li>
+</ul>
 
-<p>NetBanking:</p>
+<h4 id="netbanking">NetBanking:</h4>
 
-<p>Select KOTAK Bank from the bank list and Submit the Transaction on the following Page.</p>
+<ul>
+  <li>Select KOTAK Bank from the bank list</li>
+  <li>Submit the Transaction.</li>
+</ul>
 
 
 
