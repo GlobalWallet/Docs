@@ -22,5 +22,5 @@ content_markdown: |-
 
     #### Mobile (Qiwi, PAYTM, etc)
     Message: +911234567890
-      
+ 
 ---
